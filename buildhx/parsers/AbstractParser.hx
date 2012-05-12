@@ -33,6 +33,20 @@ class AbstractParser {
 	}
 	
 	
+	public function resolveImport (type:String):String {
+		
+		return "";
+		
+	}
+	
+	
+	public function resolveType (type:String, abbreviate:Bool = true):String {
+		
+		return "";
+		
+	}
+	
+	
 	public function writeClasses (targetPath:String):Void {
 		
 		

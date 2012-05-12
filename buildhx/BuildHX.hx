@@ -18,6 +18,7 @@ import neko.io.Path;
 import neko.Lib;
 import buildhx.parsers.AbstractParser;
 import buildhx.parsers.JSDuckParser;
+import buildhx.parsers.SimpleParser;
 
 
 class BuildHX {
@@ -70,10 +71,15 @@ class BuildHX {
 	}
 	
 	
-	public static function error (message:String):Void {
+	public static function error (message:String, exit:Bool = true):Void {
 		
 		Lib.println ("Error: " + message);
-		Sys.exit ( -1);
+		
+		if (exit) {
+			
+			Sys.exit ( -1);
+			
+		}
 		
 	}
 	
@@ -331,7 +337,8 @@ class BuildHX {
 			
 		} catch (e:Dynamic) {
 			
-			error ("\"" + inputFile + "\" contains invalid XML data");
+			error ("\"" + inputFile + "\" contains invalid XML data\n", false);
+			Lib.rethrow (e);
 			
 		}
 		
@@ -345,7 +352,13 @@ class BuildHX {
 			
 			default:
 				
-				error ("\"" + parserName + "\" is an unknown parser type");
+				if (parserName != null && parserName != "") {
+					
+					Lib.println ("Warning: \"" + parserName + "\" is an unknown parser type. Using the \"simple\" parser.");
+					
+				}
+				
+				parser = new SimpleParser (types, definitions);
 			
 		}
 		
@@ -363,7 +376,12 @@ class BuildHX {
 			
 		}
 		
-		parser.processFiles (FileSystem.readDirectory (sourcePath), sourcePath);
+		if (sourcePath != null) {
+			
+			parser.processFiles (FileSystem.readDirectory (sourcePath), sourcePath);
+			
+		}
+		
 		parser.resolveClasses ();
 		parser.writeClasses (targetPath);
 		
@@ -485,9 +503,21 @@ class BuildHX {
 			
 		}
 		
-		if (element.has.parent) {
+		if (element.has.resolve ("extends")) {
 			
-			definition.parentClassName = element.att.parent;
+			definition.parentClassName = element.att.resolve ("extends");
+			
+		}
+		
+		if (element.has.resolve ("implements")) {
+			
+			var interfaces = StringTools.replace (element.att.resolve ("implements"), ", ", ",");
+			
+			for (classInterface in interfaces.split (",")) {
+				
+				definition.interfaces.set (classInterface, classInterface);
+				
+			}
 			
 		}
 		
@@ -505,101 +535,188 @@ class BuildHX {
 					
 					definition.imports.set (childElement.att.name, childElement.att.name);
 				
-				case "property":
+				case "property", "static-property":
 					
-					var property = new ClassProperty ();
-					
-					property.name = childElement.att.name;
-					property.type = childElement.att.type;
-					
-					if (childElement.has.ignore && childElement.att.ignore == "true") {
-						
-						property.ignore = true;
-						
-					}
-					
-					if (childElement.has.owner) {
-						
-						property.owner = childElement.att.owner;
-						
-					} else {
-						
-						property.owner = definition.className;
-						
-					}
-					
-					if (childElement.has.resolve ("static") && childElement.att.resolve ("static") == "true") {
-						
-						definition.staticProperties.set (property.name, property);
-						
-					} else {
-						
-						definition.properties.set (property.name, property);
-						
-					}
+					parsePropertyElement (definition, childElement);
 				
-				case "method":
+				case "method", "static-method", "constructor":
 					
-					var method = new ClassMethod ();
-					
-					method.name = childElement.att.name;
-					
-					if (childElement.has.ignore && childElement.att.ignore == "true") {
-						
-						method.ignore = true;
-						
-					}
-					
-					if (childElement.has.owner) {
-						
-						method.owner = childElement.att.owner;
-						
-					} else {
-						
-						method.owner = definition.className;
-						
-					}
-					
-					for (methodElement in childElement.elements) {
-						
-						if (methodElement.name == "parameter") {
-							
-							method.parameterNames.push (methodElement.att.name);
-							method.parameterTypes.push (methodElement.att.type);
-							
-							if (methodElement.has.optional && methodElement.att.optional == "true") {
-								
-								method.parameterOptional.push (true);
-								
-							} else {
-								
-								method.parameterOptional.push (false);
-								
-							}
-							
-						} else if (methodElement.name == "return") {
-							
-							method.returnType = methodElement.att.type;
-							
-						}
-						
-					}
-					
-					if (childElement.has.resolve ("static") && childElement.att.resolve ("static") == "true") {
-						
-						definition.staticMethods.set (method.name, method);
-						
-					} else {
-						
-						definition.methods.set (method.name, method);
-						
-					}
+					parseMethodElement (definition, childElement);
 				
 			}
 			
 		}
 		
 		definitions.set (definition.className, definition);
+		
+	}
+	
+	
+	private static function parseMethodElement (definition:ClassDefinition, element:Fast):Void {
+		
+		var method = new ClassMethod ();
+		
+		if (element.name == "constructor") {
+			
+			method.name = "new";
+			method.returnType = "Void";
+			
+		} else {
+			
+			method.name = element.att.name;
+			
+		}
+		
+		if (element.has.ignore && element.att.ignore == "true") {
+			
+			method.ignore = true;
+			
+		}
+		
+		if (element.has.owner) {
+			
+			method.owner = element.att.owner;
+			
+		} else {
+			
+			method.owner = definition.className;
+			
+		}
+		
+		if (element.has.parameters) {
+			
+			parseParameterString (method, element.att.parameters);
+			
+		} else if (element.has.params) {
+			
+			parseParameterString (method, element.att.params);
+			
+		}
+		
+		if (element.has.resolve ("return")) {
+			
+			method.returnType = element.att.resolve ("return");
+			
+		} else {
+			
+			method.returnType = "Void";
+			
+		}
+		
+		for (childElement in element.elements) {
+			
+			if (childElement.name == "parameter") {
+				
+				method.parameterNames.push (childElement.att.name);
+				method.parameterTypes.push (childElement.att.type);
+				
+				if (childElement.has.optional && childElement.att.optional == "true") {
+					
+					method.parameterOptional.push (true);
+					
+				} else {
+					
+					method.parameterOptional.push (false);
+					
+				}
+				
+			} else if (childElement.name == "return") {
+				
+				method.returnType = childElement.att.type;
+				
+			}
+			
+		}
+		
+		if (element.name == "static-method" || (element.has.resolve ("static") && element.att.resolve ("static") == "true")) {
+			
+			definition.staticMethods.set (method.name, method);
+			
+		} else {
+			
+			definition.methods.set (method.name, method);
+			
+		}
+		
+	}
+	
+	
+	private static function parseParameterString (method:ClassMethod, parameters:String):Void {
+		
+		parameters = StringTools.replace (parameters, ", ", ",");
+		var parameterList = parameters.split (",");
+		
+		for (parameter in parameterList) {
+			
+			var optional = false;
+			
+			if (parameter.substr (0, 1) == "?") {
+				
+				parameter = parameter.substr (1);
+				optional = true;
+				
+			}
+			
+			var type = "Dynamic";
+			var index = parameter.indexOf (":");
+			
+			if (index > -1) {
+				
+				type = parameter.substr (index + 1);
+				parameter = parameter.substr (0, index);
+				
+			}
+			
+			method.parameterNames.push (parameter);
+			method.parameterOptional.push (optional);
+			method.parameterTypes.push (type);
+			
+		}
+		
+	}
+	
+	
+	private static function parsePropertyElement (definition:ClassDefinition, element:Fast):Void {
+		
+		var property = new ClassProperty ();
+		
+		property.name = element.att.name;
+		
+		if (element.has.type) {
+			
+			property.type = element.att.type;
+			
+		} else {
+			
+			property.type = "Dynamic";
+			
+		}
+		
+		if (element.has.ignore && element.att.ignore == "true") {
+			
+			property.ignore = true;
+			
+		}
+		
+		if (element.has.owner) {
+			
+			property.owner = element.att.owner;
+			
+		} else {
+			
+			property.owner = definition.className;
+			
+		}
+		
+		if (element.name == "static-property" || (element.has.resolve ("static") && element.att.resolve ("static") == "true")) {
+			
+			definition.staticProperties.set (property.name, property);
+			
+		} else {
+			
+			definition.properties.set (property.name, property);
+			
+		}
 		
 	}
 	
