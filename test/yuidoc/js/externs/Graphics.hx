@@ -1,0 +1,87 @@
+package ;
+
+@:native ("Graphics")
+extern class Graphics {
+
+	public var _active:Bool;
+	public var _activeInstructions:Array[Command];
+	public var _ctx:CanvasRenderingContext2D;
+	public var _dirty:Bool;
+	public var _fillInstructions:Array[Command];
+	public var _instructions:Array[Command];
+	public var _oldInstructions:Array[Command];
+	public var _strokeInstructions:Array[Command];
+	public var _strokeStyleInstructions:Array[Command];
+	public var a:Void;
+	public var at:Void;
+	public var BASE_64:Dynamic;
+	public var beginCmd:Command;
+	public var bf:Void;
+	public var bs:Void;
+	public var bt:Void;
+	public var c:Void;
+	public var cp:Void;
+	public var curveTo:Dynamic;
+	public var dc:Void;
+	public var de:Void;
+	public var dp:Void;
+	public var dr:Void;
+	public var drawRect:Dynamic;
+	public var ef:Void;
+	public var es:Void;
+	public var f:Void;
+	public var fillCmd:Command;
+	public var lf:Void;
+	public var ls:Void;
+	public var lt:Void;
+	public var mt:Void;
+	public var p:Void;
+	public var qt:Void;
+	public var r:Void;
+	public var rc:Void;
+	public var rf:Void;
+	public var rr:Void;
+	public var rs:Void;
+	public var s:Void;
+	public var ss:Void;
+	public var STROKE_CAPS_MAP:Array[String];
+	public var STROKE_JOINTS_MAP:Array[String];
+	public var strokeCmd:Command;
+
+	public function _newPath ():Dynamic;
+	public function _setProp (name:String, value:String):Dynamic;
+	public function _updateInstructions ():Dynamic;
+	public function arc (x:Float, y:Float, radius:Float, startAngle:Float, endAngle:Float, anticlockwise:Bool):Graphics;
+	public function arcTo (x1:Float, y1:Float, x2:Float, y2:Float, radius:Float):Graphics;
+	public function beginBitmapFill (image:Void, repetition:String):Graphics;
+	public function beginBitmapStroke (image:Image | HTMLCanvasElement | HTMLVideoElement, repetition:String):Graphics;
+	public function beginFill (color:String):Graphics;
+	public function beginLinearGradientFill (colors:Array[String], ratios:Array[Number], x0:Float, y0:Float, x1:Float, y1:Float):Graphics;
+	public function beginLinearGradientStroke (colors:Void, ratios:Void, x0:Void, y0:Void, x1:Void, y1:Void):Graphics;
+	public function beginRadialGradientFill (colors:Array[String], ratios:Array[Number], x0:Float, y0:Float, r0:Float, x1:Float, y1:Float, r1:Float):Graphics;
+	public function beginRadialGradientStroke (colors:Void, ratios:Void, x0:Void, y0:Void, r0:Void, x1:Void, y1:Void, r1:Void):Graphics;
+	public function beginStroke (color:Void):Graphics;
+	public function clear ():Graphics;
+	public function clone ():Graphics;
+	public function closePath ():Graphics;
+	public function decodePath (str:String):Graphics;
+	public function draw (ctx:CanvasRenderingContext2D):Dynamic;
+	public function drawAsPath (ctx:CanvasRenderingContext2D):Dynamic;
+	public function drawCircle (x:Float, y:Float, radius:Float):Graphics;
+	public function drawEllipse (x:Float, y:Float, w:Float, h:Float):Graphics;
+	public function drawPolyStar (x:Float, y:Float, radius:Float, sides:Float, pointSize:Float, angle:Float):Graphics;
+	public function drawRoundRect (x:Float, y:Float, w:Float, h:Float, radius:Float):Graphics;
+	public function drawRoundRectComplex (x:Float, y:Float, w:Float, h:Float, radiusTL:Float, radiusTR:Float, radiusBR:Float, radiusBL:Float):Graphics;
+	public function endStroke ():Graphics;
+	public function exec (scope:Dynamic):Dynamic;
+	public function getHSL (hue:Float, saturation:Float, lightness:Float, alpha:Float):Void;
+	public function getRGB (r:Float, g:Float, b:Float, alpha:Float):Void;
+	public function initialize (instructions:String):Dynamic;
+	public function lineTo (x:Float, y:Float):Graphics;
+	public function moveTo (x:Float, y:Float):Graphics;
+	public function quadraticCurveTo (cpx:Float, cpy:Float, x:Float, y:Float):Graphics;
+	public function rect (x:Float, y:Float, w:Float, h:Float):Graphics;
+	public function setStrokeStyle (thickness:Void, caps:Void, joints:Void, miter:Void):Graphics;
+	public function toString ():String;
+
+}

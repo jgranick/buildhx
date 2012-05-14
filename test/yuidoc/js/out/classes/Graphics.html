@@ -1,0 +1,7718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Graphics</title>
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.0&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
+    <script src="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.0&#x2F;build&#x2F;yui&#x2F;yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="..&#x2F;assets/css/logo.png" title=""></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="..&#x2F;classes/Bitmap.html">Bitmap</a></li>
+            
+                <li><a href="..&#x2F;classes/BitmapAnimation.html">BitmapAnimation</a></li>
+            
+                <li><a href="..&#x2F;classes/BoxBlurFilter.html">BoxBlurFilter</a></li>
+            
+                <li><a href="..&#x2F;classes/ColorFilter.html">ColorFilter</a></li>
+            
+                <li><a href="..&#x2F;classes/ColorMatrix.html">ColorMatrix</a></li>
+            
+                <li><a href="..&#x2F;classes/ColorMatrixFilter.html">ColorMatrixFilter</a></li>
+            
+                <li><a href="..&#x2F;classes/Command.html">Command</a></li>
+            
+                <li><a href="..&#x2F;classes/Container.html">Container</a></li>
+            
+                <li><a href="..&#x2F;classes/DisplayObject.html">DisplayObject</a></li>
+            
+                <li><a href="..&#x2F;classes/DOMElement.html">DOMElement</a></li>
+            
+                <li><a href="..&#x2F;classes/FBBitmapAnimation.html">FBBitmapAnimation</a></li>
+            
+                <li><a href="..&#x2F;classes/Filter.html">Filter</a></li>
+            
+                <li><a href="..&#x2F;classes/Graphics.html">Graphics</a></li>
+            
+                <li><a href="..&#x2F;classes/Matrix2D.html">Matrix2D</a></li>
+            
+                <li><a href="..&#x2F;classes/MouseEvent.html">MouseEvent</a></li>
+            
+                <li><a href="..&#x2F;classes/MovieClip.html">MovieClip</a></li>
+            
+                <li><a href="..&#x2F;classes/MovieClipPlugin.html">MovieClipPlugin</a></li>
+            
+                <li><a href="..&#x2F;classes/Point.html">Point</a></li>
+            
+                <li><a href="..&#x2F;classes/Rectangle.html">Rectangle</a></li>
+            
+                <li><a href="..&#x2F;classes/Shadow.html">Shadow</a></li>
+            
+                <li><a href="..&#x2F;classes/Shape.html">Shape</a></li>
+            
+                <li><a href="..&#x2F;classes/SpriteSheet.html">SpriteSheet</a></li>
+            
+                <li><a href="..&#x2F;classes/SpriteSheetBuilder.html">SpriteSheetBuilder</a></li>
+            
+                <li><a href="..&#x2F;classes/SpriteSheetUtils.html">SpriteSheetUtils</a></li>
+            
+                <li><a href="..&#x2F;classes/Stage.html">Stage</a></li>
+            
+                <li><a href="..&#x2F;classes/Text.html">Text</a></li>
+            
+                <li><a href="..&#x2F;classes/Ticker.html">Ticker</a></li>
+            
+                <li><a href="..&#x2F;classes/Touch.html">Touch</a></li>
+            
+                <li><a href="..&#x2F;classes/UID.html">UID</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="..&#x2F;modules/EaselJS.html">EaselJS</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1>Graphics Class</h1>
+<div class="box meta">
+    
+
+    
+
+    
+        <div class="foundat">
+            Defined in: <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l52"><code>easeljs&#x2F;display&#x2F;Graphics.js:52</code></a>
+        </div>
+    
+
+    
+        
+            Module: <a href="../modules/EaselJS.html">EaselJS</a>
+        
+    
+
+    
+</div>
+
+
+
+<div class="box intro">
+    <p>The Graphics class exposes an easy to use API for generating vector drawing instructions and drawing them to a specified context.
+Note that you can use Graphics without any dependency on the Easel framework by calling draw() directly,
+or it can be used with the Shape object to draw vector graphics within the context of an Easel display list.<br/><br/>
+<pre class="code"><code class="prettyprint">var g = new Graphics();
+    g.setStrokeStyle(1);
+    g.beginStroke(Graphics.getRGB(0,0,0));
+    g.beginFill(Graphics.getRGB(255,0,0));
+    g.drawCircle(0,0,3);</p>
+
+<pre class="code"><code class="prettyprint">var s = new Shape(g);
+    s.x = 100;
+    s.y = 100;
+
+stage.addChild(s);
+stage.update();&lt;/code&gt;&lt;/pre&gt;&lt;br /&gt;
+</code></pre>
+
+<p>Note that all drawing methods in Graphics return the Graphics instance, so they can be chained together. For example, the following 
+line of code would generate the instructions to draw a rectangle with a red stroke and blue fill, then render it to the specified 
+context2D:<br />
+<pre class="code"><code class="prettyprint">myGraphics.beginStroke("#F00").beginFill("#00F").drawRect(20, 20, 100, 50).draw(myContext2D);</p>
+</div>
+
+
+    <div class="constructor">
+        <h2>Constructor</h2>
+        <div id="method_Graphics" class="method item">
+    <h3 class="name"><code>Graphics</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l52"><code>easeljs&#x2F;display&#x2F;Graphics.js:52</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+    </div>
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+        
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+        
+        
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
+        
+        
+        
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+            
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                        
+                            <li class="index-item method protected">
+                                <a href="#method__newPath">_newPath</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method protected">
+                                <a href="#method__setProp">_setProp</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method protected">
+                                <a href="#method__updateInstructions">_updateInstructions</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_arc">arc</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_arcTo">arcTo</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_beginBitmapFill">beginBitmapFill</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_beginBitmapStroke">beginBitmapStroke</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_beginFill">beginFill</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_beginLinearGradientFill">beginLinearGradientFill</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_beginLinearGradientStroke">beginLinearGradientStroke</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_beginRadialGradientFill">beginRadialGradientFill</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_beginRadialGradientStroke">beginRadialGradientStroke</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_beginStroke">beginStroke</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_clear">clear</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_clone">clone</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_closePath">closePath</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_decodePath">decodePath</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_draw">draw</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_drawAsPath">drawAsPath</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_drawCircle">drawCircle</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_drawEllipse">drawEllipse</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_drawPolyStar">drawPolyStar</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_drawRoundRect">drawRoundRect</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_drawRoundRectComplex">drawRoundRectComplex</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_endStroke">endStroke</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_exec">exec</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getHSL">getHSL</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getRGB">getRGB</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                            </li>
+                        
+                            <li class="index-item method protected">
+                                <a href="#method_initialize">initialize</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_lineTo">lineTo</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_moveTo">moveTo</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_quadraticCurveTo">quadraticCurveTo</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_rect">rect</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_setStrokeStyle">setStrokeStyle</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_toString">toString</a>
+
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties">
+                        
+                            <li class="index-item property protected">
+                                <a href="#property__active">_active</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property__activeInstructions">_activeInstructions</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property__ctx">_ctx</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property__dirty">_dirty</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property__fillInstructions">_fillInstructions</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property__instructions">_instructions</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property__oldInstructions">_oldInstructions</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property__strokeInstructions">_strokeInstructions</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property__strokeStyleInstructions">_strokeStyleInstructions</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_a">a</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_at">at</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_BASE_64">BASE_64</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_beginCmd">beginCmd</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_bf">bf</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_bs">bs</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_bt">bt</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_c">c</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_cp">cp</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_curveTo">curveTo</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_dc">dc</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_de">de</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_dp">dp</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_dr">dr</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_drawRect">drawRect</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_ef">ef</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_es">es</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_f">f</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_fillCmd">fillCmd</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_lf">lf</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_ls">ls</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_lt">lt</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_mt">mt</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_p">p</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_qt">qt</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_r">r</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_rc">rc</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_rf">rf</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_rr">rr</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_rs">rs</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_s">s</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_ss">ss</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_STROKE_CAPS_MAP">STROKE_CAPS_MAP</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_STROKE_JOINTS_MAP">STROKE_JOINTS_MAP</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                            </li>
+                        
+                            <li class="index-item property protected">
+                                <a href="#property_strokeCmd">strokeCmd</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+
+            
+        </div>
+
+        
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+                
+                    <div id="method__newPath" class="method item protected">
+    <h3 class="name"><code>_newPath</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l1116"><code>easeljs&#x2F;display&#x2F;Graphics.js:1116</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method__setProp" class="method item protected">
+    <h3 class="name"><code>_setProp</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>name</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>value</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l1128"><code>easeljs&#x2F;display&#x2F;Graphics.js:1128</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>used to create Commands that set properties</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">name</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">value</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method__updateInstructions" class="method item protected">
+    <h3 class="name"><code>_updateInstructions</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l1094"><code>easeljs&#x2F;display&#x2F;Graphics.js:1094</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_arc" class="method item">
+    <h3 class="name"><code>arc</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>x</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>radius</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>startAngle</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>endAngle</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>anticlockwise</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l351"><code>easeljs&#x2F;display&#x2F;Graphics.js:351</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Draws an arc defined by the radius, startAngle and endAngle arguments, centered at the position (x, y). For example 
+arc(100, 100, 20, 0, Math.PI*2) would draw a full circle with a radius of 20 centered at (100, 100). For detailed 
+information, read the 
+<a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-arc">whatwg spec</a>.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">x</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">radius</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">startAngle</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Measured in radians.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">endAngle</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Measured in radians.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">anticlockwise</code>
+                        <span class="type">Boolean</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>:
+                    
+                    The Graphics instance the method is called on (useful for chaining calls.)
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_arcTo" class="method item">
+    <h3 class="name"><code>arcTo</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>x1</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y1</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>x2</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y2</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>radius</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l333"><code>easeljs&#x2F;display&#x2F;Graphics.js:333</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Draws an arc with the specified control points and radius.  For detailed information, read the 
+<a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-arcto">
+whatwg spec</a>.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">x1</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y1</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">x2</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y2</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">radius</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>:
+                    
+                    The Graphics instance the method is called on (useful for chaining calls.)
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_beginBitmapFill" class="method item">
+    <h3 class="name"><code>beginBitmapFill</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>image</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>repetition</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l522"><code>easeljs&#x2F;display&#x2F;Graphics.js:522</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Begins a pattern fill using the specified image. This ends the current subpath.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">image</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The Image, Canvas, or Video object to use as the pattern.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">repetition</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Optional. Indicates whether to repeat the image in the fill area. One of "repeat", "repeat-x",
+"repeat-y", or "no-repeat". Defaults to "repeat".</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>:
+                    
+                    The Graphics instance the method is called on (useful for chaining calls.)
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_beginBitmapStroke" class="method item">
+    <h3 class="name"><code>beginBitmapStroke</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>image</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>repetition</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l626"><code>easeljs&#x2F;display&#x2F;Graphics.js:626</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Begins a pattern fill using the specified image. This ends the current subpath.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">image</code>
+                        <span class="type">Image | HTMLCanvasElement | HTMLVideoElement</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The Image, Canvas, or Video object to use as the pattern.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">repetition</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Optional. Indicates whether to repeat the image in the fill area. One of "repeat", "repeat-x",
+"repeat-y", or "no-repeat". Defaults to "repeat".</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>:
+                    
+                    The Graphics instance the method is called on (useful for chaining calls.)
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_beginFill" class="method item">
+    <h3 class="name"><code>beginFill</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>color</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l457"><code>easeljs&#x2F;display&#x2F;Graphics.js:457</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Begins a fill with the specified color. This ends the current subpath.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">color</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A CSS compatible color value (ex. "#FF0000" or "rgba(255,0,0,0.5)"). Setting to null will 
+result in no fill.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>:
+                    
+                    The Graphics instance the method is called on (useful for chaining calls.)
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_beginLinearGradientFill" class="method item">
+    <h3 class="name"><code>beginLinearGradientFill</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>colors</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>ratios</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>x0</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y0</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>x1</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y1</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l470"><code>easeljs&#x2F;display&#x2F;Graphics.js:470</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Begins a linear gradient fill defined by the line (x0, y0) to (x1, y1). This ends the current subpath. For example, the
+following code defines a black to white vertical gradient ranging from 20px to 120px, and draws a square to display it:
+myGraphics.beginLinearGradientFill(["#000","#FFF"], [0, 1], 0, 20, 0, 120).drawRect(20, 20, 120, 120);</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">colors</code>
+                        <span class="type">ArrayString</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>An array of CSS compatible color values. For example, ["#F00","#00F"] would define a gradient 
+drawing from red to blue.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">ratios</code>
+                        <span class="type">ArrayNumber</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>An array of gradient positions which correspond to the colors. For example, [0.1, 0.9] would draw 
+the first color to 10% then interpolating to the second color at 90%.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">x0</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The position of the first point defining the line that defines the gradient direction and size.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y0</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The position of the first point defining the line that defines the gradient direction and size.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">x1</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The position of the second point defining the line that defines the gradient direction and size.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y1</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The position of the second point defining the line that defines the gradient direction and size.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>:
+                    
+                    The Graphics instance the method is called on (useful for chaining calls.)
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_beginLinearGradientStroke" class="method item">
+    <h3 class="name"><code>beginLinearGradientStroke</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>colors</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>ratios</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>x0</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y0</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>x1</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y1</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l579"><code>easeljs&#x2F;display&#x2F;Graphics.js:579</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Begins a linear gradient stroke defined by the line (x0, y0) to (x1, y1). This ends the current subpath. For example, the following code defines a black to white vertical gradient ranging from 20px to 120px, and draws a square to display it:
+myGraphics.setStrokeStyle(10).beginLinearGradientStroke(["#000","#FFF"], [0, 1], 0, 20, 0, 120).drawRect(20, 20, 120, 120);</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">colors</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>An array of CSS compatible color values. For example, ["#F00","#00F"] would define a gradient drawing from red to blue.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">ratios</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>An array of gradient positions which correspond to the colors. For example, [0.1, 0.9] would draw the first color to 10% then interpolating to the second color at 90%.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">x0</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The position of the first point defining the line that defines the gradient direction and size.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y0</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The position of the first point defining the line that defines the gradient direction and size.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">x1</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The position of the second point defining the line that defines the gradient direction and size.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y1</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The position of the second point defining the line that defines the gradient direction and size.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>:
+                    
+                    The Graphics instance the method is called on (useful for chaining calls.)
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_beginRadialGradientFill" class="method item">
+    <h3 class="name"><code>beginRadialGradientFill</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>colors</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>ratios</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>x0</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y0</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>r0</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>x1</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y1</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>r1</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l495"><code>easeljs&#x2F;display&#x2F;Graphics.js:495</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Begins a radial gradient fill. This ends the current subpath. For example, the following code defines a red to blue radial 
+gradient centered at (100, 100), with a radius of 50, and draws a circle to display it:
+myGraphics.beginRadialGradientFill(["#F00","#00F"], [0, 1], 100, 100, 0, 100, 100, 50).drawCircle(100, 100, 50);</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">colors</code>
+                        <span class="type">ArrayString</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>An array of CSS compatible color values. For example, ["#F00","#00F"] would define a gradient 
+drawing from red to blue.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">ratios</code>
+                        <span class="type">ArrayNumber</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>An array of gradient positions which correspond to the colors. For example, [0.1, 0.9] would 
+draw the first color to 10% then interpolating to the second color at 90%.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">x0</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Center position of the inner circle that defines the gradient.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y0</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Center position of the inner circle that defines the gradient.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">r0</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Radius of the inner circle that defines the gradient.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">x1</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Center position of the outer circle that defines the gradient.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y1</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Center position of the outer circle that defines the gradient.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">r1</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Radius of the outer circle that defines the gradient.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>:
+                    
+                    The Graphics instance the method is called on (useful for chaining calls.)
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_beginRadialGradientStroke" class="method item">
+    <h3 class="name"><code>beginRadialGradientStroke</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>colors</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>ratios</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>x0</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y0</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>r0</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>x1</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y1</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>r1</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l602"><code>easeljs&#x2F;display&#x2F;Graphics.js:602</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Begins a radial gradient stroke. This ends the current subpath. For example, the following code defines a red to blue radial gradient centered at (100, 100), with a radius of 50, and draws a rectangle to display it:
+myGraphics.setStrokeStyle(10).beginRadialGradientStroke(["#F00","#00F"], [0, 1], 100, 100, 0, 100, 100, 50).drawRect(50, 90, 150, 110);</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">colors</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>An array of CSS compatible color values. For example, ["#F00","#00F"] would define a gradient drawing from red to blue.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">ratios</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>An array of gradient positions which correspond to the colors. For example, [0.1, 0.9] would draw the first color to 10% then interpolating to the second color at 90%, then draw the second color to 100%.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">x0</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Center position of the inner circle that defines the gradient.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y0</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Center position of the inner circle that defines the gradient.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">r0</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Radius of the inner circle that defines the gradient.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">x1</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Center position of the outer circle that defines the gradient.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y1</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Center position of the outer circle that defines the gradient.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">r1</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Radius of the outer circle that defines the gradient.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>:
+                    
+                    The Graphics instance the method is called on (useful for chaining calls.)
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_beginStroke" class="method item">
+    <h3 class="name"><code>beginStroke</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>color</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l567"><code>easeljs&#x2F;display&#x2F;Graphics.js:567</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Begins a stroke with the specified color. This ends the current subpath.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">color</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A CSS compatible color value (ex. "#FF0000" or "rgba(255,0,0,0.5)"). Setting to null will result in no stroke.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>:
+                    
+                    The Graphics instance the method is called on (useful for chaining calls.)
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_clear" class="method item">
+    <h3 class="name"><code>clear</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l443"><code>easeljs&#x2F;display&#x2F;Graphics.js:443</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Clears all drawing instructions, effectively reseting this Graphics instance.</p>
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>:
+                    
+                    The Graphics instance the method is called on (useful for chaining calls.)
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_clone" class="method item">
+    <h3 class="name"><code>clone</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l873"><code>easeljs&#x2F;display&#x2F;Graphics.js:873</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns a clone of this Graphics instance.</p>
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>:
+                    
+                    A clone of the current Graphics instance.
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_closePath" class="method item">
+    <h3 class="name"><code>closePath</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l427"><code>easeljs&#x2F;display&#x2F;Graphics.js:427</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Closes the current path, effectively drawing a line from the current drawing point to the first drawing point specified
+since the fill or stroke was last set.</p>
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>:
+                    
+                    The Graphics instance the method is called on (useful for chaining calls.)
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_decodePath" class="method item">
+    <h3 class="name"><code>decodePath</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>str</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l810"><code>easeljs&#x2F;display&#x2F;Graphics.js:810</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Decodes a compact encoded path string into a series of draw instructions.
+This format is not intended to be human readable, and is meant for use by authoring tools.
+The format uses a base64 character set, with each character representing 6 bits, to define a series of draw commands.
+
+Each command is comprised of a single "header" character followed by a variable number of alternating x and y position values.
+Reading the header bits from left to right (most to least significant): bits 1 to 3 specify the type of operation
+(0-moveTo, 1-lineTo, 2-quadraticCurveTo, 3-bezierCurveTo, 4-7 unused). Bit 4 indicates whether position values use 12 bits (2 characters) 
+or 18 bits (3 characters), with a one indicating the latter. Bits 5 and 6 are currently unused.
+
+Following the header is a series of 2 (moveTo, lineTo), 4 (quadraticCurveTo), or 6 (bezierCurveTo) parameters.
+These parameters are alternating x/y positions represented by 2 or 3 characters (as indicated by the 4th bit in the command char).
+These characters consist of a 1 bit sign (1 is negative, 0 is positive), followed by an 11 (2 char) or 17 (3 char) bit integer value.
+All position values are in tenths of a pixel.
+Except in the case of move operations, this value is a delta from the previous x or y position (as appropriate).
+
+For example, the string "A3cAAMAu4AAA" represents a line starting at -150,0 and ending at 150,0.
+A - bits 000000. First 3 bits (000) indicate a moveTo operation. 4th bit (0) indicates 2 chars per parameter.
+n0 - 110111011100. Absolute x position of -150.0px. First bit indicates a negative value, remaining bits indicate 1500 tenths of a pixel. 
+AA - 000000000000. Absolute y position of 0.
+I - 001100. First 3 bits (001) indicate a lineTo operation. 4th bit (1) indicates 3 chars per parameter.
+Au4 - 000000101110111000. An x delta of 300.0px, which is added to the previous x value of -150.0px to provide an absolute position of +150.0px.
+AAA - 000000000000000000. A y delta value of 0.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">str</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The path string to decode.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>:
+                    
+                    The Graphics instance the method is called on (useful for chaining calls.)
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_draw" class="method item">
+    <h3 class="name"><code>draw</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>ctx</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l273"><code>easeljs&#x2F;display&#x2F;Graphics.js:273</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Draws the display object into the specified context ignoring it's visible, alpha, shadow, and transform.
+Returns true if the draw was handled (useful for overriding functionality).
+NOTE: This method is mainly for internal use, though it may be useful for advanced uses.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">ctx</code>
+                        <span class="type">CanvasRenderingContext2D</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The canvas 2D context object to draw into.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_drawAsPath" class="method item">
+    <h3 class="name"><code>drawAsPath</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>ctx</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l288"><code>easeljs&#x2F;display&#x2F;Graphics.js:288</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Draws only the path described for this Graphics instance, skipping any
+non-path instructions, including fill and stroke descriptions.
+Used by DisplayObject.clippingPath to draw the clipping path, for example.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">ctx</code>
+                        <span class="type">CanvasRenderingContext2D</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The canvas 2D context object to draw into.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_drawCircle" class="method item">
+    <h3 class="name"><code>drawCircle</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>x</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>radius</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l720"><code>easeljs&#x2F;display&#x2F;Graphics.js:720</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Draws a circle with the specified radius at (x, y).</p>
+
+<pre class="code"><code class="prettyprint">var g = new Graphics();
+    g.setStrokeStyle(1);
+    g.beginStroke(Graphics.getRGB(0,0,0));
+    g.beginFill(Graphics.getRGB(255,0,0));
+    g.drawCircle(0,0,3);
+
+    var s = new Shape(g);
+        s.x = 100;
+        s.y = 100;
+
+    stage.addChild(s);
+    stage.update();</code></pre>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">x</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>x coordinate center point of circle.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>y coordinate center point of circle.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">radius</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Radius of circle.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>:
+                    
+                    The Graphics instance the method is called on (useful for chaining calls.)
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_drawEllipse" class="method item">
+    <h3 class="name"><code>drawEllipse</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>x</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>w</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>h</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l746"><code>easeljs&#x2F;display&#x2F;Graphics.js:746</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Draws an ellipse (oval).</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">x</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">w</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">h</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>:
+                    
+                    The Graphics instance the method is called on (useful for chaining calls.)
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_drawPolyStar" class="method item">
+    <h3 class="name"><code>drawPolyStar</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>x</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>radius</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>sides</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>pointSize</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>angle</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l775"><code>easeljs&#x2F;display&#x2F;Graphics.js:775</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Draws a star if pointSize is greater than 0 or a regular polygon if pointSize is 0 with the specified number of points.
+For example, the following code will draw a familiar 5 pointed star shape centered at 100, 100 and with a radius of 50:
+myGraphics.beginFill("#FF0").drawPolyStar(100, 100, 50, 5, 0.6, -90); // -90 makes the first point vertical</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">x</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Position of the center of the shape.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Position of the center of the shape.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">radius</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The outer radius of the shape.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">sides</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The number of points on the star or sides on the polygon.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">pointSize</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The depth or "pointy-ness" of the star points. A pointSize of 0 will draw a regular polygon (no points), 
+a pointSize of 1 will draw nothing because the points are infinitely pointy.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">angle</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The angle of the first point / corner. For example a value of 0 will draw the first point directly to the 
+right of the center.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>:
+                    
+                    The Graphics instance the method is called on (useful for chaining calls.)
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_drawRoundRect" class="method item">
+    <h3 class="name"><code>drawRoundRect</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>x</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>w</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>h</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>radius</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l666"><code>easeljs&#x2F;display&#x2F;Graphics.js:666</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Draws a rounded rectangle with all corners with the specified radius.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">x</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">w</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">h</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">radius</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Corner radius.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>:
+                    
+                    The Graphics instance the method is called on (useful for chaining calls.)
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_drawRoundRectComplex" class="method item">
+    <h3 class="name"><code>drawRoundRectComplex</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>x</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>w</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>h</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>radiusTL</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>radiusTR</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>radiusBR</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>radiusBL</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l681"><code>easeljs&#x2F;display&#x2F;Graphics.js:681</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Draws a rounded rectangle with different corner radiuses.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">x</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">w</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">h</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">radiusTL</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Top left corner radius.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">radiusTR</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Top right corner radius.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">radiusBR</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Bottom right corner radius.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">radiusBL</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Bottom left corner radius.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>:
+                    
+                    The Graphics instance the method is called on (useful for chaining calls.)
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_endStroke" class="method item">
+    <h3 class="name"><code>endStroke</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l642"><code>easeljs&#x2F;display&#x2F;Graphics.js:642</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Ends the current subpath, and begins a new one with no stroke. Functionally identical to beginStroke(null).</p>
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>:
+                    
+                    The Graphics instance the method is called on (useful for chaining calls.)
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_exec" class="method item">
+    <h3 class="name"><code>exec</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>scope</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l46"><code>easeljs&#x2F;display&#x2F;Graphics.js:46</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">scope</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_getHSL" class="method item">
+    <h3 class="name"><code>getHSL</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>hue</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>saturation</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>lightness</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>alpha</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l113"><code>easeljs&#x2F;display&#x2F;Graphics.js:113</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns a CSS compatible color string based on the specified HSL numeric color values in the format "hsla(360,100,100,1.0)", 
+or if alpha is null then in the format "hsl(360,100,100)". For example, Graphics.getHSL(150, 100, 70) will return 
+"hsl(150,100,70)".</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">hue</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The hue component for the color, between 0 and 360.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">saturation</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The saturation component for the color, between 0 and 100.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">lightness</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The lightness component for the color, between 0 and 100.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">alpha</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Optional. The alpha component for the color where 0 is fully transparent and 1 is fully opaque.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                    a CSS compatible color string based on the specified HSL numeric color values in the format 
+"hsla(360,100,100,1.0)", or if alpha is null then in the format "hsl(360,100,100)". For example, 
+Graphics.getHSL(150, 100, 70) will return "hsl(150,100,70)".
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_getRGB" class="method item">
+    <h3 class="name"><code>getRGB</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>r</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>g</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>b</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>alpha</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l84"><code>easeljs&#x2F;display&#x2F;Graphics.js:84</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns a CSS compatible color string based on the specified RGB numeric color values in the format 
+"rgba(255,255,255,1.0)", or if alpha is null then in the format "rgb(255,255,255)". For example,
+Graphics.getRGB(50, 100, 150, 0.5) will return "rgba(50,100,150,0.5)". It also supports passing a single hex color 
+value as the first param, and an optional alpha value as the second param. For example, Graphics.getRGB(0xFF00FF, 0.2)
+will return "rgba(255,0,255,0.2)".</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">r</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The red component for the color, between 0 and 0xFF (255).</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">g</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The green component for the color, between 0 and 0xFF (255).</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">b</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The blue component for the color, between 0 and 0xFF (255).</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">alpha</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Optional. The alpha component for the color where 0 is fully transparent and 1 is fully opaque.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                    A CSS compatible color string based on the specified RGB numeric color values in the format 
+"rgba(255,255,255,1.0)", or if alpha is null then in the format "rgb(255,255,255)".
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_initialize" class="method item protected">
+    <h3 class="name"><code>initialize</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>instructions</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l262"><code>easeljs&#x2F;display&#x2F;Graphics.js:262</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Initialization method.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">instructions</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_lineTo" class="method item">
+    <h3 class="name"><code>lineTo</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>x</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l317"><code>easeljs&#x2F;display&#x2F;Graphics.js:317</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Draws a line from the current drawing point to the specified position, which become the new current drawing point. 
+For detailed information, read the 
+<a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#complex-shapes-(paths)">
+whatwg spec</a>.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">x</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The x coordinate the drawing point should draw to.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The y coordinate the drawing point should draw to.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>:
+                    
+                    The Graphics instance the method is called on (useful for chaining calls.)
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_moveTo" class="method item">
+    <h3 class="name"><code>moveTo</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>x</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l305"><code>easeljs&#x2F;display&#x2F;Graphics.js:305</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Moves the drawing point to the specified position.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">x</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The x coordinate the drawing point should move to.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The y coordinate the drawing point should move to.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>:
+                    
+                    The Graphics instance the method is called on (useful for chaining calls.)
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_quadraticCurveTo" class="method item">
+    <h3 class="name"><code>quadraticCurveTo</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>cpx</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>cpy</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>x</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l372"><code>easeljs&#x2F;display&#x2F;Graphics.js:372</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Draws a quadratic curve from the current drawing point to (x, y) using the control point (cpx, cpy).  For detailed information, 
+read the <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-quadraticcurveto">
+whatwg spec</a>.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">cpx</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">cpy</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">x</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>:
+                    
+                    The Graphics instance the method is called on (useful for chaining calls.)
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_rect" class="method item">
+    <h3 class="name"><code>rect</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>x</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>w</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>h</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l409"><code>easeljs&#x2F;display&#x2F;Graphics.js:409</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Draws a rectangle at (x, y) with the specified width and height using the current fill and/or stroke.
+ For detailed information, read the 
+<a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-rect">
+whatwg spec</a>.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">x</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">w</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Width of the rectangle</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">h</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Height of the rectangle</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>:
+                    
+                    The Graphics instance the method is called on (useful for chaining calls.)
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_setStrokeStyle" class="method item">
+    <h3 class="name"><code>setStrokeStyle</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>thickness</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>caps</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>joints</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>miter</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l546"><code>easeljs&#x2F;display&#x2F;Graphics.js:546</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Sets the stroke style for the current subpath. Like all drawing methods, this can be chained, so you can define the stroke style and color in a single line of code like so:
+myGraphics.setStrokeStyle(8,"round").beginStroke("#F00");</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">thickness</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The width of the stroke.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">caps</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Optional. Indicates the type of caps to use at the end of lines. One of butt, round, or square. Defaults to "butt". Also accepts the values 0 (butt), 1 (round), and 2 (square) for use with the tiny API.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">joints</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Optional. Specifies the type of joints that should be used where two lines meet. One of bevel, round, or miter. Defaults to "miter". Also accepts the values 0 (miter), 1 (round), and 2 (bevel) for use with the tiny API.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">miter</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Optional. If joints is set to "miter", then you can specify a miter limit ratio which controls at what point a mitered joint will be clipped.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Graphics.html" class="crosslink">Graphics</a></span>:
+                    
+                    The Graphics instance the method is called on (useful for chaining calls.)
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_toString" class="method item">
+    <h3 class="name"><code>toString</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l892"><code>easeljs&#x2F;display&#x2F;Graphics.js:892</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns a string representation of this object.</p>
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">String</span>:
+                    
+                    a string representation of the instance.
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+            </div>
+        
+
+        
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
+
+                
+                    <div id="property__active" class="property item protected">
+    <h3 class="name"><code>_active</code></h3>
+    <span class="type">Boolean</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l246"><code>easeljs&#x2F;display&#x2F;Graphics.js:246</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <p><strong>Default:</strong> false</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property__activeInstructions" class="property item protected">
+    <h3 class="name"><code>_activeInstructions</code></h3>
+    <span class="type">ArrayCommand</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l239"><code>easeljs&#x2F;display&#x2F;Graphics.js:239</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property__ctx" class="property item protected">
+    <h3 class="name"><code>_ctx</code></h3>
+    <span class="type">CanvasRenderingContext2D</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l169"><code>easeljs&#x2F;display&#x2F;Graphics.js:169</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property__dirty" class="property item protected">
+    <h3 class="name"><code>_dirty</code></h3>
+    <span class="type">Boolean</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l254"><code>easeljs&#x2F;display&#x2F;Graphics.js:254</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <p><strong>Default:</strong> false</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property__fillInstructions" class="property item protected">
+    <h3 class="name"><code>_fillInstructions</code></h3>
+    <span class="type">ArrayCommand</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l218"><code>easeljs&#x2F;display&#x2F;Graphics.js:218</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property__instructions" class="property item protected">
+    <h3 class="name"><code>_instructions</code></h3>
+    <span class="type">ArrayCommand</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l225"><code>easeljs&#x2F;display&#x2F;Graphics.js:225</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property__oldInstructions" class="property item protected">
+    <h3 class="name"><code>_oldInstructions</code></h3>
+    <span class="type">ArrayCommand</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l232"><code>easeljs&#x2F;display&#x2F;Graphics.js:232</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property__strokeInstructions" class="property item protected">
+    <h3 class="name"><code>_strokeInstructions</code></h3>
+    <span class="type">ArrayCommand</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l204"><code>easeljs&#x2F;display&#x2F;Graphics.js:204</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property__strokeStyleInstructions" class="property item protected">
+    <h3 class="name"><code>_strokeStyleInstructions</code></h3>
+    <span class="type">ArrayCommand</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l211"><code>easeljs&#x2F;display&#x2F;Graphics.js:211</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_a" class="property item protected">
+    <h3 class="name"><code>a</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l938"><code>easeljs&#x2F;display&#x2F;Graphics.js:938</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_at" class="property item protected">
+    <h3 class="name"><code>at</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l917"><code>easeljs&#x2F;display&#x2F;Graphics.js:917</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_BASE_64" class="property item">
+    <h3 class="name"><code>BASE_64</code></h3>
+    <span class="type">Object</span>
+
+    
+
+    
+
+    
+        <span class="flag final">final</span>
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l135"><code>easeljs&#x2F;display&#x2F;Graphics.js:135</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Map of Base64 characters to values. Used by decodePath().</p>
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_beginCmd" class="property item protected">
+    <h3 class="name"><code>beginCmd</code></h3>
+    <span class="type"><a href="../classes/Command.html" class="crosslink">Command</a></span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l177"><code>easeljs&#x2F;display&#x2F;Graphics.js:177</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_bf" class="property item protected">
+    <h3 class="name"><code>bf</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l987"><code>easeljs&#x2F;display&#x2F;Graphics.js:987</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_bs" class="property item protected">
+    <h3 class="name"><code>bs</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l1029"><code>easeljs&#x2F;display&#x2F;Graphics.js:1029</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_bt" class="property item protected">
+    <h3 class="name"><code>bt</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l924"><code>easeljs&#x2F;display&#x2F;Graphics.js:924</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_c" class="property item protected">
+    <h3 class="name"><code>c</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l959"><code>easeljs&#x2F;display&#x2F;Graphics.js:959</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_cp" class="property item protected">
+    <h3 class="name"><code>cp</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l952"><code>easeljs&#x2F;display&#x2F;Graphics.js:952</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_curveTo" class="property item">
+    <h3 class="name"><code>curveTo</code></h3>
+    <span class="type">Function</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l652"><code>easeljs&#x2F;display&#x2F;Graphics.js:652</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Maps the familiar ActionScript curveTo() method to the functionally similar quatraticCurveTo() method.</p>
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_dc" class="property item protected">
+    <h3 class="name"><code>dc</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l1064"><code>easeljs&#x2F;display&#x2F;Graphics.js:1064</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_de" class="property item protected">
+    <h3 class="name"><code>de</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l1071"><code>easeljs&#x2F;display&#x2F;Graphics.js:1071</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_dp" class="property item protected">
+    <h3 class="name"><code>dp</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l1078"><code>easeljs&#x2F;display&#x2F;Graphics.js:1078</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_dr" class="property item protected">
+    <h3 class="name"><code>dr</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l1043"><code>easeljs&#x2F;display&#x2F;Graphics.js:1043</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_drawRect" class="property item">
+    <h3 class="name"><code>drawRect</code></h3>
+    <span class="type">Function</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l659"><code>easeljs&#x2F;display&#x2F;Graphics.js:659</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Maps the familiar ActionScript drawRect() method to the functionally similar rect() method.</p>
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_ef" class="property item protected">
+    <h3 class="name"><code>ef</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l994"><code>easeljs&#x2F;display&#x2F;Graphics.js:994</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_es" class="property item protected">
+    <h3 class="name"><code>es</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l1036"><code>easeljs&#x2F;display&#x2F;Graphics.js:1036</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_f" class="property item protected">
+    <h3 class="name"><code>f</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l966"><code>easeljs&#x2F;display&#x2F;Graphics.js:966</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_fillCmd" class="property item protected">
+    <h3 class="name"><code>fillCmd</code></h3>
+    <span class="type"><a href="../classes/Command.html" class="crosslink">Command</a></span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l185"><code>easeljs&#x2F;display&#x2F;Graphics.js:185</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_lf" class="property item protected">
+    <h3 class="name"><code>lf</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l973"><code>easeljs&#x2F;display&#x2F;Graphics.js:973</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_ls" class="property item protected">
+    <h3 class="name"><code>ls</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l1015"><code>easeljs&#x2F;display&#x2F;Graphics.js:1015</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_lt" class="property item protected">
+    <h3 class="name"><code>lt</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l910"><code>easeljs&#x2F;display&#x2F;Graphics.js:910</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_mt" class="property item protected">
+    <h3 class="name"><code>mt</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l903"><code>easeljs&#x2F;display&#x2F;Graphics.js:903</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_p" class="property item protected">
+    <h3 class="name"><code>p</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l1085"><code>easeljs&#x2F;display&#x2F;Graphics.js:1085</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_qt" class="property item protected">
+    <h3 class="name"><code>qt</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l931"><code>easeljs&#x2F;display&#x2F;Graphics.js:931</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_r" class="property item protected">
+    <h3 class="name"><code>r</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l945"><code>easeljs&#x2F;display&#x2F;Graphics.js:945</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_rc" class="property item protected">
+    <h3 class="name"><code>rc</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l1057"><code>easeljs&#x2F;display&#x2F;Graphics.js:1057</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_rf" class="property item protected">
+    <h3 class="name"><code>rf</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l980"><code>easeljs&#x2F;display&#x2F;Graphics.js:980</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_rr" class="property item protected">
+    <h3 class="name"><code>rr</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l1050"><code>easeljs&#x2F;display&#x2F;Graphics.js:1050</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_rs" class="property item protected">
+    <h3 class="name"><code>rs</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l1022"><code>easeljs&#x2F;display&#x2F;Graphics.js:1022</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_s" class="property item protected">
+    <h3 class="name"><code>s</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l1008"><code>easeljs&#x2F;display&#x2F;Graphics.js:1008</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_ss" class="property item protected">
+    <h3 class="name"><code>ss</code></h3>
+    <span class="type">Unknown</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l1001"><code>easeljs&#x2F;display&#x2F;Graphics.js:1001</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_STROKE_CAPS_MAP" class="property item">
+    <h3 class="name"><code>STROKE_CAPS_MAP</code></h3>
+    <span class="type">ArrayString</span>
+
+    
+
+    
+
+    
+        <span class="flag final">final</span>
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l145"><code>easeljs&#x2F;display&#x2F;Graphics.js:145</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Maps numeric values for the caps parameter of setStrokeStyle to corresponding string values.
+This is primarily for use with the tiny API. The mappings are as follows: 0 to "butt",
+1 to "round", and 2 to "square".
+For example, myGraphics.ss(16, 2) would set the line caps to "square".</p>
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_STROKE_JOINTS_MAP" class="property item">
+    <h3 class="name"><code>STROKE_JOINTS_MAP</code></h3>
+    <span class="type">ArrayString</span>
+
+    
+
+    
+
+    
+        <span class="flag final">final</span>
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l157"><code>easeljs&#x2F;display&#x2F;Graphics.js:157</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Maps numeric values for the joints parameter of setStrokeStyle to corresponding string values.
+This is primarily for use with the tiny API. The mappings are as follows: 0 to "miter",
+1 to "round", and 2 to "bevel".
+For example, myGraphics.ss(16, 0, 2) would set the line joints to "bevel".</p>
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_strokeCmd" class="property item protected">
+    <h3 class="name"><code>strokeCmd</code></h3>
+    <span class="type"><a href="../classes/Command.html" class="crosslink">Command</a></span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Graphics.js.html#l193"><code>easeljs&#x2F;display&#x2F;Graphics.js:193</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+            </div>
+        
+
+        
+
+        
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="..&#x2F;assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="..&#x2F;assets/js/yui-prettify.js"></script>
+<script src="..&#x2F;assets/../api.js"></script>
+<script src="..&#x2F;assets/js/api-filter.js"></script>
+<script src="..&#x2F;assets/js/api-list.js"></script>
+<script src="..&#x2F;assets/js/api-search.js"></script>
+<script src="..&#x2F;assets/js/apidocs.js"></script>
+</body>
+</html>

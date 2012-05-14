@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>easeljs&#x2F;geom&#x2F;Matrix2D.js</title>
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.0&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
+    <script src="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.0&#x2F;build&#x2F;yui&#x2F;yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="..&#x2F;assets/css/logo.png" title=""></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="..&#x2F;classes/Bitmap.html">Bitmap</a></li>
+            
+                <li><a href="..&#x2F;classes/BitmapAnimation.html">BitmapAnimation</a></li>
+            
+                <li><a href="..&#x2F;classes/BoxBlurFilter.html">BoxBlurFilter</a></li>
+            
+                <li><a href="..&#x2F;classes/ColorFilter.html">ColorFilter</a></li>
+            
+                <li><a href="..&#x2F;classes/ColorMatrix.html">ColorMatrix</a></li>
+            
+                <li><a href="..&#x2F;classes/ColorMatrixFilter.html">ColorMatrixFilter</a></li>
+            
+                <li><a href="..&#x2F;classes/Command.html">Command</a></li>
+            
+                <li><a href="..&#x2F;classes/Container.html">Container</a></li>
+            
+                <li><a href="..&#x2F;classes/DisplayObject.html">DisplayObject</a></li>
+            
+                <li><a href="..&#x2F;classes/DOMElement.html">DOMElement</a></li>
+            
+                <li><a href="..&#x2F;classes/FBBitmapAnimation.html">FBBitmapAnimation</a></li>
+            
+                <li><a href="..&#x2F;classes/Filter.html">Filter</a></li>
+            
+                <li><a href="..&#x2F;classes/Graphics.html">Graphics</a></li>
+            
+                <li><a href="..&#x2F;classes/Matrix2D.html">Matrix2D</a></li>
+            
+                <li><a href="..&#x2F;classes/MouseEvent.html">MouseEvent</a></li>
+            
+                <li><a href="..&#x2F;classes/MovieClip.html">MovieClip</a></li>
+            
+                <li><a href="..&#x2F;classes/MovieClipPlugin.html">MovieClipPlugin</a></li>
+            
+                <li><a href="..&#x2F;classes/Point.html">Point</a></li>
+            
+                <li><a href="..&#x2F;classes/Rectangle.html">Rectangle</a></li>
+            
+                <li><a href="..&#x2F;classes/Shadow.html">Shadow</a></li>
+            
+                <li><a href="..&#x2F;classes/Shape.html">Shape</a></li>
+            
+                <li><a href="..&#x2F;classes/SpriteSheet.html">SpriteSheet</a></li>
+            
+                <li><a href="..&#x2F;classes/SpriteSheetBuilder.html">SpriteSheetBuilder</a></li>
+            
+                <li><a href="..&#x2F;classes/SpriteSheetUtils.html">SpriteSheetUtils</a></li>
+            
+                <li><a href="..&#x2F;classes/Stage.html">Stage</a></li>
+            
+                <li><a href="..&#x2F;classes/Text.html">Text</a></li>
+            
+                <li><a href="..&#x2F;classes/Ticker.html">Ticker</a></li>
+            
+                <li><a href="..&#x2F;classes/Touch.html">Touch</a></li>
+            
+                <li><a href="..&#x2F;classes/UID.html">UID</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="..&#x2F;modules/EaselJS.html">EaselJS</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: easeljs&#x2F;geom&#x2F;Matrix2D.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&#x2F;*
+* Matrix2D
+* Visit http:&#x2F;&#x2F;createjs.com&#x2F; for documentation, updates and examples.
+*
+* Copyright (c) 2010 gskinner.com, inc.
+* 
+* Permission is hereby granted, free of charge, to any person
+* obtaining a copy of this software and associated documentation
+* files (the &quot;Software&quot;), to deal in the Software without
+* restriction, including without limitation the rights to use,
+* copy, modify, merge, publish, distribute, sublicense, and&#x2F;or sell
+* copies of the Software, and to permit persons to whom the
+* Software is furnished to do so, subject to the following
+* conditions:
+* 
+* The above copyright notice and this permission notice shall be
+* included in all copies or substantial portions of the Software.
+* 
+* THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+* OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+* NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+* WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+* FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+* OTHER DEALINGS IN THE SOFTWARE.
+*&#x2F;
+
+(function(window) {
+
+&#x2F;**
+* Represents an affine transformation matrix, and provides tools for constructing and concatenating matrixes.
+* @class Matrix2D
+* @constructor
+* @param {Number} a Specifies the a property for the new matrix.
+* @param {Number} b Specifies the b property for the new matrix.
+* @param {Number} c Specifies the c property for the new matrix.
+* @param {Number} d Specifies the d property for the new matrix.
+* @param {Number} tx Specifies the tx property for the new matrix.
+* @param {Number} ty Specifies the ty property for the new matrix.
+**&#x2F;
+var Matrix2D = function(a, b, c, d, tx, ty) {
+  this.initialize(a, b, c, d, tx, ty);
+}
+var p = Matrix2D.prototype;
+
+&#x2F;&#x2F; static public properties:
+
+	&#x2F;**
+	 * An identity matrix, representing a null transformation. Read-only.
+	 * @property identity
+	 * @static
+	 * @type Matrix2D
+	 **&#x2F;
+	Matrix2D.identity = null; &#x2F;&#x2F; set at bottom of class definition.
+
+	&#x2F;**
+	 * Multiplier for converting degrees to radians. Used internally by Matrix2D. Read-only.
+	 * @property DEG_TO_RAD
+	 * @static
+	 * @final
+	 * @type Number
+	 **&#x2F;
+	Matrix2D.DEG_TO_RAD = Math.PI&#x2F;180;
+
+
+&#x2F;&#x2F; public properties:
+	&#x2F;**
+	 * Position (0, 0) in a 3x3 affine transformation matrix.
+	 * @property a
+	 * @type Number
+	 **&#x2F;
+	p.a = 1;
+
+	&#x2F;**
+	 * Position (0, 1) in a 3x3 affine transformation matrix.
+	 * @property b
+	 * @type Number
+	 **&#x2F;
+	p.b = 0;
+
+	&#x2F;**
+	 * Position (1, 0) in a 3x3 affine transformation matrix.
+	 * @property c
+	 * @type Number
+	 **&#x2F;
+	p.c = 0;
+
+	&#x2F;**
+	 * Position (1, 1) in a 3x3 affine transformation matrix.
+	 * @property d
+	 * @type Number
+	 **&#x2F;
+	p.d = 1;
+
+	&#x2F;**
+	 * Position (2, 0) in a 3x3 affine transformation matrix.
+	 * @property atx
+	 * @type Number
+	 **&#x2F;
+	p.tx = 0;
+
+	&#x2F;**
+	 * Position (2, 1) in a 3x3 affine transformation matrix.
+	 * @property ty
+	 * @type Number
+	 **&#x2F;
+	p.ty = 0;
+
+	&#x2F;**
+	 * Property representing the alpha that will be applied to a display object. This is not part of matrix
+	 * operations, but is used for operations like getConcatenatedMatrix to provide concatenated alpha values.
+	 * @property alpha
+	 * @type Number
+	 **&#x2F;
+	p.alpha = 1;
+
+	&#x2F;**
+	 * Property representing the shadow that will be applied to a display object. This is not part of matrix
+	 * operations, but is used for operations like getConcatenatedMatrix to provide concatenated shadow values.
+	 * @property shadow
+	 * @type Shadow
+	 **&#x2F;
+	p.shadow  = null;
+
+	&#x2F;**
+	 * Property representing the compositeOperation that will be applied to a display object. This is not part of
+	 * matrix operations, but is used for operations like getConcatenatedMatrix to provide concatenated
+	 * compositeOperation values. You can find a list of valid composite operations at:
+	 * &lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en&#x2F;Canvas_tutorial&#x2F;Compositing&quot;&gt;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en&#x2F;Canvas_tutorial&#x2F;Compositing&lt;&#x2F;a&gt;
+	 * @property compositeOperation
+	 * @type String
+	 **&#x2F;
+	p.compositeOperation = null;
+
+&#x2F;&#x2F; constructor:
+	&#x2F;**
+	 * Initialization method.
+	 * @method initialize
+	 * @protected
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	*&#x2F;
+	p.initialize = function(a, b, c, d, tx, ty) {
+		if (a != null) { this.a = a; }
+		this.b = b || 0;
+		this.c = c || 0;
+		if (d != null) { this.d = d; }
+		this.tx = tx || 0;
+		this.ty = ty || 0;
+		return this;
+	}
+
+&#x2F;&#x2F; public methods:
+	&#x2F;**
+	 * Concatenates the specified matrix properties with this matrix. All parameters are required.
+	 * @method prepend
+	 * @param {Number} a
+	 * @param {Number} b
+	 * @param {Number} c
+	 * @param {Number} d
+	 * @param {Number} tx
+	 * @param {Number} ty
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	 **&#x2F;
+	p.prepend = function(a, b, c, d, tx, ty) {
+		var tx1 = this.tx;
+		if (a != 1 || b != 0 || c != 0 || d != 1) {
+			var a1 = this.a;
+			var c1 = this.c;
+			this.a  = a1*a+this.b*c;
+			this.b  = a1*b+this.b*d;
+			this.c  = c1*a+this.d*c;
+			this.d  = c1*b+this.d*d;
+		}
+		this.tx = tx1*a+this.ty*c+tx;
+		this.ty = tx1*b+this.ty*d+ty;
+		return this;
+	}
+
+	&#x2F;**
+	 * Appends the specified matrix properties with this matrix. All parameters are required.
+	 * @method append
+	 * @param {Number} a
+	 * @param {Number} b
+	 * @param {Number} c
+	 * @param {Number} d
+	 * @param {Number} tx
+	 * @param {Number} ty
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	 **&#x2F;
+	p.append = function(a, b, c, d, tx, ty) {
+		var a1 = this.a;
+		var b1 = this.b;
+		var c1 = this.c;
+		var d1 = this.d;
+
+		this.a  = a*a1+b*c1;
+		this.b  = a*b1+b*d1;
+		this.c  = c*a1+d*c1;
+		this.d  = c*b1+d*d1;
+		this.tx = tx*a1+ty*c1+this.tx;
+		this.ty = tx*b1+ty*d1+this.ty;
+		return this;
+	}
+
+	&#x2F;**
+	 * Prepends the specified matrix with this matrix.
+	 * @method prependMatrix
+	 * @param {Matrix2D} matrix
+	 **&#x2F;
+	p.prependMatrix = function(matrix) {
+		this.prepend(matrix.a, matrix.b, matrix.c, matrix.d, matrix.tx, matrix.ty);
+		this.prependProperties(matrix.alpha, matrix.shadow,  matrix.compositeOperation);
+		return this;
+	}
+
+	&#x2F;**
+	 * Appends the specified matrix with this matrix.
+	 * @method appendMatrix
+	 * @param {Matrix2D} matrix
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	 **&#x2F;
+	p.appendMatrix = function(matrix) {
+		this.append(matrix.a, matrix.b, matrix.c, matrix.d, matrix.tx, matrix.ty);
+		this.appendProperties(matrix.alpha, matrix.shadow,  matrix.compositeOperation);
+		return this;
+	}
+
+	&#x2F;**
+	 * Generates matrix properties from the specified display object transform properties, and prepends them with this matrix.
+	 * For example, you can use this to generate a matrix from a display object: var mtx = new Matrix2D();
+	 * mtx.prependTransform(o.x, o.y, o.scaleX, o.scaleY, o.rotation);
+	 * @method prependTransform
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @param {Number} scaleX
+	 * @param {Number} scaleY
+	 * @param {Number} rotation
+	 * @param {Number} skewX
+	 * @param {Number} skewY
+	 * @param {Number} regX Optional.
+	 * @param {Number} regY Optional.
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	 **&#x2F;
+	p.prependTransform = function(x, y, scaleX, scaleY, rotation, skewX, skewY, regX, regY) {
+		if (rotation%360) {
+			var r = rotation*Matrix2D.DEG_TO_RAD;
+			var cos = Math.cos(r);
+			var sin = Math.sin(r);
+		} else {
+			cos = 1;
+			sin = 0;
+		}
+
+		if (regX || regY) {
+			&#x2F;&#x2F; append the registration offset:
+			this.tx -= regX; this.ty -= regY;
+		}
+		if (skewX || skewY) {
+			&#x2F;&#x2F; TODO: can this be combined into a single prepend operation?
+			skewX *= Matrix2D.DEG_TO_RAD;
+			skewY *= Matrix2D.DEG_TO_RAD;
+			this.prepend(cos*scaleX, sin*scaleX, -sin*scaleY, cos*scaleY, 0, 0);
+			this.prepend(Math.cos(skewY), Math.sin(skewY), -Math.sin(skewX), Math.cos(skewX), x, y);
+		} else {
+			this.prepend(cos*scaleX, sin*scaleX, -sin*scaleY, cos*scaleY, x, y);
+		}
+		return this;
+	}
+
+	&#x2F;**
+	 * Generates matrix properties from the specified display object transform properties, and appends them with this matrix.
+	 * For example, you can use this to generate a matrix from a display object: var mtx = new Matrix2D();
+	 * mtx.appendTransform(o.x, o.y, o.scaleX, o.scaleY, o.rotation);
+	 * @method appendTransform
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @param {Number} scaleX
+	 * @param {Number} scaleY
+	 * @param {Number} rotation
+	 * @param {Number} skewX
+	 * @param {Number} skewY
+	 * @param {Number} regX Optional.
+	 * @param {Number} regY Optional.
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	 **&#x2F;
+	p.appendTransform = function(x, y, scaleX, scaleY, rotation, skewX, skewY, regX, regY) {
+		if (rotation%360) {
+			var r = rotation*Matrix2D.DEG_TO_RAD;
+			var cos = Math.cos(r);
+			var sin = Math.sin(r);
+		} else {
+			cos = 1;
+			sin = 0;
+		}
+
+		if (skewX || skewY) {
+			&#x2F;&#x2F; TODO: can this be combined into a single append?
+			skewX *= Matrix2D.DEG_TO_RAD;
+			skewY *= Matrix2D.DEG_TO_RAD;
+			this.append(Math.cos(skewY), Math.sin(skewY), -Math.sin(skewX), Math.cos(skewX), x, y);
+			this.append(cos*scaleX, sin*scaleX, -sin*scaleY, cos*scaleY, 0, 0);
+		} else {
+			this.append(cos*scaleX, sin*scaleX, -sin*scaleY, cos*scaleY, x, y);
+		}
+
+		if (regX || regY) {
+			&#x2F;&#x2F; prepend the registration offset:
+			this.tx -= regX*this.a+regY*this.c; 
+			this.ty -= regX*this.b+regY*this.d;
+		}
+		return this;
+	}
+
+	&#x2F;**
+	 * Applies a rotation transformation to the matrix.
+	 * @method rotate
+	 * @param {Number} angle The angle in degrees.
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	 **&#x2F;
+	p.rotate = function(angle) {
+		var cos = Math.cos(angle);
+		var sin = Math.sin(angle);
+
+		var a1 = this.a;
+		var c1 = this.c;
+		var tx1 = this.tx;
+
+		this.a = a1*cos-this.b*sin;
+		this.b = a1*sin+this.b*cos;
+		this.c = c1*cos-this.d*sin;
+		this.d = c1*sin+this.d*cos;
+		this.tx = tx1*cos-this.ty*sin;
+		this.ty = tx1*sin+this.ty*cos;
+		return this;
+	}
+
+	&#x2F;**
+	 * Applies a skew transformation to the matrix.
+	 * @method skew
+	 * @param {Number} skewX The amount to skew horizontally in degrees.
+	 * @param {Number} skewY The amount to skew vertically in degrees.
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	*&#x2F;
+	p.skew = function(skewX, skewY) {
+		skewX = skewX*Matrix2D.DEG_TO_RAD;
+		skewY = skewY*Matrix2D.DEG_TO_RAD;
+		this.append(Math.cos(skewY), Math.sin(skewY), -Math.sin(skewX), Math.cos(skewX), 0, 0);
+		return this;
+	}
+
+	&#x2F;**
+	 * Applies a scale transformation to the matrix.
+	 * @method scale
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	 **&#x2F;
+	p.scale = function(x, y) {
+		this.a *= x;
+		this.d *= y;
+		this.tx *= x;
+		this.ty *= y;
+		return this;
+	}
+
+	&#x2F;**
+	 * Translates the matrix on the x and y axes.
+	 * @method translate
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	 **&#x2F;
+	p.translate = function(x, y) {
+		this.tx += x;
+		this.ty += y;
+		return this;
+	}
+
+	&#x2F;**
+	 * Sets the properties of the matrix to those of an identity matrix (one that applies a null transformation).
+	 * @method identity
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	 **&#x2F;
+	p.identity = function() {
+		this.alpha = this.a = this.d = 1;
+		this.b = this.c = this.tx = this.ty = 0;
+		this.shadow = this.compositeOperation = null;
+		return this;
+	}
+
+	&#x2F;**
+	 * Inverts the matrix, causing it to perform the opposite transformation.
+	 * @method invert
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	 **&#x2F;
+	p.invert = function() {
+		var a1 = this.a;
+		var b1 = this.b;
+		var c1 = this.c;
+		var d1 = this.d;
+		var tx1 = this.tx;
+		var n = a1*d1-b1*c1;
+
+		this.a = d1&#x2F;n;
+		this.b = -b1&#x2F;n;
+		this.c = -c1&#x2F;n;
+		this.d = a1&#x2F;n;
+		this.tx = (c1*this.ty-d1*tx1)&#x2F;n;
+		this.ty = -(a1*this.ty-b1*tx1)&#x2F;n;
+		return this;
+	}
+
+	&#x2F;**
+	 * Returns true if the matrix is an identity matrix.
+	 * @method isIdentity
+	 * @returns Boolean
+	 **&#x2F;
+	p.isIdentity = function() {
+		return this.tx == 0 &amp;&amp; this.ty == 0 &amp;&amp; this.a == 1 &amp;&amp; this.b == 0 &amp;&amp; this.c == 0 &amp;&amp; this.d == 1;
+	}
+
+	&#x2F;**
+	 * Decomposes the matrix into transform properties (x, y, scaleX, scaleY, and rotation). Note that this these values
+	 * may not match the transform properties you used to generate the matrix, though they will produce the same visual
+	 * results.
+	 * @method decompose
+	 * @param {Object} target The object to apply the transform properties to. If null, then a new object will be returned.
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	*&#x2F;
+	p.decompose = function(target) {
+		&#x2F;&#x2F; TODO: it would be nice to be able to solve for whether the matrix can be decomposed into only scale&#x2F;rotation
+		&#x2F;&#x2F; even when scale is negative
+		if (target == null) { target = {}; }
+		target.x = this.tx;
+		target.y = this.ty;
+		target.scaleX = Math.sqrt(this.a * this.a + this.b * this.b);
+		target.scaleY = Math.sqrt(this.c * this.c + this.d * this.d);
+
+		var skewX = Math.atan2(-this.c, this.d);
+		var skewY = Math.atan2(this.b, this.a);
+
+		if (skewX == skewY) {
+			target.rotation = skewY&#x2F;Matrix2D.DEG_TO_RAD;
+			if (this.a &lt; 0 &amp;&amp; this.d &gt;= 0) {
+				target.rotation += (target.rotation &lt;= 0) ? 180 : -180;
+			}
+			target.skewX = target.skewY = 0;
+		} else {
+			target.skewX = skewX&#x2F;Matrix2D.DEG_TO_RAD;
+			target.skewY = skewY&#x2F;Matrix2D.DEG_TO_RAD;
+		}
+		return target;
+	}
+
+	&#x2F;**
+	 * Reinitializes all matrix properties to those specified.
+	 * @method appendProperties
+	 * @param {Number} a
+	 * @param {Number} b
+	 * @param {Number} c
+	 * @param {Number} d
+	 * @param {Number} tx
+	 * @param {Number} ty
+	 * @param {Number} alpha desired alpha value
+	 * @param {Shadow} shadow desired shadow value
+	 * @param {String} compositeOperation desired composite operation value
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	*&#x2F;
+	p.reinitialize = function(a,b,c,d,tx,ty,alpha,shadow,compositeOperation) {
+		this.initialize(a,b,c,d,tx,ty);
+		this.alpha = alpha || 1;
+		this.shadow = shadow;
+		this.compositeOperation = compositeOperation;
+		return this;
+	}
+
+	&#x2F;**
+	 * Appends the specified visual properties to the current matrix.
+	 * @method appendProperties
+	 * @param {Number} alpha desired alpha value
+	 * @param {Shadow} shadow desired shadow value
+	 * @param {String} compositeOperation desired composite operation value
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	*&#x2F;
+	p.appendProperties = function(alpha, shadow, compositeOperation) {
+		this.alpha *= alpha;
+		this.shadow = shadow || this.shadow;
+		this.compositeOperation = compositeOperation || this.compositeOperation;
+		return this;
+	}
+
+	&#x2F;**
+	 * Prepends the specified visual properties to the current matrix.
+	 * @method prependProperties
+	 * @param {Number} alpha desired alpha value
+	 * @param {Shadow} shadow desired shadow value
+	 * @param {String} compositeOperation desired composite operation value
+	 * @return {Matrix2D} This matrix. Useful for chaining method calls.
+	*&#x2F;
+	p.prependProperties = function(alpha, shadow, compositeOperation) {
+		this.alpha *= alpha;
+		this.shadow = this.shadow || shadow;
+		this.compositeOperation = this.compositeOperation || compositeOperation;
+		return this;
+	}
+
+	&#x2F;**
+	 * Returns a clone of the Matrix2D instance.
+	 * @method clone
+	 * @return {Matrix2D} a clone of the Matrix2D instance.
+	 **&#x2F;
+	p.clone = function() {
+		var mtx = new Matrix2D(this.a, this.b, this.c, this.d, this.tx, this.ty);
+		mtx.shadow = this.shadow;
+		mtx.alpha = this.alpha;
+		mtx.compositeOperation = this.compositeOperation;
+		return mtx;
+	}
+
+	&#x2F;**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **&#x2F;
+	p.toString = function() {
+		return &quot;[Matrix2D (a=&quot;+this.a+&quot; b=&quot;+this.b+&quot; c=&quot;+this.c+&quot; d=&quot;+this.d+&quot; tx=&quot;+this.tx+&quot; ty=&quot;+this.ty+&quot;)]&quot;;
+	}
+
+	&#x2F;&#x2F; this has to be populated after the class is defined:
+	Matrix2D.identity = new Matrix2D(1, 0, 0, 1, 0, 0);
+
+window.Matrix2D = Matrix2D;
+}(window));
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="..&#x2F;assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="..&#x2F;assets/js/yui-prettify.js"></script>
+<script src="..&#x2F;assets/../api.js"></script>
+<script src="..&#x2F;assets/js/api-filter.js"></script>
+<script src="..&#x2F;assets/js/api-list.js"></script>
+<script src="..&#x2F;assets/js/api-search.js"></script>
+<script src="..&#x2F;assets/js/apidocs.js"></script>
+</body>
+</html>

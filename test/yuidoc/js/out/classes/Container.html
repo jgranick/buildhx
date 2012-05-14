@@ -1,0 +1,6334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Container</title>
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.0&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
+    <script src="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.0&#x2F;build&#x2F;yui&#x2F;yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="..&#x2F;assets/css/logo.png" title=""></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="..&#x2F;classes/Bitmap.html">Bitmap</a></li>
+            
+                <li><a href="..&#x2F;classes/BitmapAnimation.html">BitmapAnimation</a></li>
+            
+                <li><a href="..&#x2F;classes/BoxBlurFilter.html">BoxBlurFilter</a></li>
+            
+                <li><a href="..&#x2F;classes/ColorFilter.html">ColorFilter</a></li>
+            
+                <li><a href="..&#x2F;classes/ColorMatrix.html">ColorMatrix</a></li>
+            
+                <li><a href="..&#x2F;classes/ColorMatrixFilter.html">ColorMatrixFilter</a></li>
+            
+                <li><a href="..&#x2F;classes/Command.html">Command</a></li>
+            
+                <li><a href="..&#x2F;classes/Container.html">Container</a></li>
+            
+                <li><a href="..&#x2F;classes/DisplayObject.html">DisplayObject</a></li>
+            
+                <li><a href="..&#x2F;classes/DOMElement.html">DOMElement</a></li>
+            
+                <li><a href="..&#x2F;classes/FBBitmapAnimation.html">FBBitmapAnimation</a></li>
+            
+                <li><a href="..&#x2F;classes/Filter.html">Filter</a></li>
+            
+                <li><a href="..&#x2F;classes/Graphics.html">Graphics</a></li>
+            
+                <li><a href="..&#x2F;classes/Matrix2D.html">Matrix2D</a></li>
+            
+                <li><a href="..&#x2F;classes/MouseEvent.html">MouseEvent</a></li>
+            
+                <li><a href="..&#x2F;classes/MovieClip.html">MovieClip</a></li>
+            
+                <li><a href="..&#x2F;classes/MovieClipPlugin.html">MovieClipPlugin</a></li>
+            
+                <li><a href="..&#x2F;classes/Point.html">Point</a></li>
+            
+                <li><a href="..&#x2F;classes/Rectangle.html">Rectangle</a></li>
+            
+                <li><a href="..&#x2F;classes/Shadow.html">Shadow</a></li>
+            
+                <li><a href="..&#x2F;classes/Shape.html">Shape</a></li>
+            
+                <li><a href="..&#x2F;classes/SpriteSheet.html">SpriteSheet</a></li>
+            
+                <li><a href="..&#x2F;classes/SpriteSheetBuilder.html">SpriteSheetBuilder</a></li>
+            
+                <li><a href="..&#x2F;classes/SpriteSheetUtils.html">SpriteSheetUtils</a></li>
+            
+                <li><a href="..&#x2F;classes/Stage.html">Stage</a></li>
+            
+                <li><a href="..&#x2F;classes/Text.html">Text</a></li>
+            
+                <li><a href="..&#x2F;classes/Ticker.html">Ticker</a></li>
+            
+                <li><a href="..&#x2F;classes/Touch.html">Touch</a></li>
+            
+                <li><a href="..&#x2F;classes/UID.html">UID</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="..&#x2F;modules/EaselJS.html">EaselJS</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1>Container Class</h1>
+<div class="box meta">
+    
+
+    
+        <div class="extends">
+            Extends <a href="../classes/DisplayObject.html" class="crosslink">DisplayObject</a>
+        </div>
+    
+
+    
+        <div class="foundat">
+            Defined in: <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l31"><code>easeljs&#x2F;display&#x2F;Container.js:31</code></a>
+        </div>
+    
+
+    
+        
+            Module: <a href="../modules/EaselJS.html">EaselJS</a>
+        
+    
+
+    
+</div>
+
+
+
+<div class="box intro">
+    <p>A Container is a nestable display lists that allows you to work with compound display elements. For
+example you could group arm, leg, torso and head Bitmaps together into a Person Container, and
+transform them as a group, while still being able to move the individual parts relative to each
+other. Children of containers have their transform and alpha properties concatenated with their
+parent Container. For example, a Shape with x=100 and alpha=0.5, placed in a Container with
+x=50 and alpha=0.7 will be rendered to the canvas at x=150 and alpha=0.35. Containers have some
+overhead, so you generally shouldn't create a Container to hold a single child.</p>
+</div>
+
+
+    <div class="constructor">
+        <h2>Constructor</h2>
+        <div id="method_Container" class="method item">
+    <h3 class="name"><code>Container</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l31"><code>easeljs&#x2F;display&#x2F;Container.js:31</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+    </div>
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+        
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+        
+        
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
+        
+        
+        
+            <li class="api-class-tab events"><a href="#events">Events</a></li>
+        
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+            
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                        
+                            <li class="index-item method protected inherited">
+                                <a href="#method__applyFilters">_applyFilters</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method protected inherited">
+                                <a href="#method__applyShadow">_applyShadow</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method protected">
+                                <a href="#method__getObjectsUnderPoint">_getObjectsUnderPoint</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method protected inherited">
+                                <a href="#method__testHit">_testHit</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method protected inherited">
+                                <a href="#method__tick">_tick</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_addChild">addChild</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_addChildAt">addChildAt</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited">
+                                <a href="#method_cache">cache</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited">
+                                <a href="#method_clone">clone</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method protected inherited">
+                                <a href="#method_cloneProps">cloneProps</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_contains">contains</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited">
+                                <a href="#method_draw">draw</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited">
+                                <a href="#method_getCacheDataURL.">getCacheDataURL.</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getChildAt">getChildAt</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getChildIndex">getChildIndex</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited">
+                                <a href="#method_getConcatenatedMatrix">getConcatenatedMatrix</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited">
+                                <a href="#method_getMatrix">getMatrix</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getNumChildren">getNumChildren</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getObjectsUnderPoint">getObjectsUnderPoint</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getObjectUnderPoint">getObjectUnderPoint</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited">
+                                <a href="#method_getStage">getStage</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited">
+                                <a href="#method_globalToLocal">globalToLocal</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited">
+                                <a href="#method_hitTest">hitTest</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method protected inherited">
+                                <a href="#method_initialize">initialize</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited">
+                                <a href="#method_isVisible">isVisible</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited">
+                                <a href="#method_localToGlobal">localToGlobal</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited">
+                                <a href="#method_localToLocal">localToLocal</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_removeAllChildren">removeAllChildren</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_removeChild">removeChild</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_setChildIndex">setChildIndex</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited">
+                                <a href="#method_setTransform">setTransform</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited">
+                                <a href="#method_setupContext">setupContext</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_sortChildren">sortChildren</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_swapChildren">swapChildren</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_swapChildrenAt">swapChildrenAt</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited">
+                                <a href="#method_toString">toString</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited">
+                                <a href="#method_uncache">uncache</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited">
+                                <a href="#method_updateCache">updateCache</a>
+
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties">
+                        
+                            <li class="index-item property protected inherited">
+                                <a href="#property__cacheDataURL">_cacheDataURL</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected inherited">
+                                <a href="#property__cacheDataURLID">_cacheDataURLID</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected inherited">
+                                <a href="#property__cacheOffsetX">_cacheOffsetX</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected inherited">
+                                <a href="#property__cacheOffsetY">_cacheOffsetY</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property protected inherited">
+                                <a href="#property__matrix">_matrix</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_alpha">alpha</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_cacheCanvas">cacheCanvas</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_cacheID">cacheID</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_children">children</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_compositeOperation">compositeOperation</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property private">
+                                <a href="#property_DisplayObject_draw">DisplayObject_draw</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property private">
+                                <a href="#property_DisplayObject_initialize">DisplayObject_initialize</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_filters">filters</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_hitArea">hitArea</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_id">id</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_mask">mask</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_mouseEnabled">mouseEnabled</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_name">name</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_parent">parent</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_regX">regX</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_regY">regY</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_rotation">rotation</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_scaleX">scaleX</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_scaleY">scaleY</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_shadow">shadow</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_skewX">skewX</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_skewY">skewY</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_snapToPixel">snapToPixel</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_visible">visible</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_x">x</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_y">y</a>
+
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+
+            
+                <div class="index-section events">
+                    <h3>Events</h3>
+
+                    <ul class="index-list events">
+                        
+                            <li class="index-item event inherited">
+                                <a href="#event_onClick">onClick</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item event inherited">
+                                <a href="#event_onDoubleClick">onDoubleClick</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item event inherited">
+                                <a href="#event_onMouseOut">onMouseOut</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item event inherited">
+                                <a href="#event_onMouseOver">onMouseOver</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item event inherited">
+                                <a href="#event_onPress">onPress</a>
+
+                                
+                            </li>
+                        
+                            <li class="index-item event inherited">
+                                <a href="#event_onTick">onTick</a>
+
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+        </div>
+
+        
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+                
+                    <div id="method__applyFilters" class="method item protected inherited">
+    <h3 class="name"><code>_applyFilters</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#method__applyFilters">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l777"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:777</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method__applyShadow" class="method item protected inherited">
+    <h3 class="name"><code>_applyShadow</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>ctx</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>shadow</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#method__applyShadow">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l737"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:737</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">ctx</code>
+                        <span class="type">CanvasRenderingContext2D</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">shadow</code>
+                        <span class="type"><a href="../classes/Shadow.html" class="crosslink">Shadow</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method__getObjectsUnderPoint" class="method item protected">
+    <h3 class="name"><code>_getObjectsUnderPoint</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>x</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>arr</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>mouseEvents</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">ArrayDisplayObject</span>
+        </span>
+    
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l417"><code>easeljs&#x2F;display&#x2F;Container.js:417</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">x</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">arr</code>
+                        <span class="type">Array</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">mouseEvents</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A bitmask indicating which mouseEvent types to look for. Bit 1 specifies onPress &amp;
+onClick &amp; onDoubleClick, bit 2 specifies it should look for onMouseOver and onMouseOut. This implementation may change.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">ArrayDisplayObject</span>:
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method__testHit" class="method item protected inherited">
+    <h3 class="name"><code>_testHit</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>ctx</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+    
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#method__testHit">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l760"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:760</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">ctx</code>
+                        <span class="type">CanvasRenderingContext2D</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Boolean</span>:
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method__tick" class="method item protected">
+    <h3 class="name"><code>_tick</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            <p>Inherited from
+            <a href="..&#x2F;classes&#x2F;DisplayObject.html#method__tick">
+                DisplayObject
+            </a>
+            
+            but overwritten in
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l405"><code>easeljs&#x2F;display&#x2F;Container.js:405</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_addChild" class="method item">
+    <h3 class="name"><code>addChild</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>child</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/DisplayObject.html" class="crosslink">DisplayObject</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l125"><code>easeljs&#x2F;display&#x2F;Container.js:125</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Adds a child to the top of the display list. You can also add multiple children, such as "addChild(child1, child2, ...);".
+Returns the child that was added, or the last child if multiple children were added.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">child</code>
+                        <span class="type"><a href="../classes/DisplayObject.html" class="crosslink">DisplayObject</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The display object to add.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/DisplayObject.html" class="crosslink">DisplayObject</a></span>:
+                    
+                    The child that was added, or the last child if multiple children were added.
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_addChildAt" class="method item">
+    <h3 class="name"><code>addChildAt</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>child</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>index</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/DisplayObject.html" class="crosslink">DisplayObject</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l145"><code>easeljs&#x2F;display&#x2F;Container.js:145</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Adds a child to the display list at the specified index, bumping children at equal or greater indexes up one, and setting
+its parent to this Container. You can also add multiple children, such as "addChildAt(child1, child2, ..., index);". The
+index must be between 0 and numChildren. For example, to add myShape under otherShape in the display list, you could use:
+container.addChildAt(myShape, container.getChildIndex(otherShape)). This would also bump otherShape's index up by one.
+Returns the last child that was added, or the last child if multiple children were added. Fails silently if the index 
+is out of range.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">child</code>
+                        <span class="type"><a href="../classes/DisplayObject.html" class="crosslink">DisplayObject</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The display object to add.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">index</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The index to add the child at.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/DisplayObject.html" class="crosslink">DisplayObject</a></span>:
+                    
+                    The child that was added, or the last child if multiple children were added.
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_cache" class="method item inherited">
+    <h3 class="name"><code>cache</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>x</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>width</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>height</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#method_cache">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l458"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:458</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Draws the display object into a new canvas, which is then used for subsequent draws. For complex content
+that does not change frequently (ex. a Sprite with many children that do not move, or a complex vector Shape),
+this can provide for much faster rendering because the content does not need to be re-rendered each tick. The
+cached display object can be moved, rotated, faded, etc freely, however if it's content changes, you must manually
+update the cache by calling updateCache() or cache() again. You must specify the cache area via the x, y, w,
+and h parameters. This defines the rectangle that will be rendered and cached using this display object's
+coordinates. For example if you defined a Shape that drew a circle at 0, 0 with a radius of 25, you could call
+myShape.cache(-25, -25, 50, 50) to cache the full shape.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">x</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The x coordinate origin for the cache region.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The y coordinate origin for the cache region.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">width</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The width of the cache region.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">height</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The height of the cache region.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_clone" class="method item inherited">
+    <h3 class="name"><code>clone</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/DisplayObject.html" class="crosslink">DisplayObject</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#method_clone">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l685"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:685</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns a clone of this DisplayObject. Some properties that are specific to this instance's current context are
+reverted to their defaults (for example .parent).</p>
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/DisplayObject.html" class="crosslink">DisplayObject</a></span>:
+                    
+                    A clone of the current DisplayObject instance.
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_cloneProps" class="method item protected inherited">
+    <h3 class="name"><code>cloneProps</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>o</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#method_cloneProps">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l709"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:709</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">o</code>
+                        <span class="type"><a href="../classes/DisplayObject.html" class="crosslink">DisplayObject</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The DisplayObject instance which will have properties from the current DisplayObject
+instance copied into.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_contains" class="method item">
+    <h3 class="name"><code>contains</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>child</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l313"><code>easeljs&#x2F;display&#x2F;Container.js:313</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns true if the specified display object either is this container or is a descendent.
+(child, grandchild, etc) of this container.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">child</code>
+                        <span class="type"><a href="../classes/DisplayObject.html" class="crosslink">DisplayObject</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The DisplayObject to be checked.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Boolean</span>:
+                    
+                    true if the specified display object either is this container or is a descendent.
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_draw" class="method item">
+    <h3 class="name"><code>draw</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>ctx</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>ignoreCache</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            <p>Inherited from
+            <a href="..&#x2F;classes&#x2F;DisplayObject.html#method_draw">
+                DisplayObject
+            </a>
+            
+            but overwritten in
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l97"><code>easeljs&#x2F;display&#x2F;Container.js:97</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Draws the display object into the specified context ignoring it's visible, alpha, shadow, and transform.
+Returns true if the draw was handled (useful for overriding functionality).
+NOTE: This method is mainly for internal use, though it may be useful for advanced uses.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">ctx</code>
+                        <span class="type">CanvasRenderingContext2D</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The canvas 2D context object to draw into.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">ignoreCache</code>
+                        <span class="type">Boolean</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Indicates whether the draw operation should ignore any current cache.
+For example, used for drawing the cache (to prevent it from simply drawing an existing cache back
+into itself).</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_getCacheDataURL." class="method item inherited">
+    <h3 class="name"><code>getCacheDataURL.</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#method_getCacheDataURL.">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l521"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:521</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns a data URL for the cache, or null if this display object is not cached.
+Uses cacheID to ensure a new data URL is not generated if the cache has not changed.</p>
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_getChildAt" class="method item">
+    <h3 class="name"><code>getChildAt</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>index</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/DisplayObject.html" class="crosslink">DisplayObject</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l222"><code>easeljs&#x2F;display&#x2F;Container.js:222</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns the child at the specified index.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">index</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The index of the child to return.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/DisplayObject.html" class="crosslink">DisplayObject</a></span>:
+                    
+                    The child at the specified index.
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_getChildIndex" class="method item">
+    <h3 class="name"><code>getChildIndex</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>child</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Number</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l242"><code>easeljs&#x2F;display&#x2F;Container.js:242</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns the index of the specified child in the display list, or -1 if it is not in the display list.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">child</code>
+                        <span class="type"><a href="../classes/DisplayObject.html" class="crosslink">DisplayObject</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The child to return the index of.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Number</span>:
+                    
+                    The index of the specified child. -1 if the child is not found.
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_getConcatenatedMatrix" class="method item inherited">
+    <h3 class="name"><code>getConcatenatedMatrix</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>mtx</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Matrix2D.html" class="crosslink">Matrix2D</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#method_getConcatenatedMatrix">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l639"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:639</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Generates a concatenated Matrix2D object representing the combined transform of
+the display object and all of its parent Containers up to the highest level ancestor
+(usually the stage). This can be used to transform positions between coordinate spaces,
+such as with localToGlobal and globalToLocal.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">mtx</code>
+                        <span class="type"><a href="../classes/Matrix2D.html" class="crosslink">Matrix2D</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Optional. A Matrix2D object to populate with the calculated values. If null, a new
+Matrix object is returned.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Matrix2D.html" class="crosslink">Matrix2D</a></span>:
+                    
+                    a concatenated Matrix2D object representing the combined transform of
+the display object and all of its parent Containers up to the highest level ancestor (usually the stage).
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_getMatrix" class="method item inherited">
+    <h3 class="name"><code>getMatrix</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>matrix</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Matrix2D.html" class="crosslink">Matrix2D</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#method_getMatrix">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l627"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:627</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns a matrix based on this object's transform.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">matrix</code>
+                        <span class="type"><a href="../classes/Matrix2D.html" class="crosslink">Matrix2D</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Optional. A Matrix2D object to populate with the calculated values. If null, a new
+Matrix object is returned.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Matrix2D.html" class="crosslink">Matrix2D</a></span>:
+                    
+                    A matrix representing this display object's transform.
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_getNumChildren" class="method item">
+    <h3 class="name"><code>getNumChildren</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Number</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l252"><code>easeljs&#x2F;display&#x2F;Container.js:252</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns the number of children in the display list.</p>
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Number</span>:
+                    
+                    The number of children in the display list.
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_getObjectsUnderPoint" class="method item">
+    <h3 class="name"><code>getObjectsUnderPoint</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>x</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">ArrayDisplayObject</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l343"><code>easeljs&#x2F;display&#x2F;Container.js:343</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns an array of all display objects under the specified coordinates that are in this container's display list.
+This routine ignores any display objects with mouseEnabled set to false. The array will be sorted in order of visual
+depth, with the top-most display object at index 0. This uses shape based hit detection, and can be an expensive operation
+to run, so it is best to use it carefully. For example, if testing for objects under the mouse, test on tick (instead of on
+mousemove), and only if the mouse's position has changed.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">x</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The x position in the container to test.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The y position in the container to test.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">ArrayDisplayObject</span>:
+                    
+                    An Array of DisplayObjects under the specified coordinates.
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_getObjectUnderPoint" class="method item">
+    <h3 class="name"><code>getObjectUnderPoint</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>x</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/DisplayObject.html" class="crosslink">DisplayObject</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l361"><code>easeljs&#x2F;display&#x2F;Container.js:361</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Similar to getObjectsUnderPoint(), but returns only the top-most display object. This runs significantly faster than
+getObjectsUnderPoint(), but is still an expensive operation. See getObjectsUnderPoint() for more information.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">x</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The x position in the container to test.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The y position in the container to test.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/DisplayObject.html" class="crosslink">DisplayObject</a></span>:
+                    
+                    The top-most display object under the specified coordinates.
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_getStage" class="method item inherited">
+    <h3 class="name"><code>getStage</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Stage.html" class="crosslink">Stage</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#method_getStage">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l532"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:532</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns the stage that this display object will be rendered on, or null if it has not been added to one.</p>
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Stage.html" class="crosslink">Stage</a></span>:
+                    
+                    The Stage instance that the display object is a descendent of. null if the DisplayObject has not
+been added to a Stage.
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_globalToLocal" class="method item inherited">
+    <h3 class="name"><code>globalToLocal</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>x</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Point.html" class="crosslink">Point</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#method_globalToLocal">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l565"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:565</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Transforms the specified x and y position from the global (stage) coordinate space to the
+coordinate space of the display object. For example, this could be used to determine
+the current mouse position within the display object. Returns a Point instance with x and y properties
+correlating to the transformed position in the display object's coordinate space.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">x</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The x position on the stage to transform.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The y position on the stage to transform.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Point.html" class="crosslink">Point</a></span>:
+                    
+                    A Point instance with x and y properties correlating to the transformed position in the
+display object's coordinate space.
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_hitTest" class="method item">
+    <h3 class="name"><code>hitTest</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>x</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            <p>Inherited from
+            <a href="..&#x2F;classes&#x2F;DisplayObject.html#method_hitTest">
+                DisplayObject
+            </a>
+            
+            but overwritten in
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l328"><code>easeljs&#x2F;display&#x2F;Container.js:328</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Tests whether the display object intersects the specified local point (ie. draws a pixel with alpha > 0 at the specified
+position). This ignores the alpha, shadow and compositeOperation of the display object, and all transform properties
+including regX/Y.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">x</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The x position to check in the display object's local coordinates.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The y position to check in the display object's local coordinates.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Boolean</span>:
+                    
+                    A Boolean indicating whether there is a visible section of a DisplayObject that overlaps the specified
+coordinates.
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_initialize" class="method item protected">
+    <h3 class="name"><code>initialize</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            <p>Inherited from
+            <a href="..&#x2F;classes&#x2F;DisplayObject.html#method_initialize">
+                DisplayObject
+            </a>
+            
+            but overwritten in
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l67"><code>easeljs&#x2F;display&#x2F;Container.js:67</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Initialization method.</p>
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_isVisible" class="method item">
+    <h3 class="name"><code>isVisible</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            <p>Inherited from
+            <a href="..&#x2F;classes&#x2F;DisplayObject.html#method_isVisible">
+                DisplayObject
+            </a>
+            
+            but overwritten in
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l79"><code>easeljs&#x2F;display&#x2F;Container.js:79</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns true or false indicating whether the display object would be visible if drawn to a canvas.
+This does not account for whether it would be visible within the boundaries of the stage.
+NOTE: This method is mainly for internal use, though it may be useful for advanced uses.</p>
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Boolean</span>:
+                    
+                    Boolean indicating whether the display object would be visible if drawn to a canvas
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_localToGlobal" class="method item inherited">
+    <h3 class="name"><code>localToGlobal</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>x</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Point.html" class="crosslink">Point</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#method_localToGlobal">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l547"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:547</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Transforms the specified x and y position from the coordinate space of the display object
+to the global (stage) coordinate space. For example, this could be used to position an HTML label
+over a specific point on a nested display object. Returns a Point instance with x and y properties
+correlating to the transformed coordinates on the stage.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">x</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The x position in the source display object to transform.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The y position in the source display object to transform.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Point.html" class="crosslink">Point</a></span>:
+                    
+                    A Point instance with x and y properties correlating to the transformed coordinates
+on the stage.
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_localToLocal" class="method item inherited">
+    <h3 class="name"><code>localToLocal</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>x</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>target</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Point.html" class="crosslink">Point</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#method_localToLocal">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l584"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:584</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Transforms the specified x and y position from the coordinate space of this display object to the
+coordinate space of the target display object. Returns a Point instance with x and y properties
+correlating to the transformed position in the target's coordinate space. Effectively the same as calling
+var pt = this.localToGlobal(x, y); pt = target.globalToLocal(pt.x, pt.y);</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">x</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The x position in the source display object to transform.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The y position on the stage to transform.</p>
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">target</code>
+                        <span class="type"><a href="../classes/DisplayObject.html" class="crosslink">DisplayObject</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The target display object to which the coordinates will be transformed.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Point.html" class="crosslink">Point</a></span>:
+                    
+                    Returns a Point instance with x and y properties correlating to the transformed position
+in the target's coordinate space.
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_removeAllChildren" class="method item">
+    <h3 class="name"><code>removeAllChildren</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l213"><code>easeljs&#x2F;display&#x2F;Container.js:213</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Removes all children from the display list.</p>
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_removeChild" class="method item">
+    <h3 class="name"><code>removeChild</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>child</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l171"><code>easeljs&#x2F;display&#x2F;Container.js:171</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Removes the specified child from the display list. Note that it is faster to use removeChildAt() if the index is already
+known. You can also remove multiple children, such as "removeChild(child1, child2, ...);". Returns true if the child
+(or children) was removed, or false if it was not in the display list.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">child</code>
+                        <span class="type"><a href="../classes/DisplayObject.html" class="crosslink">DisplayObject</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The child to remove.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Boolean</span>:
+                    
+                    true if the child (or children) was removed, or false if it was not in the display list.
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_setChildIndex" class="method item">
+    <h3 class="name"><code>setChildIndex</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>child</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>index</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l295"><code>easeljs&#x2F;display&#x2F;Container.js:295</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Changes the depth of the specified child. Fails silently if the child is not a child of this container, or the index is out of range.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">child</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">index</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_setTransform" class="method item inherited">
+    <h3 class="name"><code>setTransform</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>x</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>scaleX</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>scaleY</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>rotation</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>skewX</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>skewY</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>regX</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>regY</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#method_setTransform">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l601"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:601</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Shortcut method to quickly set the transform properties on the display object. All parameters are optional.
+Omitted parameters will have the default value set (ex. 0 for x/y, 1 for scaleX/Y).</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">x</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">scaleX</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">scaleY</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">rotation</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">skewX</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">skewY</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">regX</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">regY</code>
+                        <span class="type">Number</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_setupContext" class="method item inherited">
+    <h3 class="name"><code>setupContext</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>ctx</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#method_setupContext">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l430"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:430</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Applies this display object's transformation, alpha, globalCompositeOperation, clipping path (mask), and shadow to the specified
+context. This is typically called prior to draw.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">ctx</code>
+                        <span class="type">CanvasRenderingContext2D</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The canvas 2D to update.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_sortChildren" class="method item">
+    <h3 class="name"><code>sortChildren</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>sortFunction</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l232"><code>easeljs&#x2F;display&#x2F;Container.js:232</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Performs an array sort operation on the child list.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">sortFunction</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>the function to use to sort the child list. See javascript's Array.sort documentation
+for details.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_swapChildren" class="method item">
+    <h3 class="name"><code>swapChildren</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>child1</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>child2</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l276"><code>easeljs&#x2F;display&#x2F;Container.js:276</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Swaps the specified children's depth in the display list. Fails silently if either child is not a child of this Container.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">child1</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">child2</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_swapChildrenAt" class="method item">
+    <h3 class="name"><code>swapChildrenAt</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>index1</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>index2</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l261"><code>easeljs&#x2F;display&#x2F;Container.js:261</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Swaps the children at the specified indexes. Fails silently if either index is out of range.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">index1</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">index2</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_toString" class="method item">
+    <h3 class="name"><code>toString</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            <p>Inherited from
+            <a href="..&#x2F;classes&#x2F;DisplayObject.html#method_toString">
+                DisplayObject
+            </a>
+            
+            but overwritten in
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l395"><code>easeljs&#x2F;display&#x2F;Container.js:395</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns a string representation of this object.</p>
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">String</span>:
+                    
+                    a string representation of the instance.
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_uncache" class="method item inherited">
+    <h3 class="name"><code>uncache</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#method_uncache">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l512"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:512</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Clears the current cache. See cache() for more information.</p>
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_updateCache" class="method item inherited">
+    <h3 class="name"><code>updateCache</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>compositeOperation</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#method_updateCache">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l489"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:489</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Redraws the display object to its cache. Calling updateCache without an active cache will throw an error.
+If compositeOperation is null the current cache will be cleared prior to drawing. Otherwise the display object
+will be drawn over the existing cache using the specified compositeOperation.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">compositeOperation</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The compositeOperation to use, or null to clear the cache and redraw it.
+<a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#compositing">
+whatwg spec on compositing</a>.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+            </div>
+        
+
+        
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
+
+                
+                    <div id="property__cacheDataURL" class="property item protected inherited">
+    <h3 class="name"><code>_cacheDataURL</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property__cacheDataURL">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l372"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:372</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <p><strong>Default:</strong> null</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property__cacheDataURLID" class="property item protected inherited">
+    <h3 class="name"><code>_cacheDataURLID</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property__cacheDataURLID">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l364"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:364</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property__cacheOffsetX" class="property item protected inherited">
+    <h3 class="name"><code>_cacheOffsetX</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property__cacheOffsetX">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l348"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:348</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property__cacheOffsetY" class="property item protected inherited">
+    <h3 class="name"><code>_cacheOffsetY</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property__cacheOffsetY">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l356"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:356</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property__matrix" class="property item protected inherited">
+    <h3 class="name"><code>_matrix</code></h3>
+    <span class="type"><a href="../classes/Matrix2D.html" class="crosslink">Matrix2D</a></span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property__matrix">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l380"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:380</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <p><strong>Default:</strong> null</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_alpha" class="property item inherited">
+    <h3 class="name"><code>alpha</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property_alpha">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l85"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:85</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The alpha (transparency) for this display object. 0 is fully transparent, 1 is fully opaque.</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> 1</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_cacheCanvas" class="property item inherited">
+    <h3 class="name"><code>cacheCanvas</code></h3>
+    <span class="type">HTMLCanvasElement</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property_cacheCanvas">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l93"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:93</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>If a cache is active, this returns the canvas that holds the cached version of this display object. See cache()
+for more information. READ-ONLY.</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> null</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_cacheID" class="property item inherited">
+    <h3 class="name"><code>cacheID</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property_cacheID">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l317"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:317</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns an ID number that uniquely identifies the current cache for this display object.
+This can be used to determine if the cache has changed since a previous check.</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_children" class="property item">
+    <h3 class="name"><code>children</code></h3>
+    <span class="type">ArrayDisplayObject</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l49"><code>easeljs&#x2F;display&#x2F;Container.js:49</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The array of children in the display list. You should usually use the child management methods,
+rather than accessing this directly, but it is included for advanced users.</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> null</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_compositeOperation" class="property item inherited">
+    <h3 class="name"><code>compositeOperation</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property_compositeOperation">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l231"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:231</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The composite operation indicates how the pixels of this display object will be composited with the elements
+behind it. If null, this property is inherited from the parent container. For more information, read the
+<a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#compositing">
+whatwg spec on compositing</a>.</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> null</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_DisplayObject_draw" class="property item private">
+    <h3 class="name"><code>DisplayObject_draw</code></h3>
+    <span class="type">Function</span>
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l90"><code>easeljs&#x2F;display&#x2F;Container.js:90</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_DisplayObject_initialize" class="property item private">
+    <h3 class="name"><code>DisplayObject_initialize</code></h3>
+    <span class="type">Function</span>
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_Container.js.html#l60"><code>easeljs&#x2F;display&#x2F;Container.js:60</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_filters" class="property item inherited">
+    <h3 class="name"><code>filters</code></h3>
+    <span class="type">ArrayFilter</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property_filters">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l308"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:308</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>An array of Filter objects to apply to this display object. Filters are only applied / updated when cache() or
+updateCache() is called on the display object, and only apply to the area that is cached.</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> null</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_hitArea" class="property item inherited">
+    <h3 class="name"><code>hitArea</code></h3>
+    <span class="type"><a href="../classes/DisplayObject.html" class="crosslink">DisplayObject</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property_hitArea">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l335"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:335</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>A display object that will be tested when checking mouse interactions or testing getObjectsUnderPoint. The hit area
+will have its transformation applied relative to this display object's coordinate space (as though the hit test object were a child of this
+display object and relative to its regX/Y). It is NOT used for hitTest().</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> null</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_id" class="property item inherited">
+    <h3 class="name"><code>id</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property_id">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l102"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:102</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Unique ID for this display object. Makes display objects easier for some uses.</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> -1</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_mask" class="property item inherited">
+    <h3 class="name"><code>mask</code></h3>
+    <span class="type"><a href="../classes/Shape.html" class="crosslink">Shape</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property_mask">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l326"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:326</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>A Shape instance that defines a vector mask (clipping path) for this display object.  The shape's transformation
+will be applied relative to the display object's parent coordinates (as if it were a child of the parent).</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> null</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_mouseEnabled" class="property item inherited">
+    <h3 class="name"><code>mouseEnabled</code></h3>
+    <span class="type">Boolean</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property_mouseEnabled">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l110"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:110</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Indicates whether to include this object when running Stage.getObjectsUnderPoint(). Setting this to true for
+Sprites will cause the Sprite to be returned (not its children) regardless of whether it's mouseChildren property
+is true.</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> true</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_name" class="property item inherited">
+    <h3 class="name"><code>name</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property_name">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l120"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:120</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>An optional name for this display object. Included in toString(). Useful for debugging.</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> null</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_parent" class="property item inherited">
+    <h3 class="name"><code>parent</code></h3>
+    <span class="type"><a href="../classes/DisplayObject.html" class="crosslink">DisplayObject</a></span>
+
+    
+
+    
+
+    
+        <span class="flag final">final</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property_parent">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l128"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:128</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>A reference to the Sprite or Stage object that contains this display object, or null if it has not been added to
+one. READ-ONLY.</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> null</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_regX" class="property item inherited">
+    <h3 class="name"><code>regX</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property_regX">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l138"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:138</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The x offset for this display object's registration point. For example, to make a 100x100px Bitmap rotate around
+it's center, you would set regX and regY to 50.</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_regY" class="property item inherited">
+    <h3 class="name"><code>regY</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property_regY">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l147"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:147</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The y offset for this display object's registration point. For example, to make a 100x100px Bitmap rotate around
+it's center, you would set regX and regY to 50.</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_rotation" class="property item inherited">
+    <h3 class="name"><code>rotation</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property_rotation">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l156"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:156</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The rotation in degrees for this display object.</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_scaleX" class="property item inherited">
+    <h3 class="name"><code>scaleX</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property_scaleX">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l164"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:164</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The factor to stretch this display object horizontally. For example, setting scaleX to 2 will stretch the display
+object to twice it's nominal width.</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> 1</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_scaleY" class="property item inherited">
+    <h3 class="name"><code>scaleY</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property_scaleY">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l173"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:173</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The factor to stretch this display object vertically. For example, setting scaleY to 0.5 will stretch the display
+object to half it's nominal height.</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> 1</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_shadow" class="property item inherited">
+    <h3 class="name"><code>shadow</code></h3>
+    <span class="type"><a href="../classes/Shadow.html" class="crosslink">Shadow</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property_shadow">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l198"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:198</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>A shadow object that defines the shadow to render on this display object. Set to null to remove a shadow. If
+null, this property is inherited from the parent container.</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> null</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_skewX" class="property item inherited">
+    <h3 class="name"><code>skewX</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property_skewX">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l182"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:182</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The factor to skew this display object horizontally.</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_skewY" class="property item inherited">
+    <h3 class="name"><code>skewY</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property_skewY">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l190"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:190</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The factor to skew this display object vertically.</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_snapToPixel" class="property item inherited">
+    <h3 class="name"><code>snapToPixel</code></h3>
+    <span class="type">Boolean</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property_snapToPixel">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l242"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:242</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Indicates whether the display object should have it's x &amp; y position rounded prior to drawing it to stage.
+Snapping to whole pixels can result in a sharper and faster draw for images (ex. Bitmap &amp; cached objects).
+This only applies if the enclosing stage has snapPixelsEnabled set to true. The snapToPixel property is true
+by default for Bitmap and BitmapAnimation instances, and false for all other display objects.
+
+Note that this applies only rounds the display object's local position. You should
+ensure that all of the display object's ancestors (parent containers) are also on a whole pixel. You can do this
+by setting the ancestors' snapToPixel property to true.</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> false</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_visible" class="property item inherited">
+    <h3 class="name"><code>visible</code></h3>
+    <span class="type">Boolean</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property_visible">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l207"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:207</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Indicates whether this display object should be rendered to the canvas and included when running
+Stage.getObjectsUnderPoint().</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> true</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_x" class="property item inherited">
+    <h3 class="name"><code>x</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property_x">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l216"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:216</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The x (horizontal) position of the display object, relative to its parent.</p>
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_y" class="property item inherited">
+    <h3 class="name"><code>y</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#property_y">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l224"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:224</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+                
+            </div>
+        
+
+        
+
+        
+            <div id="events" class="api-class-tabpanel">
+                <h2 class="off-left">Events</h2>
+
+                
+                    <div id="event_onClick" class="events item inherited">
+    <h3 class="name"><code>onClick</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#event_onClick">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l267"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:267</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The onClick callback is called when the user presses down on and then releases the mouse button over this
+display object. The handler is passed a single param containing the corresponding MouseEvent instance. If an
+onClick handler is set on a container, it will receive the event if any of its children are clicked.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Event Payload:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">event</code>
+                        <span class="type"><a href="../classes/MouseEvent.html" class="crosslink">MouseEvent</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>MouseEvent with information about the event.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+
+    
+</div>
+
+                
+                    <div id="event_onDoubleClick" class="events item inherited">
+    <h3 class="name"><code>onDoubleClick</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#event_onDoubleClick">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l276"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:276</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The onDoubleClick callback is called when the user double clicks over this display object. The handler is
+passed a single param containing the corresponding MouseEvent instance. If an onDoubleClick handler is set
+on a container, it will receive the event if any of its children are clicked.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Event Payload:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">event</code>
+                        <span class="type"><a href="../classes/MouseEvent.html" class="crosslink">MouseEvent</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>MouseEvent with information about the event.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+
+    
+</div>
+
+                
+                    <div id="event_onMouseOut" class="events item inherited">
+    <h3 class="name"><code>onMouseOut</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#event_onMouseOut">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l293"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:293</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The onMouseOut callback is called when the user rolls off of the display object. You must enable this event using
+stage.enableMouseOver(). The handler is passed a single param containing the corresponding MouseEvent instance.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Event Payload:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">event</code>
+                        <span class="type"><a href="../classes/MouseEvent.html" class="crosslink">MouseEvent</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>MouseEvent with information about the event.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+
+    
+</div>
+
+                
+                    <div id="event_onMouseOver" class="events item inherited">
+    <h3 class="name"><code>onMouseOver</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#event_onMouseOver">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l285"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:285</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The onMouseOver callback is called when the user rolls over the display object. You must enable this event using
+stage.enableMouseOver(). The handler is passed a single param containing the corresponding MouseEvent instance.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Event Payload:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">event</code>
+                        <span class="type"><a href="../classes/MouseEvent.html" class="crosslink">MouseEvent</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>MouseEvent with information about the event.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+
+    
+</div>
+
+                
+                    <div id="event_onPress" class="events item inherited">
+    <h3 class="name"><code>onPress</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#event_onPress">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l257"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:257</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The onPress callback is called when the user presses down on their mouse over this display object. The handler
+is passed a single param containing the corresponding MouseEvent instance. You can subscribe to the onMouseMove
+and onMouseUp callbacks of the event object to receive these events until the user releases the mouse button.
+If an onPress handler is set on a container, it will receive the event if any of its children are clicked.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Event Payload:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">event</code>
+                        <span class="type"><a href="../classes/MouseEvent.html" class="crosslink">MouseEvent</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>MouseEvent with information about the event.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+
+    
+</div>
+
+                
+                    <div id="event_onTick" class="events item inherited">
+    <h3 class="name"><code>onTick</code></h3>
+    <span class="type"></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="..&#x2F;classes&#x2F;DisplayObject.html#event_onTick">DisplayObject</a>:
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;easeljs_display_DisplayObject.js.html#l301"><code>easeljs&#x2F;display&#x2F;DisplayObject.js:301</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The onTick callback is called on each display object on a stage whenever the stage updates.
+This occurs immediately before the rendering (draw) pass.</p>
+    </div>
+
+    
+
+
+    
+</div>
+
+                
+            </div>
+        
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="..&#x2F;assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="..&#x2F;assets/js/yui-prettify.js"></script>
+<script src="..&#x2F;assets/../api.js"></script>
+<script src="..&#x2F;assets/js/api-filter.js"></script>
+<script src="..&#x2F;assets/js/api-list.js"></script>
+<script src="..&#x2F;assets/js/api-search.js"></script>
+<script src="..&#x2F;assets/js/apidocs.js"></script>
+</body>
+</html>

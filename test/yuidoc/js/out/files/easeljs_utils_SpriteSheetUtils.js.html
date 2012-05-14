@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>easeljs&#x2F;utils&#x2F;SpriteSheetUtils.js</title>
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.0&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
+    <script src="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.0&#x2F;build&#x2F;yui&#x2F;yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="..&#x2F;assets/css/logo.png" title=""></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="..&#x2F;classes/Bitmap.html">Bitmap</a></li>
+            
+                <li><a href="..&#x2F;classes/BitmapAnimation.html">BitmapAnimation</a></li>
+            
+                <li><a href="..&#x2F;classes/BoxBlurFilter.html">BoxBlurFilter</a></li>
+            
+                <li><a href="..&#x2F;classes/ColorFilter.html">ColorFilter</a></li>
+            
+                <li><a href="..&#x2F;classes/ColorMatrix.html">ColorMatrix</a></li>
+            
+                <li><a href="..&#x2F;classes/ColorMatrixFilter.html">ColorMatrixFilter</a></li>
+            
+                <li><a href="..&#x2F;classes/Command.html">Command</a></li>
+            
+                <li><a href="..&#x2F;classes/Container.html">Container</a></li>
+            
+                <li><a href="..&#x2F;classes/DisplayObject.html">DisplayObject</a></li>
+            
+                <li><a href="..&#x2F;classes/DOMElement.html">DOMElement</a></li>
+            
+                <li><a href="..&#x2F;classes/FBBitmapAnimation.html">FBBitmapAnimation</a></li>
+            
+                <li><a href="..&#x2F;classes/Filter.html">Filter</a></li>
+            
+                <li><a href="..&#x2F;classes/Graphics.html">Graphics</a></li>
+            
+                <li><a href="..&#x2F;classes/Matrix2D.html">Matrix2D</a></li>
+            
+                <li><a href="..&#x2F;classes/MouseEvent.html">MouseEvent</a></li>
+            
+                <li><a href="..&#x2F;classes/MovieClip.html">MovieClip</a></li>
+            
+                <li><a href="..&#x2F;classes/MovieClipPlugin.html">MovieClipPlugin</a></li>
+            
+                <li><a href="..&#x2F;classes/Point.html">Point</a></li>
+            
+                <li><a href="..&#x2F;classes/Rectangle.html">Rectangle</a></li>
+            
+                <li><a href="..&#x2F;classes/Shadow.html">Shadow</a></li>
+            
+                <li><a href="..&#x2F;classes/Shape.html">Shape</a></li>
+            
+                <li><a href="..&#x2F;classes/SpriteSheet.html">SpriteSheet</a></li>
+            
+                <li><a href="..&#x2F;classes/SpriteSheetBuilder.html">SpriteSheetBuilder</a></li>
+            
+                <li><a href="..&#x2F;classes/SpriteSheetUtils.html">SpriteSheetUtils</a></li>
+            
+                <li><a href="..&#x2F;classes/Stage.html">Stage</a></li>
+            
+                <li><a href="..&#x2F;classes/Text.html">Text</a></li>
+            
+                <li><a href="..&#x2F;classes/Ticker.html">Ticker</a></li>
+            
+                <li><a href="..&#x2F;classes/Touch.html">Touch</a></li>
+            
+                <li><a href="..&#x2F;classes/UID.html">UID</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="..&#x2F;modules/EaselJS.html">EaselJS</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: easeljs&#x2F;utils&#x2F;SpriteSheetUtils.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&#x2F;*
+* SpriteSheetUtils
+* Visit http:&#x2F;&#x2F;createjs.com&#x2F; for documentation, updates and examples.
+*
+* Copyright (c) 2010 gskinner.com, inc.
+* 
+* Permission is hereby granted, free of charge, to any person
+* obtaining a copy of this software and associated documentation
+* files (the &quot;Software&quot;), to deal in the Software without
+* restriction, including without limitation the rights to use,
+* copy, modify, merge, publish, distribute, sublicense, and&#x2F;or sell
+* copies of the Software, and to permit persons to whom the
+* Software is furnished to do so, subject to the following
+* conditions:
+* 
+* The above copyright notice and this permission notice shall be
+* included in all copies or substantial portions of the Software.
+* 
+* THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+* OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+* NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+* WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+* FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+* OTHER DEALINGS IN THE SOFTWARE.
+*&#x2F;
+
+(function(window) {
+&#x2F;&#x2F; constructor:
+&#x2F;**
+* The SpriteSheetUtils class is a collection of static methods for working
+* with sprite sheets.  A sprite sheet is a series of images (usually animation frames)
+* combined into a single image on a regular grid. For example, an animation consisting
+* of 8 100x100 images could be combined into a 400x200 sprite sheet (4 frames across by 2 high).
+* The SpriteSheetUtils class uses a static interface and should not be instantiated.
+* @class SpriteSheetUtils
+* @static
+**&#x2F;
+var SpriteSheetUtils = function() {
+	throw &quot;SpriteSheetUtils cannot be instantiated&quot;;
+}
+
+	&#x2F;**
+	 * @property _workingCanvas
+	 * @static
+	 * @type HTMLCanvasElement
+	 * @protected
+	*&#x2F;
+	SpriteSheetUtils._workingCanvas = document.createElement(&quot;canvas&quot;);
+
+	&#x2F;**
+	 * @property _workingContext
+	 * @static
+	 * @type CanvasRenderingContext2D
+	 * @protected
+	*&#x2F;
+	SpriteSheetUtils._workingContext = SpriteSheetUtils._workingCanvas.getContext(&quot;2d&quot;);
+
+&#x2F;&#x2F; public static methods:
+	&#x2F;**
+	 * &lt;b&gt;This is an experimental method, and is likely to be buggy. Please report issues.&lt;&#x2F;b&gt;&lt;br&#x2F;&gt;&lt;br&#x2F;&gt;
+	 * Extends the existing sprite sheet by flipping the original frames either horizontally, vertically, or both,
+	 * and adding appropriate animation &amp; frame data.
+	 * @method flip
+	 * @static
+	 * @param {Image} spriteSheet The sprite sheet to use as the source.
+	 * @param {Object} flipData A generic object that specifies which frames will be flipped, what to name the
+	 * flipped result, and how to flip the frames (horizontally, vertically, or both). Each property name
+	 * indicates the name of a new sequence to create, and should reference an array where the first index is
+	 * the name of the original sequence to flip, the second index indicates whether to flip it horizontally,
+	 * the third index indicates whether to flip it vertically, and the fourth indicates what the &quot;next&quot; value
+	 * for the resulting frame data should be. For example, the following would create a new sequence named
+	 * &quot;walk_left&quot; consisting of the frames from the original &quot;walk_right&quot; sequence flipped
+	 * horizontally: &amp;#123;walk_left: [&quot;walk_right&quot;, true, false]&amp;#125;
+	 **&#x2F;
+	SpriteSheetUtils.addFlippedFrames = function(spriteSheet, horizontal, vertical, both) {
+		if (!horizontal &amp;&amp; !vertical &amp;&amp; !both) { return; }
+		
+		var count = 0;
+		if (horizontal) { SpriteSheetUtils._flip(spriteSheet,++count,true,false); }
+		if (vertical) { SpriteSheetUtils._flip(spriteSheet,++count,false,true); }
+		if (both) { SpriteSheetUtils._flip(spriteSheet,++count,true,true); }
+	}
+
+	&#x2F;**
+	 * Returns a single frame of the specified sprite sheet as a new PNG image.
+	 * @method extractFrame
+	 * @static
+	 * @param {Image} spriteSheet The SpriteSheet instance to extract a frame from.
+	 * @param {Number} frame The frame number or animation name to extract. If an animation
+	 * name is specified, only the first frame of the animation will be extracted.
+	 * @return {Image} a single frame of the specified sprite sheet as a new PNG image.
+	*&#x2F;
+	SpriteSheetUtils.extractFrame = function(spriteSheet, frame) {
+		if (isNaN(frame)) {
+			frame = spriteSheet.getAnimation(frame).frames[0];
+		}
+		var data = spriteSheet.getFrame(frame);
+		if (!data) { return null; }
+		var r = data.rect;
+		var canvas = SpriteSheetUtils._workingCanvas;
+		canvas.width = r.width;
+		canvas.height = r.height;
+		SpriteSheetUtils._workingContext.drawImage(data.image, r.x, r.y, r.width, r.height, 0, 0, r.width, r.height);
+		var img = new Image();
+		img.src = canvas.toDataURL(&quot;image&#x2F;png&quot;);
+		return img;
+	}
+
+	
+&#x2F;&#x2F; private static methods:
+	SpriteSheetUtils._flip = function(spriteSheet, count, h, v) {
+		var imgs = spriteSheet._images;
+		var canvas = SpriteSheetUtils._workingCanvas;
+		var ctx = SpriteSheetUtils._workingContext;
+		var il = imgs.length&#x2F;count;
+		for (var i=0;i&lt;il;i++) {
+			var src = imgs[i];
+			src.__tmp = i; &#x2F;&#x2F; a bit hacky, but faster than doing indexOf below.
+			canvas.width = src.width;
+			canvas.height = src.height;
+			ctx.setTransform(h?-1:1, 0, 0, v?-1:1, h?src.width:0, v?src.height:0);
+			ctx.drawImage(src,0,0);
+			var img = new Image();
+			img.src = canvas.toDataURL(&quot;image&#x2F;png&quot;);
+			&#x2F;&#x2F; work around a strange bug in Safari:
+			img.width = src.width;
+			img.height = src.height;
+			imgs.push(img);
+		}
+		
+		var frames = spriteSheet._frames;
+		var fl = frames.length&#x2F;count;
+		for (i=0;i&lt;fl;i++) {
+			src = frames[i];
+			var rect = src.rect.clone();
+			img = imgs[src.image.__tmp+il*count];
+			
+			var frame = {image:img,rect:rect,regX:src.regX,regY:src.regY};
+			if (h) {
+				rect.x = img.width-rect.x-rect.width; &#x2F;&#x2F; update rect
+				frame.regX = rect.width-src.regX; &#x2F;&#x2F; update registration point
+			}
+			if (v) {
+				rect.y = img.height-rect.y-rect.height;  &#x2F;&#x2F; update rect
+				frame.regY = rect.height-src.regY; &#x2F;&#x2F; update registration point
+			}
+			frames.push(frame);
+		}
+		
+		var sfx = &quot;_&quot;+(h?&quot;h&quot;:&quot;&quot;)+(v?&quot;v&quot;:&quot;&quot;);
+		var names = spriteSheet._animations;
+		var data = spriteSheet._data;
+		var al = names.length&#x2F;count;
+		for (i=0;i&lt;al;i++) {
+			var name = names[i];
+			src = data[name];
+			var anim = {name:name+sfx,frequency:src.frequency,next:src.next,frames:[]};
+			if (src.next) { anim.next += sfx; }
+			frames = src.frames;
+			for (var j=0,l=frames.length;j&lt;l;j++) {
+				anim.frames.push(frames[j]+fl*count);
+			}
+			data[anim.name] = anim;
+			names.push(anim.name);
+		}
+	}
+
+window.SpriteSheetUtils = SpriteSheetUtils;
+}(window));
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="..&#x2F;assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="..&#x2F;assets/js/yui-prettify.js"></script>
+<script src="..&#x2F;assets/../api.js"></script>
+<script src="..&#x2F;assets/js/api-filter.js"></script>
+<script src="..&#x2F;assets/js/api-list.js"></script>
+<script src="..&#x2F;assets/js/api-search.js"></script>
+<script src="..&#x2F;assets/js/apidocs.js"></script>
+</body>
+</html>

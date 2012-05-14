@@ -19,6 +19,7 @@ import neko.Lib;
 import buildhx.parsers.AbstractParser;
 import buildhx.parsers.JSDuckParser;
 import buildhx.parsers.SimpleParser;
+import buildhx.parsers.YUIDocParser;
 
 
 class BuildHX {
@@ -349,6 +350,10 @@ class BuildHX {
 			case "jsduck":
 				
 				parser = new JSDuckParser (types, definitions);
+				
+			case "yuidoc":
+				
+				parser = new YUIDocParser(types, definitions);
 			
 			default:
 				
@@ -371,25 +376,34 @@ class BuildHX {
 		
 		if (Std.is (parser, JSDuckParser)) {
 			
-			runCommand ("", buildhx + "/bin/jsduck-3.10.1.exe", [ sourcePath, "--export=full", "--output", "obj", "--pretty-json" ]);
+			//runCommand ("", buildhx + "/bin/jsduck-3.10.1.exe", [ sourcePath, "--export=full", "--output", "obj", "--pretty-json" ]);
+			runCommand ("", buildhx + "jsduck", [ sourcePath, "--export=full", "--output", "obj", "--pretty-json" ]);
 			sourcePath = FileSystem.fullPath ("obj") + "/";
 			
 		}
 		
+		if (Std.is (parser, YUIDocParser)) {
+			trace("it's a YUI Doc...");
+			runCommand ("", buildhx + "yuidoc", ["."]);
+			sourcePath = FileSystem.fullPath ("out") + "/";
+			
+		}
+		//trace("sourcePath "+sourcePath);
 		if (sourcePath != null) {
 			
 			parser.processFiles (FileSystem.readDirectory (sourcePath), sourcePath);
 			
 		}
 		
-		parser.resolveClasses ();
-		parser.writeClasses (targetPath);
+		parser.resolveClasses();
+		//trace("targetPath "+targetPath);
+		parser.writeClasses(targetPath+"/");
 		
 	}
 	
 	
 	public static function addImport (type:String, definition:ClassDefinition):Void {
-		
+
 		if (type != null && type != "" && type.substr (-1) != ".") {
 			
 			definition.imports.set (type, type);

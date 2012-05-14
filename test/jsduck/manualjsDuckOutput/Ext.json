@@ -1,0 +1,146 @@
+{
+  "parentMixins": [
+
+  ],
+  "subclasses": [
+
+  ],
+  "doc": "\n",
+  "alternateClassNames": [
+
+  ],
+  "statics": {
+    "cfg": [
+
+    ],
+    "property": [
+
+    ],
+    "method": [
+
+    ],
+    "event": [
+
+    ],
+    "css_var": [
+
+    ],
+    "css_mixin": [
+
+    ]
+  },
+  "tagname": "class",
+  "html_meta": {
+  },
+  "mixins": [
+
+  ],
+  "requires": [
+
+  ],
+  "members": {
+    "cfg": [
+
+    ],
+    "property": [
+
+    ],
+    "method": [
+      {
+        "doc": "<p>A method belonging to Ext.</p>\n\n<p>Sets the size.</p>\n",
+        "shortDoc": "A method belonging to Ext. ...",
+        "owner": "Ext",
+        "tagname": "method",
+        "inheritable": false,
+        "html_meta": {
+        },
+        "files": [
+          {
+            "linenr": 142,
+            "filename": "/Users/fintan/Sites/haxe/easeljsexterns/testdoc/example2.js"
+          }
+        ],
+        "meta": {
+        },
+        "name": "setMasterSwitchSize",
+        "id": "method-setMasterSwitchSize",
+        "inheritdoc": {
+          "doc": null,
+          "tagname": "inheritdoc",
+          "cls": "Ext.master.Switch",
+          "member": "setSize"
+        },
+        "return": {
+          "doc": "\n",
+          "type": "undefined",
+          "html_type": "undefined",
+          "properties": [
+
+          ],
+          "name": "return"
+        },
+        "params": [
+          {
+            "doc": "<p>An object describing width and height:</p>\n\n",
+            "type": "Object",
+            "default": null,
+            "optional": false,
+            "html_type": "Object",
+            "properties": [
+              {
+                "type": "Number",
+                "doc": "<p>The width.</p>\n\n",
+                "default": "0",
+                "optional": true,
+                "tagname": "param",
+                "html_type": "Number",
+                "name": "width"
+              },
+              {
+                "type": "Number",
+                "doc": "<p>The height.</p>\n\n",
+                "default": "0",
+                "optional": true,
+                "tagname": "param",
+                "html_type": "Number",
+                "name": "height"
+              }
+            ],
+            "name": "size"
+          }
+        ]
+      }
+    ],
+    "event": [
+
+    ],
+    "css_var": [
+
+    ],
+    "css_mixin": [
+
+    ]
+  },
+  "component": false,
+  "files": [
+    {
+      "href": "",
+      "linenr": 0,
+      "filename": ""
+    }
+  ],
+  "meta": {
+  },
+  "name": "Ext",
+  "mixedInto": [
+
+  ],
+  "aliases": {
+  },
+  "uses": [
+
+  ],
+  "superclasses": [
+
+  ]
+}

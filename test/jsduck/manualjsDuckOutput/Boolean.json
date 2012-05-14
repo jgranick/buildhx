@@ -1,0 +1,189 @@
+{
+  "parentMixins": [
+
+  ],
+  "subclasses": [
+
+  ],
+  "doc": "<p>The <code>Boolean</code> object is an object wrapper for a boolean value.</p>\n\n<p>The value passed as the first parameter is converted to a boolean value, if necessary. If value is\nomitted or is 0, -0, null, false, <code>NaN</code>, undefined, or the empty string (\"\"), the object has an\ninitial value of false. All other values, including any object or the string <code>\"false\"</code>, create an\nobject with an initial value of true.</p>\n\n<p>Do not confuse the primitive Boolean values true and false with the true and false values of the\nBoolean object.</p>\n\n<p>Any object whose value is not <code>undefined</code> or <code>null</code>, including a Boolean object whose value is false,\nevaluates to true when passed to a conditional statement. For example, the condition in the following\nif statement evaluates to true:</p>\n\n<pre><code>x = new Boolean(false);\nif (x) {\n    // . . . this code is executed\n}\n</code></pre>\n\n<p>This behavior does not apply to Boolean primitives. For example, the condition in the following if\nstatement evaluates to <code>false</code>:</p>\n\n<pre><code>x = false;\nif (x) {\n    // . . . this code is not executed\n}\n</code></pre>\n\n<p>Do not use a <code>Boolean</code> object to convert a non-boolean value to a boolean value. Instead, use Boolean\nas a function to perform this task:</p>\n\n<pre><code>x = Boolean(expression);     // preferred\nx = new Boolean(expression); // don't use\n</code></pre>\n\n<p>If you specify any object, including a Boolean object whose value is false, as the initial value of a\nBoolean object, the new Boolean object has a value of true.</p>\n\n<pre><code>myFalse = new Boolean(false);   // initial value of false\ng = new Boolean(myFalse);       // initial value of true\nmyString = new String(\"Hello\"); // string object\ns = new Boolean(myString);      // initial value of true\n</code></pre>\n\n<p>Do not use a Boolean object in place of a Boolean primitive.</p>\n\n<h1>Creating Boolean objects with an initial value of false</h1>\n\n<pre><code>bNoParam = new Boolean();\nbZero = new Boolean(0);\nbNull = new Boolean(null);\nbEmptyString = new Boolean(\"\");\nbfalse = new Boolean(false);\n</code></pre>\n\n<h1>Creating Boolean objects with an initial value of true</h1>\n\n<pre><code>btrue = new Boolean(true);\nbtrueString = new Boolean(\"true\");\nbfalseString = new Boolean(\"false\");\nbSuLin = new Boolean(\"Su Lin\");\n</code></pre>\n\n<div class=\"notice\">\nDocumentation for this class comes from <a href=\"https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean\">MDN</a>\nand is available under <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">Creative Commons: Attribution-Sharealike license</a>.\n</div>\n\n",
+  "extends": null,
+  "alternateClassNames": [
+
+  ],
+  "tagname": "class",
+  "singleton": false,
+  "statics": {
+    "cfg": [
+
+    ],
+    "method": [
+
+    ],
+    "property": [
+
+    ],
+    "css_var": [
+
+    ],
+    "event": [
+
+    ],
+    "css_mixin": [
+
+    ]
+  },
+  "html_meta": {
+  },
+  "mixins": [
+
+  ],
+  "code_type": "nop",
+  "inheritable": false,
+  "requires": [
+
+  ],
+  "members": {
+    "cfg": [
+
+    ],
+    "property": [
+
+    ],
+    "method": [
+      {
+        "doc": "<p>Creates a new boolean object.</p>\n",
+        "shortDoc": "Creates a new boolean object. ...",
+        "owner": "Boolean",
+        "tagname": "method",
+        "inheritable": false,
+        "html_meta": {
+        },
+        "files": [
+          {
+            "linenr": 67,
+            "filename": "/Library/Ruby/Gems/1.8/gems/jsduck-3.10.1/js-classes/Boolean.js"
+          }
+        ],
+        "meta": {
+        },
+        "name": "constructor",
+        "id": "method-constructor",
+        "inheritdoc": null,
+        "return": {
+          "doc": "\n",
+          "type": "Object",
+          "html_type": "Object",
+          "properties": [
+
+          ],
+          "name": "return"
+        },
+        "params": [
+          {
+            "doc": "<p>Either a truthy or falsy value to create the corresponding Boolean object.</p>\n",
+            "type": "Object",
+            "default": null,
+            "optional": false,
+            "html_type": "Object",
+            "properties": [
+
+            ],
+            "name": "value"
+          }
+        ]
+      },
+      {
+        "doc": "<p>Returns a string of either \"true\" or \"false\" depending upon the value of the object.\nOverrides the <code>Object.prototype.toString</code> method.</p>\n\n<p>The Boolean object overrides the <code>toString</code> method of the <code>Object</code> object; it does not inherit\n<code><a href=\"#!/api/Object-method-toString\" rel=\"Object-method-toString\" class=\"docClass\">Object.toString</a></code>. For Boolean objects, the <code>toString</code> method returns a string representation of\nthe object.</p>\n\n<p>JavaScript calls the <code>toString</code> method automatically when a Boolean is to be represented as a text\nvalue or when a Boolean is referred to in a string concatenation.</p>\n\n<p>For Boolean objects and values, the built-in <code>toString</code> method returns the string <code>\"true\"</code> or\n<code>\"false\"</code> depending on the value of the boolean object. In the following code, <code>flag.toString</code>\nreturns <code>\"true\"</code>.</p>\n\n<pre><code>var flag = new Boolean(true)\nvar myVar = flag.toString()\n</code></pre>\n",
+        "shortDoc": "Returns a string of either \"true\" or \"false\" depending upon the value of the object. ...",
+        "owner": "Boolean",
+        "tagname": "method",
+        "inheritable": false,
+        "html_meta": {
+        },
+        "files": [
+          {
+            "linenr": 75,
+            "filename": "/Library/Ruby/Gems/1.8/gems/jsduck-3.10.1/js-classes/Boolean.js"
+          }
+        ],
+        "meta": {
+        },
+        "name": "toString",
+        "id": "method-toString",
+        "inheritdoc": null,
+        "return": {
+          "doc": "<p>The boolean value represented as a string.</p>\n",
+          "type": "String",
+          "html_type": "String",
+          "properties": null,
+          "name": "return"
+        },
+        "params": [
+
+        ]
+      },
+      {
+        "doc": "<p>Returns the primitive value of the <code>Boolean</code> object. Overrides the <code>Object.prototype.valueOf</code> method.</p>\n\n<p>The <code>valueOf</code> method of Boolean returns the primitive value of a Boolean object or literal Boolean\nas a Boolean data type.</p>\n\n<p>This method is usually called internally by JavaScript and not explicitly in code.</p>\n\n<pre><code>x = new Boolean();\nmyVar = x.valueOf()      //assigns false to myVar\n</code></pre>\n",
+        "shortDoc": "Returns the primitive value of the Boolean object. ...",
+        "owner": "Boolean",
+        "tagname": "method",
+        "inheritable": false,
+        "html_meta": {
+        },
+        "files": [
+          {
+            "linenr": 97,
+            "filename": "/Library/Ruby/Gems/1.8/gems/jsduck-3.10.1/js-classes/Boolean.js"
+          }
+        ],
+        "meta": {
+        },
+        "name": "valueOf",
+        "id": "method-valueOf",
+        "inheritdoc": null,
+        "return": {
+          "doc": "<p>The primitive value.</p>\n",
+          "type": "Boolean",
+          "html_type": "Boolean",
+          "properties": null,
+          "name": "return"
+        },
+        "params": [
+
+        ]
+      }
+    ],
+    "event": [
+
+    ],
+    "css_var": [
+
+    ],
+    "css_mixin": [
+
+    ]
+  },
+  "component": false,
+  "meta": {
+  },
+  "files": [
+    {
+      "linenr": 1,
+      "filename": "/Library/Ruby/Gems/1.8/gems/jsduck-3.10.1/js-classes/Boolean.js"
+    }
+  ],
+  "name": "Boolean",
+  "mixedInto": [
+
+  ],
+  "aliases": {
+  },
+  "inheritdoc": null,
+  "id": "class-Boolean",
+  "superclasses": [
+
+  ],
+  "uses": [
+
+  ]
+}

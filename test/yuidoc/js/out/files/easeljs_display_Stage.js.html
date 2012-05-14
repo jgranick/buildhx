@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>easeljs&#x2F;display&#x2F;Stage.js</title>
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.0&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
+    <script src="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.0&#x2F;build&#x2F;yui&#x2F;yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="..&#x2F;assets/css/logo.png" title=""></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="..&#x2F;classes/Bitmap.html">Bitmap</a></li>
+            
+                <li><a href="..&#x2F;classes/BitmapAnimation.html">BitmapAnimation</a></li>
+            
+                <li><a href="..&#x2F;classes/BoxBlurFilter.html">BoxBlurFilter</a></li>
+            
+                <li><a href="..&#x2F;classes/ColorFilter.html">ColorFilter</a></li>
+            
+                <li><a href="..&#x2F;classes/ColorMatrix.html">ColorMatrix</a></li>
+            
+                <li><a href="..&#x2F;classes/ColorMatrixFilter.html">ColorMatrixFilter</a></li>
+            
+                <li><a href="..&#x2F;classes/Command.html">Command</a></li>
+            
+                <li><a href="..&#x2F;classes/Container.html">Container</a></li>
+            
+                <li><a href="..&#x2F;classes/DisplayObject.html">DisplayObject</a></li>
+            
+                <li><a href="..&#x2F;classes/DOMElement.html">DOMElement</a></li>
+            
+                <li><a href="..&#x2F;classes/FBBitmapAnimation.html">FBBitmapAnimation</a></li>
+            
+                <li><a href="..&#x2F;classes/Filter.html">Filter</a></li>
+            
+                <li><a href="..&#x2F;classes/Graphics.html">Graphics</a></li>
+            
+                <li><a href="..&#x2F;classes/Matrix2D.html">Matrix2D</a></li>
+            
+                <li><a href="..&#x2F;classes/MouseEvent.html">MouseEvent</a></li>
+            
+                <li><a href="..&#x2F;classes/MovieClip.html">MovieClip</a></li>
+            
+                <li><a href="..&#x2F;classes/MovieClipPlugin.html">MovieClipPlugin</a></li>
+            
+                <li><a href="..&#x2F;classes/Point.html">Point</a></li>
+            
+                <li><a href="..&#x2F;classes/Rectangle.html">Rectangle</a></li>
+            
+                <li><a href="..&#x2F;classes/Shadow.html">Shadow</a></li>
+            
+                <li><a href="..&#x2F;classes/Shape.html">Shape</a></li>
+            
+                <li><a href="..&#x2F;classes/SpriteSheet.html">SpriteSheet</a></li>
+            
+                <li><a href="..&#x2F;classes/SpriteSheetBuilder.html">SpriteSheetBuilder</a></li>
+            
+                <li><a href="..&#x2F;classes/SpriteSheetUtils.html">SpriteSheetUtils</a></li>
+            
+                <li><a href="..&#x2F;classes/Stage.html">Stage</a></li>
+            
+                <li><a href="..&#x2F;classes/Text.html">Text</a></li>
+            
+                <li><a href="..&#x2F;classes/Ticker.html">Ticker</a></li>
+            
+                <li><a href="..&#x2F;classes/Touch.html">Touch</a></li>
+            
+                <li><a href="..&#x2F;classes/UID.html">UID</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="..&#x2F;modules/EaselJS.html">EaselJS</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: easeljs&#x2F;display&#x2F;Stage.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&#x2F;*
+* Stage
+* Visit http:&#x2F;&#x2F;createjs.com&#x2F; for documentation, updates and examples.
+*
+* Copyright (c) 2010 gskinner.com, inc.
+* 
+* Permission is hereby granted, free of charge, to any person
+* obtaining a copy of this software and associated documentation
+* files (the &quot;Software&quot;), to deal in the Software without
+* restriction, including without limitation the rights to use,
+* copy, modify, merge, publish, distribute, sublicense, and&#x2F;or sell
+* copies of the Software, and to permit persons to whom the
+* Software is furnished to do so, subject to the following
+* conditions:
+* 
+* The above copyright notice and this permission notice shall be
+* included in all copies or substantial portions of the Software.
+* 
+* THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+* OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+* NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+* WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+* FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+* OTHER DEALINGS IN THE SOFTWARE.
+*&#x2F;
+
+(function(window) {
+
+&#x2F;**
+* A stage is the root level Container for a display list. Each time its tick method is called, it will render its display
+* list to its target canvas.
+* @class Stage
+* @extends Container
+* @constructor
+* @param {HTMLCanvasElement} canvas The canvas the stage will render to.
+**&#x2F;
+var Stage = function(canvas) {
+  this.initialize(canvas);
+}
+var p = Stage.prototype = new Container();
+
+&#x2F;&#x2F; static properties:
+	&#x2F;**
+	 * @property _snapToPixelEnabled
+	 * @protected
+	 * @static
+	 * @type Boolean
+	 * @default false
+	 **&#x2F;
+	Stage._snapToPixelEnabled = false; &#x2F;&#x2F; snapToPixelEnabled is temporarily copied here during a draw to provide global access.
+
+&#x2F;&#x2F; public properties:
+	&#x2F;**
+	 * Indicates whether the stage should automatically clear the canvas before each render. You can set this to false to manually
+	 * control clearing (for generative art, or when pointing multiple stages at the same canvas for example).
+	 * @property autoClear
+	 * @type Boolean
+	 * @default true
+	 **&#x2F;
+	p.autoClear = true;
+
+	&#x2F;** The canvas the stage will render to. Multiple stages can share a single canvas, but you must disable autoClear for all but the
+	 * first stage that will be ticked (or they will clear each other&#x27;s render).
+	 * @property canvas
+	 * @type HTMLCanvasElement
+	 **&#x2F;
+	p.canvas = null;
+
+	&#x2F;**
+	 * READ-ONLY. The current mouse X position on the canvas. If the mouse leaves the canvas, this will indicate the most recent
+	 * position over the canvas, and mouseInBounds will be set to false.
+	 * @property mouseX
+	 * @type Number
+	 * @final
+	 **&#x2F;
+	p.mouseX = null;
+
+	&#x2F;** READ-ONLY. The current mouse Y position on the canvas. If the mouse leaves the canvas, this will indicate the most recent
+	 * position over the canvas, and mouseInBounds will be set to false.
+	 * @property mouseY
+	 * @type Number
+	 * @final
+	 **&#x2F;
+	p.mouseY = null;
+
+	&#x2F;** The onMouseMove callback is called when the user moves the mouse over the canvas.  The handler is passed a single param
+	 * containing the corresponding MouseEvent instance.
+	 * @event onMouseMove
+	 * @param {MouseEvent} event A MouseEvent instance with information about the current mouse event.
+	 **&#x2F;
+	p.onMouseMove = null;
+
+	&#x2F;**
+	 * The onMouseUp callback is called when the user releases the mouse button anywhere that the page can detect it.  The handler
+	 * is passed a single param containing the corresponding MouseEvent instance.
+	 * @event onMouseUp
+	 * @param {MouseEvent} event A MouseEvent instance with information about the current mouse event.
+	 **&#x2F;
+	p.onMouseUp = null;
+
+	&#x2F;**
+	 * The onMouseDown callback is called when the user presses the mouse button over the canvas.  The handler is passed a single
+	 * param containing the corresponding MouseEvent instance.
+	 * @event onMouseDown
+	 * @param {MouseEvent} event A MouseEvent instance with information about the current mouse event.
+	 **&#x2F;
+	p.onMouseDown = null;
+
+	&#x2F;**
+	 * Indicates whether this stage should use the snapToPixel property of display objects when rendering them. See
+	 * DisplayObject.snapToPixel for more information.
+	 * @property snapToPixelEnabled
+	 * @type Boolean
+	 * @default false
+	 **&#x2F;
+	p.snapToPixelEnabled = false;
+
+	&#x2F;** Indicates whether the mouse is currently within the bounds of the canvas.
+	 * @property mouseInBounds
+	 * @type Boolean
+	 * @default false
+	 **&#x2F;
+	p.mouseInBounds = false;
+
+	&#x2F;** If false, tick callbacks will be called on all display objects on the stage prior to rendering to the canvas.
+	 * @property tickOnUpdate
+	 * @type Boolean
+	 * @default false
+	 **&#x2F;
+	p.tickOnUpdate = true;
+
+&#x2F;&#x2F; private properties:
+
+	&#x2F;**
+	 * @property _activeMouseEvent
+	 * @protected
+	 * @type MouseEvent
+	 **&#x2F;
+	p._activeMouseEvent = null;
+
+	&#x2F;**
+	 * @property _activeMouseTarget
+	 * @protected
+	 * @type DisplayObject
+	 **&#x2F;
+	p._activeMouseTarget = null;
+
+	&#x2F;**
+	 * @property _mouseOverIntervalID
+	 * @protected
+	 * @type Number
+	 **&#x2F;
+	p._mouseOverIntervalID = null;
+
+	&#x2F;**
+	 * @property _mouseOverX
+	 * @protected
+	 * @type Number
+	 **&#x2F;
+	p._mouseOverX = 0;
+
+	&#x2F;**
+	 * @property _mouseOverY
+	 * @protected
+	 * @type Number
+	 **&#x2F;
+	p._mouseOverY = 0;
+
+	&#x2F;**
+	 * @property _mouseOverTarget
+	 * @protected
+	 * @type DisplayObject
+	 **&#x2F;
+	p._mouseOverTarget = null;
+
+&#x2F;&#x2F; constructor:
+	&#x2F;**
+	 * @property DisplayObject_initialize
+	 * @type Function
+	 * @private
+	 **&#x2F;
+	p.Container_initialize = p.initialize;
+
+	&#x2F;**
+	 * Initialization method.
+	 * @method initialize
+	 * param {HTMLCanvasElement} canvas A canvas object, or the string id of a canvas object in the current document.
+	 * @protected
+	 **&#x2F;
+	p.initialize = function(canvas) {
+		this.Container_initialize();
+		this.canvas = (canvas instanceof HTMLCanvasElement) ? canvas : document.getElementById(canvas);
+		this._enableMouseEvents(true);
+	}
+
+&#x2F;&#x2F; public methods:
+
+	&#x2F;**
+	 * @event tick
+	 * Broadcast to children when the stage is updated.
+	 **&#x2F;
+
+	&#x2F;**
+	 * Each time the update method is called, the stage will tick any descendants exposing a tick method (ex. BitmapAnimation)
+	 * and render its entire display list to the canvas.
+	 * @method update
+	 **&#x2F;
+	p.update = function(data) {
+		if (!this.canvas) { return; }
+		if (this.autoClear) { this.clear(); }
+		Stage._snapToPixelEnabled = this.snapToPixelEnabled;
+		if (this.tickOnUpdate) {
+			this._tick(data);
+		}
+		this.draw(this.canvas.getContext(&quot;2d&quot;), false, this.getConcatenatedMatrix(this._matrix));
+	}
+
+	&#x2F;**
+	 * Calls the update method. Useful for adding stage as a listener to Ticker directly.
+	 * @property tick
+	 * @private
+	 * @type Function
+	 **&#x2F;
+	p.tick = p.update;
+
+	&#x2F;**
+	 * Clears the target canvas. Useful if autoClear is set to false.
+	 * @method clear
+	 **&#x2F;
+	p.clear = function() {
+		if (!this.canvas) { return; }
+		var ctx = this.canvas.getContext(&quot;2d&quot;);
+		ctx.setTransform(1, 0, 0, 1, 0, 0);
+		ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+	}
+
+	&#x2F;**
+	 * Returns a data url that contains a Base64 encoded image of the contents of the stage. The returned data url can be
+	 * specified as the src value of an image element.
+	 * @method toDataURL
+	 * @param {String} backgroundColor The background color to be used for the generated image. The value can be any value HTML color
+	 * value, including HEX colors, rgb and rgba. The default value is a transparent background.
+	 * @param {String} mimeType The MIME type of the image format to be create. The default is &quot;image&#x2F;png&quot;. If an unknown MIME type
+	 * is passed in, or if the browser does not support the specified MIME type, the default value will be used.
+	 * @return {String} a Base64 encoded image.
+	 **&#x2F;
+	p.toDataURL = function(backgroundColor, mimeType) {
+		if(!mimeType) {
+			mimeType = &quot;image&#x2F;png&quot;;
+		}
+
+		var ctx = this.canvas.getContext(&#x27;2d&#x27;);
+		var w = this.canvas.width;
+		var h = this.canvas.height;
+
+		var data;
+
+		if(backgroundColor) {
+
+			&#x2F;&#x2F;get the current ImageData for the canvas.
+			data = ctx.getImageData(0, 0, w, h);
+
+			&#x2F;&#x2F;store the current globalCompositeOperation
+			var compositeOperation = ctx.globalCompositeOperation;
+
+			&#x2F;&#x2F;set to draw behind current content
+			ctx.globalCompositeOperation = &quot;destination-over&quot;;
+
+			&#x2F;&#x2F;set background color
+			ctx.fillStyle = backgroundColor;
+
+			&#x2F;&#x2F;draw background on entire canvas
+			ctx.fillRect(0, 0, w, h);
+		}
+
+		&#x2F;&#x2F;get the image data from the canvas
+		var dataURL = this.canvas.toDataURL(mimeType);
+
+		if(backgroundColor) {
+			&#x2F;&#x2F;clear the canvas
+			ctx.clearRect (0, 0, w, h);
+
+			&#x2F;&#x2F;restore it with original settings
+			ctx.putImageData(data, 0, 0);
+
+			&#x2F;&#x2F;reset the globalCompositeOperation to what it was
+			ctx.globalCompositeOperation = compositeOperation;
+		}
+
+		return dataURL;
+	}
+
+	&#x2F;**
+	 * Enables or disables (by passing a frequency of 0) mouse over handlers (onMouseOver and onMouseOut) for this stage&#x27;s display
+	 * list. These events can be expensive to generate, so they are disabled by default, and the frequency of the events
+	 * can be controlled independently of mouse move events via the optional frequency parameter.
+	 * @method enableMouseOver
+	 * @param {Number} frequency Optional param specifying the maximum number of times per second to broadcast mouse over&#x2F;out events. Set to 0 to disable mouse
+	 * over events completely. Maximum is 50. A lower frequency is less responsive, but uses less CPU. Default is 20.
+	 **&#x2F;
+	p.enableMouseOver = function(frequency) {
+		if (this._mouseOverIntervalID) {
+			clearInterval(this._mouseOverIntervalID);
+			this._mouseOverIntervalID = null;
+		}
+		if (frequency == null) { frequency = 20; }
+		else if (frequency &lt;= 0) { return; }
+		var o = this;
+		this._mouseOverIntervalID = setInterval(function(){ o._testMouseOver(); }, 1000&#x2F;Math.min(50,frequency));
+		this._mouseOverX = NaN;
+		this._mouseOverTarget = null;
+	}
+
+	&#x2F;**
+	 * Returns a clone of this Stage.
+	 * @return {Stage} A clone of the current Container instance.
+	 **&#x2F;
+	p.clone = function() {
+		var o = new Stage(null);
+		this.cloneProps(o);
+		return o;
+	}
+
+	&#x2F;**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **&#x2F;
+	p.toString = function() {
+		return &quot;[Stage (name=&quot;+  this.name +&quot;)]&quot;;
+	}
+
+	&#x2F;&#x2F; private methods:
+
+	&#x2F;**
+	 * @method _enableMouseEvents
+	 * @protected
+	 * @param {Boolean} enabled
+	 **&#x2F;
+	p._enableMouseEvents = function() {
+		var o = this;
+		var evtTarget = window.addEventListener ? window : document;
+		evtTarget.addEventListener(&quot;mouseup&quot;, function(e) { o._handleMouseUp(e); }, false);
+		evtTarget.addEventListener(&quot;mousemove&quot;, function(e) { o._handleMouseMove(e); }, false);
+		evtTarget.addEventListener(&quot;dblclick&quot;, function(e) { o._handleDoubleClick(e); }, false);
+		&#x2F;&#x2F; this is to facilitate extending Stage:
+		if (this.canvas) { this.canvas.addEventListener(&quot;mousedown&quot;, function(e) { o._handleMouseDown(e); }, false); }
+	}
+
+	&#x2F;**
+	 * @method _handleMouseMove
+	 * @protected
+	 * @param {MouseEvent} e
+	 **&#x2F;
+	p._handleMouseMove = function(e) {
+
+		if (!this.canvas) {
+			this.mouseX = this.mouseY = null;
+			return;
+		}
+		if(!e){ e = window.event; }
+
+		var inBounds = this.mouseInBounds;
+		this._updateMousePosition(e.pageX, e.pageY);
+		if (!inBounds &amp;&amp; !this.mouseInBounds) { return; }
+
+		var evt = new MouseEvent(&quot;onMouseMove&quot;, this.mouseX, this.mouseY, this, e);
+
+		if (this.onMouseMove) { this.onMouseMove(evt); }
+		if (this._activeMouseEvent &amp;&amp; this._activeMouseEvent.onMouseMove) { this._activeMouseEvent.onMouseMove(evt); }
+	}
+
+	&#x2F;**
+	 * @method _updateMousePosition
+	 * @protected
+	 * @param {Number} pageX
+	 * @param {Number} pageY
+	 **&#x2F;
+	p._updateMousePosition = function(pageX, pageY) {
+
+		var o = this.canvas;
+		do {
+			pageX -= o.offsetLeft;
+			pageY -= o.offsetTop;
+		} while (o = o.offsetParent);
+
+		this.mouseInBounds = (pageX &gt;= 0 &amp;&amp; pageY &gt;= 0 &amp;&amp; pageX &lt; this.canvas.width &amp;&amp; pageY &lt; this.canvas.height);
+
+		if (this.mouseInBounds) {
+			this.mouseX = pageX;
+			this.mouseY = pageY;
+		}
+	}
+
+	&#x2F;**
+	 * @method _handleMouseUp
+	 * @protected
+	 * @param {MouseEvent} e
+	 **&#x2F;
+	p._handleMouseUp = function(e) {
+		var evt = new MouseEvent(&quot;onMouseUp&quot;, this.mouseX, this.mouseY, this, e);
+		if (this.onMouseUp) { this.onMouseUp(evt); }
+		if (this._activeMouseEvent &amp;&amp; this._activeMouseEvent.onMouseUp) { this._activeMouseEvent.onMouseUp(evt); }
+		if (this._activeMouseTarget &amp;&amp; this._activeMouseTarget.onClick &amp;&amp;
+				this._getObjectsUnderPoint(this.mouseX, this.mouseY, null, true, (this._mouseOverIntervalID ? 3 : 1)) == this._activeMouseTarget) {
+
+			this._activeMouseTarget.onClick(new MouseEvent(&quot;onClick&quot;, this.mouseX, this.mouseY, this._activeMouseTarget, e));
+		}
+		this._activeMouseEvent = this._activeMouseTarget = null;
+	}
+
+	&#x2F;**
+	 * @method _handleMouseDown
+	 * @protected
+	 * @param {MouseEvent} e
+	 **&#x2F;
+	p._handleMouseDown = function(e) {
+		if (this.onMouseDown) {
+			this.onMouseDown(new MouseEvent(&quot;onMouseDown&quot;, this.mouseX, this.mouseY, this, e));
+		}
+		var target = this._getObjectsUnderPoint(this.mouseX, this.mouseY, null, (this._mouseOverIntervalID ? 3 : 1));
+		if (target) {
+			if (target.onPress instanceof Function) {
+				var evt = new MouseEvent(&quot;onPress&quot;, this.mouseX, this.mouseY, target, e);
+				target.onPress(evt);
+				if (evt.onMouseMove || evt.onMouseUp) { this._activeMouseEvent = evt; }
+			}
+			this._activeMouseTarget = target;
+		}
+	}
+
+	&#x2F;**
+	 * @method _testMouseOver
+	 * @protected
+	 **&#x2F;
+	p._testMouseOver = function() {
+		if (this.mouseX == this._mouseOverX &amp;&amp; this.mouseY == this._mouseOverY &amp;&amp; this.mouseInBounds) { return; }
+		var target = null;
+		if (this.mouseInBounds) {
+			target = this._getObjectsUnderPoint(this.mouseX, this.mouseY, null, 3);
+			this._mouseOverX = this.mouseX;
+			this._mouseOverY = this.mouseY;
+		}
+
+		if (this._mouseOverTarget != target) {
+			if (this._mouseOverTarget &amp;&amp; this._mouseOverTarget.onMouseOut) {
+				this._mouseOverTarget.onMouseOut(new MouseEvent(&quot;onMouseOut&quot;, this.mouseX, this.mouseY, this._mouseOverTarget));
+			}
+			if (target &amp;&amp; target.onMouseOver) {
+				target.onMouseOver(new MouseEvent(&quot;onMouseOver&quot;, this.mouseX, this.mouseY, target));
+			}
+			this._mouseOverTarget = target;
+		}
+	}
+
+	&#x2F;**
+	 * @method _handleDoubleClick
+	 * @protected
+	 * @param {MouseEvent} e
+	 **&#x2F;
+	p._handleDoubleClick = function(e) {
+		if (this.onDoubleClick) {
+			this.onDoubleClick(new MouseEvent(&quot;onDoubleClick&quot;, this.mouseX, this.mouseY, this, e));
+		}
+		var target = this._getObjectsUnderPoint(this.mouseX, this.mouseY, null, (this._mouseOverIntervalID ? 3 : 1));
+		if (target) {
+			if (target.onDoubleClick instanceof Function) {
+				target.onDoubleClick(new MouseEvent(&quot;onPress&quot;, this.mouseX, this.mouseY, target, e));
+			}
+		}
+	}
+
+window.Stage = Stage;
+}(window));
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="..&#x2F;assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="..&#x2F;assets/js/yui-prettify.js"></script>
+<script src="..&#x2F;assets/../api.js"></script>
+<script src="..&#x2F;assets/js/api-filter.js"></script>
+<script src="..&#x2F;assets/js/api-list.js"></script>
+<script src="..&#x2F;assets/js/api-search.js"></script>
+<script src="..&#x2F;assets/js/apidocs.js"></script>
+</body>
+</html>

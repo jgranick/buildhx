@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>easeljs&#x2F;utils&#x2F;SpriteSheetBuilder.js</title>
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.0&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
+    <script src="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.0&#x2F;build&#x2F;yui&#x2F;yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="..&#x2F;assets/css/logo.png" title=""></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="..&#x2F;classes/Bitmap.html">Bitmap</a></li>
+            
+                <li><a href="..&#x2F;classes/BitmapAnimation.html">BitmapAnimation</a></li>
+            
+                <li><a href="..&#x2F;classes/BoxBlurFilter.html">BoxBlurFilter</a></li>
+            
+                <li><a href="..&#x2F;classes/ColorFilter.html">ColorFilter</a></li>
+            
+                <li><a href="..&#x2F;classes/ColorMatrix.html">ColorMatrix</a></li>
+            
+                <li><a href="..&#x2F;classes/ColorMatrixFilter.html">ColorMatrixFilter</a></li>
+            
+                <li><a href="..&#x2F;classes/Command.html">Command</a></li>
+            
+                <li><a href="..&#x2F;classes/Container.html">Container</a></li>
+            
+                <li><a href="..&#x2F;classes/DisplayObject.html">DisplayObject</a></li>
+            
+                <li><a href="..&#x2F;classes/DOMElement.html">DOMElement</a></li>
+            
+                <li><a href="..&#x2F;classes/FBBitmapAnimation.html">FBBitmapAnimation</a></li>
+            
+                <li><a href="..&#x2F;classes/Filter.html">Filter</a></li>
+            
+                <li><a href="..&#x2F;classes/Graphics.html">Graphics</a></li>
+            
+                <li><a href="..&#x2F;classes/Matrix2D.html">Matrix2D</a></li>
+            
+                <li><a href="..&#x2F;classes/MouseEvent.html">MouseEvent</a></li>
+            
+                <li><a href="..&#x2F;classes/MovieClip.html">MovieClip</a></li>
+            
+                <li><a href="..&#x2F;classes/MovieClipPlugin.html">MovieClipPlugin</a></li>
+            
+                <li><a href="..&#x2F;classes/Point.html">Point</a></li>
+            
+                <li><a href="..&#x2F;classes/Rectangle.html">Rectangle</a></li>
+            
+                <li><a href="..&#x2F;classes/Shadow.html">Shadow</a></li>
+            
+                <li><a href="..&#x2F;classes/Shape.html">Shape</a></li>
+            
+                <li><a href="..&#x2F;classes/SpriteSheet.html">SpriteSheet</a></li>
+            
+                <li><a href="..&#x2F;classes/SpriteSheetBuilder.html">SpriteSheetBuilder</a></li>
+            
+                <li><a href="..&#x2F;classes/SpriteSheetUtils.html">SpriteSheetUtils</a></li>
+            
+                <li><a href="..&#x2F;classes/Stage.html">Stage</a></li>
+            
+                <li><a href="..&#x2F;classes/Text.html">Text</a></li>
+            
+                <li><a href="..&#x2F;classes/Ticker.html">Ticker</a></li>
+            
+                <li><a href="..&#x2F;classes/Touch.html">Touch</a></li>
+            
+                <li><a href="..&#x2F;classes/UID.html">UID</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="..&#x2F;modules/EaselJS.html">EaselJS</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: easeljs&#x2F;utils&#x2F;SpriteSheetBuilder.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&#x2F;*
+* SpriteSheetBuilder
+* Visit http:&#x2F;&#x2F;createjs.com&#x2F; for documentation, updates and examples.
+*
+* Copyright (c) 2010 gskinner.com, inc.
+* 
+* Permission is hereby granted, free of charge, to any person
+* obtaining a copy of this software and associated documentation
+* files (the &quot;Software&quot;), to deal in the Software without
+* restriction, including without limitation the rights to use,
+* copy, modify, merge, publish, distribute, sublicense, and&#x2F;or sell
+* copies of the Software, and to permit persons to whom the
+* Software is furnished to do so, subject to the following
+* conditions:
+* 
+* The above copyright notice and this permission notice shall be
+* included in all copies or substantial portions of the Software.
+* 
+* THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+* OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+* NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+* WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+* FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+* OTHER DEALINGS IN THE SOFTWARE.
+*&#x2F;
+
+(function(window) {
+
+&#x2F;**
+ * The SpriteSheetBuilder allows you to generate sprite sheets at run time from any display object. This can allow
+ * you to maintain your assets as vector graphics (for low file size), and render them at run time as sprite sheets
+ * for better performance.
+ * &lt;br&#x2F;&gt;&lt;br&#x2F;&gt;
+ * Sprite sheets can be built either synchronously, or asynchronously, so that large sprite sheets can be generated
+ * without locking the UI.
+ * &lt;br&#x2F;&gt;&lt;br&#x2F;&gt;
+ * Note that the &quot;images&quot; used in the generated sprite sheet are actually canvas elements, and that they will be sized
+ * to the nearest power of 2 up to the value of maxWidth or maxHeight.
+ * @class SpriteSheetBuilder
+ * @constructor
+ **&#x2F;
+var SpriteSheetBuilder = function() {
+  this.initialize();
+}
+var p = SpriteSheetBuilder.prototype;
+
+&#x2F;&#x2F; constants:
+	SpriteSheetBuilder.ERR_DIMENSIONS = &quot;frame dimensions exceed max spritesheet dimensions&quot;;
+	SpriteSheetBuilder.ERR_RUNNING = &quot;a build is already running&quot;;
+
+&#x2F;&#x2F; public properties:
+
+	&#x2F;**
+	 * The maximum width for the images (not individual frames) in the generated sprite sheet. It is recommended to use
+	 * a power of 2 for this value (ex. 1024, 2048, 4096). If the frames cannot all fit within the max dimensions, then
+	 * additional images will be created as needed.
+	 * @property maxWidth
+	 * @type Number
+	 * @default 2048
+	*&#x2F;
+	p.maxWidth = 2048;
+
+	&#x2F;**
+	 * The maximum height for the images (not individual frames) in the generated sprite sheet. It is recommended to use
+	 * a power of 2 for this value (ex. 1024, 2048, 4096). If the frames cannot all fit within the max dimensions, then
+	 * additional images will be created as needed.
+	 * @property maxHeight
+	 * @type Number
+	 * @default 2048
+	 **&#x2F;
+	p.maxHeight = 2048;
+
+	&#x2F;**
+	 * The sprite sheet that was generated. This will be null before a build is completed successfully.
+	 * @property spriteSheet
+	 * @type SpriteSheet
+	 **&#x2F;
+	p.spriteSheet = null;
+
+&#x2F;&#x2F; private properties:
+
+	&#x2F;**
+	 * @property _frames
+	 * @protected
+	 * @type Array
+	 **&#x2F;
+	p._frames = null;
+	
+	&#x2F;**
+	 * @property _animations
+	 * @protected
+	 * @type Array
+	 **&#x2F;
+	p._animations = null;
+	
+	&#x2F;**
+	 * @property _data
+	 * @protected
+	 * @type Array
+	 **&#x2F;
+	p._data = null;
+	
+	&#x2F;**
+	 * @property _nextFrameIndex
+	 * @protected
+	 * @type Number
+	 **&#x2F;
+	p._nextFrameIndex = 0;
+	
+	&#x2F;**
+	 * @property _index
+	 * @protected
+	 * @type Number
+	 **&#x2F;
+	p._index = 0;
+	
+	&#x2F;**
+	 * @property _callback
+	 * @protected
+	 * @type Function
+	 **&#x2F;
+	p._callback = null;
+	
+	&#x2F;**
+	 * @property _timeSlice
+	 * @protected
+	 * @type Number
+	 **&#x2F;
+	p._timeSlice = null;
+	
+	&#x2F;**
+	 * @property _timerID
+	 * @protected
+	 * @type Number
+	 **&#x2F;
+	p._timerID = null;
+
+&#x2F;&#x2F; constructor:
+	&#x2F;**
+	 * Initialization method.
+	 * @method initialize
+	 * @protected
+	 **&#x2F;
+	p.initialize = function() {
+		this._frames = [];
+		this._animations = {};
+	}
+
+&#x2F;&#x2F; public methods:
+	
+	&#x2F;**
+	 * Adds a frame to the sprite sheet. Note that the frame will not be drawn until you call build. The optional
+	 * setup params allow you to have a function run immediately before the draw occurs. For example, this allows you to
+	 * add a single source multiple times, but manipulate it or it&#x27;s children to change it to generate different frames.
+	 * &lt;br&#x2F;&gt;&lt;br&#x2F;&gt;
+	 * Note that the source&#x27;s transformations (x,y,scale,rotate,alpha) will be ignored, except for regX&#x2F;Y. To apply
+	 * transforms to a source object and have them captured in the sprite sheet, simply place it into a Container
+	 * and pass in the Container as the source.
+	 * @method addFrame
+	 * @param {DisplayObject} source The source display object to draw as the frame.
+	 * @param {Rectangle} sourceRect Optional. A rectangle defining the portion of the source to draw to the frame. If
+	 * not specified, it will look for a getBounds method, bounds property, or nominalBounds property on the source to use.
+	 * If one is not found, the frame will be skipped.
+	 * @param {Function} setupFunction Optional. A function to call immediately before drawing this frame.
+	 * @param {Array} setupParams Optional. Parameters to pass to the setup function.
+	 * @param {Object} setupScope Optional. The scope to call the setupFunction in.
+	 * @return {Number} The index of the frame that was just added, or null if a sourceRect could not be determined.
+	 **&#x2F;
+	p.addFrame = function(source, sourceRect, setupFunction, setupParams, setupScope) {
+		if (this._data) { throw SpriteSheetBuilder.ERR_RUNNING; }
+		var rect = sourceRect||source.bounds||source.nominalBounds;
+		if (!rect&amp;&amp;source.getBounds) { rect = source.getBounds(); }
+		if (!rect) { return null; }
+		return this._frames.push({source:source, sourceRect:rect, funct:setupFunction, params:setupParams, scope:setupScope, index:this._frames.length, height:rect.height})-1;
+	}
+	
+	&#x2F;**
+	 * Adds an animation that will be included in the created sprite sheet.
+	 * @method addFrame
+	 * @param {String} name The name for the animation.
+	 * @param {Array} frames An array of frame indexes that comprise the animation. Ex. [3,6,5] would describe an animation
+	 * that played frame indexes 3, 6, and 5 in that order.
+	 * @param {String} next Optional. Specifies the name of the animation to continue to after this animation ends. You can
+	 * also pass false to have the animation stop when it ends. By default it will loop to the start of the same animation.
+	 * @param {Number} frequency Optional. Specifies a frame advance frequency for this animation. For example, a value
+	 * of 2 would cause the animation to advance every second tick.
+	 **&#x2F;
+	p.addAnimation = function(name, frames, next, frequency) {
+		if (this._data) { throw SpriteSheetBuilder.ERR_RUNNING; }
+		this._animations[name] = {frames:frames, next:next, frequency:frequency};
+	}
+	
+	&#x2F;**
+	 * This will take a MovieClip, and add its frames and labels to this builder. Labels will be added as an animation
+	 * running from the label index to the next label. For example, if there is a label named &quot;foo&quot; at frame 0 and a label
+	 * named &quot;bar&quot; at frame 10, in a MovieClip with 15 frames, it will add an animation named &quot;foo&quot; that runs from frame
+	 * index 0 to 9, and an animation named &quot;bar&quot; that runs from frame index 10 to 14.
+	 * &lt;br&#x2F;&gt;&lt;br&#x2F;&gt;
+	 * Note that this will iterate through the full MovieClip with actionsEnabled set to false, ending on the last frame.
+	 * @method addMovieClip
+	 * @param {MovieClip} source The source MovieClip to add to the sprite sheet.
+	 * @param {Rectangle} sourceRect Optional. A rectangle defining the portion of the source to draw to the frame. If
+	 * not specified, it will look for a getBounds method, frameBounds array, bounds property, or nominalBounds property
+	 * on the source to use. If one is not found, the MovieClip will be skipped.
+	 **&#x2F;
+	p.addMovieClip = function(source, sourceRect) {
+		if (this._data) { throw SpriteSheetBuilder.ERR_RUNNING; }
+		var rects = source.frameBounds;
+		var rect = sourceRect||source.bounds||source.nominalBounds;
+		if (!rect&amp;&amp;source.getBounds) { rect = source.getBounds(); }
+		if (!rect &amp;&amp; !rects) { return null; }
+		
+		var l = source.timeline.duration;
+		for (var i=0; i&lt;l; i++) {
+			var r = (rects&amp;&amp;rects[i]) ? rects[i] : rect;
+			this.addFrame(source, r, function(frame) {
+				var ae = this.actionsEnabled;
+				this.actionsEnabled = false;
+				this.gotoAndStop(frame);
+				this.actionsEnabled = ae;
+			}, [i], source);
+		}
+		var labels = source.timeline._labels;
+		for (var n in labels) {
+			this.addAnimation(n, labels[n], true); &#x2F;&#x2F; for now, this loops all animations.
+		}
+	}
+	
+	&#x2F;**
+	 * Builds a SpriteSheet instance based on the current frames.
+	 * @method build
+	 * @return SpriteSheet The created SpriteSheet instance, or null if a build is already running or an error occurred.
+	 **&#x2F;
+	p.build = function() {
+		if (this._data) { throw SpriteSheetBuilder.ERR_RUNNING; }
+		this._callback = null;
+		this._startBuild();
+		while (this._drawNext()) {}
+		this._endBuild();
+		return this.spriteSheet;
+	}
+	
+	&#x2F;**
+	 * Asynchronously builds a SpriteSheet instance based on the current frames. It will run 20 times per second, using
+	 * an amount of time defined by timeSlice. When it is complete it will call the specified callback.
+	 * @method buildAsync
+	 * @param {Function} callback Optional. The function to call when the build operation completes. It will be called
+	 * with a single parameter providing a reference back to the builder.
+	 * @param {Number} timeSlice Optional. A number from 0.01 to 1 that indicates what percentage of time the builder can use. This can be
+	 * thought of as the number of seconds per second the builder will use. For example, with a timeSlice value of 0.3,
+	 * the builder will run 20 times per second, using approximately 15ms per build (30% of available time, or 0.3s per second).
+	 * Defaults to 0.3.
+	 **&#x2F;
+	p.buildAsync = function(callback, timeSlice) {
+		if (this._data) { throw SpriteSheetBuilder.ERR_RUNNING; }
+		this._callback = callback;
+		this._startBuild();
+		this._timeSlice = Math.max(0.01, Math.min(0.99, timeSlice||0.3))*50;
+		var _this = this;
+		this._timerID = setTimeout(function() { _this._run(); }, 50-this._timeSlice);
+	}
+	
+	&#x2F;**
+	 * Stops the current asynchronous build.
+	 * @method stopAsync
+	 **&#x2F;
+	p.stopAsync = function() {
+		clearTimeout(this._timerID);
+		this._data = null;
+	}
+	
+	&#x2F;**
+	 * SpriteSheetBuilder instances cannot be cloned.
+	 * @method clone
+	 **&#x2F;
+	p.clone = function() {
+		throw(&quot;SpriteSheet cannot be cloned.&quot;);
+	}
+
+	&#x2F;**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **&#x2F;
+	p.toString = function() {
+		return &quot;[SpriteSheetBuilder]&quot;;
+	}
+
+&#x2F;&#x2F; private methods:
+	&#x2F;**
+	 * @method _startBuild
+	 * @protected
+	 **&#x2F;
+	p._startBuild = function() {
+		this.spriteSheet = null;
+		this._index = 0;
+		var dataFrames = [];
+		this._data = {
+			images: [],
+			frames: dataFrames,
+			animations: this._animations &#x2F;&#x2F; TODO: should we &quot;clone&quot; _animations in case someone adds more animations after a build?
+		};
+		
+		var frames = this._frames.slice();
+		frames.sort(function(a,b) { return (a.height&lt;=b.height) ? -1 : 1; });
+		
+		if (frames[frames.length-1].sourceRect.height &gt; this.maxHeight) { throw SpriteSheetBuilder.ERR_DIMENSIONS; }
+		var y = 1, x=1;
+		var img = 0;
+		while (frames.length) {
+			var o = this._fillRow(frames, y, img, dataFrames);
+			if (o.w &gt; x) { x = o.w; }
+			y += o.h+2;
+			if (!o.h || !frames.length) {
+				var canvas = document.createElement(&quot;canvas&quot;);
+				canvas.width = this._getSize(x,this.maxWidth);
+				canvas.height = this._getSize(y,this.maxHeight);
+				this._data.images[img] = canvas;
+				if (!o.h) {
+					x=y=1;
+					img++;
+				}
+			}
+		}
+	}
+	
+	&#x2F;**
+	 * @method _fillRow
+	 * @protected
+	 * @return {Number} The width &amp; height of the row.
+	 **&#x2F;
+	p._getSize = function(size,max) {
+		var pow = 4;
+		while (Math.pow(2,++pow) &lt; size){}
+		return Math.min(max,Math.pow(2,pow));
+	}
+	
+	&#x2F;**
+	 * @method _fillRow
+	 * @protected
+	 * @return {Number} The width &amp; height of the row.
+	 **&#x2F;
+	p._fillRow = function(frames, y, img, dataFrames) {
+		&#x2F;&#x2F; TODO: round pixel values?
+		var w = this.maxWidth;
+		var maxH = this.maxHeight;
+		var h = maxH-y;
+		var x = 1;
+		var height = 0;
+		for (var i=frames.length-1; i&gt;=0; i--) {
+			var frame = frames[i];
+			var rect = frame.sourceRect;
+			var source = frame.source;
+			var rx = Math.floor(rect.x-1);
+			var ry = Math.floor(rect.y-1);
+			var rh = Math.ceil(rect.height);
+			var rw = Math.ceil(rect.width);
+			if (rw &gt; w) { throw SpriteSheetBuilder.ERR_DIMENSIONS; }
+			if (rh &gt; h || x+rw &gt; w) { continue; }
+			frame.img = img;
+			frame.rect = new Rectangle(x,y,rw,rh);
+			height = height || rh;
+			frames.splice(i,1);
+			dataFrames[frame.index] = [x-1,y-1,rw+2,rh+2,img,Math.round(-rx+source.regX),Math.round(-ry+source.regY+0.5)]; &#x2F;&#x2F; TODO: regX &#x2F; regY?
+			x += rw+2;
+		}
+		return {w:x, h:height};
+	}
+	
+	&#x2F;**
+	 * @method _endBuild
+	 * @protected
+	 **&#x2F;
+	p._endBuild = function() {
+		this.spriteSheet = new SpriteSheet(this._data);
+		this._data = null;
+		if (this._callback) { this._callback(this); }
+	}
+	
+	&#x2F;**
+	 * @method _run
+	 * @protected
+	 **&#x2F;
+	p._run = function() {
+		var t = (new Date()).getTime()+this._timeSlice;
+		var complete = false;
+		while (t &gt; (new Date()).getTime()) {
+			if (!this._drawNext()) { complete = true; break; }
+		}
+		if (complete) {
+			this._endBuild();
+		} else {
+			var _this = this;
+			this._timerID = setTimeout(function() { _this._run(); }, 50-this._timeSlice);
+		}
+	}
+	
+	&#x2F;**
+	 * @method _drawNext
+	 * @protected
+	 * @return Boolean Returns false if this is the last draw.
+	 **&#x2F;
+	p._drawNext = function() {
+		var frame = this._frames[this._index];
+		var rect = frame.rect;
+		var sourceRect = frame.sourceRect;
+		var canvas = this._data.images[frame.img];
+		var ctx = canvas.getContext(&quot;2d&quot;);
+		frame.funct&amp;&amp;frame.funct.apply(frame.scope, frame.params);
+		ctx.save();
+		ctx.beginPath();
+		ctx.rect(rect.x-1, rect.y-1, rect.width+2, rect.height+2);
+		ctx.clip();
+		ctx.translate(rect.x-sourceRect.x+0.5|0, rect.y-sourceRect.y+0.5|0); &#x2F;&#x2F; we know these are positive
+		frame.source.draw(ctx); &#x2F;&#x2F; display object will draw itself.
+		ctx.restore();
+		return (++this._index) &lt; this._frames.length;
+	}
+
+window.SpriteSheetBuilder = SpriteSheetBuilder;
+}(window));
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="..&#x2F;assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="..&#x2F;assets/js/yui-prettify.js"></script>
+<script src="..&#x2F;assets/../api.js"></script>
+<script src="..&#x2F;assets/js/api-filter.js"></script>
+<script src="..&#x2F;assets/js/api-list.js"></script>
+<script src="..&#x2F;assets/js/api-search.js"></script>
+<script src="..&#x2F;assets/js/apidocs.js"></script>
+</body>
+</html>

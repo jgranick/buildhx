@@ -1,0 +1,595 @@
+{
+  "parentMixins": [
+
+  ],
+  "subclasses": [
+
+  ],
+  "doc": "<p>An example class showcasing the features of JSDuck.</p>\n\n<p><strong>Markdown</strong> is supported thoughout the <a href=\"http://docs.sencha.com/ext-js/4.0/\">docs</a>.</p>\n\n<p>Link to external class and\nits method.\nLink to <a href=\"#!/api/Ext.master.Switch-method-setSize\" rel=\"Ext.master.Switch-method-setSize\" class=\"docClass\">method of this class</a>.</p>\n\n<p><p><img src=\"images/some/path.png\" alt=\"Alt text\"></p></p>\n\n<p>An embedded live example:</p>\n\n<pre class='inline-example '><code>Ext.create('<a href=\"#!/api/Ext.master.Switch\" rel=\"Ext.master.Switch\" class=\"docClass\">Ext.master.Switch</a>', {\n    text: 'Click me, please!',\n    handler: function() {\n        alert('You clicked me!')\n    }\n});\n</code></pre>\n\n<p><strong>Note:</strong> this is not a fully working example. When you run it\nthrough JSDuck you will get warnings about a lot of missing classes\nthat this example class references, additionally it doesn't make\nsense for singleton class to have static methods.</p>\n",
+  "extends": "Ext.button.Button",
+  "alternateClassNames": [
+    "Ext.MasterSwitch"
+  ],
+  "tagname": "class",
+  "singleton": true,
+  "statics": {
+    "cfg": [
+
+    ],
+    "method": [
+
+    ],
+    "property": [
+
+    ],
+    "css_var": [
+
+    ],
+    "event": [
+
+    ],
+    "css_mixin": [
+
+    ]
+  },
+  "html_meta": {
+  },
+  "mixins": [
+    "Ext.util.Observable",
+    "Ext.util.Floating"
+  ],
+  "code_type": "ext_define",
+  "inheritable": false,
+  "requires": [
+
+  ],
+  "members": {
+    "cfg": [
+      {
+        "evented": false,
+        "doc": "<p>A config option with type, name, and default value\nauto-detected.  Additionally docs for getIcon and setIcon\naccessor methods are generated.</p>\n",
+        "type": "String",
+        "shortDoc": "A config option with type, name, and default value\nauto-detected. ...",
+        "default": "\"some/file.png\"",
+        "owner": "Ext.master.Switch",
+        "tagname": "cfg",
+        "html_type": "String",
+        "inheritable": false,
+        "html_meta": {
+        },
+        "files": [
+          {
+            "linenr": 47,
+            "filename": "/Users/fintan/Sites/haxe/easeljsexterns/testdoc/example2.js"
+          }
+        ],
+        "meta": {
+        },
+        "properties": null,
+        "name": "icon",
+        "id": "cfg-icon",
+        "inheritdoc": null,
+        "accessor": true
+      },
+      {
+        "evented": false,
+        "doc": "<p>A very importand config option that must be specified.</p>\n",
+        "type": "String",
+        "default": null,
+        "owner": "Ext.master.Switch",
+        "tagname": "cfg",
+        "html_type": "String",
+        "inheritable": false,
+        "html_meta": {
+          "required": null
+        },
+        "files": [
+          {
+            "linenr": 57,
+            "filename": "/Users/fintan/Sites/haxe/easeljsexterns/testdoc/example2.js"
+          }
+        ],
+        "meta": {
+          "required": true
+        },
+        "properties": null,
+        "name": "name",
+        "id": "cfg-name",
+        "inheritdoc": null,
+        "accessor": false
+      },
+      {
+        "evented": false,
+        "doc": "<p>A config option with explicit type, name, and default value.</p>\n",
+        "type": "String",
+        "shortDoc": "A config option with explicit type, name, and default value. ...",
+        "default": "\"Click Me!\"",
+        "owner": "Ext.master.Switch",
+        "tagname": "cfg",
+        "html_type": "String",
+        "inheritable": false,
+        "html_meta": {
+        },
+        "files": [
+          {
+            "linenr": 41,
+            "filename": "/Users/fintan/Sites/haxe/easeljsexterns/testdoc/example2.js"
+          }
+        ],
+        "meta": {
+        },
+        "properties": null,
+        "name": "text",
+        "id": "cfg-text",
+        "inheritdoc": null,
+        "accessor": false
+      }
+    ],
+    "property": [
+      {
+        "doc": "<p>A property with auto-detected type and name.</p>\n",
+        "type": "Boolean",
+        "shortDoc": "A property with auto-detected type and name. ...",
+        "default": "false",
+        "owner": "Ext.master.Switch",
+        "tagname": "property",
+        "html_type": "Boolean",
+        "inheritable": false,
+        "html_meta": {
+        },
+        "files": [
+          {
+            "linenr": 70,
+            "filename": "/Users/fintan/Sites/haxe/easeljsexterns/testdoc/example2.js"
+          }
+        ],
+        "meta": {
+        },
+        "properties": [
+
+        ],
+        "name": "disabled",
+        "id": "property-disabled",
+        "inheritdoc": null
+      },
+      {
+        "doc": "<p>A property with explicit type name and name.\nIt's an object containing the following fields:</p>\n",
+        "type": "Object",
+        "shortDoc": "A property with explicit type name and name. ...",
+        "default": null,
+        "owner": "Ext.master.Switch",
+        "tagname": "property",
+        "html_type": "Object",
+        "inheritable": false,
+        "html_meta": {
+        },
+        "files": [
+          {
+            "linenr": 62,
+            "filename": "/Users/fintan/Sites/haxe/easeljsexterns/testdoc/example2.js"
+          }
+        ],
+        "meta": {
+        },
+        "properties": [
+          {
+            "type": "Number",
+            "doc": "<p>The width.</p>\n",
+            "tagname": "property",
+            "html_type": "Number",
+            "name": "width"
+          },
+          {
+            "type": "Number",
+            "doc": "<p>The height.</p>\n",
+            "tagname": "property",
+            "html_type": "Number",
+            "name": "height"
+          }
+        ],
+        "name": "size",
+        "id": "property-size",
+        "inheritdoc": null
+      }
+    ],
+    "method": [
+      {
+        "doc": "<p>Constructor documentation.</p>\n",
+        "shortDoc": "Constructor documentation. ...",
+        "owner": "Ext.master.Switch",
+        "tagname": "method",
+        "inheritable": false,
+        "html_meta": {
+        },
+        "files": [
+          {
+            "linenr": 75,
+            "filename": "/Users/fintan/Sites/haxe/easeljsexterns/testdoc/example2.js"
+          }
+        ],
+        "meta": {
+        },
+        "name": "constructor",
+        "id": "method-constructor",
+        "inheritdoc": null,
+        "return": {
+          "doc": "\n",
+          "type": "Object",
+          "html_type": "Object",
+          "properties": [
+
+          ],
+          "name": "return"
+        },
+        "params": [
+          {
+            "doc": "<p>An optional config object</p>\n",
+            "type": "Object",
+            "default": null,
+            "optional": true,
+            "html_type": "Object",
+            "properties": [
+
+            ],
+            "name": "cfg"
+          }
+        ]
+      },
+      {
+        "doc": "<p>Achieves something.</p>\n",
+        "shortDoc": "Achieves something. ...",
+        "owner": "Ext.master.Switch",
+        "tagname": "method",
+        "inheritable": true,
+        "html_meta": {
+          "static": null
+        },
+        "files": [
+          {
+            "linenr": 131,
+            "filename": "/Users/fintan/Sites/haxe/easeljsexterns/testdoc/example2.js"
+          }
+        ],
+        "meta": {
+          "static": true
+        },
+        "name": "doSomething",
+        "id": "static-method-doSomething",
+        "inheritdoc": null,
+        "return": {
+          "doc": "\n",
+          "type": "undefined",
+          "html_type": "undefined",
+          "properties": [
+
+          ],
+          "name": "return"
+        },
+        "params": [
+
+        ]
+      },
+      {
+        "doc": "<p>Filters out subcomponents.</p>\n",
+        "shortDoc": "Filters out subcomponents. ...",
+        "owner": "Ext.master.Switch",
+        "tagname": "method",
+        "inheritable": false,
+        "html_meta": {
+          "static": null
+        },
+        "files": [
+          {
+            "linenr": 114,
+            "filename": "/Users/fintan/Sites/haxe/easeljsexterns/testdoc/example2.js"
+          }
+        ],
+        "meta": {
+          "static": true
+        },
+        "name": "filter",
+        "id": "static-method-filter",
+        "inheritdoc": null,
+        "return": {
+          "doc": "<p>Array of components.</p>\n",
+          "type": "Ext.Component[]",
+          "html_type": "Ext.Component[]",
+          "properties": null,
+          "name": "return"
+        },
+        "params": [
+          {
+            "doc": "<p>Callback function.</p>\n",
+            "type": "Function",
+            "default": null,
+            "optional": false,
+            "html_type": "Function",
+            "properties": [
+              {
+                "type": "Ext.Component",
+                "doc": "<p>The component parameter.</p>\n",
+                "tagname": "param",
+                "html_type": "Ext.Component",
+                "name": "cmp"
+              },
+              {
+                "type": "Number",
+                "doc": "<p>Component index parameter.</p>\n",
+                "tagname": "param",
+                "html_type": "Number",
+                "name": "index"
+              },
+              {
+                "type": "Boolean",
+                "doc": "<p>The return value of callback\nmust be true to include the component, false to exclude.</p>\n",
+                "tagname": "param",
+                "html_type": "Boolean",
+                "name": "return"
+              }
+            ],
+            "name": "fn"
+          },
+          {
+            "doc": "<p>Scope for the callback.</p>\n",
+            "type": "Object",
+            "default": null,
+            "optional": false,
+            "html_type": "Object",
+            "properties": [
+
+            ],
+            "name": "scope"
+          }
+        ]
+      },
+      {
+        "doc": "<p>Returns the value of <a href=\"#!/api/Ext.master.Switch-cfg-icon\" rel=\"Ext.master.Switch-cfg-icon\" class=\"docClass\">icon</a>.</p>\n",
+        "shortDoc": "Returns the value of icon. ...",
+        "owner": "Ext.master.Switch",
+        "tagname": "method",
+        "html_meta": {
+        },
+        "meta": {
+        },
+        "private": null,
+        "files": [
+          {
+            "linenr": 47,
+            "filename": "/Users/fintan/Sites/haxe/easeljsexterns/testdoc/example2.js"
+          }
+        ],
+        "name": "getIcon",
+        "id": "method-getIcon",
+        "params": [
+
+        ],
+        "return": {
+          "type": "String",
+          "doc": "\n",
+          "html_type": "String"
+        }
+      },
+      {
+        "doc": "<p>Returns the size of component.</p>\n",
+        "shortDoc": "Returns the size of component. ...",
+        "owner": "Ext.master.Switch",
+        "tagname": "method",
+        "inheritable": false,
+        "html_meta": {
+        },
+        "files": [
+          {
+            "linenr": 102,
+            "filename": "/Users/fintan/Sites/haxe/easeljsexterns/testdoc/example2.js"
+          }
+        ],
+        "meta": {
+        },
+        "name": "getSize",
+        "id": "method-getSize",
+        "inheritdoc": null,
+        "return": {
+          "doc": "<p>Object with properties:</p>\n",
+          "type": "Object",
+          "html_type": "Object",
+          "properties": [
+            {
+              "type": "Number",
+              "doc": "<p>The width.</p>\n",
+              "tagname": "return",
+              "html_type": "Number",
+              "name": "width"
+            },
+            {
+              "type": "Number",
+              "doc": "<p>The height.</p>\n",
+              "tagname": "return",
+              "html_type": "Number",
+              "name": "height"
+            }
+          ],
+          "name": "return"
+        },
+        "params": [
+
+        ]
+      },
+      {
+        "doc": "<p>Sets the value of <a href=\"#!/api/Ext.master.Switch-cfg-icon\" rel=\"Ext.master.Switch-cfg-icon\" class=\"docClass\">icon</a>.</p>\n",
+        "shortDoc": "Sets the value of icon. ...",
+        "owner": "Ext.master.Switch",
+        "tagname": "method",
+        "html_meta": {
+        },
+        "meta": {
+        },
+        "private": null,
+        "files": [
+          {
+            "linenr": 47,
+            "filename": "/Users/fintan/Sites/haxe/easeljsexterns/testdoc/example2.js"
+          }
+        ],
+        "name": "setIcon",
+        "id": "method-setIcon",
+        "params": [
+          {
+            "type": "String",
+            "doc": "\n",
+            "html_type": "String",
+            "name": "icon"
+          }
+        ],
+        "return": {
+          "type": "undefined",
+          "doc": "\n",
+          "html_type": "undefined"
+        }
+      },
+      {
+        "doc": "<p>Sets the size.</p>\n",
+        "shortDoc": "Sets the size. ...",
+        "owner": "Ext.master.Switch",
+        "tagname": "method",
+        "inheritable": false,
+        "html_meta": {
+        },
+        "files": [
+          {
+            "linenr": 92,
+            "filename": "/Users/fintan/Sites/haxe/easeljsexterns/testdoc/example2.js"
+          }
+        ],
+        "meta": {
+        },
+        "name": "setSize",
+        "id": "method-setSize",
+        "inheritdoc": null,
+        "return": {
+          "doc": "\n",
+          "type": "undefined",
+          "html_type": "undefined",
+          "properties": [
+
+          ],
+          "name": "return"
+        },
+        "params": [
+          {
+            "doc": "<p>An object describing width and height:</p>\n",
+            "type": "Object",
+            "default": null,
+            "optional": false,
+            "html_type": "Object",
+            "properties": [
+              {
+                "type": "Number",
+                "doc": "<p>The width.</p>\n",
+                "default": "0",
+                "optional": true,
+                "tagname": "param",
+                "html_type": "Number",
+                "name": "width"
+              },
+              {
+                "type": "Number",
+                "doc": "<p>The height.</p>\n",
+                "default": "0",
+                "optional": true,
+                "tagname": "param",
+                "html_type": "Number",
+                "name": "height"
+              }
+            ],
+            "name": "size"
+          }
+        ]
+      }
+    ],
+    "event": [
+      {
+        "doc": "<p>Fired when button clicked.</p>\n",
+        "shortDoc": "Fired when button clicked. ...",
+        "owner": "Ext.master.Switch",
+        "tagname": "event",
+        "inheritable": false,
+        "html_meta": {
+        },
+        "files": [
+          {
+            "linenr": 82,
+            "filename": "/Users/fintan/Sites/haxe/easeljsexterns/testdoc/example2.js"
+          }
+        ],
+        "meta": {
+        },
+        "name": "click",
+        "id": "event-click",
+        "inheritdoc": null,
+        "params": [
+          {
+            "doc": "\n",
+            "type": "Ext.master.Switch",
+            "default": null,
+            "optional": false,
+            "html_type": "Ext.master.Switch",
+            "properties": [
+
+            ],
+            "name": "this"
+          },
+          {
+            "doc": "<p>The number of times clicked.</p>\n",
+            "type": "Number",
+            "default": null,
+            "optional": false,
+            "html_type": "Number",
+            "properties": [
+
+            ],
+            "name": "times"
+          },
+          {
+            "type": "Object",
+            "doc": "<p>The options object passed to Ext.util.Observable.addListener.</p>\n",
+            "tagname": "param",
+            "html_type": "Object",
+            "name": "eOpts"
+          }
+        ]
+      }
+    ],
+    "css_var": [
+
+    ],
+    "css_mixin": [
+
+    ]
+  },
+  "component": false,
+  "meta": {
+  },
+  "files": [
+    {
+      "linenr": 1,
+      "filename": "/Users/fintan/Sites/haxe/easeljsexterns/testdoc/example2.js"
+    }
+  ],
+  "name": "Ext.master.Switch",
+  "mixedInto": [
+
+  ],
+  "aliases": {
+    "widget": [
+      "masterswitch"
+    ]
+  },
+  "inheritdoc": null,
+  "id": "class-Ext.master.Switch",
+  "superclasses": [
+    "Ext.button.Button"
+  ],
+  "uses": [
+
+  ]
+}

@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>easeljs&#x2F;display&#x2F;DisplayObject.js</title>
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.0&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
+    <script src="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.0&#x2F;build&#x2F;yui&#x2F;yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="..&#x2F;assets/css/logo.png" title=""></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="..&#x2F;classes/Bitmap.html">Bitmap</a></li>
+            
+                <li><a href="..&#x2F;classes/BitmapAnimation.html">BitmapAnimation</a></li>
+            
+                <li><a href="..&#x2F;classes/BoxBlurFilter.html">BoxBlurFilter</a></li>
+            
+                <li><a href="..&#x2F;classes/ColorFilter.html">ColorFilter</a></li>
+            
+                <li><a href="..&#x2F;classes/ColorMatrix.html">ColorMatrix</a></li>
+            
+                <li><a href="..&#x2F;classes/ColorMatrixFilter.html">ColorMatrixFilter</a></li>
+            
+                <li><a href="..&#x2F;classes/Command.html">Command</a></li>
+            
+                <li><a href="..&#x2F;classes/Container.html">Container</a></li>
+            
+                <li><a href="..&#x2F;classes/DisplayObject.html">DisplayObject</a></li>
+            
+                <li><a href="..&#x2F;classes/DOMElement.html">DOMElement</a></li>
+            
+                <li><a href="..&#x2F;classes/FBBitmapAnimation.html">FBBitmapAnimation</a></li>
+            
+                <li><a href="..&#x2F;classes/Filter.html">Filter</a></li>
+            
+                <li><a href="..&#x2F;classes/Graphics.html">Graphics</a></li>
+            
+                <li><a href="..&#x2F;classes/Matrix2D.html">Matrix2D</a></li>
+            
+                <li><a href="..&#x2F;classes/MouseEvent.html">MouseEvent</a></li>
+            
+                <li><a href="..&#x2F;classes/MovieClip.html">MovieClip</a></li>
+            
+                <li><a href="..&#x2F;classes/MovieClipPlugin.html">MovieClipPlugin</a></li>
+            
+                <li><a href="..&#x2F;classes/Point.html">Point</a></li>
+            
+                <li><a href="..&#x2F;classes/Rectangle.html">Rectangle</a></li>
+            
+                <li><a href="..&#x2F;classes/Shadow.html">Shadow</a></li>
+            
+                <li><a href="..&#x2F;classes/Shape.html">Shape</a></li>
+            
+                <li><a href="..&#x2F;classes/SpriteSheet.html">SpriteSheet</a></li>
+            
+                <li><a href="..&#x2F;classes/SpriteSheetBuilder.html">SpriteSheetBuilder</a></li>
+            
+                <li><a href="..&#x2F;classes/SpriteSheetUtils.html">SpriteSheetUtils</a></li>
+            
+                <li><a href="..&#x2F;classes/Stage.html">Stage</a></li>
+            
+                <li><a href="..&#x2F;classes/Text.html">Text</a></li>
+            
+                <li><a href="..&#x2F;classes/Ticker.html">Ticker</a></li>
+            
+                <li><a href="..&#x2F;classes/Touch.html">Touch</a></li>
+            
+                <li><a href="..&#x2F;classes/UID.html">UID</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="..&#x2F;modules/EaselJS.html">EaselJS</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: easeljs&#x2F;display&#x2F;DisplayObject.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&#x2F;*
+* DisplayObject
+* Visit http:&#x2F;&#x2F;createjs.com&#x2F; for documentation, updates and examples.
+*
+* Copyright (c) 2010 gskinner.com, inc.
+* 
+* Permission is hereby granted, free of charge, to any person
+* obtaining a copy of this software and associated documentation
+* files (the &quot;Software&quot;), to deal in the Software without
+* restriction, including without limitation the rights to use,
+* copy, modify, merge, publish, distribute, sublicense, and&#x2F;or sell
+* copies of the Software, and to permit persons to whom the
+* Software is furnished to do so, subject to the following
+* conditions:
+* 
+* The above copyright notice and this permission notice shall be
+* included in all copies or substantial portions of the Software.
+* 
+* THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+* OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+* NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+* WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+* FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+* OTHER DEALINGS IN THE SOFTWARE.
+*&#x2F;
+
+&#x2F;**
+* The EaselJS Javascript library provides a retained graphics mode for canvas
+* including a full, hierarchical display list, a core interaction model, and
+* helper classes to make working with 2D graphics in Canvas much easier.
+* @module EaselJS
+**&#x2F;
+
+(function(window) {
+
+&#x2F;**
+* DisplayObject is an abstract class that should not be constructed directly. Instead construct subclasses such as
+* Sprite, Bitmap, and Shape. DisplayObject is the base class for all display classes in the CanvasDisplay library.
+* It defines the core properties and methods that are shared between all display objects.
+* @class DisplayObject
+* @constructor
+**&#x2F;
+var DisplayObject = function() {
+  this.initialize();
+}
+var p = DisplayObject.prototype;
+
+	&#x2F;**
+	 * Suppresses errors generated when using features like hitTest, onPress&#x2F;onClick, and getObjectsUnderPoint with cross
+	 * domain content
+	 * @property suppressCrossDomainErrors
+	 * @static
+	 * @type Boolean
+	 * @default false
+	 **&#x2F;
+	DisplayObject.suppressCrossDomainErrors = false;
+
+	&#x2F;**
+	 * @property _hitTestCanvas
+	 * @type HTMLCanvasElement
+	 * @static
+	 * @protected
+	 **&#x2F;
+	DisplayObject._hitTestCanvas = document.createElement(&quot;canvas&quot;);
+	DisplayObject._hitTestCanvas.width = DisplayObject._hitTestCanvas.height = 1;
+
+	&#x2F;**
+	 * @property _hitTestContext
+	 * @type CanvasRenderingContext2D
+	 * @static
+	 * @protected
+	 **&#x2F;
+	DisplayObject._hitTestContext = DisplayObject._hitTestCanvas.getContext(&quot;2d&quot;);
+
+	&#x2F;**
+	 * @property _nextCacheID
+	 * @type Number
+	 * @static
+	 * @protected
+	 **&#x2F;
+	DisplayObject._nextCacheID = 1;
+
+	&#x2F;**
+	 * The alpha (transparency) for this display object. 0 is fully transparent, 1 is fully opaque.
+	 * @property alpha
+	 * @type Number
+	 * @default 1
+	 **&#x2F;
+	p.alpha = 1;
+
+	&#x2F;**
+	 * If a cache is active, this returns the canvas that holds the cached version of this display object. See cache()
+	 * for more information. READ-ONLY.
+	 * @property cacheCanvas
+	 * @type HTMLCanvasElement
+	 * @default null
+	 **&#x2F;
+	p.cacheCanvas = null;
+
+	&#x2F;**
+	 * Unique ID for this display object. Makes display objects easier for some uses.
+	 * @property id
+	 * @type Number
+	 * @default -1
+	 **&#x2F;
+	p.id = -1;
+
+	&#x2F;**
+	 * Indicates whether to include this object when running Stage.getObjectsUnderPoint(). Setting this to true for
+	 * Sprites will cause the Sprite to be returned (not its children) regardless of whether it&#x27;s mouseChildren property
+	 * is true.
+	 * @property mouseEnabled
+	 * @type Boolean
+	 * @default true
+	 **&#x2F;
+	p.mouseEnabled = true;
+
+	&#x2F;**
+	 * An optional name for this display object. Included in toString(). Useful for debugging.
+	 * @property name
+	 * @type String
+	 * @default null
+	 **&#x2F;
+	p.name = null;
+
+	&#x2F;**
+	 * A reference to the Sprite or Stage object that contains this display object, or null if it has not been added to
+	 * one. READ-ONLY.
+	 * @property parent
+	 * @final
+	 * @type DisplayObject
+	 * @default null
+	 **&#x2F;
+	p.parent = null;
+
+	&#x2F;**
+	 * The x offset for this display object&#x27;s registration point. For example, to make a 100x100px Bitmap rotate around
+	 * it&#x27;s center, you would set regX and regY to 50.
+	 * @property regX
+	 * @type Number
+	 * @default 0
+	 **&#x2F;
+	p.regX = 0;
+
+	&#x2F;**
+	 * The y offset for this display object&#x27;s registration point. For example, to make a 100x100px Bitmap rotate around
+	 * it&#x27;s center, you would set regX and regY to 50.
+	 * @property regY
+	 * @type Number
+	 * @default 0
+	 **&#x2F;
+	p.regY = 0;
+
+	&#x2F;**
+	 * The rotation in degrees for this display object.
+	 * @property rotation
+	 * @type Number
+	 * @default 0
+	 **&#x2F;
+	p.rotation = 0;
+
+	&#x2F;**
+	 * The factor to stretch this display object horizontally. For example, setting scaleX to 2 will stretch the display
+	 * object to twice it&#x27;s nominal width.
+	 * @property scaleX
+	 * @type Number
+	 * @default 1
+	 **&#x2F;
+	p.scaleX = 1;
+
+	&#x2F;**
+	 * The factor to stretch this display object vertically. For example, setting scaleY to 0.5 will stretch the display
+	 * object to half it&#x27;s nominal height.
+	 * @property scaleY
+	 * @type Number
+	 * @default 1
+	 **&#x2F;
+	p.scaleY = 1;
+
+	&#x2F;**
+	 * The factor to skew this display object horizontally.
+	 * @property skewX
+	 * @type Number
+	 * @default 0
+	 **&#x2F;
+	p.skewX = 0;
+
+	&#x2F;**
+	 * The factor to skew this display object vertically.
+	 * @property skewY
+	 * @type Number
+	 * @default 0
+	 **&#x2F;
+	p.skewY = 0;
+
+	&#x2F;**
+	 * A shadow object that defines the shadow to render on this display object. Set to null to remove a shadow. If
+	 * null, this property is inherited from the parent container.
+	 * @property shadow
+	 * @type Shadow
+	 * @default null
+	 **&#x2F;
+	p.shadow = null;
+
+	&#x2F;**
+	 * Indicates whether this display object should be rendered to the canvas and included when running
+	 * Stage.getObjectsUnderPoint().
+	 * @property visible
+	 * @type Boolean
+	 * @default true
+	 **&#x2F;
+	p.visible = true;
+
+	&#x2F;**
+	 * The x (horizontal) position of the display object, relative to its parent.
+	 * @property x
+	 * @type Number
+	 * @default 0
+	 **&#x2F;
+	p.x = 0;
+
+	&#x2F;** The y (vertical) position of the display object, relative to its parent.
+	 * @property y
+	 * @type Number
+	 * @default 0
+	 **&#x2F;
+	p.y = 0;
+
+	&#x2F;**
+	 * The composite operation indicates how the pixels of this display object will be composited with the elements
+	 * behind it. If null, this property is inherited from the parent container. For more information, read the
+	 * &lt;a href=&quot;http:&#x2F;&#x2F;www.whatwg.org&#x2F;specs&#x2F;web-apps&#x2F;current-work&#x2F;multipage&#x2F;the-canvas-element.html#compositing&quot;&gt;
+	 * whatwg spec on compositing&lt;&#x2F;a&gt;.
+	 * @property compositeOperation
+	 * @type String
+	 * @default null
+	 **&#x2F;
+	p.compositeOperation = null;
+
+	&#x2F;**
+	 * Indicates whether the display object should have it&#x27;s x &amp; y position rounded prior to drawing it to stage.
+	 * Snapping to whole pixels can result in a sharper and faster draw for images (ex. Bitmap &amp; cached objects).
+	 * This only applies if the enclosing stage has snapPixelsEnabled set to true. The snapToPixel property is true
+	 * by default for Bitmap and BitmapAnimation instances, and false for all other display objects.
+	 * &lt;br&#x2F;&gt;&lt;br&#x2F;&gt;
+	 * Note that this applies only rounds the display object&#x27;s local position. You should
+	 * ensure that all of the display object&#x27;s ancestors (parent containers) are also on a whole pixel. You can do this
+	 * by setting the ancestors&#x27; snapToPixel property to true.
+	 * @property snapToPixel
+	 * @type Boolean
+	 * @default false
+	 **&#x2F;
+	p.snapToPixel = false;
+
+	&#x2F;**
+	 * The onPress callback is called when the user presses down on their mouse over this display object. The handler
+	 * is passed a single param containing the corresponding MouseEvent instance. You can subscribe to the onMouseMove
+	 * and onMouseUp callbacks of the event object to receive these events until the user releases the mouse button.
+	 * If an onPress handler is set on a container, it will receive the event if any of its children are clicked.
+	 * @event onPress
+	 * @param {MouseEvent} event MouseEvent with information about the event.
+	 **&#x2F;
+	p.onPress = null;
+
+	&#x2F;**
+	 * The onClick callback is called when the user presses down on and then releases the mouse button over this
+	 * display object. The handler is passed a single param containing the corresponding MouseEvent instance. If an
+	 * onClick handler is set on a container, it will receive the event if any of its children are clicked.
+	 * @event onClick
+	 * @param {MouseEvent} event MouseEvent with information about the event.
+	 **&#x2F;
+	p.onClick = null;
+
+	&#x2F;**
+	 * The onDoubleClick callback is called when the user double clicks over this display object. The handler is
+	 * passed a single param containing the corresponding MouseEvent instance. If an onDoubleClick handler is set
+	 * on a container, it will receive the event if any of its children are clicked.
+	 * @event onDoubleClick
+	 * @param {MouseEvent} event MouseEvent with information about the event.
+	 **&#x2F;
+	p.onDoubleClick = null;
+
+	&#x2F;**
+	 * The onMouseOver callback is called when the user rolls over the display object. You must enable this event using
+	 * stage.enableMouseOver(). The handler is passed a single param containing the corresponding MouseEvent instance.
+	 * @event onMouseOver
+	 * @param {MouseEvent} event MouseEvent with information about the event.
+	 **&#x2F;
+	p.onMouseOver = null;
+
+	&#x2F;**
+	 * The onMouseOut callback is called when the user rolls off of the display object. You must enable this event using
+	 * stage.enableMouseOver(). The handler is passed a single param containing the corresponding MouseEvent instance.
+	 * @event onMouseOut
+	 * @param {MouseEvent} event MouseEvent with information about the event.
+	 **&#x2F;
+	p.onMouseOut = null;
+
+	&#x2F;**
+	 * The onTick callback is called on each display object on a stage whenever the stage updates.
+	 * This occurs immediately before the rendering (draw) pass.
+	 * @event onTick
+	 **&#x2F;
+	p.onTick = null;
+
+	&#x2F;**
+	 * An array of Filter objects to apply to this display object. Filters are only applied &#x2F; updated when cache() or
+	 * updateCache() is called on the display object, and only apply to the area that is cached.
+	 * @property filters
+	 * @type Array[Filter]
+	 * @default null
+	 **&#x2F;
+	p.filters = null;
+
+	&#x2F;**
+	* Returns an ID number that uniquely identifies the current cache for this display object.
+	* This can be used to determine if the cache has changed since a previous check.
+	* @property cacheID
+	* @type Number
+	* @default 0
+	*&#x2F;
+	p.cacheID = 0;
+	
+	&#x2F;**
+	 * A Shape instance that defines a vector mask (clipping path) for this display object.  The shape&#x27;s transformation
+	 * will be applied relative to the display object&#x27;s parent coordinates (as if it were a child of the parent).
+	 * @property mask
+	 * @type Shape
+	 * @default null
+	 *&#x2F;
+	p.mask = null;
+	
+	&#x2F;**
+	 * A display object that will be tested when checking mouse interactions or testing getObjectsUnderPoint. The hit area
+	 * will have its transformation applied relative to this display object&#x27;s coordinate space (as though the hit test object were a child of this
+	 * display object and relative to its regX&#x2F;Y). It is NOT used for hitTest().
+	 * @property hitArea
+	 * @type DisplayObject
+	 * @default null
+	 *&#x2F;
+	p.hitArea = null;
+	
+
+&#x2F;&#x2F; private properties:
+
+	&#x2F;**
+	 * @property _cacheOffsetX
+	 * @protected
+	 * @type Number
+	 * @default 0
+	 **&#x2F;
+	p._cacheOffsetX = 0;
+
+	&#x2F;**
+	 * @property _cacheOffsetY
+	 * @protected
+	 * @type Number
+	 * @default 0
+	 **&#x2F;
+	p._cacheOffsetY = 0;
+
+	&#x2F;**
+	* @property _cacheDataURLID
+	* @protected
+	* @type Number
+	* @default 0
+	*&#x2F;
+	p._cacheDataURLID = 0;
+	
+	&#x2F;**
+	* @property _cacheDataURL
+	* @protected
+	* @type String
+	* @default null
+	*&#x2F;
+	p._cacheDataURL = null;
+
+	&#x2F;**
+	 * @property _matrix
+	 * @protected
+	 * @type Matrix2D
+	 * @default null
+	 **&#x2F;
+	p._matrix = null;
+	
+
+&#x2F;&#x2F; constructor:
+	&#x2F;&#x2F; separated so it can be easily addressed in subclasses:
+
+	&#x2F;**
+	 * Initialization method.
+	 * @method initialize
+	 * @protected
+	*&#x2F;
+	p.initialize = function() {
+		this.id = UID.get();
+		this._matrix = new Matrix2D();
+	}
+
+&#x2F;&#x2F; public methods:
+	&#x2F;**
+	 * Returns true or false indicating whether the display object would be visible if drawn to a canvas.
+	 * This does not account for whether it would be visible within the boundaries of the stage.
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method isVisible
+	 * @return {Boolean} Boolean indicating whether the display object would be visible if drawn to a canvas
+	 **&#x2F;
+	p.isVisible = function() {
+		return this.visible &amp;&amp; this.alpha &gt; 0 &amp;&amp; this.scaleX != 0 &amp;&amp; this.scaleY != 0;
+	}
+
+	&#x2F;**
+	 * Draws the display object into the specified context ignoring it&#x27;s visible, alpha, shadow, and transform.
+	 * Returns true if the draw was handled (useful for overriding functionality).
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method draw
+	 * @param {CanvasRenderingContext2D} ctx The canvas 2D context object to draw into.
+	 * @param {Boolean} ignoreCache Indicates whether the draw operation should ignore any current cache.
+	 * For example, used for drawing the cache (to prevent it from simply drawing an existing cache back
+	 * into itself).
+	 **&#x2F;
+	p.draw = function(ctx, ignoreCache) {
+		if (ignoreCache || !this.cacheCanvas) { return false; }
+		ctx.drawImage(this.cacheCanvas, this._cacheOffsetX, this._cacheOffsetY);
+		return true;
+	}
+	
+	&#x2F;**
+	 * Applies this display object&#x27;s transformation, alpha, globalCompositeOperation, clipping path (mask), and shadow to the specified
+	 * context. This is typically called prior to draw.
+	 * @method setupContext
+	 * @param {CanvasRenderingContext2D} ctx The canvas 2D to update.
+	 **&#x2F;
+	p.updateContext = function(ctx) {
+		var mtx, mask=this.mask, o=this;
+		
+		if (mask &amp;&amp; mask.graphics) {
+			mtx = mask.getMatrix(mask._matrix);
+			ctx.transform(mtx.a,  mtx.b, mtx.c, mtx.d, mtx.tx, mtx.ty);
+			
+			mask.graphics.drawAsPath(ctx);
+			ctx.clip();
+			
+			mtx.invert();
+			ctx.transform(mtx.a,  mtx.b, mtx.c, mtx.d, mtx.tx, mtx.ty);
+		}
+		
+		mtx = o._matrix.identity().appendTransform(o.x, o.y, o.scaleX, o.scaleY, o.rotation, o.skewX, o.skewY, o.regX, o.regY);
+		if (Stage._snapToPixelEnabled &amp;&amp; o.snapToPixel) { ctx.transform(mtx.a,  mtx.b, mtx.c, mtx.d, mtx.tx+0.5|0, mtx.ty+0.5|0); }
+		else { ctx.transform(mtx.a,  mtx.b, mtx.c, mtx.d, mtx.tx, mtx.ty); }
+		ctx.globalAlpha *= o.alpha;
+		if (o.compositeOperation) { ctx.globalCompositeOperation = o.compositeOperation; }
+		if (o.shadow) { this._applyShadow(ctx, o.shadow); }
+	}
+
+	&#x2F;**
+	 * Draws the display object into a new canvas, which is then used for subsequent draws. For complex content
+	 * that does not change frequently (ex. a Sprite with many children that do not move, or a complex vector Shape),
+	 * this can provide for much faster rendering because the content does not need to be re-rendered each tick. The
+	 * cached display object can be moved, rotated, faded, etc freely, however if it&#x27;s content changes, you must manually
+	 * update the cache by calling updateCache() or cache() again. You must specify the cache area via the x, y, w,
+	 * and h parameters. This defines the rectangle that will be rendered and cached using this display object&#x27;s
+	 * coordinates. For example if you defined a Shape that drew a circle at 0, 0 with a radius of 25, you could call
+	 * myShape.cache(-25, -25, 50, 50) to cache the full shape.
+	 * @method cache
+	 * @param {Number} x The x coordinate origin for the cache region.
+	 * @param {Number} y The y coordinate origin for the cache region.
+	 * @param {Number} width The width of the cache region.
+	 * @param {Number} height The height of the cache region.
+	 **&#x2F;
+	p.cache = function(x, y, width, height) {
+		&#x2F;&#x2F; draw to canvas.
+		var cacheCanvas = this.cacheCanvas;
+		if (cacheCanvas == null) { cacheCanvas = this.cacheCanvas = document.createElement(&quot;canvas&quot;); }
+		var ctx = cacheCanvas.getContext(&quot;2d&quot;);
+		cacheCanvas.width = width;
+		cacheCanvas.height = height;
+		ctx.setTransform(1, 0, 0, 1, -x, -y);
+		ctx.clearRect(x, y, cacheCanvas.width, cacheCanvas.height); &#x2F;&#x2F; some browsers don&#x27;t clear correctly.
+		this.draw(ctx, true, this._matrix.reinitialize(1,0,0,1,-x,-y)); &#x2F;&#x2F; containers require the matrix to work from
+		this._cacheOffsetX = x;
+		this._cacheOffsetY = y;
+		this._applyFilters();
+		this.cacheID = DisplayObject._nextCacheID++;
+	}
+
+	&#x2F;**
+	 * Redraws the display object to its cache. Calling updateCache without an active cache will throw an error.
+	 * If compositeOperation is null the current cache will be cleared prior to drawing. Otherwise the display object
+	 * will be drawn over the existing cache using the specified compositeOperation.
+	 * @method updateCache
+	 * @param {String} compositeOperation The compositeOperation to use, or null to clear the cache and redraw it.
+	 * &lt;a href=&quot;http:&#x2F;&#x2F;www.whatwg.org&#x2F;specs&#x2F;web-apps&#x2F;current-work&#x2F;multipage&#x2F;the-canvas-element.html#compositing&quot;&gt;
+	 * whatwg spec on compositing&lt;&#x2F;a&gt;.
+	 **&#x2F;
+	p.updateCache = function(compositeOperation) {
+		var cacheCanvas = this.cacheCanvas, offX = this._cacheOffsetX, offY = this._cacheOffsetY;
+		if (cacheCanvas == null) { throw &quot;cache() must be called before updateCache()&quot;; }
+		var ctx = cacheCanvas.getContext(&quot;2d&quot;);
+		ctx.setTransform(1, 0, 0, 1, -offX, -offY);
+		if (!compositeOperation) {
+			ctx.clearRect(offX, offY, cacheCanvas.width, cacheCanvas.height);
+		} else { ctx.globalCompositeOperation = compositeOperation; }
+		this.draw(ctx, true);
+		if (compositeOperation) { ctx.globalCompositeOperation = &quot;source-over&quot;; }
+		this._applyFilters();
+		this.cacheID = DisplayObject._nextCacheID++;
+	}
+
+	&#x2F;**
+	 * Clears the current cache. See cache() for more information.
+	 * @method uncache
+	 **&#x2F;
+	p.uncache = function() {
+		this._cacheDataURL = this.cacheCanvas = null;
+		this.cacheID = this._cacheOffsetX = this._cacheOffsetY = 0;
+	}
+	
+	&#x2F;**
+	* Returns a data URL for the cache, or null if this display object is not cached.
+	* Uses cacheID to ensure a new data URL is not generated if the cache has not changed.
+	* @method getCacheDataURL.
+	**&#x2F;
+	p.getCacheDataURL = function() {
+		if (!this.cacheCanvas) { return null; }
+		if (this.cacheID != this._cacheDataURLID) { this._cacheDataURL = this.cacheCanvas.toDataURL(); }
+		return this._cacheDataURL;
+	}
+
+	&#x2F;**
+	 * Returns the stage that this display object will be rendered on, or null if it has not been added to one.
+	 * @method getStage
+	 * @return {Stage} The Stage instance that the display object is a descendent of. null if the DisplayObject has not
+	 * been added to a Stage.
+	 **&#x2F;
+	p.getStage = function() {
+		var o = this;
+		while (o.parent) {
+			o = o.parent;
+		}
+		if (o instanceof Stage) { return o; }
+		return null;
+	}
+
+	&#x2F;**
+	 * Transforms the specified x and y position from the coordinate space of the display object
+	 * to the global (stage) coordinate space. For example, this could be used to position an HTML label
+	 * over a specific point on a nested display object. Returns a Point instance with x and y properties
+	 * correlating to the transformed coordinates on the stage.
+	 * @method localToGlobal
+	 * @param {Number} x The x position in the source display object to transform.
+	 * @param {Number} y The y position in the source display object to transform.
+	 * @return {Point} A Point instance with x and y properties correlating to the transformed coordinates
+	 * on the stage.
+	 **&#x2F;
+	p.localToGlobal = function(x, y) {
+		var mtx = this.getConcatenatedMatrix(this._matrix);
+		if (mtx == null) { return null; }
+		mtx.append(1, 0, 0, 1, x, y);
+		return new Point(mtx.tx, mtx.ty);
+	}
+
+	&#x2F;**
+	 * Transforms the specified x and y position from the global (stage) coordinate space to the
+	 * coordinate space of the display object. For example, this could be used to determine
+	 * the current mouse position within the display object. Returns a Point instance with x and y properties
+	 * correlating to the transformed position in the display object&#x27;s coordinate space.
+	 * @method globalToLocal
+	 * @param {Number} x The x position on the stage to transform.
+	 * @param {Number} y The y position on the stage to transform.
+	 * @return {Point} A Point instance with x and y properties correlating to the transformed position in the
+	 * display object&#x27;s coordinate space.
+	 **&#x2F;
+	p.globalToLocal = function(x, y) {
+		var mtx = this.getConcatenatedMatrix(this._matrix);
+		if (mtx == null) { return null; }
+		mtx.invert();
+		mtx.append(1, 0, 0, 1, x, y);
+		return new Point(mtx.tx, mtx.ty);
+	}
+
+	&#x2F;**
+	 * Transforms the specified x and y position from the coordinate space of this display object to the
+	 * coordinate space of the target display object. Returns a Point instance with x and y properties
+	 * correlating to the transformed position in the target&#x27;s coordinate space. Effectively the same as calling
+	 * var pt = this.localToGlobal(x, y); pt = target.globalToLocal(pt.x, pt.y);
+	 * @method localToLocal
+	 * @param {Number} x The x position in the source display object to transform.
+	 * @param {Number} y The y position on the stage to transform.
+	 * @param {DisplayObject} target The target display object to which the coordinates will be transformed.
+	 * @return {Point} Returns a Point instance with x and y properties correlating to the transformed position
+	 * in the target&#x27;s coordinate space.
+	 **&#x2F;
+	p.localToLocal = function(x, y, target) {
+		var pt = this.localToGlobal(x, y);
+		return target.globalToLocal(pt.x, pt.y);
+	}
+
+	&#x2F;**
+	 * Shortcut method to quickly set the transform properties on the display object. All parameters are optional.
+	 * Omitted parameters will have the default value set (ex. 0 for x&#x2F;y, 1 for scaleX&#x2F;Y).
+	 * @method setTransform
+	 * @param {Number} x
+	 * @param {Number} y
+	 * @param {Number} scaleX
+	 * @param {Number} scaleY
+	 * @param {Number} rotation
+	 * @param {Number} skewX
+	 * @param {Number} skewY
+	 * @param {Number} regX
+	 * @param {Number} regY
+	*&#x2F;
+	p.setTransform = function(x, y, scaleX, scaleY, rotation, skewX, skewY, regX, regY) {
+		this.x = x || 0;
+		this.y = y || 0;
+		this.scaleX = scaleX == null ? 1 : scaleX;
+		this.scaleY = scaleY == null ? 1 : scaleY;
+		this.rotation = rotation || 0;
+		this.skewX = skewX || 0;
+		this.skewY = skewY || 0;
+		this.regX = regX || 0;
+		this.regY = regY || 0;
+	}
+	
+	&#x2F;**
+	 * Returns a matrix based on this object&#x27;s transform.
+	 * @method getMatrix
+	 * @param {Matrix2D} matrix Optional. A Matrix2D object to populate with the calculated values. If null, a new
+	 * Matrix object is returned.
+	 * @return {Matrix2D} A matrix representing this display object&#x27;s transform.
+	 **&#x2F;
+	p.getMatrix = function(matrix) {
+		var o = this;
+		return (matrix ? matrix.identity() : new Matrix()).appendTransform(o.x, o.y, o.scaleX, o.scaleY, o.rotation, o.skewX, o.skewY, o.regX, o.regY).appendProperties(o.alpha, o.shadow, o.compositeOperation);
+	}
+	
+	&#x2F;**
+	 * Generates a concatenated Matrix2D object representing the combined transform of
+	 * the display object and all of its parent Containers up to the highest level ancestor
+	 * (usually the stage). This can be used to transform positions between coordinate spaces,
+	 * such as with localToGlobal and globalToLocal.
+	 * @method getConcatenatedMatrix
+	 * @param {Matrix2D} mtx Optional. A Matrix2D object to populate with the calculated values. If null, a new
+	 * Matrix object is returned.
+	 * @return {Matrix2D} a concatenated Matrix2D object representing the combined transform of
+	 * the display object and all of its parent Containers up to the highest level ancestor (usually the stage).
+	 **&#x2F;
+	p.getConcatenatedMatrix = function(matrix) {
+		if (matrix) { matrix.identity(); }
+		else { matrix = new Matrix2D(); }
+		var o = this;
+		while (o != null) {
+			matrix.prependTransform(o.x, o.y, o.scaleX, o.scaleY, o.rotation, o.skewX, o.skewY, o.regX, o.regY).prependProperties(o.alpha, o.shadow, o.compositeOperation);
+			o = o.parent;
+		}
+		return matrix;
+	}
+
+	&#x2F;**
+	 * Tests whether the display object intersects the specified local point (ie. draws a pixel with alpha &gt; 0 at
+	 * the specified position). This ignores the alpha, shadow and compositeOperation of the display object, and all
+	 * transform properties including regX&#x2F;Y.
+	 * @method hitTest
+	 * @param {Number} x The x position to check in the display object&#x27;s local coordinates.
+	 * @param {Number} y The y position to check in the display object&#x27;s local coordinates.
+	 * @return {Boolean} A Boolean indicting whether a visible portion of the DisplayObject intersect the specified
+	 * local Point.
+	*&#x2F;
+	p.hitTest = function(x, y) {
+		var ctx = DisplayObject._hitTestContext;
+		var canvas = DisplayObject._hitTestCanvas;
+
+		ctx.setTransform(1,  0, 0, 1, -x, -y);
+		this.draw(ctx);
+
+		var hit = this._testHit(ctx);
+
+		canvas.width = 0;
+		canvas.width = 1;
+		return hit;
+	}
+
+	&#x2F;**
+	 * Returns a clone of this DisplayObject. Some properties that are specific to this instance&#x27;s current context are
+	 * reverted to their defaults (for example .parent).
+	 * @method clone
+	 @return {DisplayObject} A clone of the current DisplayObject instance.
+	 **&#x2F;
+	p.clone = function() {
+		var o = new DisplayObject();
+		this.cloneProps(o);
+		return o;
+	}
+
+	&#x2F;**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **&#x2F;
+	p.toString = function() {
+		return &quot;[DisplayObject (name=&quot;+  this.name +&quot;)]&quot;;
+	}
+
+&#x2F;&#x2F; private methods:
+
+	&#x2F;&#x2F; separated so it can be used more easily in subclasses:
+	&#x2F;**
+	 * @method cloneProps
+	 * @protected
+	 * @param {DisplayObject} o The DisplayObject instance which will have properties from the current DisplayObject
+	 * instance copied into.
+	 **&#x2F;
+	p.cloneProps = function(o) {
+		o.alpha = this.alpha;
+		o.name = this.name;
+		o.regX = this.regX;
+		o.regY = this.regY;
+		o.rotation = this.rotation;
+		o.scaleX = this.scaleX;
+		o.scaleY = this.scaleY;
+		o.shadow = this.shadow;
+		o.skewX = this.skewX;
+		o.skewY = this.skewY;
+		o.visible = this.visible;
+		o.x  = this.x;
+		o.y = this.y;
+		o.mouseEnabled = this.mouseEnabled;
+		o.compositeOperation = this.compositeOperation;
+		if (this.cacheCanvas) {
+			o.cacheCanvas = this.cacheCanvas.cloneNode(true);
+			o.cacheCanvas.getContext(&quot;2d&quot;).putImageData(this.cacheCanvas.getContext(&quot;2d&quot;).getImageData(0,0,this.cacheCanvas.width,this.cacheCanvas.height),0,0);
+		}
+	}
+
+	&#x2F;**
+	 * @method _applyShadow
+	 * @protected
+	 * @param {CanvasRenderingContext2D} ctx
+	 * @param {Shadow} shadow
+	 **&#x2F;
+	p._applyShadow = function(ctx, shadow) {
+		shadow = shadow || Shadow.identity;
+		ctx.shadowColor = shadow.color;
+		ctx.shadowOffsetX = shadow.offsetX;
+		ctx.shadowOffsetY = shadow.offsetY;
+		ctx.shadowBlur = shadow.blur;
+	}
+	
+	
+	&#x2F;**
+	 * @method _tick
+	 * @protected
+	 **&#x2F;
+	p._tick = function(data) {
+		if (this.onTick) { this.onTick(data); }
+	}
+
+	&#x2F;**
+	 * @method _testHit
+	 * @protected
+	 * @param {CanvasRenderingContext2D} ctx
+	 * @return {Boolean}
+	 **&#x2F;
+	p._testHit = function(ctx) {
+		try {
+			var hit = ctx.getImageData(0, 0, 1, 1).data[3] &gt; 1;
+		} catch (e) {
+			if (!DisplayObject.suppressCrossDomainErrors) {
+				throw &quot;An error has occurred. This is most likely due to security restrictions on reading canvas pixel data with local or cross-domain images.&quot;;
+			}
+		}
+		return hit;
+	}
+
+	&#x2F;**
+	 * @method _applyFilters
+	 * @protected
+	 **&#x2F;
+	p._applyFilters = function() {
+		if (!this.filters || this.filters.length == 0 || !this.cacheCanvas) { return; }
+		var l = this.filters.length;
+		var ctx = this.cacheCanvas.getContext(&quot;2d&quot;);
+		var w = this.cacheCanvas.width;
+		var h = this.cacheCanvas.height;
+		for (var i=0; i&lt;l; i++) {
+			this.filters[i].applyFilter(ctx, 0, 0, w, h);
+		}
+	}
+	 
+
+window.DisplayObject = DisplayObject;
+}(window));
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="..&#x2F;assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="..&#x2F;assets/js/yui-prettify.js"></script>
+<script src="..&#x2F;assets/../api.js"></script>
+<script src="..&#x2F;assets/js/api-filter.js"></script>
+<script src="..&#x2F;assets/js/api-list.js"></script>
+<script src="..&#x2F;assets/js/api-search.js"></script>
+<script src="..&#x2F;assets/js/apidocs.js"></script>
+</body>
+</html>
