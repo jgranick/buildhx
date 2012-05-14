@@ -3,17 +3,17 @@ package ;
 @:native ("Container")
 extern class Container extends DisplayObject {
 
+	private var DisplayObject_draw:Dynamic;
+	private var DisplayObject_initialize:Dynamic;
 	public var children:Array[DisplayObject];
-	public var DisplayObject_draw:Dynamic;
-	public var DisplayObject_initialize:Dynamic;
 
-	//public function _tick ():Dynamic;
+	//private function _tick ():Dynamic;
+	//private function initialize ():Dynamic;
 	//public function draw (ctx:CanvasRenderingContext2D, ignoreCache:Bool):Dynamic;
 	//public function hitTest (x:Void, y:Void):Bool;
-	//public function initialize ():Dynamic;
 	//public function isVisible ():Bool;
 	//public function toString ():String;
-	public function _getObjectsUnderPoint (x:Float, y:Float, arr:Array <Dynamic>, mouseEvents:Float):Array[DisplayObject];
+	private function _getObjectsUnderPoint (x:Float, y:Float, arr:Array <Dynamic>, mouseEvents:Float):Array[DisplayObject];
 	public function addChild (child:DisplayObject):DisplayObject;
 	public function addChildAt (child:DisplayObject, index:Float):DisplayObject;
 	public function contains (child:DisplayObject):Bool;

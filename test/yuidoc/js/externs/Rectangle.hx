@@ -8,8 +8,8 @@ extern class Rectangle {
 	public var x:Float;
 	public var y:Float;
 
+	private function initialize ():Dynamic;
 	public function clone ():Rectangle;
-	public function initialize ():Dynamic;
 	public function toString ():String;
 
 }

@@ -3,14 +3,15 @@ package ;
 @:native ("DisplayObject")
 extern class DisplayObject {
 
-	public var _cacheDataURL:String;
-	public var _cacheDataURLID:Float;
-	public var _cacheOffsetX:Float;
-	public var _cacheOffsetY:Float;
-	public var _hitTestCanvas:HTMLCanvasElement;
-	public var _hitTestContext:CanvasRenderingContext2D;
-	public var _matrix:Matrix2D;
-	public var _nextCacheID:Float;
+	private var _cacheDataURL:String;
+	private var _cacheDataURLID:Float;
+	private var _cacheOffsetX:Float;
+	private var _cacheOffsetY:Float;
+	private var _matrix:Matrix2D;
+	public static var _hitTestCanvas:HTMLCanvasElement;
+	public static var _hitTestContext:CanvasRenderingContext2D;
+	public static var _nextCacheID:Float;
+	public static var suppressCrossDomainErrors:Bool;
 	public var alpha:Float;
 	public var cacheCanvas:HTMLCanvasElement;
 	public var cacheID:Float;
@@ -31,18 +32,18 @@ extern class DisplayObject {
 	public var skewX:Float;
 	public var skewY:Float;
 	public var snapToPixel:Bool;
-	public var suppressCrossDomainErrors:Bool;
 	public var visible:Bool;
 	public var x:Float;
 	public var y:Float;
 
-	public function _applyFilters ():Dynamic;
-	public function _applyShadow (ctx:CanvasRenderingContext2D, shadow:Shadow):Dynamic;
-	public function _testHit (ctx:CanvasRenderingContext2D):Bool;
-	public function _tick ():Dynamic;
+	private function _applyFilters ():Dynamic;
+	private function _applyShadow (ctx:CanvasRenderingContext2D, shadow:Shadow):Dynamic;
+	private function _testHit (ctx:CanvasRenderingContext2D):Bool;
+	private function _tick ():Dynamic;
+	private function cloneProps (o:DisplayObject):Dynamic;
+	private function initialize ():Dynamic;
 	public function cache (x:Float, y:Float, width:Float, height:Float):Dynamic;
 	public function clone ():DisplayObject;
-	public function cloneProps (o:DisplayObject):Dynamic;
 	public function draw (ctx:CanvasRenderingContext2D, ignoreCache:Bool):Dynamic;
 	public function getCacheDataURL. ():Dynamic;
 	public function getConcatenatedMatrix (mtx:Matrix2D):Matrix2D;
@@ -50,7 +51,6 @@ extern class DisplayObject {
 	public function getStage ():Stage;
 	public function globalToLocal (x:Float, y:Float):Point;
 	public function hitTest (x:Float, y:Float):Bool;
-	public function initialize ():Dynamic;
 	public function isVisible ():Bool;
 	public function localToGlobal (x:Float, y:Float):Point;
 	public function localToLocal (x:Float, y:Float, target:DisplayObject):Point;

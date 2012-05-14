@@ -90,6 +90,8 @@ class YUIDocParser extends SimpleParser
 			if(Reflect.hasField(item, "name"))
 			{
 				var access = i.access; //nowhere to assign this at the moment?
+				if(access =="protected") access = "private";
+				
 				var itemType = i.itemtype;
 				var ownerClass = Reflect.field(item, "class");
 				//var classDef = classes.get(ownerClass);
@@ -101,7 +103,7 @@ class YUIDocParser extends SimpleParser
 				
 				if(Reflect.hasField(item, "static"))
 				{
-					var isStatic = Reflect.field(item, "static") == 1;
+					isStatic = Std.parseInt(Reflect.field(item, "static")) == 1;
 					//trace("isStatic "+isStatic);
 				}
 				
@@ -110,6 +112,7 @@ class YUIDocParser extends SimpleParser
 					var methodDef = new ClassMethod();
 					methodDef.owner = ownerClass;
 					methodDef.name = i.name;
+					methodDef.accessModifier = access;
 					
 					if(Reflect.hasField(item, "params"))
 					{
@@ -153,6 +156,7 @@ class YUIDocParser extends SimpleParser
 					propertyDef.type = i.type;
 					propertyDef.hasConflict = false;//?
 					propertyDef.ignore = false;//?
+					propertyDef.accessModifier = access;
 					
 					if(isStatic)
 					{
@@ -290,6 +294,12 @@ class YUIDocParser extends SimpleParser
 		if (type == null) {
 			
 			return "Void";
+			
+		}
+		
+		if (type.indexOf ("|") > -1) {
+			
+			return "Dynamic";
 			
 		}
 		

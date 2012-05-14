@@ -3,10 +3,10 @@ package ;
 @:native ("SpriteSheetUtils")
 extern class SpriteSheetUtils {
 
-	public var _workingCanvas:HTMLCanvasElement;
-	public var _workingContext:CanvasRenderingContext2D;
+	public static var _workingCanvas:HTMLCanvasElement;
+	public static var _workingContext:CanvasRenderingContext2D;
 
-	public function extractFrame (spriteSheet:Image, frame:Float):Image;
-	public function flip (spriteSheet:Image, flipData:Dynamic):Dynamic;
+	public static function extractFrame (spriteSheet:Image, frame:Float):Image;
+	public static function flip (spriteSheet:Image, flipData:Dynamic):Dynamic;
 
 }

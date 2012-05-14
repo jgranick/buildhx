@@ -3,11 +3,11 @@ package ;
 @:native ("Text")
 extern class Text extends DisplayObject {
 
-	public var _workingContext:CanvasRenderingContext2D;
+	private var _workingContext:CanvasRenderingContext2D;
+	private var DisplayObject_cloneProps:Dynamic;
+	private var DisplayObject_draw:Dynamic;
+	private var DisplayObject_initialize:Dynamic;
 	public var color:String;
-	public var DisplayObject_cloneProps:Dynamic;
-	public var DisplayObject_draw:Dynamic;
-	public var DisplayObject_initialize:Dynamic;
 	public var font:String;
 	public var lineHeight:Float;
 	public var lineWidth:Float;
@@ -17,14 +17,14 @@ extern class Text extends DisplayObject {
 	public var textAlign:String;
 	public var textBaseline:String;
 
+	//private function cloneProps (o:Text):Dynamic;
+	//private function initialize ():Dynamic;
 	//public function clone ():Point;
-	//public function cloneProps (o:Text):Dynamic;
 	//public function draw (ctx:CanvasRenderingContext2D, ignoreCache:Bool):Dynamic;
-	//public function initialize ():Dynamic;
 	//public function isVisible ():Bool;
 	//public function toString ():String;
-	public function _drawTextLine (ctx:CanvasRenderingContext2D, text:Text, y:Float):Dynamic;
-	public function _getWorkingContext ():Float;
+	private function _drawTextLine (ctx:CanvasRenderingContext2D, text:Text, y:Float):Dynamic;
+	private function _getWorkingContext ():Float;
 	public function getMeasuredHeight ():Float;
 	public function getMeasuredLineHeight ():Float;
 	public function getMeasuredWidth ():Float;

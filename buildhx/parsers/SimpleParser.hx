@@ -122,9 +122,9 @@ class SimpleParser extends AbstractParser {
 	
 	
 	public override function resolveClasses ():Void {
-		trace("resolveClasses...");
+		
 		for (definition in definitions) {
-			trace("resolved..");
+			
 			BuildHX.print ("Resolving " + definition.className);
 			
 			resolveClass (definition);

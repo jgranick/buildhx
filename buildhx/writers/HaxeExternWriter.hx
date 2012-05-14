@@ -171,7 +171,7 @@ class HaxeExternWriter {
 			
 			if (!method.ignore) {
 				
-				methods.push (writeClassMethod (method, false));
+				methods.push (writeClassMethod (method, false, method.accessModifier));
 				
 			}
 			
@@ -181,7 +181,7 @@ class HaxeExternWriter {
 			
 			if (!property.ignore) {
 				
-				properties.push (writeClassProperty (property, false));
+				properties.push (writeClassProperty (property, false, property.accessModifier));
 				
 			}
 			
@@ -191,7 +191,7 @@ class HaxeExternWriter {
 			
 			if (!method.ignore) {
 				
-				methods.push (writeClassMethod (method, true));
+				methods.push (writeClassMethod (method, true, method.accessModifier));
 				
 			}
 			
@@ -328,9 +328,9 @@ class HaxeExternWriter {
 	}
 	
 	
-	private function writeClassMethod (method:ClassMethod, isStatic:Bool):String {
+	private function writeClassMethod (method:ClassMethod, isStatic:Bool, access:String="public"):String {
 		
-		var output = "public ";
+		var output = access + " ";
 		
 		if (isStatic) {
 			
@@ -373,9 +373,9 @@ class HaxeExternWriter {
 	}
 	
 	
-	private function writeClassProperty (property:ClassProperty, isStatic:Bool):String {
+	private function writeClassProperty (property:ClassProperty, isStatic:Bool, access:String="public"):String {
 		
-		var output = "public ";
+		var output = access + " ";
 		
 		if (isStatic) {
 			

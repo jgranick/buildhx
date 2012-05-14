@@ -16,12 +16,14 @@ class ClassMethod {
 	public var parameterOptional:Array <Bool>;
 	public var parameterTypes:Array <String>;
 	public var returnType:String;
+	public var accessModifier:String;
 	
 	public function new () {
 		
 		parameterNames = new Array <String> ();
 		parameterOptional = new Array <Bool> ();
 		parameterTypes = new Array <String> ();
+		accessModifier = "public";
 		
 	}
 	

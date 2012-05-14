@@ -9,8 +9,8 @@ extern class MouseEvent {
 	public var target:DisplayObject;
 	public var type:String;
 
+	private function initialize ():Dynamic;
 	public function clone ():MouseEvent;
-	public function initialize ():Dynamic;
 	public function toString ():String;
 
 }
