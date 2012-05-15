@@ -1,6 +1,7 @@
 package buildhx;
 
 
+import ext.String;
 import neko.FileSystem;
 import neko.io.File;
 import neko.io.Path;
@@ -30,6 +31,7 @@ class BuildHX {
 	public static var isLinux = false;
 	public static var isWindows = false;
 	public static var buildhx:String = "";
+	public static var customNamespace:String;
 	public static var libraryName:String;
 	public static var traceEnabled:Bool = true;
 	public static var verbose = false;
@@ -41,7 +43,6 @@ class BuildHX {
 	private static var sourcePath:String;
 	private static var targetFlags:Hash <String>;
 	private static var targetPath:String;
-	private static var customNameSpace:String;
 	
 	private static var definitions:Hash <ClassDefinition>;
 	private static var types:Hash <String>;
@@ -383,28 +384,35 @@ class BuildHX {
 		
 		if (Std.is (parser, JSDuckParser)) {
 			
-			//runCommand ("", buildhx + "/bin/jsduck-3.10.1.exe", [ sourcePath, "--export=full", "--output", "obj", "--pretty-json" ]);
-			runCommand ("", buildhx + "jsduck", [ sourcePath, "--export=full", "--output", "obj", "--pretty-json" ]);
+			if (isWindows) {
+				
+				runCommand ("", buildhx + "/bin/jsduck-3.10.1.exe", [ sourcePath, "--export=full", "--output", "obj", "--pretty-json" ]);
+				
+			} else {
+				
+				runCommand ("", buildhx + "/bin/jsduck", [ sourcePath, "--export=full", "--output", "obj", "--pretty-json" ]);
+				
+			}
+			
 			sourcePath = FileSystem.fullPath ("obj") + "/";
 			
 		}
 		
 		if (Std.is (parser, YUIDocParser)) {
-			trace("it's a YUI Doc...");
-			runCommand ("", buildhx + "yuidoc", ["."]);
+			
+			runCommand ("", buildhx + "/bin/yuidoc", [ "." ]);
 			sourcePath = FileSystem.fullPath ("out") + "/";
 			
 		}
-		//trace("sourcePath "+sourcePath);
+		
 		if (sourcePath != null) {
 			
 			parser.processFiles (FileSystem.readDirectory (sourcePath), sourcePath);
 			
 		}
 		
-		parser.resolveClasses();
-		//trace("targetPath "+targetPath);
-		parser.writeClasses(targetPath+"/");
+		parser.resolveClasses ();
+		parser.writeClasses (targetPath);
 		
 	}
 	
@@ -839,13 +847,14 @@ class BuildHX {
 					
 					if (!FileSystem.exists (targetPath)) {
 						
-						targetPath = FileSystem.fullPath (targetPath);
+						targetPath = FileSystem.fullPath (targetPath) + "/";
 						
 					}
 					
-					if(element.has.customNameSpace && element.att.customNameSpace != "")
-					{
-						ClassDefinition.CUSTOM_NAMESPACE = element.att.customNameSpace + ".";
+					if (element.has.namespace && element.att.namespace != "") {
+						
+						customNamespace = element.att.namespace;
+						
 					}
 				
 				case "library":

@@ -368,9 +368,14 @@ class YUIDocParser extends SimpleParser
 			
 		} else {
 			
-			if(definitions.exists(type))
-			{
-				type = ClassDefinition.CUSTOM_NAMESPACE + type;
+			if (definitions.exists (type)) {
+				
+				if (BuildHX.customNamespace != null) {
+					
+					type = BuildHX.customNamespace + "." + type;
+					
+				}
+				
 			}
 			
 			return  type;
