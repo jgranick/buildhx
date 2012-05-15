@@ -17,6 +17,7 @@ import neko.io.File;
 import neko.io.Path;
 import neko.Lib;
 import buildhx.parsers.AbstractParser;
+import buildhx.parsers.CPPParser;
 import buildhx.parsers.JSDuckParser;
 import buildhx.parsers.SimpleParser;
 
@@ -28,6 +29,7 @@ class BuildHX {
 	public static var isLinux = false;
 	public static var isWindows = false;
 	public static var buildhx:String = "";
+	public static var libraryName:String;
 	public static var traceEnabled:Bool = true;
 	public static var verbose = false;
 	
@@ -350,6 +352,10 @@ class BuildHX {
 				
 				parser = new JSDuckParser (types, definitions);
 			
+			case "cpp":
+				
+				parser = new CPPParser (types, definitions);
+			
 			default:
 				
 				if (parserName != null && parserName != "") {
@@ -390,7 +396,7 @@ class BuildHX {
 	
 	public static function addImport (type:String, definition:ClassDefinition):Void {
 		
-		if (type != null && type != "" && type.substr (-1) != ".") {
+		if (type != null && type != "" && type.substr (-1) != "." && type != definition.className) {
 			
 			definition.imports.set (type, type);
 			
@@ -503,6 +509,12 @@ class BuildHX {
 			
 		}
 		
+		if (element.has.native) {
+			
+			definition.nativeClassName = element.att.native;
+			
+		}
+		
 		if (element.has.resolve ("extends")) {
 			
 			definition.parentClassName = element.att.resolve ("extends");
@@ -564,6 +576,12 @@ class BuildHX {
 		} else {
 			
 			method.name = element.att.name;
+			
+		}
+		
+		if (element.has.native) {
+			
+			method.nativeName = element.att.native;
 			
 		}
 		
@@ -692,6 +710,18 @@ class BuildHX {
 			
 		}
 		
+		if (element.has.getter) {
+			
+			property.getter = element.att.getter;
+			
+		}
+		
+		if (element.has.setter) {
+			
+			property.setter = element.att.setter;
+			
+		}
+		
 		if (element.has.ignore && element.att.ignore == "true") {
 			
 			property.ignore = true;
@@ -774,11 +804,22 @@ class BuildHX {
 						
 					}
 					
+					if (targetPath.substr (-1) != "/") {
+						
+						targetPath += "/";
+						
+					}
+					
 					if (!FileSystem.exists (targetPath)) {
 						
 						targetPath = FileSystem.fullPath (targetPath);
 						
 					}
+				
+				case "library":
+					
+					libraryName = element.att.name;
+					parserName = element.att.type;
 				
 			}
 			

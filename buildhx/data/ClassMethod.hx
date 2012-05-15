@@ -11,6 +11,7 @@ class ClassMethod {
 	public var hasConflict:Bool;
 	public var ignore:Bool;
 	public var name:String;
+	public var nativeName:String;
 	public var owner:String;
 	public var parameterNames:Array <String>;
 	public var parameterOptional:Array <Bool>;

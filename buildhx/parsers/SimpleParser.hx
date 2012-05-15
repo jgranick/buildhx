@@ -291,6 +291,12 @@ class SimpleParser extends AbstractParser {
 			
 			resolvedType = types.get (type);
 			
+			if (abbreviate && resolvedType.indexOf ("<") == -1) {
+				
+				resolvedType = resolvedType.substr (resolvedType.lastIndexOf (".") + 1);
+				
+			}
+			
 		} else {
 			
 			if (abbreviate) {

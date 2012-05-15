@@ -14,6 +14,8 @@ class ClassDefinition {
 	public var interfaces:Hash <String>;
 	public var isConfigClass:Bool;
 	public var methods:Hash <ClassMethod>;
+	public var nativeClassName:String;
+	public var nativeHeader:String;
 	public var parentClassName:String;
 	public var properties:Hash <ClassProperty>;
 	public var staticMethods:Hash <ClassMethod>;
