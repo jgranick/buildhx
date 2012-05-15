@@ -7,7 +7,7 @@ package buildhx.data;
 
 class ClassDefinition {
 	
-	
+	public static var CUSTOM_NAMESPACE:String = "";
 	public var className:String;
 	public var ignore:Bool;
 	public var imports:Hash <String>;
@@ -20,7 +20,7 @@ class ClassDefinition {
 	public var properties:Hash <ClassProperty>;
 	public var staticMethods:Hash <ClassMethod>;
 	public var staticProperties:Hash <ClassProperty>;
-	
+	public var comment:String;
 	
 	public function new () {
 		
@@ -30,7 +30,7 @@ class ClassDefinition {
 		properties = new Hash <ClassProperty> ();
 		staticMethods = new Hash <ClassMethod> ();
 		staticProperties = new Hash <ClassProperty> ();
-		
+		comment = "";
 	}
 	
 	

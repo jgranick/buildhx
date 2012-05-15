@@ -20,6 +20,7 @@ import buildhx.parsers.AbstractParser;
 import buildhx.parsers.CPPParser;
 import buildhx.parsers.JSDuckParser;
 import buildhx.parsers.SimpleParser;
+import buildhx.parsers.YUIDocParser;
 
 
 class BuildHX {
@@ -40,6 +41,7 @@ class BuildHX {
 	private static var sourcePath:String;
 	private static var targetFlags:Hash <String>;
 	private static var targetPath:String;
+	private static var customNameSpace:String;
 	
 	private static var definitions:Hash <ClassDefinition>;
 	private static var types:Hash <String>;
@@ -351,6 +353,10 @@ class BuildHX {
 			case "jsduck":
 				
 				parser = new JSDuckParser (types, definitions);
+				
+			case "yuidoc":
+				
+				parser = new YUIDocParser(types, definitions);
 			
 			case "cpp":
 				
@@ -377,25 +383,34 @@ class BuildHX {
 		
 		if (Std.is (parser, JSDuckParser)) {
 			
-			runCommand ("", buildhx + "/bin/jsduck-3.10.1.exe", [ sourcePath, "--export=full", "--output", "obj", "--pretty-json" ]);
+			//runCommand ("", buildhx + "/bin/jsduck-3.10.1.exe", [ sourcePath, "--export=full", "--output", "obj", "--pretty-json" ]);
+			runCommand ("", buildhx + "jsduck", [ sourcePath, "--export=full", "--output", "obj", "--pretty-json" ]);
 			sourcePath = FileSystem.fullPath ("obj") + "/";
 			
 		}
 		
+		if (Std.is (parser, YUIDocParser)) {
+			trace("it's a YUI Doc...");
+			runCommand ("", buildhx + "yuidoc", ["."]);
+			sourcePath = FileSystem.fullPath ("out") + "/";
+			
+		}
+		//trace("sourcePath "+sourcePath);
 		if (sourcePath != null) {
 			
 			parser.processFiles (FileSystem.readDirectory (sourcePath), sourcePath);
 			
 		}
 		
-		parser.resolveClasses ();
-		parser.writeClasses (targetPath);
+		parser.resolveClasses();
+		//trace("targetPath "+targetPath);
+		parser.writeClasses(targetPath+"/");
 		
 	}
 	
 	
 	public static function addImport (type:String, definition:ClassDefinition):Void {
-		
+
 		if (type != null && type != "" && type.substr (-1) != "." && type != definition.className) {
 			
 			definition.imports.set (type, type);
@@ -826,6 +841,11 @@ class BuildHX {
 						
 						targetPath = FileSystem.fullPath (targetPath);
 						
+					}
+					
+					if(element.has.customNameSpace && element.att.customNameSpace != "")
+					{
+						ClassDefinition.CUSTOM_NAMESPACE = element.att.customNameSpace + ".";
 					}
 				
 				case "library":

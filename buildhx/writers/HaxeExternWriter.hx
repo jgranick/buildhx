@@ -150,7 +150,7 @@ class HaxeExternWriter {
 	
 	public function writeClass (definition:ClassDefinition, basePath:String):Void {
 		
-		var targetPath = basePath + BuildHX.resolvePackageNameDot (definition.className).split (".").join ("/") + BuildHX.resolveClassName (definition.className) + ".hx";
+		var targetPath = basePath + BuildHX.resolvePackageNameDot (ClassDefinition.CUSTOM_NAMESPACE + "." + definition.className).split (".").join ("/") + BuildHX.resolveClassName (definition.className) + ".hx";
 		
 		BuildHX.print ("Writing " + targetPath);
 		BuildHX.makeDirectory (targetPath);
@@ -171,7 +171,7 @@ class HaxeExternWriter {
 			
 			if (!method.ignore) {
 				
-				methods.push (writeClassMethod (method, false));
+				methods.push (writeClassMethod (method, false, method.accessModifier));
 				
 			}
 			
@@ -181,7 +181,7 @@ class HaxeExternWriter {
 			
 			if (!property.ignore) {
 				
-				properties.push (writeClassProperty (property, false));
+				properties.push (writeClassProperty (property, false, property.accessModifier));
 				
 			}
 			
@@ -191,7 +191,7 @@ class HaxeExternWriter {
 			
 			if (!method.ignore) {
 				
-				methods.push (writeClassMethod (method, true));
+				methods.push (writeClassMethod (method, true, method.accessModifier));
 				
 			}
 			
@@ -215,7 +215,7 @@ class HaxeExternWriter {
 		
 		var output = File.write (targetPath, false);
 		
-		output.writeString ("package " + BuildHX.resolvePackageName (definition.className) + ";\n\n");
+		output.writeString ("package " + BuildHX.resolvePackageName (ClassDefinition.CUSTOM_NAMESPACE + definition.className) + ";\n\n");
 		
 		for (importPath in imports) {
 			
@@ -227,6 +227,13 @@ class HaxeExternWriter {
 			
 			output.writeString ("\n");
 			
+		}
+		
+		if(definition.comment != null) {
+			
+			output.writeString ("\n");
+			output.writeString (definition.comment);
+			output.writeString ("\n");
 		}
 		
 		output.writeString ('@:native ("' + definition.className + '")\n');
@@ -328,9 +335,22 @@ class HaxeExternWriter {
 	}
 	
 	
-	private function writeClassMethod (method:ClassMethod, isStatic:Bool):String {
+	private function writeClassMethod (method:ClassMethod, isStatic:Bool, access:String="public"):String {
 		
-		var output = "public ";
+		var output = "";
+		
+		if(method.comment != null) {
+			
+			output += method.comment + "\n\t";
+			
+		}
+		
+		if (method.hasConflict)
+		{
+			output += "//";
+		}
+		
+		output += access + " ";
 		
 		if (isStatic) {
 			
@@ -360,22 +380,22 @@ class HaxeExternWriter {
 		
 		output += "):" + parser.resolveType (method.returnType) + ";\n";
 		
-		if (method.hasConflict) {
+		return output;
 			
-			return "//" + output;
-			
-		} else {
-			
-			return output;
-			
-		}
-		
 	}
 	
 	
-	private function writeClassProperty (property:ClassProperty, isStatic:Bool):String {
+	private function writeClassProperty (property:ClassProperty, isStatic:Bool, access:String="public"):String {
 		
-		var output = "public ";
+		var output = "";
+		
+		if(property.comment != null) {
+			
+			output += property.comment + "\n\t";
+			
+		}
+		
+		output += access + " ";
 		
 		if (isStatic) {
 			
@@ -396,6 +416,6 @@ class HaxeExternWriter {
 		}
 		
 	}
-	
+
 	
 }
