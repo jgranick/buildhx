@@ -229,6 +229,13 @@ class HaxeExternWriter {
 			
 		}
 		
+		if(definition.comment != null) {
+			
+			output.writeString ("\n");
+			output.writeString (definition.comment);
+			output.writeString ("\n");
+		}
+		
 		output.writeString ('@:native ("' + definition.className + '")\n');
 		output.writeString ('extern class ' + BuildHX.resolveClassName (definition.className));
 		
@@ -330,7 +337,20 @@ class HaxeExternWriter {
 	
 	private function writeClassMethod (method:ClassMethod, isStatic:Bool, access:String="public"):String {
 		
-		var output = access + " ";
+		var output = "";
+		
+		if(method.comment != null) {
+			
+			output += method.comment + "\n\t";
+			
+		}
+		
+		if (method.hasConflict)
+		{
+			output += "//";
+		}
+		
+		output += access + " ";
 		
 		if (isStatic) {
 			
@@ -360,22 +380,22 @@ class HaxeExternWriter {
 		
 		output += "):" + parser.resolveType (method.returnType) + ";\n";
 		
-		if (method.hasConflict) {
+		return output;
 			
-			return "//" + output;
-			
-		} else {
-			
-			return output;
-			
-		}
-		
 	}
 	
 	
 	private function writeClassProperty (property:ClassProperty, isStatic:Bool, access:String="public"):String {
 		
-		var output = access + " ";
+		var output = "";
+		
+		if(property.comment != null) {
+			
+			output += property.comment + "\n\t";
+			
+		}
+		
+		output += access + " ";
 		
 		if (isStatic) {
 			
@@ -396,6 +416,6 @@ class HaxeExternWriter {
 		}
 		
 	}
-	
+
 	
 }

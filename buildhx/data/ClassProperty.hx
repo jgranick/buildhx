@@ -14,10 +14,11 @@ class ClassProperty {
 	public var owner:String;
 	public var type:String;
 	public var accessModifier:String;
-	
+	public var comment:String;
 	
 	public function new () {
 		accessModifier = "public";
+		comment = "";
 	}
 	
 	

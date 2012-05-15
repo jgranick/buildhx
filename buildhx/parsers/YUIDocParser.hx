@@ -9,8 +9,6 @@ import buildhx.data.ClassProperty;
 class YUIDocParser extends SimpleParser 
 {
 	
-	//var classes:Hash<ClassDefinition>;
-	
 	public function new (types:Hash <String>, definitions:Hash<ClassDefinition>) 
 	{	
 		super (types, definitions);
@@ -30,8 +28,6 @@ class YUIDocParser extends SimpleParser
 			types = new Hash <String> ();
 			
 		}
-		
-		//classes = new Hash<ClassDefinition>();
 		
 		//TODO: match these to YUI Doc types
 		types.set ("String", "String");
@@ -70,6 +66,11 @@ class YUIDocParser extends SimpleParser
 			var classDef = new ClassDefinition();
 			classDef.className = cl.name;
 			
+			if(cl.description != null)
+			{
+				classDef.comment = "\n/**\n*	"+ cl.description.split("\n").join("\n*\t") +"\n*\n*/";
+				
+			}
 			
 			if(Reflect.hasField(claz, "extends"))
 			{
@@ -77,8 +78,44 @@ class YUIDocParser extends SimpleParser
 				classDef.parentClassName = Reflect.field(claz, "extends");
 			}
 			
-			//classes.set(cl.name, classDef);
 			definitions.set (cl.name, classDef);
+			
+			var isContructor = false;
+			
+			if(Reflect.hasField(claz, "is_constructor")){
+				if(claz.is_constructor == 1) 
+				{
+					isContructor = true;
+					
+					var constructorDef = new ClassMethod();
+					constructorDef.owner = cl.name;
+					constructorDef.name = "new";
+					constructorDef.accessModifier = "public";
+					
+					if(Reflect.hasField(claz, "params"))
+					{
+						var params:Array<YUIMethodParam> = cl.params;
+						//trace("i.params "+i.params);
+						for(param in params)
+						{
+							//trace("param "+ param.name + ":" + param.type);
+							constructorDef.parameterNames.push(param.name);
+							constructorDef.parameterTypes.push(param.type);
+							constructorDef.parameterOptional.push(false);//cannot determine
+						}
+					}
+					
+					if(cl.description != null)
+					{
+						constructorDef.description = cl.description;
+						
+						constructorDef.comment = createMethodComment(constructorDef);
+						
+					}
+					
+					classDef.methods.set(constructorDef.name, constructorDef);		
+				}
+			}
 			
 		}
 		
@@ -94,7 +131,6 @@ class YUIDocParser extends SimpleParser
 				
 				var itemType = i.itemtype;
 				var ownerClass = Reflect.field(item, "class");
-				//var classDef = classes.get(ownerClass);
 				var classDef = definitions.get(ownerClass);
 				//trace(i.clazz + "-> "+access + "  "+ itemType + " "+i.name);
 				//trace(ownerClass + "-> "+access + "  "+ itemType + " "+i.name);
@@ -123,6 +159,7 @@ class YUIDocParser extends SimpleParser
 							//trace("param "+ param.name + ":" + param.type);
 							methodDef.parameterNames.push(param.name);
 							methodDef.parameterTypes.push(param.type);
+							methodDef.parameterDescriptions.push(param.description);
 							methodDef.parameterOptional.push(false);//cannot determine
 						}
 					}
@@ -146,6 +183,14 @@ class YUIDocParser extends SimpleParser
 					{
 						classDef.methods.set(methodDef.name, methodDef);
 					}
+					
+					if(i.description != null)
+					{
+						methodDef.description = i.description;
+						
+						methodDef.comment = createMethodComment(methodDef);
+						
+					}
 				
 				}
 				else if(itemType == "property")
@@ -157,6 +202,12 @@ class YUIDocParser extends SimpleParser
 					propertyDef.hasConflict = false;//?
 					propertyDef.ignore = false;//?
 					propertyDef.accessModifier = access;
+					
+					if(i.description != null)
+					{
+						propertyDef.comment = "\n\t/**\n\t*	"+ "@type " + i.type + "\n\t*\t" + i.description.split("\n").join("\n\t*\t") +"\n\t*\n\t*/";
+						//propertyDef.comment = "\n\t/**\n\t*	"+ i.description.split("\n").join(" ") + "\n\t*\t@type " + i.type +"\n\t*\n\t*/";
+					}
 					
 					if(isStatic)
 					{
@@ -170,6 +221,27 @@ class YUIDocParser extends SimpleParser
 			}
 			
 		}
+	}
+	
+	private function createMethodComment(methodDef:ClassMethod):String
+	{
+		var str = "\n\t/**\n\t*	"+ "@method " + methodDef.name;
+		
+		str += "\n\t*\t" + methodDef.description.split("\n").join("\n\t*\t");
+		
+		for(i in 0...methodDef.parameterNames.length)
+		{
+			
+			str += "\n\t*\t"+ "@param " + methodDef.parameterNames[i] + " (" + methodDef.parameterTypes[i] + ")  ";
+			if(methodDef.parameterDescriptions[i] != null)
+			{	
+				str += methodDef.parameterDescriptions[i].split("\n").join("\n\t*\t");
+			}
+		}
+		
+		str += "\n\t*\n\t*/";
+		
+		return str;
 	}
 	
 	public override function processFiles (files:Array <String>, basePath:String):Void 
@@ -312,6 +384,8 @@ class YUIDocParser extends SimpleParser
 			
 		}
 		
+		type = type.split("[").join("<").split("]").join(">");
+		
 		var resolvedType:String = "";
 		
 		if (type.indexOf ("/") > -1) {
@@ -372,8 +446,8 @@ typedef YUIClass =
 	var line:Int;
 	var description:String;
 	//var extends:String; //parent class
-	var is_constructor:Int;
-	var params:Array<Dynamic>;
+	var is_constructor:Int; //1 = constructor
+	var params:Array<YUIMethodParam>; //constructor params
 }
 
 typedef YUIClassItem = 

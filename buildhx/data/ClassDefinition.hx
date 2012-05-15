@@ -18,7 +18,7 @@ class ClassDefinition {
 	public var properties:Hash <ClassProperty>;
 	public var staticMethods:Hash <ClassMethod>;
 	public var staticProperties:Hash <ClassProperty>;
-	
+	public var comment:String;
 	
 	public function new () {
 		
@@ -28,7 +28,7 @@ class ClassDefinition {
 		properties = new Hash <ClassProperty> ();
 		staticMethods = new Hash <ClassMethod> ();
 		staticProperties = new Hash <ClassProperty> ();
-		
+		comment = "";
 	}
 	
 	
