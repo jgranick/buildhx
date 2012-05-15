@@ -129,14 +129,15 @@ class HaxeCFFIWriter {
 				
 				var nativeMethodName = getNativeMethodName (definition, method);
 				nativeMethodNames.push (nativeMethodName);
-				nativeMethodParameters.push (method.parameterNames.length + 1);
 				
 				if (method.name == "new") {
 					
+					nativeMethodParameters.push (method.parameterNames.length);
 					constructor = writeClassMethod (method, false, nativeMethodName);
 					
 				} else {
 					
+					nativeMethodParameters.push (method.parameterNames.length + 1);
 					methods.push (writeClassMethod (method, false, nativeMethodName));
 					
 				}
@@ -311,7 +312,7 @@ class HaxeCFFIWriter {
 			
 		}
 		
-		output.writeString ("	/** @private */\n	private var handle:Dynamic;\n\n\n");
+		output.writeString ("	/** @private */\n	public var handle:Dynamic;\n\n\n");
 		output.writeString (constructor);
 		
 		if (methods.length > 0) {
@@ -437,6 +438,16 @@ class HaxeCFFIWriter {
 			}
 			
 			output += method.parameterNames[i];
+			
+			switch (method.parameterTypes[i]) {
+				
+				case null, "Int", "String", "Float", "Void":
+					
+				default:
+					
+					output += ".handle";
+				
+			}
 			
 		}
 		

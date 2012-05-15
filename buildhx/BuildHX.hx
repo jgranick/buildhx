@@ -515,6 +515,12 @@ class BuildHX {
 			
 		}
 		
+		if (element.has.header) {
+			
+			definition.nativeHeader = element.att.header;
+			
+		}
+		
 		if (element.has.resolve ("extends")) {
 			
 			definition.parentClassName = element.att.resolve ("extends");
@@ -719,6 +725,12 @@ class BuildHX {
 		if (element.has.setter) {
 			
 			property.setter = element.att.setter;
+			
+		}
+		
+		if (element.has.native) {
+			
+			property.nativeName = element.att.native;
 			
 		}
 		

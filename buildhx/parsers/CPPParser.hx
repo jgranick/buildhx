@@ -36,11 +36,12 @@ class CPPParser extends SimpleParser {
 			if (!definition.ignore) {
 				
 				haxeWriter.writeClass (definition, targetPath);
-				cppWriter.writeClass (definition, cppTargetPath);
 				
 			}
 			
 		}
+		
+		cppWriter.writeClasses (definitions, cppTargetPath);
 		
 	}
 	
