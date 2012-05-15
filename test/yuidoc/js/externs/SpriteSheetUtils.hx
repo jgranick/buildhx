@@ -1,5 +1,8 @@
 package ;
 
+import js.w3c.html5.Canvas2DContext;
+import js.w3c.html5.Core;
+
 
 
 /**

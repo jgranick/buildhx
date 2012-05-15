@@ -95,7 +95,7 @@ extern class SpriteSheetBuilder {
 	*	Builds a SpriteSheet instance based on the current frames.
 	*
 	*/
-	public function build ():Void;
+	public function build ():Dynamic;
 	
 	/**
 	*	@method buildAsync
@@ -154,7 +154,7 @@ extern class SpriteSheetBuilder {
 	*/
 	public function toString ():String;
 	
-	private function _drawNext ():Void;
+	private function _drawNext ():Dynamic;
 	
 	private function _endBuild ():Dynamic;
 	

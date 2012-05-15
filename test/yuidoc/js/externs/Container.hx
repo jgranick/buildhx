@@ -1,5 +1,7 @@
 package ;
 
+import js.w3c.html5.Canvas2DContext;
+
 
 
 /**
@@ -125,11 +127,11 @@ extern class Container extends DisplayObject {
 	*	Tests whether the display object intersects the specified local point (ie. draws a pixel with alpha > 0 at the specified
 	*	position). This ignores the alpha, shadow and compositeOperation of the display object, and all transform properties
 	*	including regX/Y.
-	*	@param x (null)  The x position to check in the display object's local coordinates.
-	*	@param y (null)  The y position to check in the display object's local coordinates.
+	*	@param x (Dynamic)  The x position to check in the display object's local coordinates.
+	*	@param y (Dynamic)  The y position to check in the display object's local coordinates.
 	*
 	*/
-	//public function hitTest (x:Void, y:Void):Bool;
+	//public function hitTest (x:Dynamic, y:Dynamic):Bool;
 	
 	/**
 	*	@method initialize
@@ -180,11 +182,11 @@ extern class Container extends DisplayObject {
 	/**
 	*	@method setChildIndex
 	*	Changes the depth of the specified child. Fails silently if the child is not a child of this container, or the index is out of range.
-	*	@param child (null)  
-	*	@param index (null)  
+	*	@param child (Dynamic)  
+	*	@param index (Dynamic)  
 	*
 	*/
-	public function setChildIndex (child:Void, index:Void):Dynamic;
+	public function setChildIndex (child:Dynamic, index:Dynamic):Dynamic;
 	
 	/**
 	*	@method sortChildren
@@ -198,20 +200,20 @@ extern class Container extends DisplayObject {
 	/**
 	*	@method swapChildren
 	*	Swaps the specified children's depth in the display list. Fails silently if either child is not a child of this Container.
-	*	@param child1 (null)  
-	*	@param child2 (null)  
+	*	@param child1 (Dynamic)  
+	*	@param child2 (Dynamic)  
 	*
 	*/
-	public function swapChildren (child1:Void, child2:Void):Dynamic;
+	public function swapChildren (child1:Dynamic, child2:Dynamic):Dynamic;
 	
 	/**
 	*	@method swapChildrenAt
 	*	Swaps the children at the specified indexes. Fails silently if either index is out of range.
-	*	@param index1 (null)  
-	*	@param index2 (null)  
+	*	@param index1 (Dynamic)  
+	*	@param index2 (Dynamic)  
 	*
 	*/
-	public function swapChildrenAt (index1:Void, index2:Void):Dynamic;
+	public function swapChildrenAt (index1:Dynamic, index2:Dynamic):Dynamic;
 	
 	/**
 	*	@method toString

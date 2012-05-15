@@ -521,7 +521,7 @@ var p = DisplayObject.prototype;
 	/**
 	* Returns a data URL for the cache, or null if this display object is not cached.
 	* Uses cacheID to ensure a new data URL is not generated if the cache has not changed.
-	* @method getCacheDataURL.
+	* @method getCacheDataURL
 	**/
 	p.getCacheDataURL = function() {
 		if (!this.cacheCanvas) { return null; }

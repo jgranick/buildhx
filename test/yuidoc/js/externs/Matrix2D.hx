@@ -185,7 +185,7 @@ extern class Matrix2D {
 	*	Returns true if the matrix is an identity matrix.
 	*
 	*/
-	public function isIdentity ():Void;
+	public function isIdentity ():Dynamic;
 	
 	/**
 	*	@method new

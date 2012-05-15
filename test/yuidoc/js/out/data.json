@@ -2673,7 +2673,7 @@
             "line": 521,
             "description": "Returns a data URL for the cache, or null if this display object is not cached.\nUses cacheID to ensure a new data URL is not generated if the cache has not changed.",
             "itemtype": "method",
-            "name": "getCacheDataURL.",
+            "name": "getCacheDataURL",
             "class": "DisplayObject",
             "module": "EaselJS"
         },

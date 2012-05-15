@@ -35,8 +35,10 @@ class YUIDocParser extends SimpleParser
 		types.set ("Function", "Dynamic");
 		types.set ("Boolean", "Bool");
 		types.set ("Object", "Dynamic");
-		types.set ("undefined", "Void");
-		types.set ("null", "Void");
+		//types.set ("undefined", "Void");
+		types.set ("undefined", "Dynamic");
+		//types.set ("null", "Void");
+		types.set ("null", "Dynamic");
 		types.set ("", "Dynamic");
 		types.set ("HTMLElement", "HtmlDom");
 		types.set ("Mixed", "Dynamic");
@@ -158,7 +160,7 @@ class YUIDocParser extends SimpleParser
 						{
 							//trace("param "+ param.name + ":" + param.type);
 							methodDef.parameterNames.push(param.name);
-							methodDef.parameterTypes.push(param.type);
+							methodDef.parameterTypes.push(param.type != null ? param.type : "Dynamic");
 							methodDef.parameterDescriptions.push(param.description);
 							methodDef.parameterOptional.push(false);//cannot determine
 						}
@@ -168,7 +170,7 @@ class YUIDocParser extends SimpleParser
 					{
 						var returnObject:YUIReturnObject = Reflect.field(item, "return");
 						//trace("returns "+returnObject.type);
-						methodDef.returnType = returnObject.type;
+						methodDef.returnType = returnObject.type != null ? returnObject.type : "Dynamic";
 					}
 					else
 					{
@@ -198,7 +200,7 @@ class YUIDocParser extends SimpleParser
 					var  propertyDef = new ClassProperty();
 					propertyDef.owner = ownerClass;
 					propertyDef.name = i.name;
-					propertyDef.type = i.type;
+					propertyDef.type = i.type != null ? i.type : "Dynamic";
 					propertyDef.hasConflict = false;//?
 					propertyDef.ignore = false;//?
 					propertyDef.accessModifier = access;
@@ -345,6 +347,18 @@ class YUIDocParser extends SimpleParser
 		if (type == "HtmlDom") {
 			
 			type = "js.Dom";
+			
+		}
+		
+		if(type =="HTMLCanvasElement" || type == "HTMLCollection" || type == "HTMLAllCollection" || type =="HTMLDocument" || type == "HTMLElement") {
+			
+			type = "js.w3c.html5.Core";
+			
+		}
+		
+		if(type == "CanvasRenderingContext2D" || type == "CanvasPixelArray" || type == "ImageData" || type == "TextMetrics" || type == "CanvasPattern" || type == "CanvasGradient") {
+			
+			type = "js.w3c.html5.Canvas2DContext";
 			
 		}
 		

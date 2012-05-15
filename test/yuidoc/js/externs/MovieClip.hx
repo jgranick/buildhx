@@ -1,5 +1,7 @@
 package ;
 
+import js.w3c.html5.Canvas2DContext;
+
 
 
 /**
@@ -130,18 +132,18 @@ extern class MovieClip extends Container {
 	/**
 	*	@method gotoAndPlay
 	*	Advances this movie clip to the specified position or label and sets paused to false.
-	*	@param positionOrLabel (null)  
+	*	@param positionOrLabel (Dynamic)  
 	*
 	*/
-	public function gotoAndPlay (positionOrLabel:Void):Dynamic;
+	public function gotoAndPlay (positionOrLabel:Dynamic):Dynamic;
 	
 	/**
 	*	@method gotoAndStop
 	*	Advances this movie clip to the specified position or label and sets paused to true.
-	*	@param positionOrLabel (null)  
+	*	@param positionOrLabel (Dynamic)  
 	*
 	*/
-	public function gotoAndStop (positionOrLabel:Void):Dynamic;
+	public function gotoAndStop (positionOrLabel:Dynamic):Dynamic;
 	
 	/**
 	*	@method initialize

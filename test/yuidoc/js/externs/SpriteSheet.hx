@@ -92,25 +92,25 @@ extern class SpriteSheet {
 	*/
 	public var complete:Bool;
 	
-	private var _animations:Void;
+	private var _animations:Dynamic;
 	
-	private var _data:Void;
+	private var _data:Dynamic;
 	
-	private var _frameHeight:Void;
+	private var _frameHeight:Dynamic;
 	
-	private var _frames:Void;
+	private var _frames:Dynamic;
 	
-	private var _frameWidth:Void;
+	private var _frameWidth:Dynamic;
 	
-	private var _images:Void;
+	private var _images:Dynamic;
 	
-	private var _loadCount:Void;
+	private var _loadCount:Dynamic;
 	
-	private var _numFrames:Void;
+	private var _numFrames:Dynamic;
 	
-	private var _regX:Void;
+	private var _regX:Dynamic;
 	
-	private var _regY:Void;
+	private var _regY:Dynamic;
 
 	
 	/**
@@ -127,10 +127,10 @@ extern class SpriteSheet {
 	*	property indicating the advance frequency for this animation, a name property, 
 	*	and a next property, which specifies the default next animation. If the animation
 	*	loops, the name and next property will be the same.
-	*	@param name (null)  The name of the animation to get.
+	*	@param name (Dynamic)  The name of the animation to get.
 	*
 	*/
-	public function getAnimation (name:Void):Dynamic;
+	public function getAnimation (name:Dynamic):Dynamic;
 	
 	/**
 	*	@method getAnimations

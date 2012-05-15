@@ -1,6 +1,7 @@
 package ;
 
 import js.Dom;
+import js.w3c.html5.Canvas2DContext;
 
 
 
@@ -31,7 +32,7 @@ extern class DOMElement extends DisplayObject {
 	*/
 	public var htmlElement:HtmlDom;
 	
-	private var _style:Void;
+	private var _style:Dynamic;
 	
 	private var DisplayObject_initialize:Dynamic;
 

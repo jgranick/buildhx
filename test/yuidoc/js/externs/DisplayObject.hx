@@ -1,5 +1,8 @@
 package ;
 
+import js.w3c.html5.Canvas2DContext;
+import js.w3c.html5.Core;
+
 
 
 /**
@@ -258,12 +261,12 @@ extern class DisplayObject {
 	public function draw (ctx:CanvasRenderingContext2D, ignoreCache:Bool):Dynamic;
 	
 	/**
-	*	@method getCacheDataURL.
+	*	@method getCacheDataURL
 	*	Returns a data URL for the cache, or null if this display object is not cached.
 	*	Uses cacheID to ensure a new data URL is not generated if the cache has not changed.
 	*
 	*/
-	public function getCacheDataURL. ():Dynamic;
+	public function getCacheDataURL ():Dynamic;
 	
 	/**
 	*	@method getConcatenatedMatrix

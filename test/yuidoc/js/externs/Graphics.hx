@@ -1,5 +1,7 @@
 package ;
 
+import js.w3c.html5.Canvas2DContext;
+
 
 
 /**
@@ -85,59 +87,59 @@ extern class Graphics {
 	
 	private var _strokeStyleInstructions:Array<Command>;
 	
-	private var a:Void;
+	private var a:Dynamic;
 	
-	private var at:Void;
+	private var at:Dynamic;
 	
-	private var bf:Void;
+	private var bf:Dynamic;
 	
-	private var bs:Void;
+	private var bs:Dynamic;
 	
-	private var bt:Void;
+	private var bt:Dynamic;
 	
-	private var c:Void;
+	private var c:Dynamic;
 	
-	private var cp:Void;
+	private var cp:Dynamic;
 	
-	private var dc:Void;
+	private var dc:Dynamic;
 	
-	private var de:Void;
+	private var de:Dynamic;
 	
-	private var dp:Void;
+	private var dp:Dynamic;
 	
-	private var dr:Void;
+	private var dr:Dynamic;
 	
-	private var ef:Void;
+	private var ef:Dynamic;
 	
-	private var es:Void;
+	private var es:Dynamic;
 	
-	private var f:Void;
+	private var f:Dynamic;
 	
-	private var lf:Void;
+	private var lf:Dynamic;
 	
-	private var ls:Void;
+	private var ls:Dynamic;
 	
-	private var lt:Void;
+	private var lt:Dynamic;
 	
-	private var mt:Void;
+	private var mt:Dynamic;
 	
-	private var p:Void;
+	private var p:Dynamic;
 	
-	private var qt:Void;
+	private var qt:Dynamic;
 	
-	private var r:Void;
+	private var r:Dynamic;
 	
-	private var rc:Void;
+	private var rc:Dynamic;
 	
-	private var rf:Void;
+	private var rf:Dynamic;
 	
-	private var rr:Void;
+	private var rr:Dynamic;
 	
-	private var rs:Void;
+	private var rs:Dynamic;
 	
-	private var s:Void;
+	private var s:Dynamic;
 	
-	private var ss:Void;
+	private var ss:Dynamic;
 	
 	public static var _ctx:CanvasRenderingContext2D;
 	
@@ -190,12 +192,12 @@ extern class Graphics {
 	/**
 	*	@method beginBitmapFill
 	*	Begins a pattern fill using the specified image. This ends the current subpath.
-	*	@param image (null)  The Image, Canvas, or Video object to use as the pattern.
+	*	@param image (Dynamic)  The Image, Canvas, or Video object to use as the pattern.
 	*	@param repetition (String)  Optional. Indicates whether to repeat the image in the fill area. One of "repeat", "repeat-x",
 	*	"repeat-y", or "no-repeat". Defaults to "repeat".
 	*
 	*/
-	public function beginBitmapFill (image:Void, repetition:String):Graphics;
+	public function beginBitmapFill (image:Dynamic, repetition:String):Graphics;
 	
 	/**
 	*	@method beginBitmapStroke
@@ -237,15 +239,15 @@ extern class Graphics {
 	*	@method beginLinearGradientStroke
 	*	Begins a linear gradient stroke defined by the line (x0, y0) to (x1, y1). This ends the current subpath. For example, the following code defines a black to white vertical gradient ranging from 20px to 120px, and draws a square to display it:<br/>
 	*	myGraphics.setStrokeStyle(10).beginLinearGradientStroke(["#000","#FFF"], [0, 1], 0, 20, 0, 120).drawRect(20, 20, 120, 120);
-	*	@param colors (null)  An array of CSS compatible color values. For example, ["#F00","#00F"] would define a gradient drawing from red to blue.
-	*	@param ratios (null)  An array of gradient positions which correspond to the colors. For example, [0.1, 0.9] would draw the first color to 10% then interpolating to the second color at 90%.
-	*	@param x0 (null)  The position of the first point defining the line that defines the gradient direction and size.
-	*	@param y0 (null)  The position of the first point defining the line that defines the gradient direction and size.
-	*	@param x1 (null)  The position of the second point defining the line that defines the gradient direction and size.
-	*	@param y1 (null)  The position of the second point defining the line that defines the gradient direction and size.
+	*	@param colors (Dynamic)  An array of CSS compatible color values. For example, ["#F00","#00F"] would define a gradient drawing from red to blue.
+	*	@param ratios (Dynamic)  An array of gradient positions which correspond to the colors. For example, [0.1, 0.9] would draw the first color to 10% then interpolating to the second color at 90%.
+	*	@param x0 (Dynamic)  The position of the first point defining the line that defines the gradient direction and size.
+	*	@param y0 (Dynamic)  The position of the first point defining the line that defines the gradient direction and size.
+	*	@param x1 (Dynamic)  The position of the second point defining the line that defines the gradient direction and size.
+	*	@param y1 (Dynamic)  The position of the second point defining the line that defines the gradient direction and size.
 	*
 	*/
-	public function beginLinearGradientStroke (colors:Void, ratios:Void, x0:Void, y0:Void, x1:Void, y1:Void):Graphics;
+	public function beginLinearGradientStroke (colors:Dynamic, ratios:Dynamic, x0:Dynamic, y0:Dynamic, x1:Dynamic, y1:Dynamic):Graphics;
 	
 	/**
 	*	@method beginRadialGradientFill
@@ -270,25 +272,25 @@ extern class Graphics {
 	*	@method beginRadialGradientStroke
 	*	Begins a radial gradient stroke. This ends the current subpath. For example, the following code defines a red to blue radial gradient centered at (100, 100), with a radius of 50, and draws a rectangle to display it:<br/>
 	*	myGraphics.setStrokeStyle(10).beginRadialGradientStroke(["#F00","#00F"], [0, 1], 100, 100, 0, 100, 100, 50).drawRect(50, 90, 150, 110);
-	*	@param colors (null)  An array of CSS compatible color values. For example, ["#F00","#00F"] would define a gradient drawing from red to blue.
-	*	@param ratios (null)  An array of gradient positions which correspond to the colors. For example, [0.1, 0.9] would draw the first color to 10% then interpolating to the second color at 90%, then draw the second color to 100%.
-	*	@param x0 (null)  Center position of the inner circle that defines the gradient.
-	*	@param y0 (null)  Center position of the inner circle that defines the gradient.
-	*	@param r0 (null)  Radius of the inner circle that defines the gradient.
-	*	@param x1 (null)  Center position of the outer circle that defines the gradient.
-	*	@param y1 (null)  Center position of the outer circle that defines the gradient.
-	*	@param r1 (null)  Radius of the outer circle that defines the gradient.
+	*	@param colors (Dynamic)  An array of CSS compatible color values. For example, ["#F00","#00F"] would define a gradient drawing from red to blue.
+	*	@param ratios (Dynamic)  An array of gradient positions which correspond to the colors. For example, [0.1, 0.9] would draw the first color to 10% then interpolating to the second color at 90%, then draw the second color to 100%.
+	*	@param x0 (Dynamic)  Center position of the inner circle that defines the gradient.
+	*	@param y0 (Dynamic)  Center position of the inner circle that defines the gradient.
+	*	@param r0 (Dynamic)  Radius of the inner circle that defines the gradient.
+	*	@param x1 (Dynamic)  Center position of the outer circle that defines the gradient.
+	*	@param y1 (Dynamic)  Center position of the outer circle that defines the gradient.
+	*	@param r1 (Dynamic)  Radius of the outer circle that defines the gradient.
 	*
 	*/
-	public function beginRadialGradientStroke (colors:Void, ratios:Void, x0:Void, y0:Void, r0:Void, x1:Void, y1:Void, r1:Void):Graphics;
+	public function beginRadialGradientStroke (colors:Dynamic, ratios:Dynamic, x0:Dynamic, y0:Dynamic, r0:Dynamic, x1:Dynamic, y1:Dynamic, r1:Dynamic):Graphics;
 	
 	/**
 	*	@method beginStroke
 	*	Begins a stroke with the specified color. This ends the current subpath.
-	*	@param color (null)  A CSS compatible color value (ex. "#FF0000" or "rgba(255,0,0,0.5)"). Setting to null will result in no stroke.
+	*	@param color (Dynamic)  A CSS compatible color value (ex. "#FF0000" or "rgba(255,0,0,0.5)"). Setting to null will result in no stroke.
 	*
 	*/
-	public function beginStroke (color:Void):Graphics;
+	public function beginStroke (color:Dynamic):Graphics;
 	
 	/**
 	*	@method clear
@@ -457,7 +459,7 @@ extern class Graphics {
 	*	@param alpha (Number)  Optional. The alpha component for the color where 0 is fully transparent and 1 is fully opaque.
 	*
 	*/
-	public static function getHSL (hue:Float, saturation:Float, lightness:Float, alpha:Float):Void;
+	public static function getHSL (hue:Float, saturation:Float, lightness:Float, alpha:Float):Dynamic;
 	
 	/**
 	*	@method getRGB
@@ -472,7 +474,7 @@ extern class Graphics {
 	*	@param alpha (Number)  Optional. The alpha component for the color where 0 is fully transparent and 1 is fully opaque.
 	*
 	*/
-	public static function getRGB (r:Float, g:Float, b:Float, alpha:Float):Void;
+	public static function getRGB (r:Float, g:Float, b:Float, alpha:Float):Dynamic;
 	
 	/**
 	*	@method initialize
@@ -559,13 +561,13 @@ extern class Graphics {
 	*	@method setStrokeStyle
 	*	Sets the stroke style for the current subpath. Like all drawing methods, this can be chained, so you can define the stroke style and color in a single line of code like so:
 	*	myGraphics.setStrokeStyle(8,"round").beginStroke("#F00");
-	*	@param thickness (null)  The width of the stroke.
-	*	@param caps (null)  Optional. Indicates the type of caps to use at the end of lines. One of butt, round, or square. Defaults to "butt". Also accepts the values 0 (butt), 1 (round), and 2 (square) for use with the tiny API.
-	*	@param joints (null)  Optional. Specifies the type of joints that should be used where two lines meet. One of bevel, round, or miter. Defaults to "miter". Also accepts the values 0 (miter), 1 (round), and 2 (bevel) for use with the tiny API.
-	*	@param miter (null)  Optional. If joints is set to "miter", then you can specify a miter limit ratio which controls at what point a mitered joint will be clipped.
+	*	@param thickness (Dynamic)  The width of the stroke.
+	*	@param caps (Dynamic)  Optional. Indicates the type of caps to use at the end of lines. One of butt, round, or square. Defaults to "butt". Also accepts the values 0 (butt), 1 (round), and 2 (square) for use with the tiny API.
+	*	@param joints (Dynamic)  Optional. Specifies the type of joints that should be used where two lines meet. One of bevel, round, or miter. Defaults to "miter". Also accepts the values 0 (miter), 1 (round), and 2 (bevel) for use with the tiny API.
+	*	@param miter (Dynamic)  Optional. If joints is set to "miter", then you can specify a miter limit ratio which controls at what point a mitered joint will be clipped.
 	*
 	*/
-	public function setStrokeStyle (thickness:Void, caps:Void, joints:Void, miter:Void):Graphics;
+	public function setStrokeStyle (thickness:Dynamic, caps:Dynamic, joints:Dynamic, miter:Dynamic):Graphics;
 	
 	/**
 	*	@method toString
