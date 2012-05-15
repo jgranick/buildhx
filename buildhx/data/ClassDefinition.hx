@@ -7,7 +7,7 @@ package buildhx.data;
 
 class ClassDefinition {
 	
-	
+	public static var CUSTOM_NAMESPACE:String = "";
 	public var className:String;
 	public var ignore:Bool;
 	public var imports:Hash <String>;

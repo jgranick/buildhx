@@ -1,0 +1,1430 @@
+{
+    "project": {},
+    "files": {
+        "tweenjs/CSSPlugin.js": {
+            "name": "tweenjs/CSSPlugin.js",
+            "modules": {},
+            "classes": {
+                "CSSPlugin": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "tweenjs/Ease.js": {
+            "name": "tweenjs/Ease.js",
+            "modules": {},
+            "classes": {
+                "Ease": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "tweenjs/Timeline.js": {
+            "name": "tweenjs/Timeline.js",
+            "modules": {},
+            "classes": {
+                "Timeline": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "tweenjs/Tween.js": {
+            "name": "tweenjs/Tween.js",
+            "modules": {
+                "TweenJS": 1
+            },
+            "classes": {
+                "Tween": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "TweenJS": {
+            "name": "TweenJS",
+            "submodules": {},
+            "classes": {
+                "CSSPlugin": 1,
+                "Ease": 1,
+                "Timeline": 1,
+                "Tween": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "tweenjs/Tween.js",
+            "line": 40,
+            "description": "The TweenJS Javascript library provides a simple but powerful tweening interface. It allows you to chain tweens and\nactions together to create complex sequences. For example:<br/>\nTween.get(target).wait(500).to({alpha:0,visible:false},1000).call(onComplete);<br/>\nThis tween will wait 0.5s, tween the target's alpha property to 0 over 1s, set it's visible to false, then call the onComplete function."
+        }
+    },
+    "classes": {
+        "CSSPlugin": {
+            "name": "CSSPlugin",
+            "shortname": "CSSPlugin",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "TweenJS",
+            "file": "tweenjs/CSSPlugin.js",
+            "line": 30,
+            "description": "TODO.",
+            "access": "protected",
+            "tagname": "",
+            "is_constructor": 1
+        },
+        "Ease": {
+            "name": "Ease",
+            "shortname": "Ease",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "TweenJS",
+            "file": "tweenjs/Ease.js",
+            "line": 32,
+            "description": "The Ease class provides a collection of easing functions for use with TweenJS.\nIt does not use the standard 4 param easing signature. Instead it uses a single param\nwhich indicates the current linear ratio (0 to 1) of the tween.<br/>\n<br/>\nMost methods on Ease can be passed directly as easing functions:<br/>\nTween.get(target).to({x:100}, 500, Ease.linear);<br/>\n<br/>\nHowever, methods beginning with \"get\" will return an easing function based on parameter values:<br/>\nTween.get(target).to({y:200}, 500, Ease.getPowIn(2.2));<br/>\n<br/>\nEquations derived from work by Robert Penner.",
+            "static": 1
+        },
+        "Timeline": {
+            "name": "Timeline",
+            "shortname": "Timeline",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "TweenJS",
+            "file": "tweenjs/Timeline.js",
+            "line": 32,
+            "description": "The Timeline class synchronizes multiple tweens and allows them to be controlled as a group.",
+            "params": [
+                {
+                    "name": "tweens",
+                    "description": "An array of Tweens to add to this timeline. See addTween for more info."
+                },
+                {
+                    "name": "labels",
+                    "description": "An object defining labels for using gotoAndPlay/Stop. See setLabels for details."
+                },
+                {
+                    "name": "props",
+                    "description": "The configuration properties to apply to this tween instance (ex. ). All properties default to false. Supported props are:<UL>\n   <LI> loop: sets the loop property on this tween.</LI>\n   <LI> useTicks: uses ticks for all durations instead of milliseconds.</LI>\n   <LI> ignoreGlobalPause: sets the ignoreGlobalPause property on this tween.</LI>\n   <LI> paused: indicates whether to start the tween paused.</LI>\n   <LI> position: indicates the initial position for this timeline</LI>\n</UL>",
+                    "type": "Loop:true"
+                }
+            ],
+            "is_constructor": 1
+        },
+        "Tween": {
+            "name": "Tween",
+            "shortname": "Tween",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "TweenJS",
+            "namespace": "",
+            "file": "tweenjs/Tween.js",
+            "line": 40,
+            "description": "Returns a new Tween instance. See Tween.get for param documentation.",
+            "is_constructor": 1
+        }
+    },
+    "classitems": [
+        {
+            "file": "tweenjs/CSSPlugin.js",
+            "line": 42,
+            "description": "Defines the default suffix map for CSS tweens. This can be overridden on a per tween basis by specifying a\ncssSuffixMap value for the individual tween. The object maps CSS property names to the suffix to use when\nreading or setting those properties. For example a map in the form {top:\"px\"} specifies that when tweening\nthe \"top\" CSS property, it should use the \"px\" suffix (ex. target.style.top = \"20.5px\"). This only applies\nto tweens with the \"css\" config property set to true.",
+            "itemtype": "property",
+            "name": "cssSuffixMap",
+            "type": "Object",
+            "static": 1,
+            "class": "CSSPlugin"
+        },
+        {
+            "file": "tweenjs/CSSPlugin.js",
+            "line": 56,
+            "class": "CSSPlugin"
+        },
+        {
+            "file": "tweenjs/CSSPlugin.js",
+            "line": 65,
+            "class": "CSSPlugin"
+        },
+        {
+            "file": "tweenjs/CSSPlugin.js",
+            "line": 81,
+            "class": "CSSPlugin"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 52,
+            "itemtype": "method",
+            "name": "linear",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 58,
+            "description": "Identical to linear.",
+            "itemtype": "method",
+            "name": "none",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 65,
+            "description": "Mimics the simple -100 to 100 easing in Flash Pro.",
+            "itemtype": "method",
+            "name": "get",
+            "params": [
+                {
+                    "name": "amount",
+                    "description": "A value from -1 (ease in) to 1 (ease out) indicating the strength and direction of the ease."
+                }
+            ],
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 81,
+            "description": "Configurable exponential ease.",
+            "itemtype": "method",
+            "name": "getPowIn",
+            "params": [
+                {
+                    "name": "pow",
+                    "description": "The exponent to use (ex. 3 would return a cubic ease)."
+                }
+            ],
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 94,
+            "description": "Configurable exponential ease.",
+            "itemtype": "method",
+            "name": "getPowOut",
+            "params": [
+                {
+                    "name": "pow",
+                    "description": "The exponent to use (ex. 3 would return a cubic ease)."
+                }
+            ],
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 107,
+            "description": "Configurable exponential ease.",
+            "itemtype": "method",
+            "name": "getPowInOut",
+            "params": [
+                {
+                    "name": "pow",
+                    "description": "The exponent to use (ex. 3 would return a cubic ease)."
+                }
+            ],
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 121,
+            "itemtype": "method",
+            "name": "quadIn",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 126,
+            "itemtype": "method",
+            "name": "quadOut",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 131,
+            "itemtype": "method",
+            "name": "quadInOut",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 138,
+            "itemtype": "method",
+            "name": "cubicIn",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 143,
+            "itemtype": "method",
+            "name": "cubicOut",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 148,
+            "itemtype": "method",
+            "name": "cubicInOut",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 155,
+            "itemtype": "method",
+            "name": "quartIn",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 160,
+            "itemtype": "method",
+            "name": "quartOut",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 165,
+            "itemtype": "method",
+            "name": "quartInOut",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 172,
+            "itemtype": "method",
+            "name": "quintIn",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 177,
+            "itemtype": "method",
+            "name": "quintOut",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 182,
+            "itemtype": "method",
+            "name": "quintInOut",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 189,
+            "itemtype": "method",
+            "name": "sineIn",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 197,
+            "itemtype": "method",
+            "name": "sineOut",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 205,
+            "itemtype": "method",
+            "name": "sineInOut",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 214,
+            "description": "Configurable \"back in\" ease.",
+            "itemtype": "method",
+            "name": "getBackIn",
+            "params": [
+                {
+                    "name": "amount",
+                    "description": "The strength of the ease."
+                }
+            ],
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 225,
+            "itemtype": "method",
+            "name": "backIn",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 231,
+            "description": "Configurable \"back out\" ease.",
+            "itemtype": "method",
+            "name": "getBackOut",
+            "params": [
+                {
+                    "name": "amount",
+                    "description": "The strength of the ease."
+                }
+            ],
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 242,
+            "itemtype": "method",
+            "name": "backOut",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 248,
+            "description": "Configurable \"back in out\" ease.",
+            "itemtype": "method",
+            "name": "getBackInOut",
+            "params": [
+                {
+                    "name": "amount",
+                    "description": "The strength of the ease."
+                }
+            ],
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 261,
+            "itemtype": "method",
+            "name": "backInOut",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 268,
+            "itemtype": "method",
+            "name": "circIn",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 276,
+            "itemtype": "method",
+            "name": "circOut",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 284,
+            "itemtype": "method",
+            "name": "circInOut",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 293,
+            "itemtype": "method",
+            "name": "bounceIn",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 301,
+            "itemtype": "method",
+            "name": "bounceOut",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 317,
+            "itemtype": "method",
+            "name": "bounceInOut",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 327,
+            "description": "Configurable elastic ease.",
+            "itemtype": "method",
+            "name": "getElasticIn",
+            "params": [
+                {
+                    "name": "amplitude",
+                    "description": ""
+                },
+                {
+                    "name": "period",
+                    "description": ""
+                }
+            ],
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 342,
+            "itemtype": "method",
+            "name": "elasticIn",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 348,
+            "description": "Configurable elastic ease.",
+            "itemtype": "method",
+            "name": "getElasticOut",
+            "params": [
+                {
+                    "name": "amplitude",
+                    "description": ""
+                },
+                {
+                    "name": "period",
+                    "description": ""
+                }
+            ],
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 363,
+            "itemtype": "method",
+            "name": "elasticOut",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 369,
+            "description": "Configurable elastic ease.",
+            "itemtype": "method",
+            "name": "getElasticInOut",
+            "params": [
+                {
+                    "name": "amplitude",
+                    "description": ""
+                },
+                {
+                    "name": "period",
+                    "description": ""
+                }
+            ],
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 384,
+            "itemtype": "method",
+            "name": "elasticInOut",
+            "static": 1,
+            "class": "Ease"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 53,
+            "description": "Causes this timeline to continue playing when a global pause is active.",
+            "itemtype": "property",
+            "name": "ignoreGlobalPause",
+            "type": "Boolean",
+            "class": "Timeline"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 60,
+            "description": "Read-only property specifying the total duration of this timeline in milliseconds (or ticks if useTicks is true).\nThis value is usually automatically updated as you modify the timeline. See updateDuration for more information.",
+            "itemtype": "property",
+            "name": "duration",
+            "type": "Number",
+            "class": "Timeline"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 68,
+            "description": "If true, the timeline will loop when it reaches the end. Can be set via the props param.",
+            "itemtype": "property",
+            "name": "loop",
+            "type": "Boolean",
+            "class": "Timeline"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 77,
+            "itemtype": "property",
+            "name": "_paused",
+            "type": "Boolean",
+            "access": "protected",
+            "tagname": "",
+            "class": "Timeline"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 84,
+            "itemtype": "property",
+            "name": "_tweens",
+            "type": "Array[Tween]",
+            "access": "protected",
+            "tagname": "",
+            "class": "Timeline"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 91,
+            "itemtype": "property",
+            "name": "_labels",
+            "type": "Array[String]",
+            "access": "protected",
+            "tagname": "",
+            "class": "Timeline"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 98,
+            "itemtype": "property",
+            "name": "_prevPosition",
+            "type": "Number",
+            "access": "protected",
+            "tagname": "",
+            "class": "Timeline"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 105,
+            "itemtype": "property",
+            "name": "_prevPos",
+            "type": "Number",
+            "access": "protected",
+            "tagname": "",
+            "class": "Timeline"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 112,
+            "itemtype": "property",
+            "name": "_useTicks",
+            "type": "Boolean",
+            "access": "protected",
+            "tagname": "",
+            "class": "Timeline"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 120,
+            "description": "Initialization method.",
+            "itemtype": "method",
+            "name": "initialize",
+            "access": "protected",
+            "tagname": "",
+            "class": "Timeline"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 140,
+            "description": "Adds one or more tweens (or timelines) to this timeline. The tweens will be paused (to remove them from the normal ticking system)\nand managed by this timeline. Adding a tween to multiple timelines will result in unexpected behaviour.",
+            "itemtype": "method",
+            "name": "addTween",
+            "params": [
+                {
+                    "name": "tween",
+                    "description": "The tween(s) to add. Accepts multiple arguments."
+                }
+            ],
+            "return": {
+                "description": "Tween The first tween that was passed in."
+            },
+            "class": "Timeline"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 163,
+            "description": "Removes one or more tweens from this timeline.",
+            "itemtype": "method",
+            "name": "removeTween",
+            "params": [
+                {
+                    "name": "tween",
+                    "description": "The tween(s) to remove. Accepts multiple arguments."
+                }
+            ],
+            "return": {
+                "description": "Boolean Returns true if all of the tweens were successfully removed."
+            },
+            "class": "Timeline"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 184,
+            "description": "Adds a label that can be used with gotoAndPlay/Stop.",
+            "itemtype": "method",
+            "name": "addLabel",
+            "params": [
+                {
+                    "name": "label",
+                    "description": "The label name."
+                },
+                {
+                    "name": "position",
+                    "description": "The position this label represents."
+                }
+            ],
+            "class": "Timeline"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 194,
+            "description": "Defines labels for use with gotoAndPlay/Stop. Overwrites any previously set labels.",
+            "itemtype": "method",
+            "name": "addLabel",
+            "params": [
+                {
+                    "name": "o",
+                    "description": "An object defining labels for using gotoAndPlay/Stop in the form  where time is in ms (or ticks if useTicks is true).",
+                    "type": "LabelName:time"
+                }
+            ],
+            "class": "Timeline"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 203,
+            "description": "Unpauses this timeline and jumps to the specified position or label.",
+            "itemtype": "method",
+            "name": "gotoAndPlay",
+            "params": [
+                {
+                    "name": "positionOrLabel",
+                    "description": "The position in milliseconds (or ticks if useTicks is true) or label to jump to."
+                }
+            ],
+            "class": "Timeline"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 213,
+            "description": "Pauses this timeline and jumps to the specified position or label.",
+            "itemtype": "method",
+            "name": "gotoAndStop",
+            "params": [
+                {
+                    "name": "positionOrLabel",
+                    "description": "The position in milliseconds (or ticks if useTicks is true) or label to jump to."
+                }
+            ],
+            "class": "Timeline"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 223,
+            "description": "Advances the timeline to the specified position.",
+            "itemtype": "method",
+            "name": "setPosition",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "The position to seek to in milliseconds (or ticks if useTicks is true)."
+                },
+                {
+                    "name": "actionsMode",
+                    "description": "Optional parameter specifying how actions are handled. See Tween.setPosition for more details."
+                }
+            ],
+            "return": {
+                "description": "Boolean Returns true if the timeline is complete (ie. the full timeline has run & loop is false)."
+            },
+            "class": "Timeline"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 245,
+            "description": "Pauses or plays this timeline.",
+            "itemtype": "method",
+            "name": "setPaused",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "Indicates whether the tween should be paused (true) or played (false)."
+                }
+            ],
+            "class": "Timeline"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 256,
+            "description": "Recalculates the duration of the timeline.\nThe duration is automatically updated when tweens are added or removed, but this method is useful \nif you modify a tween after it was added to the timeline.",
+            "itemtype": "method",
+            "name": "updateDuration",
+            "class": "Timeline"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 270,
+            "description": "Advances this timeline by the specified amount of time in milliseconds (or ticks if useTicks is true).\nThis is normally called automatically by the Tween engine (via Tween.tick), but is exposed for advanced uses.",
+            "itemtype": "method",
+            "name": "tick",
+            "params": [
+                {
+                    "name": "delta",
+                    "description": "The time to advance in milliseconds (or ticks if useTicks is true)."
+                }
+            ],
+            "class": "Timeline"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 286,
+            "description": "Returns a string representation of this object.",
+            "itemtype": "method",
+            "name": "toString",
+            "return": {
+                "description": "a string representation of the instance.",
+                "type": "String"
+            },
+            "class": "Timeline"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 295,
+            "itemtype": "method",
+            "name": "clone",
+            "access": "protected",
+            "tagname": "",
+            "class": "Timeline"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 304,
+            "itemtype": "method",
+            "name": "_goto",
+            "access": "protected",
+            "tagname": "",
+            "class": "Timeline"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 51,
+            "description": "Constant defining the none actionsMode for use with setPosition.",
+            "itemtype": "property",
+            "name": "NONE",
+            "type": "Number",
+            "static": 1,
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 59,
+            "description": "Constant defining the loop actionsMode for use with setPosition.",
+            "itemtype": "property",
+            "name": "LOOP",
+            "type": "Number",
+            "static": 1,
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 67,
+            "description": "Constant defining the reverse actionsMode for use with setPosition.",
+            "itemtype": "property",
+            "name": "REVERSE",
+            "type": "Number",
+            "static": 1,
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 75,
+            "description": "Constant returned by plugins to tell the tween not to use default assignment.",
+            "itemtype": "property",
+            "name": "IGNORE",
+            "type": "Object",
+            "static": 1,
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 83,
+            "itemtype": "property",
+            "name": "_listeners",
+            "type": "Array[Tween]",
+            "static": 1,
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 91,
+            "itemtype": "property",
+            "name": "_plugins",
+            "type": "Object",
+            "static": 1,
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 99,
+            "description": "Returns a new tween instance. This is functionally identical to using \"new Tween(...)\", but looks cleaner\nwith the chained syntax of TweenJS.",
+            "itemtype": "method",
+            "name": "get",
+            "static": 1,
+            "params": [
+                {
+                    "name": "target",
+                    "description": "The target object that will have its properties tweened."
+                },
+                {
+                    "name": "props",
+                    "description": "The configuration properties to apply to this tween instance (ex. ). All properties default to false. Supported props are:<UL>\n   <LI> loop: sets the loop property on this tween.</LI>\n   <LI> useTicks: uses ticks for all durations instead of milliseconds.</LI>\n   <LI> ignoreGlobalPause: sets the ignoreGlobalPause property on this tween.</LI>\n   <LI> override: if true, Tween.removeTweens(target) will be called to remove any other tweens with the same target.\n   <LI> paused: indicates whether to start the tween paused.</LI>\n   <LI> position: indicates the initial position for this timeline</LI>\n</UL>",
+                    "type": "Loop:true, paused:true"
+                }
+            ],
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 118,
+            "description": "Advances all tweens. This typically uses the Ticker class (when available), but you can call it manually if you prefer to use\nyour own \"heartbeat\" implementation.",
+            "itemtype": "method",
+            "name": "tick",
+            "static": 1,
+            "params": [
+                {
+                    "name": "delta",
+                    "description": "The change in time in milliseconds since the last tick. Required unless all tweens have useTicks set to true."
+                },
+                {
+                    "name": "paused",
+                    "description": "Indicates whether a global pause is in effect. Tweens with ignoreGlobalPause will ignore this, but all others will pause if this is true."
+                }
+            ],
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 137,
+            "description": "Removes all existing tweens for a target. This is called automatically by new tweens if the \"override\" prop is true.",
+            "itemtype": "method",
+            "name": "removeTweens",
+            "static": 1,
+            "params": [
+                {
+                    "name": "target",
+                    "description": "The target object to remove existing tweens from."
+                }
+            ],
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 152,
+            "description": "TODO: doc.",
+            "itemtype": "method",
+            "name": "installPlugin",
+            "static": 1,
+            "params": [
+                {
+                    "name": "plugin",
+                    "description": ""
+                },
+                {
+                    "name": "properties",
+                    "description": ""
+                }
+            ],
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 175,
+            "description": "Registers or unregisters a tween with the ticking system.",
+            "itemtype": "method",
+            "name": "_register",
+            "static": 1,
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 194,
+            "description": "Causes this tween to continue playing when a global pause is active. For example, if TweenJS is using Ticker,\nthen setting this to true (the default) will cause this tween to be paused when Ticker.setPaused(true) is called.\nSee Tween.tick() for more info. Can be set via the props param.",
+            "itemtype": "property",
+            "name": "ignoreGlobalPause",
+            "type": "Boolean",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 203,
+            "description": "If true, the tween will loop when it reaches the end. Can be set via the props param.",
+            "itemtype": "property",
+            "name": "loop",
+            "type": "Boolean",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 210,
+            "description": "Read-only property specifying the total duration of this tween in milliseconds (or ticks if useTicks is true).\nThis value is automatically updated as you modify the tween.",
+            "itemtype": "property",
+            "name": "duration",
+            "type": "Number",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 219,
+            "description": "Allows you to specify data that will be used by installed plugins. Each plugin uses this differently, but in general\nyou specify data by setting it to a property of pluginData with the same name as the plugin class.<br/>\nEx. myTween.pluginData.PluginClassName = data;<br/>\n<br/>\nAlso, most plugins support a property to enable or disable them. This is typically the plugin class name followed by \"_enabled\".<br/>\nEx. myTween.pluginData.PluginClassName_enabled = false;<br/>\n<br/>\nSome plugins also store instance data in this object, usually in a property named _PluginClassName.\nSee the documentation for individual plugins for more details.",
+            "itemtype": "property",
+            "name": "pluginData",
+            "type": "Object",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 236,
+            "itemtype": "property",
+            "name": "_paused",
+            "type": "Boolean",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 243,
+            "itemtype": "property",
+            "name": "_curQueueProps",
+            "type": "Object",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 250,
+            "itemtype": "property",
+            "name": "_initQueueProps",
+            "type": "Object",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 257,
+            "itemtype": "property",
+            "name": "_steps",
+            "type": "Array",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 264,
+            "itemtype": "property",
+            "name": "_actions",
+            "type": "Array",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 271,
+            "description": "Raw position.",
+            "itemtype": "property",
+            "name": "_prevPosition",
+            "type": "Number",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 279,
+            "description": "The position within the current step.",
+            "itemtype": "property",
+            "name": "_stepPosition",
+            "type": "Number",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 287,
+            "description": "Normalized position.",
+            "itemtype": "property",
+            "name": "_prevPos",
+            "type": "Number",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 295,
+            "itemtype": "property",
+            "name": "_target",
+            "type": "Object",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 302,
+            "itemtype": "property",
+            "name": "_useTicks",
+            "type": "Boolean",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 310,
+            "itemtype": "method",
+            "name": "initialize",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 334,
+            "description": "Queues a wait (essentially an empty tween).",
+            "itemtype": "method",
+            "name": "wait",
+            "params": [
+                {
+                    "name": "duration",
+                    "description": "The duration of the wait in milliseconds (or in ticks if useTicks is true)."
+                }
+            ],
+            "return": {
+                "description": "Tween This tween instance (for chaining calls)."
+            },
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 346,
+            "description": "Queues a tween from the current values to the target properties. Set duration to 0 to jump to these value.\nNumeric properties will be tweened from their current value in the tween to the target value. Non-numeric\nproperties will be set at the end of the specified duration.",
+            "itemtype": "method",
+            "name": "to",
+            "params": [
+                {
+                    "name": "props",
+                    "description": "An object specifying property target values for this tween (Ex.  would tween the x property of the target to 300).",
+                    "type": "X:300"
+                },
+                {
+                    "name": "duration",
+                    "description": "The duration of the wait in milliseconds (or in ticks if useTicks is true)."
+                },
+                {
+                    "name": "ease",
+                    "description": "The easing function to use for this tween."
+                }
+            ],
+            "return": {
+                "description": "Tween This tween instance (for chaining calls)."
+            },
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 361,
+            "description": "Queues an action to call the specified function. For example: myTween.wait(1000).call(myFunction); would call myFunction() after 1s.",
+            "itemtype": "method",
+            "name": "call",
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "The function to call."
+                },
+                {
+                    "name": "params",
+                    "description": "The parameters to call the function with. If this is omitted, then the function will be called with a single param pointing to this tween."
+                },
+                {
+                    "name": "scope",
+                    "description": "The scope to call the function in. If omitted, it will be called in the target's scope."
+                }
+            ],
+            "return": {
+                "description": "Tween This tween instance (for chaining calls)."
+            },
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 373,
+            "description": "Queues an action to set the specified props on the specified target. If target is null, it will use this tween's target. Ex. myTween.wait(1000).set({visible:false},foo);",
+            "itemtype": "method",
+            "name": "set",
+            "params": [
+                {
+                    "name": "props",
+                    "description": "The properties to set (ex. ).",
+                    "type": "Visible:false"
+                },
+                {
+                    "name": "target",
+                    "description": "The target to set the properties on. If omitted, they will be set on the tween's target."
+                }
+            ],
+            "return": {
+                "description": "Tween This tween instance (for chaining calls)."
+            },
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 384,
+            "description": "Queues an action to to play (unpause) the specified tween. This enables you to sequence multiple tweens. Ex. myTween.to({x:100},500).play(otherTween);",
+            "itemtype": "method",
+            "name": "play",
+            "params": [
+                {
+                    "name": "tween",
+                    "description": "The tween to play."
+                }
+            ],
+            "return": {
+                "description": "Tween This tween instance (for chaining calls)."
+            },
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 394,
+            "description": "Queues an action to to pause the specified tween.",
+            "itemtype": "method",
+            "name": "pause",
+            "params": [
+                {
+                    "name": "tween",
+                    "description": "The tween to play. If null, it pauses this tween."
+                }
+            ],
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 404,
+            "description": "Advances the tween to a specified position.",
+            "itemtype": "method",
+            "name": "setPosition",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "The position to seek to in milliseconds (or ticks if useTicks is true)."
+                },
+                {
+                    "name": "actionsMode",
+                    "description": "Optional parameter specifying how actions are handled (ie. call, set, play, pause): Tween.NONE (0) - run no actions. Tween.LOOP (1) - if new position is less than old, then run all actions between old and duration, then all actions between 0 and new. Defaults to LOOP. Tween.REVERSE (2) - if new position is less than old, run all actions between them in reverse."
+                }
+            ],
+            "return": {
+                "description": "Boolean Returns true if the tween is complete (ie. the full tween has run & loop is false)."
+            },
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 462,
+            "description": "Advances this tween by the specified amount of time in milliseconds (or ticks if useTicks is true).\nThis is normally called automatically by the Tween engine (via Tween.tick), but is exposed for advanced uses.",
+            "itemtype": "method",
+            "name": "tick",
+            "params": [
+                {
+                    "name": "delta",
+                    "description": "The time to advance in milliseconds (or ticks if useTicks is true)."
+                }
+            ],
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 473,
+            "description": "Pauses or plays this tween.",
+            "itemtype": "method",
+            "name": "setPaused",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "Indicates whether the tween should be paused (true) or played (false)."
+                }
+            ],
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 492,
+            "description": "Returns a string representation of this object.",
+            "itemtype": "method",
+            "name": "toString",
+            "return": {
+                "description": "a string representation of the instance.",
+                "type": "String"
+            },
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 501,
+            "itemtype": "method",
+            "name": "clone",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 510,
+            "itemtype": "method",
+            "name": "_updateTargetProps",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 549,
+            "itemtype": "method",
+            "name": "_runActions",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 575,
+            "itemtype": "method",
+            "name": "_appendQueueProps",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 599,
+            "itemtype": "method",
+            "name": "_cloneProps",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 611,
+            "itemtype": "method",
+            "name": "_addStep",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 624,
+            "itemtype": "method",
+            "name": "_addAction",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 634,
+            "itemtype": "method",
+            "name": "_set",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        }
+    ]
+}

@@ -39,6 +39,7 @@ class BuildHX {
 	private static var sourcePath:String;
 	private static var targetFlags:Hash <String>;
 	private static var targetPath:String;
+	private static var customNameSpace:String;
 	
 	private static var definitions:Hash <ClassDefinition>;
 	private static var types:Hash <String>;
@@ -792,6 +793,11 @@ class BuildHX {
 						
 						targetPath = FileSystem.fullPath (targetPath);
 						
+					}
+					
+					if(element.has.customNameSpace && element.att.customNameSpace != "")
+					{
+						ClassDefinition.CUSTOM_NAMESPACE = element.att.customNameSpace + ".";
 					}
 				
 			}

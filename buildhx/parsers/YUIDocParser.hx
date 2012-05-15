@@ -368,7 +368,12 @@ class YUIDocParser extends SimpleParser
 			
 		} else {
 			
-			return type;
+			if(definitions.exists(type))
+			{
+				type = ClassDefinition.CUSTOM_NAMESPACE + type;
+			}
+			
+			return  type;
 			
 		}
 		
@@ -443,6 +448,8 @@ class YUIDocParser extends SimpleParser
 	}
 	
 }
+
+//http://yui.github.com/yuidoc/syntax/index.html
 
 typedef YUIDocRoot =
 {

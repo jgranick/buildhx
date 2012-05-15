@@ -2,4 +2,5 @@
 <data>
 	<source path="js" parser="yuidoc"></source>
 	<output path="externs"></output>
+	<!--output path="externs" customNameSpace="createjs.tween"></output-->
 </data>

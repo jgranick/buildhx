@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>tweenjs&#x2F;Timeline.js</title>
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.0&#x2F;build&#x2F;cssgrids&#x2F;cssgrids-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="..&#x2F;assets/css/main.css" id="site_styles">
+    <script src="http:&#x2F;&#x2F;yui.yahooapis.com&#x2F;3.5.0&#x2F;build&#x2F;yui&#x2F;yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="..&#x2F;assets/css/logo.png" title=""></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="..&#x2F;classes/CSSPlugin.html">CSSPlugin</a></li>
+            
+                <li><a href="..&#x2F;classes/Ease.html">Ease</a></li>
+            
+                <li><a href="..&#x2F;classes/Timeline.html">Timeline</a></li>
+            
+                <li><a href="..&#x2F;classes/Tween.html">Tween</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="..&#x2F;modules/TweenJS.html">TweenJS</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: tweenjs&#x2F;Timeline.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&#x2F;*
+* Timeline
+* Visit http:&#x2F;&#x2F;createjs.com&#x2F; for documentation, updates and examples.
+*
+* Copyright (c) 2010 gskinner.com, inc.
+* 
+* Permission is hereby granted, free of charge, to any person
+* obtaining a copy of this software and associated documentation
+* files (the &quot;Software&quot;), to deal in the Software without
+* restriction, including without limitation the rights to use,
+* copy, modify, merge, publish, distribute, sublicense, and&#x2F;or sell
+* copies of the Software, and to permit persons to whom the
+* Software is furnished to do so, subject to the following
+* conditions:
+* 
+* The above copyright notice and this permission notice shall be
+* included in all copies or substantial portions of the Software.
+* 
+* THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+* OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+* NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+* WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+* FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+* OTHER DEALINGS IN THE SOFTWARE.
+*&#x2F;
+
+(function(window) {
+
+
+&#x2F;**
+ * The Timeline class synchronizes multiple tweens and allows them to be controlled as a group.
+ * @class Timeline
+ * @param tweens An array of Tweens to add to this timeline. See addTween for more info.
+ * @param labels An object defining labels for using gotoAndPlay&#x2F;Stop. See setLabels for details.
+ * @param props The configuration properties to apply to this tween instance (ex. {loop:true}). All properties default to false. Supported props are:&lt;UL&gt;
+ *    &lt;LI&gt; loop: sets the loop property on this tween.&lt;&#x2F;LI&gt;
+ *    &lt;LI&gt; useTicks: uses ticks for all durations instead of milliseconds.&lt;&#x2F;LI&gt;
+ *    &lt;LI&gt; ignoreGlobalPause: sets the ignoreGlobalPause property on this tween.&lt;&#x2F;LI&gt;
+ *    &lt;LI&gt; paused: indicates whether to start the tween paused.&lt;&#x2F;LI&gt;
+ *    &lt;LI&gt; position: indicates the initial position for this timeline&lt;&#x2F;LI&gt;
+ * &lt;&#x2F;UL&gt;
+ * @constructor
+ **&#x2F;
+var Timeline = function(tweens, labels, props) {
+  this.initialize(tweens, labels, props);
+}
+var p = Timeline.prototype;
+
+&#x2F;&#x2F; public properties:
+	
+	&#x2F;**
+	 * Causes this timeline to continue playing when a global pause is active.
+	 * @property ignoreGlobalPause
+	 * @type Boolean
+	 **&#x2F;
+	p.ignoreGlobalPause = false;
+	
+	&#x2F;**
+	 * Read-only property specifying the total duration of this timeline in milliseconds (or ticks if useTicks is true).
+	 * This value is usually automatically updated as you modify the timeline. See updateDuration for more information.
+	 * @property duration
+	 * @type Number
+	 **&#x2F;
+	p.duration = 0;
+	
+	&#x2F;**
+	 * If true, the timeline will loop when it reaches the end. Can be set via the props param.
+	 * @property loop
+	 * @type Boolean
+	 **&#x2F;
+	p.loop = false;
+
+&#x2F;&#x2F; private properties:
+	
+	&#x2F;**
+	 * @property _paused
+	 * @type Boolean
+	 * @protected
+	 **&#x2F;
+	p._paused = true;
+	
+	&#x2F;**
+	 * @property _tweens
+	 * @type Array[Tween]
+	 * @protected
+	 **&#x2F;
+	p._tweens = null;
+	
+	&#x2F;**
+	 * @property _labels
+	 * @type Array[String]
+	 * @protected
+	 **&#x2F;
+	p._labels = null;
+	
+	&#x2F;**
+	 * @property _prevPosition
+	 * @type Number
+	 * @protected
+	 **&#x2F;
+	p._prevPosition = 0;
+	
+	&#x2F;**
+	 * @property _prevPos
+	 * @type Number
+	 * @protected
+	 **&#x2F;
+	p._prevPos = -1;
+	
+	&#x2F;**
+	 * @property _useTicks
+	 * @type Boolean
+	 * @protected
+	 **&#x2F;
+	p._useTicks = false;
+	
+&#x2F;&#x2F; constructor:
+	&#x2F;** 
+	* Initialization method.
+	* @method initialize
+	* @protected
+	**&#x2F;
+	p.initialize = function(tweens, labels, props) {
+		this._tweens = [];
+		if (props) {
+			this._useTicks = props.useTicks;
+			this.loop = props.loop;
+			this.ignoreGlobalPause = props.ignoreGlobalPause;
+		}
+		if (tweens) { this.addTween.apply(this, tweens); }
+		this.setLabels(labels);
+		if (props&amp;&amp;props.paused) { this._paused=true; }
+		else { Tween._register(this,true); }
+		if (props&amp;&amp;props.position!=null) { this.setPosition(props.position, Tween.NONE); }
+	}
+	
+&#x2F;&#x2F; public methods:
+	&#x2F;** 
+	 * Adds one or more tweens (or timelines) to this timeline. The tweens will be paused (to remove them from the normal ticking system)
+	 * and managed by this timeline. Adding a tween to multiple timelines will result in unexpected behaviour.
+	 * @method addTween
+	 * @param tween The tween(s) to add. Accepts multiple arguments.
+	 * @return Tween The first tween that was passed in.
+	 **&#x2F;
+	p.addTween = function(tween) {
+		var l = arguments.length;
+		if (l &gt; 1) {
+			for (var i=0; i&lt;l; i++) { this.addTween(arguments[i]); }
+			return arguments[0];
+		} else if (l == 0) { return null; }
+		this.removeTween(tween);
+		this._tweens.push(tween);
+		tween.setPaused(true);
+		tween._paused = false;
+		tween._useTicks = this._useTicks;
+		if (tween.duration &gt; this.duration) { this.duration = tween.duration; }
+		if (this._prevPos &gt;= 0) { tween.setPosition(this._prevPos, Tween.NONE); }
+		return tween;
+	}
+
+	&#x2F;** 
+	 * Removes one or more tweens from this timeline.
+	 * @method removeTween
+	 * @param tween The tween(s) to remove. Accepts multiple arguments.
+	 * @return Boolean Returns true if all of the tweens were successfully removed.
+	 **&#x2F;
+	p.removeTween = function(tween) {
+		var l = arguments.length;
+		if (l &gt; 1) {
+			var good = true;
+			for (var i=0; i&lt;l; i++) { good = good &amp;&amp; this.removeTween(arguments[i]); }
+			return good;
+		} else if (l == 0) { return false; }
+		var index = this._tweens.indexOf(tween);
+		if (index != -1) {
+			this._tweens.splice(index,1);
+			if (tween.duration &gt;= this.duration) { this.updateDuration(); }
+			return true;
+		} else { return false; }
+	}
+	
+	&#x2F;** 
+	 * Adds a label that can be used with gotoAndPlay&#x2F;Stop.
+	 * @method addLabel
+	 * @param label The label name.
+	 * @param position The position this label represents.
+	 **&#x2F;
+	p.addLabel = function(label, position) {
+		this._labels[label] = position;
+	}
+
+	&#x2F;** 
+	 * Defines labels for use with gotoAndPlay&#x2F;Stop. Overwrites any previously set labels.
+	 * @method addLabel
+	 * @param o An object defining labels for using gotoAndPlay&#x2F;Stop in the form {labelName:time} where time is in ms (or ticks if useTicks is true).
+	 **&#x2F;
+	p.setLabels = function(o) {
+		this._labels = o ?  o : {};
+	}
+	
+	&#x2F;** 
+	 * Unpauses this timeline and jumps to the specified position or label.
+	 * @method gotoAndPlay
+	 * @param positionOrLabel The position in milliseconds (or ticks if useTicks is true) or label to jump to.
+	 **&#x2F;
+	p.gotoAndPlay = function(positionOrLabel) {
+		this.setPaused(false);
+		this._goto(positionOrLabel);
+	}
+	
+	&#x2F;** 
+	 * Pauses this timeline and jumps to the specified position or label.
+	 * @method gotoAndStop
+	 * @param positionOrLabel The position in milliseconds (or ticks if useTicks is true) or label to jump to.
+	 **&#x2F;
+	p.gotoAndStop = function(positionOrLabel) {
+		this.setPaused(true);
+		this._goto(positionOrLabel);
+	}
+	
+	&#x2F;** 
+	 * Advances the timeline to the specified position.
+	 * @method setPosition
+	 * @param value The position to seek to in milliseconds (or ticks if useTicks is true).
+	 * @param actionsMode Optional parameter specifying how actions are handled. See Tween.setPosition for more details.
+	 * @return Boolean Returns true if the timeline is complete (ie. the full timeline has run &amp; loop is false).
+	 **&#x2F;
+	p.setPosition = function(value, actionsMode) {
+		if (value &lt; 0) { value = 0; }
+		var t = this.loop ? value%this.duration : value;
+		var end = !this.loop &amp;&amp; value &gt;= this.duration;
+		if (t == this._prevPos) { return end; }
+		this._prevPosition = value;
+		this._prevPos = t; &#x2F;&#x2F; in case an action changes the current frame.
+		for (var i=0, l=this._tweens.length; i&lt;l; i++) {
+			this._tweens[i].setPosition(t, actionsMode);
+			if (t != this._prevPos) { return false; } &#x2F;&#x2F; an action changed this timeline&#x27;s position.
+		}
+		if (end) { this.setPaused(true); }
+		return end;
+	}
+	
+	&#x2F;** 
+	 * Pauses or plays this timeline.
+	 * @method setPaused
+	 * @param value Indicates whether the tween should be paused (true) or played (false).
+	 **&#x2F;
+	p.setPaused = function(value) {
+		if (this._paused == !!value) { return; }
+		this._paused = !!value;
+		Tween._register(this, !value);
+	}
+	
+	&#x2F;** 
+	 * Recalculates the duration of the timeline.
+	 * The duration is automatically updated when tweens are added or removed, but this method is useful 
+	 * if you modify a tween after it was added to the timeline.
+	 * @method updateDuration
+	 **&#x2F;
+	p.updateDuration = function() {
+		this.duration = 0;
+		for (var i=0,l=this._tweens.length; i&lt;l; i++) {
+			tween = this._tweens[i];
+			if (tween.duration &gt; this.duration) { this.duration = tween.duration; }
+		}
+	}
+	
+	&#x2F;** 
+	 * Advances this timeline by the specified amount of time in milliseconds (or ticks if useTicks is true).
+	 * This is normally called automatically by the Tween engine (via Tween.tick), but is exposed for advanced uses.
+	 * @method tick
+	 * @param delta The time to advance in milliseconds (or ticks if useTicks is true).
+	 **&#x2F;
+	p.tick = function(delta) {
+		this.setPosition(this._prevPosition+delta);
+	}
+	
+	p.resolve = function(positionOrLabel) {
+		var pos = parseFloat(positionOrLabel);
+		if (isNaN(pos)) { pos = this._labels[positionOrLabel]; }
+		return pos;
+	}
+
+	&#x2F;**
+	* Returns a string representation of this object.
+	* @method toString
+	* @return {String} a string representation of the instance.
+	**&#x2F;
+	p.toString = function() {
+		return &quot;[Timeline]&quot;;
+	}
+	
+	&#x2F;**
+	 * @method clone
+	 * @protected
+	 **&#x2F;
+	p.clone = function() {
+		throw(&quot;Timeline can not be cloned.&quot;)
+	}
+	
+&#x2F;&#x2F; private methods:
+	&#x2F;**
+	 * @method _goto
+	 * @protected
+	 **&#x2F;
+	p._goto = function(positionOrLabel) {
+		var pos = this.resolve(positionOrLabel);
+		if (pos != null) { this.setPosition(pos); }
+	}
+	
+window.Timeline = Timeline;
+}(window));
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="..&#x2F;assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="..&#x2F;assets/js/yui-prettify.js"></script>
+<script src="..&#x2F;assets/../api.js"></script>
+<script src="..&#x2F;assets/js/api-filter.js"></script>
+<script src="..&#x2F;assets/js/api-list.js"></script>
+<script src="..&#x2F;assets/js/api-search.js"></script>
+<script src="..&#x2F;assets/js/apidocs.js"></script>
+</body>
+</html>
