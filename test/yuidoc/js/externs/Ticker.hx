@@ -61,11 +61,11 @@ extern class Ticker {
 	
 	private var _startTime:Float;
 	
-	private var _tickTimes:Array<Number>;
+	private var _tickTimes:Array<Float>;
 	
 	private var _timeoutID:Float;
 	
-	private var _times:Array<Number>;
+	private var _times:Array<Float>;
 
 	
 	/**

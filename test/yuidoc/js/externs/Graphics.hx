@@ -233,7 +233,7 @@ extern class Graphics {
 	*	@param y1 (Number)  The position of the second point defining the line that defines the gradient direction and size.
 	*
 	*/
-	public function beginLinearGradientFill (colors:Array<String>, ratios:Array<Number>, x0:Float, y0:Float, x1:Float, y1:Float):Graphics;
+	public function beginLinearGradientFill (colors:Array<String>, ratios:Array<Float>, x0:Float, y0:Float, x1:Float, y1:Float):Graphics;
 	
 	/**
 	*	@method beginLinearGradientStroke
@@ -266,7 +266,7 @@ extern class Graphics {
 	*	@param r1 (Number)  Radius of the outer circle that defines the gradient.
 	*
 	*/
-	public function beginRadialGradientFill (colors:Array<String>, ratios:Array<Number>, x0:Float, y0:Float, r0:Float, x1:Float, y1:Float, r1:Float):Graphics;
+	public function beginRadialGradientFill (colors:Array<String>, ratios:Array<Float>, x0:Float, y0:Float, r0:Float, x1:Float, y1:Float, r1:Float):Graphics;
 	
 	/**
 	*	@method beginRadialGradientStroke

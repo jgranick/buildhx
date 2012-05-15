@@ -398,7 +398,13 @@ class YUIDocParser extends SimpleParser
 			
 		}
 		
-		type = type.split("[").join("<").split("]").join(">");
+		if (type.indexOf ("[") > -1) {
+			
+			type = type.split("[").join("<").split("]").join(">");
+			var r = ~/(Number+)/;
+			type = r.replace(type, "Float");
+		}
+		
 		
 		var resolvedType:String = "";
 		
