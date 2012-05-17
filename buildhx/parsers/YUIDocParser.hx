@@ -1,7 +1,7 @@
 package buildhx.parsers;
 
 import buildhx.writers.HaxeExternWriter;
-import neko.io.File;
+import sys.io.File;
 import buildhx.data.ClassDefinition;
 import buildhx.data.ClassMethod;
 import buildhx.data.ClassProperty;
