@@ -150,7 +150,7 @@ class HaxeExternWriter {
 	
 	public function writeClass (definition:ClassDefinition, basePath:String):Void {
 		
-		var targetPath = basePath + BuildHX.resolvePackageNameDot (ClassDefinition.CUSTOM_NAMESPACE + "." + definition.className).split (".").join ("/") + BuildHX.resolveClassName (definition.className) + ".hx";
+		var targetPath = basePath + BuildHX.resolvePackageNameDot (BuildHX.customNamespace + definition.className).split (".").join ("/") + BuildHX.resolveClassName (definition.className) + ".hx";
 		
 		BuildHX.print ("Writing " + targetPath);
 		BuildHX.makeDirectory (targetPath);
@@ -215,7 +215,7 @@ class HaxeExternWriter {
 		
 		var output = File.write (targetPath, false);
 		
-		output.writeString ("package " + BuildHX.resolvePackageName (ClassDefinition.CUSTOM_NAMESPACE + definition.className) + ";\n\n");
+		output.writeString ("package " + BuildHX.resolvePackageName (BuildHX.customNamespace + definition.className) + ";\n\n");
 		
 		for (importPath in imports) {
 			
@@ -229,7 +229,7 @@ class HaxeExternWriter {
 			
 		}
 		
-		if(definition.comment != null) {
+		if (definition.comment != null) {
 			
 			output.writeString ("\n");
 			output.writeString (definition.comment);

@@ -372,7 +372,7 @@ class YUIDocParser extends SimpleParser
 				
 				if (BuildHX.customNamespace != null) {
 					
-					type = BuildHX.customNamespace + "." + type;
+					type = BuildHX.customNamespace + type;
 					
 				}
 				

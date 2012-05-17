@@ -1,7 +1,6 @@
 package buildhx;
 
 
-import ext.String;
 import neko.FileSystem;
 import neko.io.File;
 import neko.io.Path;
@@ -31,12 +30,12 @@ class BuildHX {
 	public static var isLinux = false;
 	public static var isWindows = false;
 	public static var buildhx:String = "";
-	public static var customNamespace:String;
+	public static var customNamespace:String = "";
 	public static var libraryName:String;
 	public static var traceEnabled:Bool = true;
 	public static var verbose = false;
 	
-	private static var restrictedNames:Array < String > = [ "callback", "extern", "class", "override", "static", "public", "private", "enum" ];
+	private static var restrictedNames:Array <String> = [ "callback", "extern", "class", "override", "static", "public", "private", "enum" ];
 	
 	private static var parser:AbstractParser;
 	private static var parserName:String;
@@ -544,6 +543,12 @@ class BuildHX {
 			
 		}
 		
+		if (element.has.type) {
+			
+			definition.type = element.att.type;
+			
+		}
+		
 		if (element.has.resolve ("extends")) {
 			
 			definition.parentClassName = element.att.resolve ("extends");
@@ -847,13 +852,13 @@ class BuildHX {
 					
 					if (!FileSystem.exists (targetPath)) {
 						
-						targetPath = FileSystem.fullPath (targetPath) + "/";
+						targetPath = FileSystem.fullPath (targetPath);
 						
 					}
 					
 					if (element.has.namespace && element.att.namespace != "") {
 						
-						customNamespace = element.att.namespace;
+						customNamespace = element.att.namespace + ".";
 						
 					}
 				
