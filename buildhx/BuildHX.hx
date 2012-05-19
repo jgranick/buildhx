@@ -1,21 +1,14 @@
 package buildhx;
 
-
-import neko.FileSystem;
-import neko.io.File;
-import neko.io.Path;
-import neko.Lib;
-import neko.Sys;
+import sys.FileSystem;
+import sys.io.File;
+import haxe.io.Path;
 import haxe.xml.Fast;
 
 import buildhx.data.ClassDefinition;
 import buildhx.data.ClassMethod;
 import buildhx.data.ClassProperty;
 import hxjson2.JSON;
-import neko.FileSystem;
-import neko.io.File;
-import neko.io.Path;
-import neko.Lib;
 import buildhx.parsers.AbstractParser;
 import buildhx.parsers.CPPParser;
 import buildhx.parsers.JSDuckParser;
@@ -49,9 +42,9 @@ class BuildHX {
 	
 	private static function argumentError (error:String):Void {
 		
-		Lib.println (error);
-		Lib.println ("Usage :  haxelib run buildhx COMMAND ...");
-		Lib.println (" COMMAND : externs sourcePath targetPath");
+		Sys.println (error);
+		Sys.println ("Usage :  haxelib run buildhx COMMAND ...");
+		Sys.println (" COMMAND : externs sourcePath targetPath");
 		
 	}
 	
@@ -66,7 +59,7 @@ class BuildHX {
 		
 		if (verbose) {
 			
-			Lib.println ("Copy " + source + " to " + destination);
+			Sys.println ("Copy " + source + " to " + destination);
 			
 		}
 		
@@ -77,7 +70,7 @@ class BuildHX {
 	
 	public static function error (message:String, exit:Bool = true):Void {
 		
-		Lib.println ("Error: " + message);
+		Sys.println ("Error: " + message);
 		
 		if (exit) {
 			
@@ -151,7 +144,7 @@ class BuildHX {
 		
 		if (!requireVerbose || verbose) {
 			
-			Lib.println (message);
+			Sys.println (message);
 			
 		}
 		
@@ -312,8 +305,8 @@ class BuildHX {
 		
 		if (inputFile == "") {
 			
-			Lib.println ("BuildHX (1.0.0)");
-			Lib.println ("Usage : haxelib run buildhx Build.xml");
+			Sys.println ("BuildHX (1.0.0)");
+			Sys.println ("Usage : haxelib run buildhx Build.xml");
 			return;
 			
 		}
@@ -342,7 +335,11 @@ class BuildHX {
 		} catch (e:Dynamic) {
 			
 			error ("\"" + inputFile + "\" contains invalid XML data\n", false);
-			Lib.rethrow (e);
+			#if !neko
+				throw e;
+			#else
+				neko.Lib.rethrow(e);
+			#end
 			
 		}
 		
@@ -366,7 +363,7 @@ class BuildHX {
 				
 				if (parserName != null && parserName != "") {
 					
-					Lib.println ("Warning: \"" + parserName + "\" is an unknown parser type. Using the \"simple\" parser.");
+					Sys.println ("Warning: \"" + parserName + "\" is an unknown parser type. Using the \"simple\" parser.");
 					
 				}
 				
