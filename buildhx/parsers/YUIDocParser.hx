@@ -70,7 +70,7 @@ class YUIDocParser extends SimpleParser
 			
 			if(cl.description != null)
 			{
-				classDef.comment = "\n/**\n* "+ cl.description.split("\n").join("\n*\t") +"\n*/";
+				classDef.comment = "/**\n* "+ cl.description.split("\n").join("\n*\t") +"\n*/";
 				
 			}
 			
@@ -104,6 +104,7 @@ class YUIDocParser extends SimpleParser
 							constructorDef.parameterNames.push(param.name);
 							constructorDef.parameterTypes.push(param.type);
 							constructorDef.parameterOptional.push(false);//cannot determine
+							constructorDef.parameterDescriptions.push(param.description);
 						}
 					}
 					

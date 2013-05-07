@@ -215,7 +215,7 @@ class HaxeExternWriter {
 		
 		var output = File.write (targetPath, false);
 		
-		output.writeString ("package " + BuildHX.resolvePackageName (BuildHX.customNamespace + definition.className) + ";\n");
+		output.writeString ("package " + BuildHX.resolvePackageName (BuildHX.customNamespace + definition.className) + ";\n\n");
 		
 		for (importPath in imports) {
 			
@@ -225,7 +225,7 @@ class HaxeExternWriter {
 		
 		if (imports.length > 0) {
 			
-			//output.writeString ("\n");
+			output.writeString ("\n");
 			
 		}
 		
@@ -329,7 +329,7 @@ class HaxeExternWriter {
 			
 		}
 		
-		output.writeString ("}");
+		output.writeString ("}\n");
 		output.close ();
 		
 	}
