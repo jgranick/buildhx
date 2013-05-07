@@ -43,7 +43,7 @@ class YUIDocParser extends SimpleParser
 		types.set ("HTMLElement", "HtmlDom");
 		types.set ("Mixed", "Dynamic");
 		types.set ("Iterable", "Dynamic");
-		types.set ("Array", "Array <Dynamic>");
+		types.set ("Array", "Array<Dynamic>");
 		types.set ("RegExp", "EReg");
 		
 		this.types = types;
@@ -70,7 +70,7 @@ class YUIDocParser extends SimpleParser
 			
 			if(cl.description != null)
 			{
-				classDef.comment = "\n/**\n*	"+ cl.description.split("\n").join("\n*\t") +"\n*\n*/";
+				classDef.comment = "\n/**\n* "+ cl.description.split("\n").join("\n*\t") +"\n*/";
 				
 			}
 			
@@ -207,8 +207,8 @@ class YUIDocParser extends SimpleParser
 					
 					if(i.description != null)
 					{
-						propertyDef.comment = "\n\t/**\n\t*	"+ "@type " + i.type + "\n\t*\t" + i.description.split("\n").join("\n\t*\t") +"\n\t*\n\t*/";
-						//propertyDef.comment = "\n\t/**\n\t*	"+ i.description.split("\n").join(" ") + "\n\t*\t@type " + i.type +"\n\t*\n\t*/";
+						//propertyDef.comment = "\n\t/**\n\t*	"+ "@type " + i.type + "\n\t*\t" + i.description.split("\n").join("\n\t*\t") +"\n\t*\n\t*/";
+						propertyDef.comment = "\n\t/**\n\t* "+ i.description.split("\n").join(" ") +"\n\t*/";
 					}
 					
 					if(isStatic)
@@ -227,21 +227,21 @@ class YUIDocParser extends SimpleParser
 	
 	private function createMethodComment(methodDef:ClassMethod):String
 	{
-		var str = "\n\t/**\n\t*	"+ "@method " + methodDef.name;
+		var str = "\n\t/**";
 		
-		str += "\n\t*\t" + methodDef.description.split("\n").join("\n\t*\t");
+		str += "\n\t* " + methodDef.description.split("\n").join("\n\t*\t");
 		
 		for(i in 0...methodDef.parameterNames.length)
 		{
 			
-			str += "\n\t*\t"+ "@param " + methodDef.parameterNames[i] + " (" + methodDef.parameterTypes[i] + ")  ";
+			str += "\n\t* "+ "@param " + methodDef.parameterNames[i] + " ";
 			if(methodDef.parameterDescriptions[i] != null)
 			{	
 				str += methodDef.parameterDescriptions[i].split("\n").join("\n\t*\t");
 			}
 		}
 		
-		str += "\n\t*\n\t*/";
+		str += "\n\t*/";
 		
 		return str;
 	}
@@ -442,7 +442,7 @@ class YUIDocParser extends SimpleParser
 		
 		if (isArray) {
 			
-			return "Array <" + resolvedType + ">";
+			return "Array<" + resolvedType + ">";
 			
 		} else {
 			

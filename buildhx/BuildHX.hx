@@ -39,12 +39,14 @@ class BuildHX {
 	private static var definitions:Hash <ClassDefinition>;
 	private static var types:Hash <String>;
 	
+	public static var VERSION:String = "1.0.8";
+	public static var USAGE:String = "Usage : haxelib run buildhx build.xml";
+	
 	
 	private static function argumentError (error:String):Void {
 		
 		Sys.println (error);
-		Sys.println ("Usage :  haxelib run buildhx COMMAND ...");
-		Sys.println (" COMMAND : externs sourcePath targetPath");
+		Sys.println (USAGE);
 		
 	}
 	
@@ -305,8 +307,8 @@ class BuildHX {
 		
 		if (inputFile == "") {
 			
-			Sys.println ("BuildHX (1.0.0)");
-			Sys.println ("Usage : haxelib run buildhx Build.xml");
+			Sys.println ("BuildHX (" + VERSION + ")");
+			Sys.println (USAGE);
 			return;
 			
 		}
@@ -396,7 +398,7 @@ class BuildHX {
 		
 		if (Std.is (parser, YUIDocParser)) {
 			
-			runCommand ("", buildhx + "/bin/yuidoc", [ "." ]);
+			runCommand ("", "yuidoc", [ sourcePath ]);
 			sourcePath = FileSystem.fullPath ("out") + "/";
 			
 		}

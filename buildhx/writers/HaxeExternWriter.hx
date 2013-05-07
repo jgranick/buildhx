@@ -215,7 +215,7 @@ class HaxeExternWriter {
 		
 		var output = File.write (targetPath, false);
 		
-		output.writeString ("package " + BuildHX.resolvePackageName (BuildHX.customNamespace + definition.className) + ";\n\n");
+		output.writeString ("package " + BuildHX.resolvePackageName (BuildHX.customNamespace + definition.className) + ";\n");
 		
 		for (importPath in imports) {
 			
@@ -225,18 +225,18 @@ class HaxeExternWriter {
 		
 		if (imports.length > 0) {
 			
-			output.writeString ("\n");
+			//output.writeString ("\n");
 			
 		}
 		
 		if (definition.comment != null) {
 			
-			output.writeString ("\n");
+			//output.writeString ("\n");
 			output.writeString (definition.comment);
 			output.writeString ("\n");
 		}
 		
-		output.writeString ('@:native ("' + definition.className + '")\n');
+		output.writeString ('@:native("' + definition.className + '")\n');
 		output.writeString ('extern class ' + BuildHX.resolveClassName (definition.className));
 		
 		var parentClassName = "";
@@ -279,7 +279,7 @@ class HaxeExternWriter {
 			
 		}
 		
-		output.writeString (" {\n\n");
+		output.writeString ("\n{");
 		
 		for (property in staticProperties) {
 			
@@ -289,7 +289,7 @@ class HaxeExternWriter {
 		
 		if (staticProperties.length > 0) {
 			
-			output.writeString ("\n");
+			//output.writeString ("\n");
 			
 		}
 		
@@ -301,7 +301,7 @@ class HaxeExternWriter {
 		
 		if (properties.length > 0) {
 			
-			output.writeString ("\n");
+			//output.writeString ("\n");
 			
 		}
 		
@@ -313,7 +313,7 @@ class HaxeExternWriter {
 		
 		if (staticMethods.length > 0) {
 			
-			output.writeString ("\n");
+			//output.writeString ("\n");
 			
 		}
 		
@@ -325,7 +325,7 @@ class HaxeExternWriter {
 		
 		if (methods.length > 0) {
 			
-			output.writeString ("\n");
+			//output.writeString ("\n");
 			
 		}
 		
@@ -358,7 +358,7 @@ class HaxeExternWriter {
 			
 		}
 		
-		output += "function " + method.name + " (";
+		output += "function " + method.name + "(";
 		
 		for (i in 0...method.parameterNames.length) {
 			

@@ -1,5 +1,5 @@
 <project name="buildhx" url="" license="MIT">
 	<user name="elyon"/>
 	<description>BuildHX helps you create externs for native libraries.</description>
-    <version name="1.0.5">Added initial support for C++ bindings</version>
+    <version name="1.0.8">YUIDocParser path improvement and general cleanup</version>
 </project>

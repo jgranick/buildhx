@@ -52,7 +52,7 @@ class JSDuckParser extends SimpleParser {
 		types.set ("HTMLElement", "HtmlDom");
 		types.set ("Mixed", "Dynamic");
 		types.set ("Iterable", "Dynamic");
-		types.set ("Array", "Array <Dynamic>");
+		types.set ("Array", "Array<Dynamic>");
 		types.set ("RegExp", "EReg");
 		
 		this.types = types;
