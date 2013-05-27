@@ -1,5 +1,6 @@
 package buildhx;
 
+import haxe.Json;
 import sys.FileSystem;
 import sys.io.File;
 import haxe.io.Path;
@@ -8,7 +9,6 @@ import haxe.xml.Fast;
 import buildhx.data.ClassDefinition;
 import buildhx.data.ClassMethod;
 import buildhx.data.ClassProperty;
-import hxjson2.JSON;
 import buildhx.parsers.AbstractParser;
 import buildhx.parsers.CPPParser;
 import buildhx.parsers.JSDuckParser;
@@ -24,27 +24,30 @@ class BuildHX {
 	public static var isWindows = false;
 	public static var buildhx:String = "";
 	public static var customNamespace:String = "";
+	public static var nativeNamespace:String = "";
 	public static var libraryName:String;
 	public static var traceEnabled:Bool = true;
 	public static var verbose = false;
 	
-	private static var restrictedNames:Array <String> = [ "callback", "extern", "class", "override", "static", "public", "private", "enum" ];
+	private static var restrictedNames:Array<String> = [ "callback", "extern", "class", "override", "static", "public", "private", "enum" ];
 	
 	private static var parser:AbstractParser;
 	private static var parserName:String;
 	private static var sourcePath:String;
-	private static var targetFlags:Hash <String>;
+	private static var targetFlags:Map<String, String>;
 	private static var targetPath:String;
 	
-	private static var definitions:Hash <ClassDefinition>;
-	private static var types:Hash <String>;
+	private static var definitions:Map<String, ClassDefinition>;
+	private static var types:Map<String, String>;
+	
+	public static var VERSION:String = "2.0.2";
+	public static var USAGE:String = "Usage : haxelib run buildhx build.xml";
 	
 	
 	private static function argumentError (error:String):Void {
 		
 		Sys.println (error);
-		Sys.println ("Usage :  haxelib run buildhx COMMAND ...");
-		Sys.println (" COMMAND : externs sourcePath targetPath");
+		Sys.println (USAGE);
 		
 	}
 	
@@ -191,13 +194,13 @@ class BuildHX {
 		
 		var inputFile:String = "";
 		var debug:Bool = false;
-		var defines = new Hash <String> ();
-		var includePaths = new Array <String> ();
-		var targetFlags = new Hash <String> ();
+		var defines = new Map <String, String> ();
+		var includePaths = new Array<String> ();
+		var targetFlags = new Map <String, String> ();
 		
 		includePaths.push (".");
 		
-		var args:Array <String> = Sys.args ();
+		var args:Array<String> = Sys.args ();
 		
 		if (args.length > 0) {
 			
@@ -246,7 +249,7 @@ class BuildHX {
 			
 		}
 		
-		var words:Array <String> = new Array <String> ();
+		var words:Array<String> = new Array<String> ();
 		
 		for (arg in args) {
 			
@@ -305,8 +308,8 @@ class BuildHX {
 		
 		if (inputFile == "") {
 			
-			Sys.println ("BuildHX (1.0.0)");
-			Sys.println ("Usage : haxelib run buildhx Build.xml");
+			Sys.println ("BuildHX (" + VERSION + ")");
+			Sys.println (USAGE);
 			return;
 			
 		}
@@ -396,7 +399,7 @@ class BuildHX {
 		
 		if (Std.is (parser, YUIDocParser)) {
 			
-			runCommand ("", buildhx + "/bin/yuidoc", [ "." ]);
+			runCommand ("", "yuidoc", [ sourcePath ]);
 			sourcePath = FileSystem.fullPath ("out") + "/";
 			
 		}
@@ -413,14 +416,14 @@ class BuildHX {
 	}
 	
 	
-	public static function addImport (type:String, definition:ClassDefinition):Void {
+	public static function addImport (types:Array<String>, definition:ClassDefinition):Void {
+		for (type in types) {
+			if (type != null && type != "" && type.substr (-1) != "." && type != definition.className) {
 
-		if (type != null && type != "" && type.substr (-1) != "." && type != definition.className) {
-			
-			definition.imports.set (type, type);
-			
+				definition.imports.set (type, type);
+
+			}
 		}
-		
 	}
 	
 	
@@ -511,7 +514,7 @@ class BuildHX {
 	
 	public static function parseJSON (content:String):Dynamic {
 		
-		return JSON.decode (content, false);
+		return Json.parse (content);
 		
 	}
 	
@@ -790,8 +793,8 @@ class BuildHX {
 	
 	private static function parseXML (xml:Fast):Void {
 		
-		types = new Hash <String> ();
-		definitions = new Hash <ClassDefinition> ();
+		types = new Map <String, String> ();
+		definitions = new Map <String, ClassDefinition> ();
 		
 		for (element in xml.elements) {
 			
@@ -858,7 +861,13 @@ class BuildHX {
 						customNamespace = element.att.namespace + ".";
 						
 					}
-				
+					
+					if (element.has.native && element.att.native != "") {
+						
+						nativeNamespace = element.att.native + ".";
+						
+					}
+					
 				case "library":
 					
 					libraryName = element.att.name;

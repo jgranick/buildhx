@@ -13,11 +13,11 @@ import buildhx.writers.HaxeExternWriter;
 class SimpleParser extends AbstractParser {
 	
 	
-	private var definitions:Hash <ClassDefinition>;
-	private var types:Hash <String>;
+	private var definitions:Map <String, ClassDefinition>;
+	private var types:Map <String, String>;
 	
 	
-	public function new (types:Hash <String>, definitions:Hash <ClassDefinition>) {
+	public function new (types:Map <String, String>, definitions:Map <String, ClassDefinition>) {
 		
 		super (types, definitions);
 		
@@ -253,27 +253,27 @@ class SimpleParser extends AbstractParser {
 	}
 	
 	
-	public override function resolveImport (type:String):String {
-		
+	public override function resolveImport (type:String):Array<String> {
+
 		var type = resolveType (type, false);
-		
-		if (type.indexOf ("Array <") > -1) {
-			
+
+		if (type.indexOf ("Array<") > -1) {
+
 			var indexOfFirstBracket = type.indexOf ("<");
 			type = type.substr (indexOfFirstBracket + 1, type.indexOf (">") - indexOfFirstBracket - 1);
-			
+
 		}
-		
+
 		if (type.indexOf (".") == -1) {
-			
-			return null;
-			
+
+			return [];
+
 		} else {
-			
-			return type;
-			
+
+			return [type];
+
 		}
-		
+
 	}
 	
 	
