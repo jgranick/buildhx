@@ -6,16 +6,9 @@ Helps generate externs for native libraries.
 Current Features
 ----------------
 
-* Generate JS externs for libraries supporting JSDuck
 * Generate externs from manually defined XML
+* Generate JS externs for libraries supporting JSDuck and YUIDoc
 * Initial support for binding native C++ libraries
-
-Planned Features
-----------------
-
-* Improve native C++ binding support
-* Migrate support for creating Java/JNI bindings
-* Generate bindings to use native Objective-C libraries
 
 Usage
 -----
