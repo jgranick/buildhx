@@ -1,5 +1,0 @@
-<project name="buildhx" url="" license="MIT">
-	<user name="Meychi"/>
-	<description>BuildHX helps you create externs for native libraries.</description>
-    <version name="2.0.0">No deps and for Haxe 3</version>
-</project>

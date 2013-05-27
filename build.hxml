@@ -1,2 +1,3 @@
+-cp src
 -main buildhx.BuildHX
--neko run.n
+-neko haxelib.n

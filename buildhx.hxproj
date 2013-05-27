@@ -4,7 +4,7 @@
   <output>
     <movie outputType="Application" />
     <movie input="" />
-    <movie path="run.n" />
+    <movie path="haxelib.n" />
     <movie fps="0" />
     <movie width="0" />
     <movie height="0" />
