@@ -33,11 +33,11 @@ class HaxeExternWriter {
 		BuildHX.print ("Writing " + targetPath);
 		BuildHX.makeDirectory (targetPath);
 		
-		var imports = new Array <String> ();
-		var methods = new Array <String> ();
-		var properties = new Array <String> ();
-		var staticMethods = new Array <String> ();
-		var staticProperties = new Array <String> ();
+		var imports = new Array<String> ();
+		var methods = new Array<String> ();
+		var properties = new Array<String> ();
+		var staticMethods = new Array<String> ();
+		var staticProperties = new Array<String> ();
 		
 		for (importPath in definition.imports) {
 			
@@ -155,11 +155,11 @@ class HaxeExternWriter {
 		BuildHX.print ("Writing " + targetPath);
 		BuildHX.makeDirectory (targetPath);
 		
-		var imports = new Array <String> ();
-		var methods = new Array <String> ();
-		var properties = new Array <String> ();
-		var staticMethods = new Array <String> ();
-		var staticProperties = new Array <String> ();
+		var imports = new Array<String> ();
+		var methods = new Array<String> ();
+		var properties = new Array<String> ();
+		var staticMethods = new Array<String> ();
+		var staticProperties = new Array<String> ();
 		
 		for (importPath in definition.imports) {
 			
@@ -231,12 +231,12 @@ class HaxeExternWriter {
 		
 		if (definition.comment != null) {
 			
-			output.writeString ("\n");
+			//output.writeString ("\n");
 			output.writeString (definition.comment);
 			output.writeString ("\n");
 		}
 		
-		output.writeString ('@:native ("' + definition.className + '")\n');
+		output.writeString ('@:native("' + BuildHX.nativeNamespace + definition.className + '")\n');
 		output.writeString ('extern class ' + BuildHX.resolveClassName (definition.className));
 		
 		var parentClassName = "";
@@ -279,7 +279,7 @@ class HaxeExternWriter {
 			
 		}
 		
-		output.writeString (" {\n\n");
+		output.writeString ("\n{");
 		
 		for (property in staticProperties) {
 			
@@ -289,7 +289,7 @@ class HaxeExternWriter {
 		
 		if (staticProperties.length > 0) {
 			
-			output.writeString ("\n");
+			//output.writeString ("\n");
 			
 		}
 		
@@ -301,7 +301,7 @@ class HaxeExternWriter {
 		
 		if (properties.length > 0) {
 			
-			output.writeString ("\n");
+			//output.writeString ("\n");
 			
 		}
 		
@@ -313,7 +313,7 @@ class HaxeExternWriter {
 		
 		if (staticMethods.length > 0) {
 			
-			output.writeString ("\n");
+			//output.writeString ("\n");
 			
 		}
 		
@@ -325,11 +325,11 @@ class HaxeExternWriter {
 		
 		if (methods.length > 0) {
 			
-			output.writeString ("\n");
+			//output.writeString ("\n");
 			
 		}
 		
-		output.writeString ("}");
+		output.writeString ("}\n");
 		output.close ();
 		
 	}
@@ -358,7 +358,7 @@ class HaxeExternWriter {
 			
 		}
 		
-		output += "function " + method.name + " (";
+		output += "function " + method.name + "(";
 		
 		for (i in 0...method.parameterNames.length) {
 			

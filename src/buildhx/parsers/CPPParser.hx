@@ -14,7 +14,7 @@ import buildhx.writers.HaxeCFFIWriter;
 class CPPParser extends SimpleParser {
 	
 	
-	public function new (types:Hash <String>, definitions:Hash <ClassDefinition>) {
+	public function new (types:Map <String, String>, definitions:Map <String, ClassDefinition>) {
 		
 		super (types, definitions);
 		

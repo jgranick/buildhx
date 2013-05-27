@@ -9,13 +9,13 @@ import buildhx.data.ClassProperty;
 class YUIDocParser extends SimpleParser 
 {
 	
-	public function new (types:Hash <String>, definitions:Hash<ClassDefinition>) 
+	public function new (types:Map <String, String>, definitions:Map<String, ClassDefinition>) 
 	{	
 		super (types, definitions);
 		
 		if (definitions == null) {
 			
-			this.definitions = new Hash <ClassDefinition> ();
+			this.definitions = new Map <String, ClassDefinition> ();
 			
 		} else {
 			
@@ -25,7 +25,7 @@ class YUIDocParser extends SimpleParser
 		
 		if (types == null) {
 			
-			types = new Hash <String> ();
+			types = new Map <String, String> ();
 			
 		}
 		
@@ -40,10 +40,10 @@ class YUIDocParser extends SimpleParser
 		//types.set ("null", "Void");
 		types.set ("null", "Dynamic");
 		types.set ("", "Dynamic");
-		types.set ("HTMLElement", "HtmlDom");
+		types.set ("HTMLElement", "Element");
 		types.set ("Mixed", "Dynamic");
 		types.set ("Iterable", "Dynamic");
-		types.set ("Array", "Array <Dynamic>");
+		types.set ("Array", "Array<Dynamic>");
 		types.set ("RegExp", "EReg");
 		
 		this.types = types;
@@ -70,7 +70,7 @@ class YUIDocParser extends SimpleParser
 			
 			if(cl.description != null)
 			{
-				classDef.comment = "\n/**\n*	"+ cl.description.split("\n").join("\n*\t") +"\n*\n*/";
+				classDef.comment = "/**\n* "+ cl.description.split("\n").join("\n*\t") +"\n*/";
 				
 			}
 			
@@ -104,6 +104,7 @@ class YUIDocParser extends SimpleParser
 							constructorDef.parameterNames.push(param.name);
 							constructorDef.parameterTypes.push(param.type);
 							constructorDef.parameterOptional.push(false);//cannot determine
+							constructorDef.parameterDescriptions.push(param.description);
 						}
 					}
 					
@@ -207,8 +208,8 @@ class YUIDocParser extends SimpleParser
 					
 					if(i.description != null)
 					{
-						propertyDef.comment = "\n\t/**\n\t*	"+ "@type " + i.type + "\n\t*\t" + i.description.split("\n").join("\n\t*\t") +"\n\t*\n\t*/";
-						//propertyDef.comment = "\n\t/**\n\t*	"+ i.description.split("\n").join(" ") + "\n\t*\t@type " + i.type +"\n\t*\n\t*/";
+						//propertyDef.comment = "\n\t/**\n\t*	"+ "@type " + i.type + "\n\t*\t" + i.description.split("\n").join("\n\t*\t") +"\n\t*\n\t*/";
+						propertyDef.comment = "\n\t/**\n\t* "+ i.description.split("\n").join(" ") +"\n\t*/";
 					}
 					
 					if(isStatic)
@@ -227,26 +228,26 @@ class YUIDocParser extends SimpleParser
 	
 	private function createMethodComment(methodDef:ClassMethod):String
 	{
-		var str = "\n\t/**\n\t*	"+ "@method " + methodDef.name;
+		var str = "\n\t/**";
 		
-		str += "\n\t*\t" + methodDef.description.split("\n").join("\n\t*\t");
+		str += "\n\t* " + methodDef.description.split("\n").join("\n\t*\t");
 		
 		for(i in 0...methodDef.parameterNames.length)
 		{
 			
-			str += "\n\t*\t"+ "@param " + methodDef.parameterNames[i] + " (" + methodDef.parameterTypes[i] + ")  ";
+			str += "\n\t* "+ "@param " + methodDef.parameterNames[i] + " ";
 			if(methodDef.parameterDescriptions[i] != null)
 			{	
 				str += methodDef.parameterDescriptions[i].split("\n").join("\n\t*\t");
 			}
 		}
 		
-		str += "\n\t*\n\t*/";
+		str += "\n\t*/";
 		
 		return str;
 	}
 	
-	public override function processFiles (files:Array <String>, basePath:String):Void 
+	public override function processFiles (files:Array<String>, basePath:String):Void 
 	{	
 		//expecting only one file called data.json but may be hidden files in dir (e.g., .DS_store)
 		for (file in files) 
@@ -333,55 +334,61 @@ class YUIDocParser extends SimpleParser
 	}
 	
 	
-	public override function resolveImport (type:String):String {
-		
+	public override function resolveImport (type:String):Array<String> {
+
 		var type = resolveType (type, false);
-		
-		if (type.indexOf ("Array <") > -1) {
-			
+
+		if (type.indexOf ("Array<") > -1) {
+
 			var indexOfFirstBracket = type.indexOf ("<");
 			type = type.substr (indexOfFirstBracket + 1, type.indexOf (">") - indexOfFirstBracket - 1);
-			
+
+		}
+
+		if (type == "Event") {
+
+			type = "js.html.Event";
+
 		}
 		
-		if (type == "HtmlDom") {
-			
-			type = "js.Dom";
-			
+		if (type == "Element") {
+
+			type = "js.html.Element";
+
 		}
 		
 		if(type =="HTMLCanvasElement" || type == "HTMLCollection" || type == "HTMLAllCollection" || type =="HTMLDocument" || type == "HTMLElement") {
-			
-			type = "js.w3c.html5.Core";
-			
+
+			type = "js.html.Element";
+
 		}
-		
+
 		if(type == "CanvasRenderingContext2D" || type == "CanvasPixelArray" || type == "ImageData" || type == "TextMetrics" || type == "CanvasPattern" || type == "CanvasGradient") {
-			
-			type = "js.w3c.html5.Canvas2DContext";
-			
+
+			type = "js.html.CanvasRenderingContext2D";
+
 		}
-		
+
 		if (type.indexOf (".") == -1) {
-			
-			return null;
-			
+
+			return [];
+
 		} else {
-			
+
 			if (definitions.exists (type)) {
-				
+
 				if (BuildHX.customNamespace != null) {
-					
+
 					type = BuildHX.customNamespace + type;
-					
+
 				}
-				
+
 			}
-			
-			return  type;
-			
+
+			return  [type];
+
 		}
-		
+
 	}
 	
 	
@@ -397,6 +404,11 @@ class YUIDocParser extends SimpleParser
 			
 			return "Dynamic";
 			
+		}
+		
+		if (type.indexOf ("{") > -1) {
+			
+			type = type.split("{").join("").split("}").join("");
 		}
 		
 		var isArray = false;
@@ -442,7 +454,7 @@ class YUIDocParser extends SimpleParser
 		
 		if (isArray) {
 			
-			return "Array <" + resolvedType + ">";
+			return "Array<" + resolvedType + ">";
 			
 		} else {
 			
