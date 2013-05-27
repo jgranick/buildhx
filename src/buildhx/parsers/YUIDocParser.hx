@@ -40,7 +40,7 @@ class YUIDocParser extends SimpleParser
 		//types.set ("null", "Void");
 		types.set ("null", "Dynamic");
 		types.set ("", "Dynamic");
-		types.set ("HTMLElement", "HtmlDom");
+		types.set ("HTMLElement", "Element");
 		types.set ("Mixed", "Dynamic");
 		types.set ("Iterable", "Dynamic");
 		types.set ("Array", "Array<Dynamic>");
@@ -345,12 +345,18 @@ class YUIDocParser extends SimpleParser
 
 		}
 
-		if (type == "HtmlDom") {
+		if (type == "Event") {
+
+			type = "js.html.Event";
+
+		}
+		
+		if (type == "Element") {
 
 			type = "js.html.Element";
 
 		}
-
+		
 		if(type =="HTMLCanvasElement" || type == "HTMLCollection" || type == "HTMLAllCollection" || type =="HTMLDocument" || type == "HTMLElement") {
 
 			type = "js.html.Element";
@@ -398,6 +404,11 @@ class YUIDocParser extends SimpleParser
 			
 			return "Dynamic";
 			
+		}
+		
+		if (type.indexOf ("{") > -1) {
+			
+			type = type.split("{").join("").split("}").join("");
 		}
 		
 		var isArray = false;
