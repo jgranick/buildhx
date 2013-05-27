@@ -106,16 +106,16 @@ class HaxeCFFIWriter {
 		BuildHX.makeDirectory (targetPath);
 		
 		var constructor:String = "";
-		var getters = new Array <String> ();
-		var imports = new Array <String> ();
-		var methods = new Array <String> ();
-		var nativeMethodNames = new Array <String> ();
-		var nativeMethodParameters = new Array <Int> ();
-		var nativeMethods = new Array <String> ();
-		var properties = new Array <String> ();
-		var setters = new Array <String> ();
-		var staticMethods = new Array <String> ();
-		var staticProperties = new Array <String> ();
+		var getters = new Array<String> ();
+		var imports = new Array<String> ();
+		var methods = new Array<String> ();
+		var nativeMethodNames = new Array<String> ();
+		var nativeMethodParameters = new Array<Int> ();
+		var nativeMethods = new Array<String> ();
+		var properties = new Array<String> ();
+		var setters = new Array<String> ();
+		var staticMethods = new Array<String> ();
+		var staticProperties = new Array<String> ();
 		
 		for (importPath in definition.imports) {
 			

@@ -28,7 +28,7 @@ class BuildHX {
 	public static var traceEnabled:Bool = true;
 	public static var verbose = false;
 	
-	private static var restrictedNames:Array <String> = [ "callback", "extern", "class", "override", "static", "public", "private", "enum" ];
+	private static var restrictedNames:Array<String> = [ "callback", "extern", "class", "override", "static", "public", "private", "enum" ];
 	
 	private static var parser:AbstractParser;
 	private static var parserName:String;
@@ -194,12 +194,12 @@ class BuildHX {
 		var inputFile:String = "";
 		var debug:Bool = false;
 		var defines = new Map <String, String> ();
-		var includePaths = new Array <String> ();
+		var includePaths = new Array<String> ();
 		var targetFlags = new Map <String, String> ();
 		
 		includePaths.push (".");
 		
-		var args:Array <String> = Sys.args ();
+		var args:Array<String> = Sys.args ();
 		
 		if (args.length > 0) {
 			
@@ -248,7 +248,7 @@ class BuildHX {
 			
 		}
 		
-		var words:Array <String> = new Array <String> ();
+		var words:Array<String> = new Array<String> ();
 		
 		for (arg in args) {
 			
@@ -415,14 +415,14 @@ class BuildHX {
 	}
 	
 	
-	public static function addImport (type:String, definition:ClassDefinition):Void {
+	public static function addImport (types:Array<String>, definition:ClassDefinition):Void {
+		for (type in types) {
+			if (type != null && type != "" && type.substr (-1) != "." && type != definition.className) {
 
-		if (type != null && type != "" && type.substr (-1) != "." && type != definition.className) {
-			
-			definition.imports.set (type, type);
-			
+				definition.imports.set (type, type);
+
+			}
 		}
-		
 	}
 	
 	

@@ -16,7 +16,7 @@ import buildhx.data.ClassProperty;
 class JSDuckParser extends SimpleParser {
 	
 	
-	private var ignoredFiles:Array <String>;
+	private var ignoredFiles:Array<String>;
 	
 	
 	public function new (types:Map <String, String>, definitions:Map <String, ClassDefinition>) {
@@ -72,21 +72,21 @@ class JSDuckParser extends SimpleParser {
 		
 		if (data.singleton) {
 			
-			processMethods (cast (data.members.method, Array <Dynamic>), definition.staticMethods);
-			processProperties (cast (data.members.property, Array <Dynamic>), definition.staticProperties);
+			processMethods (cast (data.members.method, Array<Dynamic>), definition.staticMethods);
+			processProperties (cast (data.members.property, Array<Dynamic>), definition.staticProperties);
 			
 		} else {
 			
-			processMethods (cast (data.members.method, Array <Dynamic>), definition.methods);
-			processProperties (cast (data.members.property, Array <Dynamic>), definition.properties);
-			processMethods (cast (data.statics.method, Array <Dynamic>), definition.staticMethods);
-			processProperties (cast (data.members.property, Array <Dynamic>), definition.staticProperties);
+			processMethods (cast (data.members.method, Array<Dynamic>), definition.methods);
+			processProperties (cast (data.members.property, Array<Dynamic>), definition.properties);
+			processMethods (cast (data.statics.method, Array<Dynamic>), definition.staticMethods);
+			processProperties (cast (data.members.property, Array<Dynamic>), definition.staticProperties);
 			
 			if (Reflect.hasField (data.members, "cfg")) {
 				
-				var configProperties = cast (data.members.cfg, Array <Dynamic>);
+				var configProperties = cast (data.members.cfg, Array<Dynamic>);
 				
-				if (configProperties.length > 0 || cast (data.subclasses, Array <Dynamic>).length > 0) {
+				if (configProperties.length > 0 || cast (data.subclasses, Array<Dynamic>).length > 0) {
 					
 					var configDefinition = new ClassDefinition ();
 					configDefinition.isConfigClass = true;
@@ -98,7 +98,7 @@ class JSDuckParser extends SimpleParser {
 						
 					}
 					
-					processProperties (cast (data.members.cfg, Array <Dynamic>), configDefinition.properties);
+					processProperties (cast (data.members.cfg, Array<Dynamic>), configDefinition.properties);
 					definitions.set (configDefinition.className, configDefinition);
 					
 				}
@@ -133,7 +133,7 @@ class JSDuckParser extends SimpleParser {
 	}
 	
 	
-	public override function processFiles (files:Array <String>, basePath:String):Void {
+	public override function processFiles (files:Array<String>, basePath:String):Void {
 		
 		for (file in files) {
 			
@@ -160,7 +160,7 @@ class JSDuckParser extends SimpleParser {
 	}
 	
 	
-	private function processMethods (methodsData:Array <Dynamic>, methods:Map <String, ClassMethod>):Void {
+	private function processMethods (methodsData:Array<Dynamic>, methods:Map <String, ClassMethod>):Void {
 		
 		for (methodData in methodsData) {
 			
@@ -182,7 +182,7 @@ class JSDuckParser extends SimpleParser {
 				
 				method.owner = methodData.owner;
 				
-				for (param in cast (methodData.params, Array <Dynamic>)) {
+				for (param in cast (methodData.params, Array<Dynamic>)) {
 					
 					method.parameterNames.push (param.name);
 					method.parameterOptional.push (param.optional);
@@ -203,7 +203,7 @@ class JSDuckParser extends SimpleParser {
 	}
 	
 	
-	private function processProperties (propertiesData:Array <Dynamic>, properties:Map <String, ClassProperty>):Void {
+	private function processProperties (propertiesData:Array<Dynamic>, properties:Map <String, ClassProperty>):Void {
 		
 		for (propertyData in propertiesData) {
 			
@@ -302,33 +302,33 @@ class JSDuckParser extends SimpleParser {
 	}
 	
 	
-	public override function resolveImport (type:String):String {
-		
+	public override function resolveImport (type:String):Array<String> {
+
 		var type = resolveType (type, false);
-		
-		if (type.indexOf ("Array <") > -1) {
-			
+
+		if (type.indexOf ("Array<") > -1) {
+
 			var indexOfFirstBracket = type.indexOf ("<");
 			type = type.substr (indexOfFirstBracket + 1, type.indexOf (">") - indexOfFirstBracket - 1);
-			
+
 		}
-		
+
 		if (type == "HtmlDom") {
-			
-			type = "js.Dom";
-			
+
+			type = "js.html.Element";
+
 		}
-		
+
 		if (type.indexOf (".") == -1) {
-			
-			return null;
-			
+
+			return [];
+
 		} else {
-			
-			return type;
-			
+
+			return [type];
+
 		}
-		
+
 	}
 	
 	
@@ -375,7 +375,7 @@ class JSDuckParser extends SimpleParser {
 		
 		if (isArray) {
 			
-			return "Array <" + resolvedType + ">";
+			return "Array<" + resolvedType + ">";
 			
 		} else {
 			

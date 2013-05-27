@@ -33,11 +33,11 @@ class HaxeExternWriter {
 		BuildHX.print ("Writing " + targetPath);
 		BuildHX.makeDirectory (targetPath);
 		
-		var imports = new Array <String> ();
-		var methods = new Array <String> ();
-		var properties = new Array <String> ();
-		var staticMethods = new Array <String> ();
-		var staticProperties = new Array <String> ();
+		var imports = new Array<String> ();
+		var methods = new Array<String> ();
+		var properties = new Array<String> ();
+		var staticMethods = new Array<String> ();
+		var staticProperties = new Array<String> ();
 		
 		for (importPath in definition.imports) {
 			
@@ -155,11 +155,11 @@ class HaxeExternWriter {
 		BuildHX.print ("Writing " + targetPath);
 		BuildHX.makeDirectory (targetPath);
 		
-		var imports = new Array <String> ();
-		var methods = new Array <String> ();
-		var properties = new Array <String> ();
-		var staticMethods = new Array <String> ();
-		var staticProperties = new Array <String> ();
+		var imports = new Array<String> ();
+		var methods = new Array<String> ();
+		var properties = new Array<String> ();
+		var staticMethods = new Array<String> ();
+		var staticProperties = new Array<String> ();
 		
 		for (importPath in definition.imports) {
 			

@@ -19,7 +19,7 @@ class AbstractParser {
 	}
 	
 	
-	public function processFiles (files:Array <String>, basePath:String):Void {
+	public function processFiles (files:Array<String>, basePath:String):Void {
 		
 		
 		
@@ -33,10 +33,10 @@ class AbstractParser {
 	}
 	
 	
-	public function resolveImport (type:String):String {
-		
-		return "";
-		
+	public function resolveImport (type:String):Array<String> {
+
+		return [];
+
 	}
 	
 	

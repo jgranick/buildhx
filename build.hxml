@@ -1,3 +1,2 @@
 -main buildhx.BuildHX
 -neko run.n
--lib hxJson2

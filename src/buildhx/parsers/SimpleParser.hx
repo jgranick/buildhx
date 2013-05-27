@@ -253,27 +253,27 @@ class SimpleParser extends AbstractParser {
 	}
 	
 	
-	public override function resolveImport (type:String):String {
-		
+	public override function resolveImport (type:String):Array<String> {
+
 		var type = resolveType (type, false);
-		
-		if (type.indexOf ("Array <") > -1) {
-			
+
+		if (type.indexOf ("Array<") > -1) {
+
 			var indexOfFirstBracket = type.indexOf ("<");
 			type = type.substr (indexOfFirstBracket + 1, type.indexOf (">") - indexOfFirstBracket - 1);
-			
+
 		}
-		
+
 		if (type.indexOf (".") == -1) {
-			
-			return null;
-			
+
+			return [];
+
 		} else {
-			
-			return type;
-			
+
+			return [type];
+
 		}
-		
+
 	}
 	
 	

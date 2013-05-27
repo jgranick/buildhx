@@ -247,7 +247,7 @@ class YUIDocParser extends SimpleParser
 		return str;
 	}
 	
-	public override function processFiles (files:Array <String>, basePath:String):Void 
+	public override function processFiles (files:Array<String>, basePath:String):Void 
 	{	
 		//expecting only one file called data.json but may be hidden files in dir (e.g., .DS_store)
 		for (file in files) 
@@ -334,55 +334,55 @@ class YUIDocParser extends SimpleParser
 	}
 	
 	
-	public override function resolveImport (type:String):String {
-		
+	public override function resolveImport (type:String):Array<String> {
+
 		var type = resolveType (type, false);
-		
-		if (type.indexOf ("Array <") > -1) {
-			
+
+		if (type.indexOf ("Array<") > -1) {
+
 			var indexOfFirstBracket = type.indexOf ("<");
 			type = type.substr (indexOfFirstBracket + 1, type.indexOf (">") - indexOfFirstBracket - 1);
-			
+
 		}
-		
+
 		if (type == "HtmlDom") {
-			
-			type = "js.Dom";
-			
+
+			type = "js.html.Element";
+
 		}
-		
+
 		if(type =="HTMLCanvasElement" || type == "HTMLCollection" || type == "HTMLAllCollection" || type =="HTMLDocument" || type == "HTMLElement") {
-			
-			type = "js.w3c.html5.Core";
-			
+
+			type = "js.html.Element";
+
 		}
-		
+
 		if(type == "CanvasRenderingContext2D" || type == "CanvasPixelArray" || type == "ImageData" || type == "TextMetrics" || type == "CanvasPattern" || type == "CanvasGradient") {
-			
-			type = "js.w3c.html5.Canvas2DContext";
-			
+
+			type = "js.html.CanvasRenderingContext2D";
+
 		}
-		
+
 		if (type.indexOf (".") == -1) {
-			
-			return null;
-			
+
+			return [];
+
 		} else {
-			
+
 			if (definitions.exists (type)) {
-				
+
 				if (BuildHX.customNamespace != null) {
-					
+
 					type = BuildHX.customNamespace + type;
-					
+
 				}
-				
+
 			}
-			
-			return  type;
-			
+
+			return  [type];
+
 		}
-		
+
 	}
 	
 	
