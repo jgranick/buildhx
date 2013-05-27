@@ -4,8 +4,8 @@
 	"tags": ["js","extern"],
 	"description": "BuildHX helps you create externs for native libraries.",
 	"contributors": ["Meychi"],
-	"releasenote": "Run script added",
-	"version": "2.0.1",
+	"releasenote": "Added native namespace",
+	"version": "2.0.2",
 	"url": "https://github.com/Meychi/buildhx",
 	"dependencies": {}
 }

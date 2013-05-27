@@ -24,6 +24,7 @@ class BuildHX {
 	public static var isWindows = false;
 	public static var buildhx:String = "";
 	public static var customNamespace:String = "";
+	public static var nativeNamespace:String = "";
 	public static var libraryName:String;
 	public static var traceEnabled:Bool = true;
 	public static var verbose = false;
@@ -39,7 +40,7 @@ class BuildHX {
 	private static var definitions:Map<String, ClassDefinition>;
 	private static var types:Map<String, String>;
 	
-	public static var VERSION:String = "2.0.0";
+	public static var VERSION:String = "2.0.2";
 	public static var USAGE:String = "Usage : haxelib run buildhx build.xml";
 	
 	
@@ -860,7 +861,13 @@ class BuildHX {
 						customNamespace = element.att.namespace + ".";
 						
 					}
-				
+					
+					if (element.has.native && element.att.native != "") {
+						
+						nativeNamespace = element.att.native + ".";
+						
+					}
+					
 				case "library":
 					
 					libraryName = element.att.name;
