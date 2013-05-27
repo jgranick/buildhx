@@ -19,13 +19,13 @@ class JSDuckParser extends SimpleParser {
 	private var ignoredFiles:Array <String>;
 	
 	
-	public function new (types:Hash <String>, definitions:Hash <ClassDefinition>) {
+	public function new (types:Map <String, String>, definitions:Map <String, ClassDefinition>) {
 		
 		super (types, definitions);
 		
 		if (definitions == null) {
 			
-			this.definitions = new Hash <ClassDefinition> ();
+			this.definitions = new Map <String, ClassDefinition> ();
 			
 		} else {
 			
@@ -37,7 +37,7 @@ class JSDuckParser extends SimpleParser {
 		
 		if (types == null) {
 			
-			types = new Hash <String> ();
+			types = new Map <String, String> ();
 			
 		}
 		
@@ -160,7 +160,7 @@ class JSDuckParser extends SimpleParser {
 	}
 	
 	
-	private function processMethods (methodsData:Array <Dynamic>, methods:Hash <ClassMethod>):Void {
+	private function processMethods (methodsData:Array <Dynamic>, methods:Map <String, ClassMethod>):Void {
 		
 		for (methodData in methodsData) {
 			
@@ -203,7 +203,7 @@ class JSDuckParser extends SimpleParser {
 	}
 	
 	
-	private function processProperties (propertiesData:Array <Dynamic>, properties:Hash <ClassProperty>):Void {
+	private function processProperties (propertiesData:Array <Dynamic>, properties:Map <String, ClassProperty>):Void {
 		
 		for (propertyData in propertiesData) {
 			

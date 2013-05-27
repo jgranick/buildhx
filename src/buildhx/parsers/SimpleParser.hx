@@ -13,11 +13,11 @@ import buildhx.writers.HaxeExternWriter;
 class SimpleParser extends AbstractParser {
 	
 	
-	private var definitions:Hash <ClassDefinition>;
-	private var types:Hash <String>;
+	private var definitions:Map <String, ClassDefinition>;
+	private var types:Map <String, String>;
 	
 	
-	public function new (types:Hash <String>, definitions:Hash <ClassDefinition>) {
+	public function new (types:Map <String, String>, definitions:Map <String, ClassDefinition>) {
 		
 		super (types, definitions);
 		

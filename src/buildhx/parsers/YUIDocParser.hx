@@ -9,13 +9,13 @@ import buildhx.data.ClassProperty;
 class YUIDocParser extends SimpleParser 
 {
 	
-	public function new (types:Hash <String>, definitions:Hash<ClassDefinition>) 
+	public function new (types:Map <String, String>, definitions:Map<String, ClassDefinition>) 
 	{	
 		super (types, definitions);
 		
 		if (definitions == null) {
 			
-			this.definitions = new Hash <ClassDefinition> ();
+			this.definitions = new Map <String, ClassDefinition> ();
 			
 		} else {
 			
@@ -25,7 +25,7 @@ class YUIDocParser extends SimpleParser
 		
 		if (types == null) {
 			
-			types = new Hash <String> ();
+			types = new Map <String, String> ();
 			
 		}
 		

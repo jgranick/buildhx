@@ -84,7 +84,7 @@ class CPPWriter {
 	}
 	
 	
-	public function writeClasses (definitions:Hash <ClassDefinition>, basePath:String):Void {
+	public function writeClasses (definitions:Map <String, ClassDefinition>, basePath:String):Void {
 		
 		var targetPath = basePath + "ExternalInterface.cpp";
 		
@@ -247,7 +247,7 @@ class CPPWriter {
 	}
 	
 	
-	private function writeClassMethod (method:ClassMethod, isStatic:Bool, methodName:String, definition:ClassDefinition, definitions:Hash <ClassDefinition>):String {
+	private function writeClassMethod (method:ClassMethod, isStatic:Bool, methodName:String, definition:ClassDefinition, definitions:Map <String, ClassDefinition>):String {
 		
 		var output = "";
 		
@@ -388,7 +388,7 @@ class CPPWriter {
 	}
 	
 	
-	private function writeClassPropertySetter (property:ClassProperty, isStatic:Bool, setterName:String, definitions:Hash <ClassDefinition>, definition:ClassDefinition):String {
+	private function writeClassPropertySetter (property:ClassProperty, isStatic:Bool, setterName:String, definitions:Map <String, ClassDefinition>, definition:ClassDefinition):String {
 		
 		var output = "void " + setterName + " (value handle, value newValue) {\n\n";
 		
@@ -447,7 +447,7 @@ class CPPWriter {
 		
 		switch (name) {
 			
-			case null, "Void":
+			case "Void":
 				
 				return "";
 			
@@ -476,7 +476,7 @@ class CPPWriter {
 	}
 	
 	
-	private function writeNativeConversion (definitions:Hash <ClassDefinition>, name:String, type:String, dereference:Bool = true):String {
+	private function writeNativeConversion (definitions:Map <String, ClassDefinition>, name:String, type:String, dereference:Bool = true):String {
 		
 		switch (type) {
 			

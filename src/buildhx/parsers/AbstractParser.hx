@@ -12,7 +12,7 @@ import buildhx.data.ClassDefinition;
 class AbstractParser {
 
 	
-	public function new (types:Hash <String>, definitions:Hash <ClassDefinition>) {
+	public function new (types:Map<String, String>, definitions:Map<String, ClassDefinition>) {
 		
 		
 		

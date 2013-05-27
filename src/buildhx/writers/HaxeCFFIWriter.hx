@@ -441,7 +441,7 @@ class HaxeCFFIWriter {
 			
 			switch (method.parameterTypes[i]) {
 				
-				case null, "Int", "String", "Float", "Void":
+				case "Int", "String", "Float", "Void":
 					
 				default:
 					

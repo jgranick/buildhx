@@ -1,5 +1,6 @@
 package buildhx;
 
+import haxe.Json;
 import sys.FileSystem;
 import sys.io.File;
 import haxe.io.Path;
@@ -8,7 +9,6 @@ import haxe.xml.Fast;
 import buildhx.data.ClassDefinition;
 import buildhx.data.ClassMethod;
 import buildhx.data.ClassProperty;
-import hxjson2.JSON;
 import buildhx.parsers.AbstractParser;
 import buildhx.parsers.CPPParser;
 import buildhx.parsers.JSDuckParser;
@@ -33,13 +33,13 @@ class BuildHX {
 	private static var parser:AbstractParser;
 	private static var parserName:String;
 	private static var sourcePath:String;
-	private static var targetFlags:Hash <String>;
+	private static var targetFlags:Map<String, String>;
 	private static var targetPath:String;
 	
-	private static var definitions:Hash <ClassDefinition>;
-	private static var types:Hash <String>;
+	private static var definitions:Map<String, ClassDefinition>;
+	private static var types:Map<String, String>;
 	
-	public static var VERSION:String = "1.0.8";
+	public static var VERSION:String = "2.0.0";
 	public static var USAGE:String = "Usage : haxelib run buildhx build.xml";
 	
 	
@@ -193,9 +193,9 @@ class BuildHX {
 		
 		var inputFile:String = "";
 		var debug:Bool = false;
-		var defines = new Hash <String> ();
+		var defines = new Map <String, String> ();
 		var includePaths = new Array <String> ();
-		var targetFlags = new Hash <String> ();
+		var targetFlags = new Map <String, String> ();
 		
 		includePaths.push (".");
 		
@@ -513,7 +513,7 @@ class BuildHX {
 	
 	public static function parseJSON (content:String):Dynamic {
 		
-		return JSON.decode (content, false);
+		return Json.parse (content);
 		
 	}
 	
@@ -792,8 +792,8 @@ class BuildHX {
 	
 	private static function parseXML (xml:Fast):Void {
 		
-		types = new Hash <String> ();
-		definitions = new Hash <ClassDefinition> ();
+		types = new Map <String, String> ();
+		definitions = new Map <String, ClassDefinition> ();
 		
 		for (element in xml.elements) {
 			

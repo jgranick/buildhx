@@ -1,5 +1,5 @@
 <project name="buildhx" url="" license="MIT">
-	<user name="elyon"/>
+	<user name="Meychi"/>
 	<description>BuildHX helps you create externs for native libraries.</description>
-    <version name="1.0.8">YUIDocParser path improvement and general cleanup</version>
+    <version name="2.0.0">No deps and for Haxe 3</version>
 </project>
