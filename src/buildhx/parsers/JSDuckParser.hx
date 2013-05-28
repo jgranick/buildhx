@@ -33,7 +33,7 @@ class JSDuckParser extends SimpleParser {
 			
 		}
 		
-		ignoredFiles = [ "globals.json" ];
+		ignoredFiles = [ "global.json" ];
 		
 		if (types == null) {
 			
@@ -49,7 +49,7 @@ class JSDuckParser extends SimpleParser {
 		types.set ("undefined", "Void");
 		types.set ("null", "Void");
 		types.set ("", "Dynamic");
-		types.set ("HTMLElement", "HtmlDom");
+		types.set ("HTMLElement", "Element");
 		types.set ("Mixed", "Dynamic");
 		types.set ("Iterable", "Dynamic");
 		types.set ("Array", "Array<Dynamic>");
@@ -70,6 +70,9 @@ class JSDuckParser extends SimpleParser {
 	
 	private function getClassMembers (data:Dynamic, definition:ClassDefinition):Void {
 		
+		processStaticMethods(cast (data.members.method, Array<Dynamic>), definition.staticMethods);
+		processStaticProperties(cast (data.members.property, Array<Dynamic>), definition.staticProperties);
+		
 		if (data.singleton) {
 			
 			processMethods (cast (data.members.method, Array<Dynamic>), definition.staticMethods);
@@ -80,7 +83,7 @@ class JSDuckParser extends SimpleParser {
 			processMethods (cast (data.members.method, Array<Dynamic>), definition.methods);
 			processProperties (cast (data.members.property, Array<Dynamic>), definition.properties);
 			processMethods (cast (data.statics.method, Array<Dynamic>), definition.staticMethods);
-			processProperties (cast (data.members.property, Array<Dynamic>), definition.staticProperties);
+			processProperties (cast (data.statics.property, Array<Dynamic>), definition.staticProperties);
 			
 			if (Reflect.hasField (data.members, "cfg")) {
 				
@@ -159,6 +162,24 @@ class JSDuckParser extends SimpleParser {
 		
 	}
 	
+	private function processStaticMethods (methodsData:Array<Dynamic>, methods:Map <String, ClassMethod>):Void 
+	{
+		for (methodData in methodsData) {
+				
+			if (Reflect.hasField(methodData, "meta"))
+			{
+				var meta = Reflect.getProperty(methodData, "meta");
+				if (Reflect.hasField(meta, "static") && Reflect.getProperty(meta, "static") == true)
+				{
+					var method = new ClassMethod ();
+					method.name = methodData.name;
+					methods.set(methodData.name, method);
+				}
+			}
+			
+		}
+		
+	}
 	
 	private function processMethods (methodsData:Array<Dynamic>, methods:Map <String, ClassMethod>):Void {
 		
@@ -202,6 +223,28 @@ class JSDuckParser extends SimpleParser {
 		
 	}
 	
+	private function processStaticProperties (propertiesData:Array<Dynamic>, properties:Map <String, ClassProperty>):Void {
+		
+		for (propertyData in propertiesData) {
+			
+			if (propertyData.deprecated == null) {
+				
+				if (Reflect.hasField(propertyData, "meta"))
+				{
+					var meta = Reflect.getProperty(propertyData, "meta");
+					if (Reflect.hasField(meta, "static") && Reflect.getProperty(meta, "static") == true)
+					{
+						var property = new ClassProperty ();
+						property.name = propertyData.name;
+						properties.set(propertyData.name, property);
+					}
+				}
+				
+			}
+			
+		}
+		
+	}
 	
 	private function processProperties (propertiesData:Array<Dynamic>, properties:Map <String, ClassProperty>):Void {
 		
@@ -313,9 +356,27 @@ class JSDuckParser extends SimpleParser {
 
 		}
 
-		if (type == "HtmlDom") {
+		if (type == "Event") {
+
+			type = "js.html.Event";
+
+		}
+		
+		if (type == "Element") {
 
 			type = "js.html.Element";
+
+		}
+		
+		if(type =="HTMLCanvasElement" || type == "HTMLCollection" || type == "HTMLAllCollection" || type =="HTMLDocument" || type == "HTMLElement") {
+
+			type = "js.html.Element";
+
+		}
+
+		if(type == "CanvasRenderingContext2D" || type == "CanvasPixelArray" || type == "ImageData" || type == "TextMetrics" || type == "CanvasPattern" || type == "CanvasGradient") {
+
+			type = "js.html.CanvasRenderingContext2D";
 
 		}
 
@@ -337,6 +398,12 @@ class JSDuckParser extends SimpleParser {
 		if (type == null) {
 			
 			return "Void";
+			
+		}
+		
+		if (type.indexOf ("|") > -1) {
+			
+			return "Dynamic";
 			
 		}
 		

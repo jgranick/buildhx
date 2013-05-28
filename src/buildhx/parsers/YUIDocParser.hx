@@ -100,10 +100,9 @@ class YUIDocParser extends SimpleParser
 						//trace("i.params "+i.params);
 						for(param in params)
 						{
-							//trace("param "+ param.name + ":" + param.type);
 							constructorDef.parameterNames.push(param.name);
 							constructorDef.parameterTypes.push(param.type);
-							constructorDef.parameterOptional.push(false);//cannot determine
+							constructorDef.parameterOptional.push(param.optional != null ? param.optional : false);
 							constructorDef.parameterDescriptions.push(param.description);
 						}
 					}
@@ -163,7 +162,7 @@ class YUIDocParser extends SimpleParser
 							methodDef.parameterNames.push(param.name);
 							methodDef.parameterTypes.push(param.type != null ? param.type : "Dynamic");
 							methodDef.parameterDescriptions.push(param.description);
-							methodDef.parameterOptional.push(false);//cannot determine
+							methodDef.parameterOptional.push(param.optional != null ? param.optional : false);
 						}
 					}
 					
@@ -522,4 +521,5 @@ typedef YUIMethodParam =
 	var name:String;
     var description:String;
     var type:String;
+	var optional:Bool;
 }

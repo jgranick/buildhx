@@ -229,7 +229,7 @@ class HaxeExternWriter {
 			
 		}
 		
-		if (definition.comment != null) {
+		if (definition.comment != null && definition.comment != "") {
 			
 			//output.writeString ("\n");
 			output.writeString (definition.comment);
@@ -279,7 +279,7 @@ class HaxeExternWriter {
 			
 		}
 		
-		output.writeString ("\n{");
+		output.writeString ("\n{\n");
 		
 		for (property in staticProperties) {
 			
@@ -339,7 +339,7 @@ class HaxeExternWriter {
 		
 		var output = "";
 		
-		if(method.comment != null) {
+		if(method.comment != null && method.comment != "") {
 			
 			output += method.comment + "\n\t";
 			
@@ -389,10 +389,15 @@ class HaxeExternWriter {
 		
 		var output = "";
 		
-		if(property.comment != null) {
+		if(property.comment != null && property.comment != "") {
 			
 			output += property.comment + "\n\t";
 			
+		}
+		
+		if (property.hasConflict)
+		{
+			output += "//";
 		}
 		
 		output += access + " ";
@@ -405,15 +410,7 @@ class HaxeExternWriter {
 		
 		output += "var " + property.name + ":" + parser.resolveType (property.type) + ";\n";
 		
-		if (property.hasConflict) {
-			
-			return "//" + output;
-			
-		} else {
-			
-			return output;
-			
-		}
+		return output;
 		
 	}
 

@@ -1,11 +1,11 @@
 {
 	"name": "buildhx",
 	"license": "MIT",
-	"tags": ["js","extern"],
+	"tags": ["extern"],
 	"description": "BuildHX helps you create externs for native libraries.",
 	"contributors": ["Meychi"],
-	"releasenote": "Added native namespace",
-	"version": "2.0.2",
+	"releasenote": "Optional params for YUIDoc, new JSDuck binary and JSDuck improvements",
+	"version": "2.0.3",
 	"url": "https://github.com/Meychi/buildhx",
 	"dependencies": {}
 }
