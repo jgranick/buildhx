@@ -5,6 +5,7 @@ import buildhx.data.ClassDefinition;
 import buildhx.data.ClassMethod;
 import buildhx.data.ClassProperty;
 import buildhx.parsers.AbstractParser;
+import buildhx.parsers.YUIDocParser;
 import sys.io.File;
 
 
@@ -279,7 +280,8 @@ class HaxeExternWriter {
 			
 		}
 		
-		output.writeString ("\n{\n");
+		if (Std.is(parser, YUIDocParser)) output.writeString ("\n{");
+		else output.writeString ("\n{\n");
 		
 		for (property in staticProperties) {
 			
