@@ -2,6 +2,7 @@ package buildhx.parsers;
 
 
 import buildhx.writers.HaxeExternWriter;
+import sys.FileSystem;
 import sys.io.File;
 import buildhx.data.ClassDefinition;
 import buildhx.data.ClassMethod;
@@ -355,29 +356,26 @@ class JSDuckParser extends SimpleParser {
 			type = type.substr (indexOfFirstBracket + 1, type.indexOf (">") - indexOfFirstBracket - 1);
 
 		}
-
-		if (type == "Event") {
-
-			type = "js.html.Event";
-
-		}
 		
-		if (type == "Element") {
-
-			type = "js.html.Element";
-
-		}
+		// Manual fix of renamed AudioGainNode
+		if (type == "AudioGainNode") type = "GainNode";
 		
-		if(type =="HTMLCanvasElement" || type == "HTMLCollection" || type == "HTMLAllCollection" || type =="HTMLDocument" || type == "HTMLElement") {
-
-			type = "js.html.Element";
-
-		}
-
-		if(type == "CanvasRenderingContext2D" || type == "CanvasPixelArray" || type == "ImageData" || type == "TextMetrics" || type == "CanvasPattern" || type == "CanvasGradient") {
-
-			type = "js.html.CanvasRenderingContext2D";
-
+		// Try to resolve types from js std definitions
+		
+		var path:String = Sys.getEnv("HAXEPATH");
+		var dirs = ["audio", "fs", "idb", "rtc", "sql", "svg", "webgl"];
+		if (path != null)
+		{
+			var html = path + "std/js/html/" + type + ".hx";
+			if (FileSystem.exists(html)) type = "js.html." + type;
+			else 
+			{
+				for (dir in dirs)
+				{
+					var file = path + "std/js/html/" + dir + "/" + type + ".hx";
+					if (FileSystem.exists(file)) type = "js.html." + dir + "." + type;
+				}
+			}
 		}
 
 		if (type.indexOf (".") == -1) {

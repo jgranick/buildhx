@@ -1,6 +1,7 @@
 package buildhx.parsers;
 
 import buildhx.writers.HaxeExternWriter;
+import sys.FileSystem;
 import sys.io.File;
 import buildhx.data.ClassDefinition;
 import buildhx.data.ClassMethod;
@@ -208,7 +209,7 @@ class YUIDocParser extends SimpleParser
 					if(i.description != null)
 					{
 						//propertyDef.comment = "\n\t/**\n\t*	"+ "@type " + i.type + "\n\t*\t" + i.description.split("\n").join("\n\t*\t") +"\n\t*\n\t*/";
-						propertyDef.comment = "\n\t/**\n\t* "+ i.description.split("\n").join(" ") +"\n\t*/";
+						propertyDef.comment = "/**\n\t* "+ i.description.split("\n").join(" ") +"\n\t*/";
 					}
 					
 					if(isStatic)
@@ -227,7 +228,7 @@ class YUIDocParser extends SimpleParser
 	
 	private function createMethodComment(methodDef:ClassMethod):String
 	{
-		var str = "\n\t/**";
+		var str = "/**";
 		
 		str += "\n\t* " + methodDef.description.split("\n").join("\n\t*\t");
 		
@@ -344,28 +345,25 @@ class YUIDocParser extends SimpleParser
 
 		}
 
-		if (type == "Event") {
-
-			type = "js.html.Event";
-
-		}
+		// Manual fix of renamed AudioGainNode
+		if (type == "AudioGainNode") type = "GainNode";
 		
-		if (type == "Element") {
-
-			type = "js.html.Element";
-
-		}
+		// Try to resolve types from js std definitions
 		
-		if(type =="HTMLCanvasElement" || type == "HTMLCollection" || type == "HTMLAllCollection" || type =="HTMLDocument" || type == "HTMLElement") {
-
-			type = "js.html.Element";
-
-		}
-
-		if(type == "CanvasRenderingContext2D" || type == "CanvasPixelArray" || type == "ImageData" || type == "TextMetrics" || type == "CanvasPattern" || type == "CanvasGradient") {
-
-			type = "js.html.CanvasRenderingContext2D";
-
+		var path:String = Sys.getEnv("HAXEPATH");
+		var dirs = ["audio", "fs", "idb", "rtc", "sql", "svg", "webgl"];
+		if (path != null)
+		{
+			var html = path + "std/js/html/" + type + ".hx";
+			if (FileSystem.exists(html)) type = "js.html." + type;
+			else 
+			{
+				for (dir in dirs)
+				{
+					var file = path + "std/js/html/" + dir + "/" + type + ".hx";
+					if (FileSystem.exists(file)) type = "js.html." + dir + "." + type;
+				}
+			}
 		}
 
 		if (type.indexOf (".") == -1) {

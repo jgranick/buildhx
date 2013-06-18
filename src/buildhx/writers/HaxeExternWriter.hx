@@ -103,7 +103,7 @@ class HaxeExternWriter {
 			
 		}
 		
-		output.writeString (" {\n\n");
+		output.writeString ("\n{\n");
 		
 		for (property in properties) {
 			
@@ -117,8 +117,8 @@ class HaxeExternWriter {
 			
 		}
 		
-		output.writeString ("	public function new (properties:Dynamic = null):Void {\n");
-		output.writeString ("		\n");
+		output.writeString ("	public function new (properties:Dynamic = null):Void\n\t{\n");
+		//output.writeString ("		\n");
 		
 		if (parentClassName != "") {
 			
@@ -127,23 +127,23 @@ class HaxeExternWriter {
 		} else {
 			
 			output.writeString ("		untyped __js__ (\"this.__proto__ = {}.__proto__\");\n");
-			output.writeString ("		\n");
-			output.writeString ("		if (properties != null) {\n");
-			output.writeString ("			\n");
-			output.writeString ("			for (propertyName in Reflect.fields (properties)) {\n");
-			output.writeString ("				\n");
-			output.writeString ("				Reflect.setField (this, propertyName, Reflect.field (properties, propertyName));");
-			output.writeString ("				\n");
+			//output.writeString ("		\n");
+			output.writeString ("		if (properties != null)\n\t\t{\n");
+			//output.writeString ("			\n");
+			output.writeString ("			for (propertyName in Reflect.fields (properties))\n\t\t\t{\n");
+			//output.writeString ("				\n");
+			output.writeString ("				Reflect.setField (this, propertyName, Reflect.field (properties, propertyName));\n");
+			//output.writeString ("				\n");
 			output.writeString ("			}\n");
-			output.writeString ("			\n");
+			//output.writeString ("			\n");
 			output.writeString ("		}\n");
 			
 		}
 		
-		output.writeString ("		\n");
-		output.writeString ("	}\n\n");
+		//output.writeString ("		\n");
+		output.writeString ("	}\n");
 		
-		output.writeString ("}");
+		output.writeString ("\n}\n");
 		output.close ();
 		
 	}
@@ -280,12 +280,11 @@ class HaxeExternWriter {
 			
 		}
 		
-		if (Std.is(parser, YUIDocParser)) output.writeString ("\n{");
-		else output.writeString ("\n{\n");
+		output.writeString ("\n{");
 		
 		for (property in staticProperties) {
 			
-			output.writeString ("	" + property);
+			output.writeString ("\n\t" + property);
 			
 		}
 		
@@ -297,7 +296,7 @@ class HaxeExternWriter {
 		
 		for (property in properties) {
 			
-			output.writeString ("	" + property);
+			output.writeString ("\n\t" + property);
 			
 		}
 		
@@ -309,7 +308,7 @@ class HaxeExternWriter {
 		
 		for (method in staticMethods) {
 			
-			output.writeString ("	" + method);
+			output.writeString ("\n\t" + method);
 			
 		}
 		
@@ -321,7 +320,7 @@ class HaxeExternWriter {
 		
 		for (method in methods) {
 			
-			output.writeString ("	" + method);
+			output.writeString ("\n\t" + method);
 			
 		}
 		
@@ -331,7 +330,7 @@ class HaxeExternWriter {
 			
 		}
 		
-		output.writeString ("}\n");
+		output.writeString ("\n}\n");
 		output.close ();
 		
 	}
@@ -380,7 +379,7 @@ class HaxeExternWriter {
 			
 		}
 		
-		output += "):" + parser.resolveType (method.returnType) + ";\n";
+		output += "):" + parser.resolveType (method.returnType) + ";\n\t";
 		
 		return output;
 			
@@ -410,7 +409,7 @@ class HaxeExternWriter {
 			
 		}
 		
-		output += "var " + property.name + ":" + parser.resolveType (property.type) + ";\n";
+		output += "var " + property.name + ":" + parser.resolveType (property.type) + ";\n\t";
 		
 		return output;
 		
