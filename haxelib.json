@@ -4,8 +4,8 @@
 	"tags": ["extern", "js"],
 	"description": "BuildHX helps you create externs for native libraries.",
 	"contributors": ["singmajesty"],
-	"releasenote": "Types are now resolved from haxe std files + consistent formatting.",
-	"version": "2.0.4",
+	"releasenote": "Minor type resolution improvements.",
+	"version": "2.0.5",
 	"url": "https://github.com/jgranick/buildhx",
 	"dependencies": {}
 }

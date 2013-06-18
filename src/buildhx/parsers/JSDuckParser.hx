@@ -56,6 +56,11 @@ class JSDuckParser extends SimpleParser {
 		types.set ("Array", "Array<Dynamic>");
 		types.set ("RegExp", "EReg");
 		
+		// Manual fixes
+		types.set ("Any", "Dynamic");
+		types.set ("Class", "Dynamic");
+		types.set ("AudioGainNode", "GainNode");
+		
 		this.types = types;
 		
 	}
@@ -356,9 +361,6 @@ class JSDuckParser extends SimpleParser {
 			type = type.substr (indexOfFirstBracket + 1, type.indexOf (">") - indexOfFirstBracket - 1);
 
 		}
-		
-		// Manual fix of renamed AudioGainNode
-		if (type == "AudioGainNode") type = "GainNode";
 		
 		// Try to resolve types from js std definitions
 		
