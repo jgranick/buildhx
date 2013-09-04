@@ -21,7 +21,7 @@ BuildHX is simple to use:
 
 ```xml
 <buildhx>
-	<source [path="path_to_folder"] />
+	<source [path="path_to_folder"] parser="jsduck|yuidoc|cpp" />
 	<type name="name" [remap="new_name"] />
 	<class name="name" [ignore="true"] [native="native_name"] [header="native_header"] [type=""] [extends="parent_class_name"] [implements="a,b"] [config="true"]>
 	    <import name="name" />
