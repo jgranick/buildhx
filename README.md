@@ -18,15 +18,15 @@ BuildHX is simple to use:
 	haxelib run buildhx [options] build.xml
 	
 ...where options are:
-	-v, -verbose    Verbose output.    
-	-Dkey           Define key.
-	-lpath          Include path.
-	key=value       Define key with a value.
+ * -v, -verbose    Verbose output.    
+ * -Dkey           Define key.
+ * -lpath          Include path.
+ * key=value       Define key with a value.
 
 "build.xml" is your XML definitions file:
 ```xml
 <build>
-	<source path="path_to_folder" parser="jsduck|yuidoc|cpp" />
+	<source path="path_to_folder_with_js_files" parser="jsduck|yuidoc|cpp" />
 	<type name="name" remap="new_name" />
 	<class name="name" ignore="true" native="native_name" header="native_header" type="type" extends="parent_class_name" implements="a,b" config="true">
 	    <import name="name" />
@@ -44,6 +44,6 @@ BuildHX is simple to use:
 	    </constructor>
 	</class>
 	<output path="path_to_folder" namespace="custom_namespace" native="native_namespace" />
-	<library name="lib_name" type="jsduck|yuidoc|cpp" />
+	<library name="ndll_file_name_without extension" type="cpp" />
 </build>
 ```
