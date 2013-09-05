@@ -33,7 +33,7 @@ class BuildHX {
 	
 	private static var parser:AbstractParser;
 	private static var parserName:String;
-	private static var sourcePath:String;
+	public static var sourcePath(default, null):String;
 	private static var targetFlags:Map<String, String>;
 	private static var targetPath:String;
 	
@@ -381,6 +381,8 @@ class BuildHX {
 	
 	public static function generateExterns () {
 		
+		var generatedPath : String = null;
+		
 		if (Std.is (parser, JSDuckParser)) {
 			
 			if (isWindows) {
@@ -393,20 +395,20 @@ class BuildHX {
 				
 			}
 			
-			sourcePath = FileSystem.fullPath ("obj") + "/";
+			generatedPath = FileSystem.fullPath ("obj") + "/";
 			
 		}
 		
 		if (Std.is (parser, YUIDocParser)) {
 			
 			runCommand ("", "yuidoc", [ sourcePath ]);
-			sourcePath = FileSystem.fullPath ("out") + "/";
+			generatedPath = FileSystem.fullPath ("out") + "/";
 			
 		}
 		
-		if (sourcePath != null) {
+		if (generatedPath != null) {
 			
-			parser.processFiles (FileSystem.readDirectory (sourcePath), sourcePath);
+			parser.processFiles (FileSystem.readDirectory (generatedPath), generatedPath);
 			
 		}
 		

@@ -6,6 +6,7 @@ import sys.io.File;
 import buildhx.data.ClassDefinition;
 import buildhx.data.ClassMethod;
 import buildhx.data.ClassProperty;
+using StringTools;
 
 class YUIDocParser extends SimpleParser 
 {
@@ -72,7 +73,15 @@ class YUIDocParser extends SimpleParser
 			var claz = Reflect.field(data.classes, key);
 			//trace("Class - "+cl.name);
 			var classDef = new ClassDefinition();
-			classDef.className = cl.name;
+			
+			var sourcePath = BuildHX.sourcePath.toLowerCase().replace("\\", "/");
+			var classFile = cl.file.toLowerCase().replace("\\", "/");
+			var pack = classFile.startsWith(sourcePath) 
+				? BuildHX.resolvePackageNameDot(BuildHX.resolvePackageName(classFile.substr(sourcePath.length + 1).replace("/", ".")))
+				: "";
+			
+			classDef.className = pack + cl.name;
+			classDef.nativeClassName = (cl.module != null ? cl.module.toLowerCase() + "." : "") + cl.name;
 			
 			if(cl.description != null)
 			{
@@ -483,6 +492,7 @@ typedef YUIClass =
 	var plugins:Array<Dynamic>;
 	var extensions:Array<Dynamic>;
 	var plugin_for:Array<Dynamic>;
+	var module:String;
 	var extension_for:Array<Dynamic>;
 	var file:String;
 	var line:Int;
