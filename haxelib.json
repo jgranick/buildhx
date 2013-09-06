@@ -3,9 +3,9 @@
 	"license": "MIT",
 	"tags": ["extern", "js"],
 	"description": "BuildHX helps you create externs for native libraries.",
-	"contributors": ["singmajesty"],
-	"releasenote": "Minor type resolution improvements.",
-	"version": "2.0.5",
-	"url": "https://github.com/jgranick/buildhx",
+	"contributors": ["Meychi"],
+	"releasenote": "Updated README.md and native class names and packages support improvements.",
+	"version": "2.0.6",
+	"url": "https://github.com/Meychi/buildhx",
 	"dependencies": {}
 }
