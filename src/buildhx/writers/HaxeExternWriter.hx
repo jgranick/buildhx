@@ -237,7 +237,7 @@ class HaxeExternWriter {
 			output.writeString ("\n");
 		}
 		
-		output.writeString ('@:native("' + BuildHX.nativeNamespace + definition.className + '")\n');
+		output.writeString ('@:native("' + BuildHX.nativeNamespace + (definition.nativeClassName != null ? definition.nativeClassName : definition.className) + '")\n');
 		output.writeString ('extern class ' + BuildHX.resolveClassName (definition.className));
 		
 		var parentClassName = "";
