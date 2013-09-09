@@ -1,11 +1,11 @@
 {
 	"name": "buildhx",
 	"license": "MIT",
-	"tags": ["js","extern"],
+	"tags": ["extern", "js"],
 	"description": "BuildHX helps you create externs for native libraries.",
 	"contributors": ["Meychi"],
-	"releasenote": "Added native namespace",
-	"version": "2.0.2",
+	"releasenote": "Rollback to previous functionality.",
+	"version": "2.0.7",
 	"url": "https://github.com/Meychi/buildhx",
 	"dependencies": {}
 }
