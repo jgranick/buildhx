@@ -33,14 +33,14 @@ class BuildHX {
 	
 	private static var parser:AbstractParser;
 	private static var parserName:String;
-	public static var sourcePath(default, null):String;
+	private static var sourcePath:String;
 	private static var targetFlags:Map<String, String>;
 	private static var targetPath:String;
 	
 	private static var definitions:Map<String, ClassDefinition>;
 	private static var types:Map<String, String>;
 	
-	public static var VERSION:String = "2.0.6";
+	public static var VERSION:String = "2.0.5";
 	public static var USAGE:String = "Usage : haxelib run buildhx build.xml";
 	
 	
@@ -381,8 +381,6 @@ class BuildHX {
 	
 	public static function generateExterns () {
 		
-		var generatedPath : String = null;
-		
 		if (Std.is (parser, JSDuckParser)) {
 			
 			if (isWindows) {
@@ -395,20 +393,20 @@ class BuildHX {
 				
 			}
 			
-			generatedPath = FileSystem.fullPath ("obj") + "/";
+			sourcePath = FileSystem.fullPath ("obj") + "/";
 			
 		}
 		
 		if (Std.is (parser, YUIDocParser)) {
 			
 			runCommand ("", "yuidoc", [ sourcePath ]);
-			generatedPath = FileSystem.fullPath ("out") + "/";
+			sourcePath = FileSystem.fullPath ("out") + "/";
 			
 		}
 		
-		if (generatedPath != null) {
+		if (sourcePath != null) {
 			
-			parser.processFiles (FileSystem.readDirectory (generatedPath), generatedPath);
+			parser.processFiles (FileSystem.readDirectory (sourcePath), sourcePath);
 			
 		}
 		
