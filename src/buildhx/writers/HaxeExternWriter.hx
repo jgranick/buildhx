@@ -5,6 +5,7 @@ import buildhx.data.ClassDefinition;
 import buildhx.data.ClassMethod;
 import buildhx.data.ClassProperty;
 import buildhx.parsers.AbstractParser;
+import buildhx.parsers.YUIDocParser;
 import sys.io.File;
 
 
@@ -102,7 +103,7 @@ class HaxeExternWriter {
 			
 		}
 		
-		output.writeString (" {\n\n");
+		output.writeString ("\n{\n");
 		
 		for (property in properties) {
 			
@@ -116,8 +117,8 @@ class HaxeExternWriter {
 			
 		}
 		
-		output.writeString ("	public function new (properties:Dynamic = null):Void {\n");
-		output.writeString ("		\n");
+		output.writeString ("	public function new (properties:Dynamic = null):Void\n\t{\n");
+		//output.writeString ("		\n");
 		
 		if (parentClassName != "") {
 			
@@ -126,23 +127,23 @@ class HaxeExternWriter {
 		} else {
 			
 			output.writeString ("		untyped __js__ (\"this.__proto__ = {}.__proto__\");\n");
-			output.writeString ("		\n");
-			output.writeString ("		if (properties != null) {\n");
-			output.writeString ("			\n");
-			output.writeString ("			for (propertyName in Reflect.fields (properties)) {\n");
-			output.writeString ("				\n");
-			output.writeString ("				Reflect.setField (this, propertyName, Reflect.field (properties, propertyName));");
-			output.writeString ("				\n");
+			//output.writeString ("		\n");
+			output.writeString ("		if (properties != null)\n\t\t{\n");
+			//output.writeString ("			\n");
+			output.writeString ("			for (propertyName in Reflect.fields (properties))\n\t\t\t{\n");
+			//output.writeString ("				\n");
+			output.writeString ("				Reflect.setField (this, propertyName, Reflect.field (properties, propertyName));\n");
+			//output.writeString ("				\n");
 			output.writeString ("			}\n");
-			output.writeString ("			\n");
+			//output.writeString ("			\n");
 			output.writeString ("		}\n");
 			
 		}
 		
-		output.writeString ("		\n");
-		output.writeString ("	}\n\n");
+		//output.writeString ("		\n");
+		output.writeString ("	}\n");
 		
-		output.writeString ("}");
+		output.writeString ("\n}\n");
 		output.close ();
 		
 	}
@@ -229,7 +230,7 @@ class HaxeExternWriter {
 			
 		}
 		
-		if (definition.comment != null) {
+		if (definition.comment != null && definition.comment != "") {
 			
 			//output.writeString ("\n");
 			output.writeString (definition.comment);
@@ -283,7 +284,7 @@ class HaxeExternWriter {
 		
 		for (property in staticProperties) {
 			
-			output.writeString ("	" + property);
+			output.writeString ("\n\t" + property);
 			
 		}
 		
@@ -295,7 +296,7 @@ class HaxeExternWriter {
 		
 		for (property in properties) {
 			
-			output.writeString ("	" + property);
+			output.writeString ("\n\t" + property);
 			
 		}
 		
@@ -307,7 +308,7 @@ class HaxeExternWriter {
 		
 		for (method in staticMethods) {
 			
-			output.writeString ("	" + method);
+			output.writeString ("\n\t" + method);
 			
 		}
 		
@@ -319,7 +320,7 @@ class HaxeExternWriter {
 		
 		for (method in methods) {
 			
-			output.writeString ("	" + method);
+			output.writeString ("\n\t" + method);
 			
 		}
 		
@@ -329,7 +330,7 @@ class HaxeExternWriter {
 			
 		}
 		
-		output.writeString ("}\n");
+		output.writeString ("\n}\n");
 		output.close ();
 		
 	}
@@ -339,7 +340,7 @@ class HaxeExternWriter {
 		
 		var output = "";
 		
-		if(method.comment != null) {
+		if(method.comment != null && method.comment != "") {
 			
 			output += method.comment + "\n\t";
 			
@@ -378,7 +379,7 @@ class HaxeExternWriter {
 			
 		}
 		
-		output += "):" + parser.resolveType (method.returnType) + ";\n";
+		output += "):" + parser.resolveType (method.returnType) + ";\n\t";
 		
 		return output;
 			
@@ -389,10 +390,15 @@ class HaxeExternWriter {
 		
 		var output = "";
 		
-		if(property.comment != null) {
+		if(property.comment != null && property.comment != "") {
 			
 			output += property.comment + "\n\t";
 			
+		}
+		
+		if (property.hasConflict)
+		{
+			output += "//";
 		}
 		
 		output += access + " ";
@@ -403,17 +409,9 @@ class HaxeExternWriter {
 			
 		}
 		
-		output += "var " + property.name + ":" + parser.resolveType (property.type) + ";\n";
+		output += "var " + property.name + ":" + parser.resolveType (property.type) + ";\n\t";
 		
-		if (property.hasConflict) {
-			
-			return "//" + output;
-			
-		} else {
-			
-			return output;
-			
-		}
+		return output;
 		
 	}
 

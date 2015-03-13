@@ -2,6 +2,7 @@ package buildhx.parsers;
 
 
 import buildhx.writers.HaxeExternWriter;
+import sys.FileSystem;
 import sys.io.File;
 import buildhx.data.ClassDefinition;
 import buildhx.data.ClassMethod;
@@ -33,7 +34,7 @@ class JSDuckParser extends SimpleParser {
 			
 		}
 		
-		ignoredFiles = [ "globals.json" ];
+		ignoredFiles = [ "global.json" ];
 		
 		if (types == null) {
 			
@@ -49,11 +50,16 @@ class JSDuckParser extends SimpleParser {
 		types.set ("undefined", "Void");
 		types.set ("null", "Void");
 		types.set ("", "Dynamic");
-		types.set ("HTMLElement", "HtmlDom");
+		types.set ("HTMLElement", "Element");
 		types.set ("Mixed", "Dynamic");
 		types.set ("Iterable", "Dynamic");
 		types.set ("Array", "Array<Dynamic>");
 		types.set ("RegExp", "EReg");
+		
+		// Manual fixes
+		types.set ("Any", "Dynamic");
+		types.set ("Class", "Dynamic");
+		types.set ("AudioGainNode", "GainNode");
 		
 		this.types = types;
 		
@@ -70,6 +76,9 @@ class JSDuckParser extends SimpleParser {
 	
 	private function getClassMembers (data:Dynamic, definition:ClassDefinition):Void {
 		
+		processStaticMethods(cast (data.members.method, Array<Dynamic>), definition.staticMethods);
+		processStaticProperties(cast (data.members.property, Array<Dynamic>), definition.staticProperties);
+		
 		if (data.singleton) {
 			
 			processMethods (cast (data.members.method, Array<Dynamic>), definition.staticMethods);
@@ -80,7 +89,7 @@ class JSDuckParser extends SimpleParser {
 			processMethods (cast (data.members.method, Array<Dynamic>), definition.methods);
 			processProperties (cast (data.members.property, Array<Dynamic>), definition.properties);
 			processMethods (cast (data.statics.method, Array<Dynamic>), definition.staticMethods);
-			processProperties (cast (data.members.property, Array<Dynamic>), definition.staticProperties);
+			processProperties (cast (data.statics.property, Array<Dynamic>), definition.staticProperties);
 			
 			if (Reflect.hasField (data.members, "cfg")) {
 				
@@ -159,6 +168,24 @@ class JSDuckParser extends SimpleParser {
 		
 	}
 	
+	private function processStaticMethods (methodsData:Array<Dynamic>, methods:Map <String, ClassMethod>):Void 
+	{
+		for (methodData in methodsData) {
+				
+			if (Reflect.hasField(methodData, "meta"))
+			{
+				var meta = Reflect.getProperty(methodData, "meta");
+				if (Reflect.hasField(meta, "static") && Reflect.getProperty(meta, "static") == true)
+				{
+					var method = new ClassMethod ();
+					method.name = methodData.name;
+					methods.set(methodData.name, method);
+				}
+			}
+			
+		}
+		
+	}
 	
 	private function processMethods (methodsData:Array<Dynamic>, methods:Map <String, ClassMethod>):Void {
 		
@@ -202,6 +229,28 @@ class JSDuckParser extends SimpleParser {
 		
 	}
 	
+	private function processStaticProperties (propertiesData:Array<Dynamic>, properties:Map <String, ClassProperty>):Void {
+		
+		for (propertyData in propertiesData) {
+			
+			if (propertyData.deprecated == null) {
+				
+				if (Reflect.hasField(propertyData, "meta"))
+				{
+					var meta = Reflect.getProperty(propertyData, "meta");
+					if (Reflect.hasField(meta, "static") && Reflect.getProperty(meta, "static") == true)
+					{
+						var property = new ClassProperty ();
+						property.name = propertyData.name;
+						properties.set(propertyData.name, property);
+					}
+				}
+				
+			}
+			
+		}
+		
+	}
 	
 	private function processProperties (propertiesData:Array<Dynamic>, properties:Map <String, ClassProperty>):Void {
 		
@@ -312,11 +361,23 @@ class JSDuckParser extends SimpleParser {
 			type = type.substr (indexOfFirstBracket + 1, type.indexOf (">") - indexOfFirstBracket - 1);
 
 		}
-
-		if (type == "HtmlDom") {
-
-			type = "js.html.Element";
-
+		
+		// Try to resolve types from js std definitions
+		
+		var path:String = Sys.getEnv("HAXEPATH");
+		var dirs = ["audio", "fs", "idb", "rtc", "sql", "svg", "webgl"];
+		if (path != null)
+		{
+			var html = path + "std/js/html/" + type + ".hx";
+			if (FileSystem.exists(html)) type = "js.html." + type;
+			else 
+			{
+				for (dir in dirs)
+				{
+					var file = path + "std/js/html/" + dir + "/" + type + ".hx";
+					if (FileSystem.exists(file)) type = "js.html." + dir + "." + type;
+				}
+			}
 		}
 
 		if (type.indexOf (".") == -1) {
@@ -337,6 +398,12 @@ class JSDuckParser extends SimpleParser {
 		if (type == null) {
 			
 			return "Void";
+			
+		}
+		
+		if (type.indexOf ("|") > -1) {
+			
+			return "Dynamic";
 			
 		}
 		

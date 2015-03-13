@@ -40,7 +40,7 @@ class BuildHX {
 	private static var definitions:Map<String, ClassDefinition>;
 	private static var types:Map<String, String>;
 	
-	public static var VERSION:String = "2.0.2";
+	public static var VERSION:String = "2.0.7";
 	public static var USAGE:String = "Usage : haxelib run buildhx build.xml";
 	
 	
@@ -385,7 +385,7 @@ class BuildHX {
 			
 			if (isWindows) {
 				
-				runCommand ("", buildhx + "/bin/jsduck-3.10.1.exe", [ sourcePath, "--export=full", "--output", "obj", "--pretty-json" ]);
+				runCommand ("", buildhx + "/bin/jsduck-4.4.1.exe", [ sourcePath, "--export=full", "--output", "obj", "--pretty-json" ]);
 				
 			} else {
 				

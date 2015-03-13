@@ -1,6 +1,7 @@
 package buildhx.parsers;
 
 import buildhx.writers.HaxeExternWriter;
+import sys.FileSystem;
 import sys.io.File;
 import buildhx.data.ClassDefinition;
 import buildhx.data.ClassMethod;
@@ -45,6 +46,11 @@ class YUIDocParser extends SimpleParser
 		types.set ("Iterable", "Dynamic");
 		types.set ("Array", "Array<Dynamic>");
 		types.set ("RegExp", "EReg");
+		
+		// Manual fixes
+		types.set ("Any", "Dynamic");
+		types.set ("Class", "Dynamic");
+		types.set ("AudioGainNode", "GainNode");
 		
 		this.types = types;
 	
@@ -100,10 +106,9 @@ class YUIDocParser extends SimpleParser
 						//trace("i.params "+i.params);
 						for(param in params)
 						{
-							//trace("param "+ param.name + ":" + param.type);
 							constructorDef.parameterNames.push(param.name);
 							constructorDef.parameterTypes.push(param.type);
-							constructorDef.parameterOptional.push(false);//cannot determine
+							constructorDef.parameterOptional.push(param.optional != null ? param.optional : false);
 							constructorDef.parameterDescriptions.push(param.description);
 						}
 					}
@@ -163,7 +168,7 @@ class YUIDocParser extends SimpleParser
 							methodDef.parameterNames.push(param.name);
 							methodDef.parameterTypes.push(param.type != null ? param.type : "Dynamic");
 							methodDef.parameterDescriptions.push(param.description);
-							methodDef.parameterOptional.push(false);//cannot determine
+							methodDef.parameterOptional.push(param.optional != null ? param.optional : false);
 						}
 					}
 					
@@ -209,7 +214,7 @@ class YUIDocParser extends SimpleParser
 					if(i.description != null)
 					{
 						//propertyDef.comment = "\n\t/**\n\t*	"+ "@type " + i.type + "\n\t*\t" + i.description.split("\n").join("\n\t*\t") +"\n\t*\n\t*/";
-						propertyDef.comment = "\n\t/**\n\t* "+ i.description.split("\n").join(" ") +"\n\t*/";
+						propertyDef.comment = "/**\n\t* "+ i.description.split("\n").join(" ") +"\n\t*/";
 					}
 					
 					if(isStatic)
@@ -228,7 +233,7 @@ class YUIDocParser extends SimpleParser
 	
 	private function createMethodComment(methodDef:ClassMethod):String
 	{
-		var str = "\n\t/**";
+		var str = "/**";
 		
 		str += "\n\t* " + methodDef.description.split("\n").join("\n\t*\t");
 		
@@ -344,29 +349,22 @@ class YUIDocParser extends SimpleParser
 			type = type.substr (indexOfFirstBracket + 1, type.indexOf (">") - indexOfFirstBracket - 1);
 
 		}
-
-		if (type == "Event") {
-
-			type = "js.html.Event";
-
-		}
 		
-		if (type == "Element") {
-
-			type = "js.html.Element";
-
-		}
-		
-		if(type =="HTMLCanvasElement" || type == "HTMLCollection" || type == "HTMLAllCollection" || type =="HTMLDocument" || type == "HTMLElement") {
-
-			type = "js.html.Element";
-
-		}
-
-		if(type == "CanvasRenderingContext2D" || type == "CanvasPixelArray" || type == "ImageData" || type == "TextMetrics" || type == "CanvasPattern" || type == "CanvasGradient") {
-
-			type = "js.html.CanvasRenderingContext2D";
-
+		// Try to resolve types from js std definitions
+		var path:String = Sys.getEnv("HAXEPATH");
+		var dirs = ["audio", "fs", "idb", "rtc", "sql", "svg", "webgl"];
+		if (path != null)
+		{
+			var html = path + "std/js/html/" + type + ".hx";
+			if (FileSystem.exists(html)) type = "js.html." + type;
+			else 
+			{
+				for (dir in dirs)
+				{
+					var file = path + "std/js/html/" + dir + "/" + type + ".hx";
+					if (FileSystem.exists(file)) type = "js.html." + dir + "." + type;
+				}
+			}
 		}
 
 		if (type.indexOf (".") == -1) {
@@ -522,4 +520,5 @@ typedef YUIMethodParam =
 	var name:String;
     var description:String;
     var type:String;
+	var optional:Bool;
 }
