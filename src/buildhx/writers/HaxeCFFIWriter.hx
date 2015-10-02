@@ -55,7 +55,7 @@ class HaxeCFFIWriter {
 		
 		if (property.getter != null || (property.getter == null && property.setter == null)) { 
 			
-			return "get" + property.name.substr (0, 1).toUpperCase () + property.name.substr (1);
+			return "get_" + property.name;
 			
 		}
 		
@@ -68,7 +68,7 @@ class HaxeCFFIWriter {
 		
 		if (property.setter != null || (property.getter == null && property.setter == null)) { 
 			
-			return "set" + property.name.substr (0, 1).toUpperCase () + property.name.substr (1);
+			return "set_" + property.name;
 			
 		}
 		
